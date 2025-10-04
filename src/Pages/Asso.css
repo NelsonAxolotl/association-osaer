@@ -1,102 +1,121 @@
-/* =========================
-   Container principal
-   ========================= */
 .asso {
   position: relative;
-  min-height: 100vh;
   color: white;
-  background: black;
+  background: rgb(0, 0, 0); /* pour test, à adapter */
+  min-height: 100vh;
   overflow: hidden;
   z-index: 0;
 }
 
-/* Fond diagonal */
 .asso::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 701;
+  z-index: 701; /* derrière le titre et la photo */
   background-image: repeating-linear-gradient(
     -135deg,
-    rgba(255, 255, 255, 0.07) 0px,
+    rgba(255, 255, 255, 0.074) 0px,
     rgba(255, 255, 255, 0.06) 1px,
     transparent 250px,
     transparent 460px
   );
+  pointer-events: none;
   filter: blur(8px);
   opacity: 0;
   transition: opacity 6s ease-in-out;
-  pointer-events: none;
 }
 
-.crossfade-visible::before {
-  opacity: 1;
-}
-
-/* Ligne horizontale */
 .asso::after {
   content: "";
   position: fixed;
   top: 20.9%;
   left: 1%;
   width: 88.5%;
-  height: 2px;
+  height: 1.9px;
   background: white;
-  opacity: 0;
+  opacity: 0; /* départ invisible */
   animation: fadeLineTop 4s ease-in forwards;
-  animation-delay: 0.5s;
+  animation-delay: 0.5s; /* décalage pour effet plus élégant */
 }
 
-/* =========================
-   Titre
-   ========================= */
+/* animation pour la verticale */
+@keyframes fadeLineVertical {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .asso-title {
   position: fixed;
   top: 10%;
   left: 5%;
-  margin: 0;
   font-size: 3.5rem;
-  font-family: "Caveat", cursive;
   color: white;
+  font-family: "Caveat", cursive;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  margin: 0;
   white-space: nowrap;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(20px); /* décalage initial pour le glissement */
   transition: opacity 2s ease-in-out, transform 2s ease-in-out;
 }
 
-.visible-after-video {
-  opacity: 0.8 !important;
-  transform: translateY(0);
+.crossfade-visible::before {
+  opacity: 1;
 }
 
-/* =========================
-   Rectangle décoratif
-   ========================= */
+/* rectangle vert derrière la photo */
 .asso-rectangle {
   position: relative;
-  top: 155px;
+  top: 155px; /* commence au-dessus de la photo, ajuster selon besoin */
   left: 1%;
-  width: 78%;
+  width: 78%; /* jusqu'à la ligne blanche à droite */
   height: 100vh;
-  background: black;
+  background: rgb(0, 0, 0);
   padding: 50px;
-  border-radius: 3px;
-  z-index: 700;
-  opacity: 0;
+  z-index: 700; /* derrière la photo */
+  opacity: 1;
   overflow: hidden;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
   pointer-events: none;
+}
+
+/* apparition progressive avec contentVisible */
+.crossfade-visible .asso-rectangle {
+  opacity: 1;
+}
+
+/* Logo en bas à droite de la vidéo */
+.logoasso {
+  position: fixed; /* absolute pour qu'il reste dans le container vidéo */
+  top: 14%; /* distance depuis le bas de la vidéo */
+  right: 21%; /* distance depuis la droite */
+  z-index: -1;
+  opacity: 0;
   transition: opacity 2s ease-in-out;
 }
 
-.crossfade-visible .asso-rectangle {
-  opacity: 1;
+.logoasso img {
+  width: 12vw; /* largeur relative à la largeur de l'écran */
+  width: 200px; /* limite maximale pour les grands écrans */
+  height: auto; /* garde les proportions */
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .asso-rectangle::after {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: url("/Pics/tulle.jpg") no-repeat top center;
   background-size: cover;
   opacity: 0;
@@ -114,49 +133,16 @@
   }
 }
 
-/* =========================
-   Logo
-   ========================= */
-.logoasso {
-  position: fixed;
-  top: 14%;
-  right: 21%;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-}
-
-.logoasso img {
-  width: min(200px, 12vw);
-  height: auto;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-/* =========================
-   Animations
-   ========================= */
-@keyframes fadeLineTop {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* =========================
-   Media queries
-   ========================= */
 @media (max-width: 900px) {
   .asso::after {
     top: 22.5%;
-    width: 98vw;
-    right: 0;
+    right: 0; /* commence à zéro à droite */
+    width: 98vw; /* prend toute la largeur de l’écran */
   }
 
   .asso-rectangle {
-    width: 98%;
     margin-top: 15px;
+    width: 98%;
   }
 
   .logoasso {
@@ -164,13 +150,93 @@
   }
 }
 
+.visible-after-video {
+  opacity: 0.8 !important;
+  transform: translateY(0);
+}
+
+/* par défaut, on montre la normale */
+.normal-video {
+  opacity: 0.3;
+  z-index: 2;
+}
+
+.mirror-video {
+  opacity: 0.3;
+  transform: scaleX(-1);
+}
+
+.asso-bg-video {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  width: 0%;
+  height: 70%;
+  object-fit: cover;
+  opacity: 0.06;
+  border-radius: 5px;
+  animation: openHorizontal 14s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes openHorizontal {
+  0% {
+    width: 0%;
+    left: 50%;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.fade2-video {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  z-index: 1;
+  opacity: 1;
+  animation: openVertical2 3s ease forwards;
+  pointer-events: none;
+}
+
+/* Vidéo background */
+.background2-video {
+  position: absolute;
+  top: 25%;
+  left: 0%;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  z-index: 2;
+  opacity: 0;
+  animation: openVertical2 3s ease forwards;
+  pointer-events: none;
+}
+
+/* Animation rideau vertical */
+@keyframes openVertical2 {
+  0% {
+    height: 0%;
+    top: 20%;
+    opacity: 0;
+  }
+  100% {
+    height: 50%;
+    top: 0%;
+    opacity: 0.7;
+  }
+}
+
 @media (max-width: 500px) {
   .asso-title {
-    left: 50%;
+    transform: none;
+    left: 40%; /* centre horizontalement */
     transform: translateX(-50%) translateY(0);
-  }
-
-  .bottom-asso-line-responsive {
-    bottom: 7%;
   }
 }

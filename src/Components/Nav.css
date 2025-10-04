@@ -13,7 +13,7 @@
   content: "";
   position: absolute;
   top: -41.5%;
-  right: 100%;
+  right: 99.5%;
   width: 1.9px;
   height: 170%;
   background: white;
@@ -196,7 +196,7 @@
 
   .burger-arrow {
     display: block;
-    margin: 40px 0 80px;
+    margin: 40px 200px 80px;
     font-size: 2rem;
     color: white;
     animation: bounceDown 1.6s infinite ease-in-out;
@@ -238,5 +238,9 @@
 
   .navbar ul {
     margin-top: 15px;
+  }
+
+  .burger-arrow {
+    margin: 40px 130px 80px;
   }
 }

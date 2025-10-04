@@ -1,16 +1,13 @@
-/* =========================
-   Base container
-   ========================= */
 .maincontact {
   position: relative;
-  min-height: 100vh;
   color: white;
-  background: black;
+  background-color: black; /* pour test, à adapter */
   overflow: hidden;
+  min-height: 100vh;
   z-index: 0;
 }
 
-/* Effet de fond diagonales */
+/* rectangle entre la gauche et la ligne blanche */
 .maincontact::before {
   content: "";
   position: absolute;
@@ -18,114 +15,41 @@
   z-index: 701;
   background-image: repeating-linear-gradient(
     -135deg,
-    rgba(255, 255, 255, 0.07) 0px,
+    rgba(255, 255, 255, 0.074) 0px,
     rgba(255, 255, 255, 0.07) 1px,
     transparent 250px,
     transparent 460px
   );
+  pointer-events: none;
   filter: blur(8px);
   opacity: 0;
   transition: opacity 6s ease-in-out;
-  pointer-events: none;
 }
 
 .crossfade-visible::before {
   opacity: 1;
 }
 
-/* Ligne horizontale */
 .maincontact::after {
   content: "";
   position: fixed;
   top: 20.9%;
   left: 1%;
   width: 88.5%;
-  height: 2px;
+  height: 1.9px;
   background: white;
-  opacity: 0;
+  opacity: 0; /* départ invisible */
   animation: fadeLineTop 4s ease-in forwards;
-  animation-delay: 0.5s;
+  animation-delay: 0.5s; /* décalage pour effet plus élégant */
 }
 
-/* =========================
-   Titre
-   ========================= */
-.contact-title {
-  position: fixed;
-  top: 10%;
-  left: 5%;
-  margin: 0;
-  font-size: 3.5rem;
-  font-family: "Caveat", cursive;
-  color: white;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-  white-space: nowrap;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
-}
-
-.visible-after-video {
-  opacity: 0.8 !important;
-  transform: translateY(0);
-}
-
-/* =========================
-   Rectangle de contenu
-   ========================= */
-.contact-rectangle {
-  position: relative;
-  top: 155px;
-  left: 1%;
-  width: 78%;
-  height: 100vh;
-  background: black;
-  padding: 50px;
-  border-radius: 3px;
-  z-index: 700;
-  opacity: 0;
-  overflow: hidden;
-  pointer-events: none;
-  transition: opacity 2s ease-in-out;
-}
-
+/* apparition progressive avec contentVisible */
 .crossfade-visible .contact-rectangle {
   opacity: 1;
 }
 
-.contact-rectangle::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  height: 85%;
-  background: url("/Pics/color10.jpg") no-repeat top center;
-  background-size: cover;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-/* =========================
-   Logo
-   ========================= */
-.logocontact {
-  position: fixed;
-  top: 14%;
-  right: 21%;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-}
-
-.logocontact img {
-  width: min(200px, 12vw);
-  height: auto;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-/* =========================
-   Animations
-   ========================= */
-@keyframes fadeLineTop {
+/* animation pour la verticale */
+@keyframes fadeLineVertical {
   from {
     opacity: 0;
   }
@@ -134,14 +58,82 @@
   }
 }
 
-/* =========================
-   Media queries
-   ========================= */
+.contact-title {
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  font-size: 3.5rem;
+  color: white;
+  font-family: "Caveat", cursive;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  margin: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(20px); /* décalage initial pour le glissement */
+  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+}
+
+.visible-after-video {
+  opacity: 0.8 !important;
+  transform: translateY(0);
+}
+
+/* Logo en bas à droite de la vidéo */
+.logocontact {
+  position: fixed; /* absolute pour qu'il reste dans le container vidéo */
+  top: 14%; /* distance depuis le bas de la vidéo */
+  right: 21%; /* distance depuis la droite */
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.logocontact img {
+  width: 12vw; /* largeur relative à la largeur de l'écran */
+  width: 200px; /* limite maximale pour les grands écrans */
+  height: auto; /* garde les proportions */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* rectangle vert derrière la photo */
+.contact-rectangle {
+  position: relative;
+  top: 155px; /* commence au-dessus de la photo, ajuster selon besoin */
+  left: 1%;
+  width: 78%; /* jusqu'à la ligne blanche à droite */
+  height: 100vh;
+  background: rgb(0, 0, 0);
+  padding: 50px;
+  z-index: 700; /* derrière la photo */
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 2s ease-in-out;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  pointer-events: none;
+}
+
+.contact-rectangle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  background: url("/Pics/color10.jpg") no-repeat top center;
+  background-size: cover;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 @media (max-width: 900px) {
   .maincontact::after {
     top: 22.5%;
-    right: 0;
-    width: 98%;
+    right: 0; /* commence à zéro à droite */
+    width: 98%; /* prend toute la largeur de l’écran */
   }
 
   .contact-rectangle {
@@ -156,15 +148,34 @@
   .logocontact {
     display: none;
   }
+
+  .bottom-contact-line-responsive {
+    position: absolute;
+    bottom: 6%;
+    left: 1%;
+    width: 98%;
+    height: 1.5px; /* épaisseur */
+    background: white; /* couleur de la ligne */
+    z-index: 1000; /* au-dessus des vidéos */
+    opacity: 0; /* départ invisible */
+    animation: fadeLineTop 5s ease-in forwards;
+    animation-delay: 0.5s; /* décalage pour effet plus élégant */
+  }
 }
 
 @media (max-width: 500px) {
   .contact-title {
-    left: 50%;
+    transform: none;
+    left: 50%; /* centre horizontalement */
     transform: translateX(-50%) translateY(0);
   }
 
   .bottom-contact-line-responsive {
     bottom: 7%;
+  }
+
+  .contact-rectangle {
+    width: 97%;
+    left: 1.5%;
   }
 }

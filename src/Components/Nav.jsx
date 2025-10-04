@@ -7,11 +7,11 @@ function Navbar({ className }) {
   const location = useLocation();
 
   const links = [
-    { label: "Accueil", to: "/" },
-    { label: "Asso", to: "/asso" },
-    { label: "Scolaire", to: "/scolaire" },
-    { label: "Bio", to: "/bio" },
-    { label: "Contact", to: "/contact" },
+    { label: "Accueil", to: "/", side: "right" },
+    { label: "Asso", to: "/asso", side: "left" },
+    { label: "Scolaire", to: "/scolaire", side: "right" },
+    { label: "Bio", to: "/bio", side: "left" },
+    { label: "Contact", to: "/contact", side: "right" },
   ];
 
   return (
@@ -29,20 +29,18 @@ function Navbar({ className }) {
       <nav className={`navbar ${isOpen ? "active" : ""} ${className || ""}`}>
         <div className="burger-arrow">↓</div>
         <ul className="nav-links">
-          {links.map((link) => (
-            <li key={link.to}>
+          {links.map(({ label, to, side }) => (
+            <li key={to}>
               <button
                 className={`nav-link ${
-                  location.pathname === link.to ? "active" : ""
-                } ${
-                  link.to === "/asso" || link.to === "/bio" ? "left" : "right"
-                }`}
+                  location.pathname === to ? "active" : ""
+                } ${side}`}
                 onClick={() => {
                   setIsOpen(false);
-                  window.location.href = link.to; // force le vrai reload
+                  window.location.href = to; // force reload
                 }}
               >
-                {link.label}
+                {label}
               </button>
             </li>
           ))}

@@ -1,11 +1,10 @@
-/* ===== Conteneur principal ===== */
 .crossfade-container {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
   z-index: 0;
-  background: black;
+  background: rgb(0, 0, 0);
 }
 
 /* lignes diagonales */
@@ -27,12 +26,8 @@
   transition: opacity 6s ease-in-out;
 }
 
-.crossfade-container.crossfade-visible::before {
-  opacity: 1;
-}
-
-/* ligne horizontale */
 .crossfade-container::after {
+  z-index: 0;
   content: "";
   position: fixed;
   top: 20.9%;
@@ -40,42 +35,60 @@
   width: 88.5%;
   height: 1.9px;
   background: white;
-  opacity: 0;
-  z-index: 0;
+  opacity: 0; /* départ invisible */
   animation: fadeLineTop 10s ease-in forwards;
-  animation-delay: 0.5s;
+  animation-delay: 0.5s; /* décalage pour effet plus élégant */
 }
 
-/* ===== Animations ===== */
-@keyframes fadeLineTop {
+/* animation pour la verticale */
+@keyframes fadeLineVertical {
   from {
-    opacity: 0;
+    opacity: 1;
   }
   to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInH1 {
-  0%,
-  50% {
     opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
-@keyframes bounceDown {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(12px);
-  }
+/* 
+.video-container {
+  position: absolute;
+  top: 5%; 
+  left: 0%;
+  width: 80%; 
+  height: 95%;
+  overflow: hidden; 
+  z-index: 900;
+  border: 1px solid rgba(3, 3, 3, 0.292);
+} */
+
+/* .fade-video {
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+.video-container {
+  position: relative; /* permet de scroller */
+  z-index: 1000; /* plus haut que H1 et ligne à 800 */
+  width: 80%;
+  height: 70%;
+  top: 21%;
+  left: 0;
+}
+
+.fade-video {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  padding: 15px 15px 0 15px;
+  object-fit: fill;
+  opacity: 1 !important; /* force l'opacité */
+  z-index: 1001; /* encore au-dessus du container */
 }
 
 /* animation rideau pour le bas de la vidéo */
@@ -94,52 +107,63 @@
   }
 }
 
-@keyframes curtainRightUpDown {
-  0% {
-    clip-path: inset(0 0 0 0);
-  }
-  40%,
-  60% {
-    clip-path: inset(0 50% 0 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
+.video-curtain {
+  animation: curtainUpDown 6s ease-in-out;
 }
 
-/* ===== Vidéo ===== */
-.video-container {
-  position: relative;
-  z-index: 1000;
-  width: 80%;
-  height: 70%;
-  top: 21%;
-  left: 0;
+@keyframes curtainRightUpDown {
+  0% {
+    clip-path: inset(0 0 0 0); /* position initiale */
+  }
+  40% {
+    clip-path: inset(0 50% 0 0); /* monte */
+  }
+  60% {
+    clip-path: inset(0 50% 0 0); /* reste en haut un moment */
+  }
+  100% {
+    clip-path: inset(0 0 0 0); /* redescend doucement */
+  }
 }
 
 .video-container.right-animate {
   animation: curtainRightUpDown 7s ease-in-out forwards;
 }
 
-.video-curtain {
-  animation: curtainUpDown 6s ease-in-out;
-}
-
-.fade-video,
-.background-video {
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  padding: 15px 15px 0 15px;
+/* .fade-video {
+  position: relative;
+  top: 21%;
+  left: 0%;
+  width: 80%;
+  height: 70%;
+  object-position: 50% 30%;
+  z-index: 900;
+  opacity: 1;
   object-fit: fill;
-  opacity: 1 !important;
-  z-index: 1001;
-}
+  animation: openVertical 8s ease forwards;
+  pointer-events: none;
+  padding: 15px;
+} */
 
-/* ===== H1 ===== */
+/* Animation rideau vertical */
+/* @keyframes openVertical {
+  0% {
+    height: 0%;
+    top: 50%;
+    opacity: 0;
+  }
+  100% {
+    height: 60%;
+    top: 30%;
+    opacity: 0.7;
+  }
+} */
+
+/* H1 centré */
 .main-title {
   position: fixed;
   top: 10%;
+  /* right: 25%; */
   left: 3%;
   font-size: 3rem;
   color: white;
@@ -149,12 +173,24 @@
   margin: 0;
   white-space: nowrap;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(20px); /* décalage initial pour le glissement */
   transition: opacity 8s ease-in-out, transform 8s ease-in-out;
-  animation: fadeInH1 14s forwards;
+  animation: fadeInH1 14s forwards; /* 36s de délai + 2s de fondu */
 }
 
-/* ===== Flèche descendante ===== */
+@keyframes fadeInH1 {
+  0%,
+  50% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Flèche descendante */
 .scroll-arrow-down {
   position: fixed;
   top: 8%;
@@ -170,23 +206,36 @@
   z-index: 3;
 }
 
-/* ===== Logo ===== */
+@keyframes bounceDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+.crossfade-visible::before {
+  opacity: 1;
+}
+
+/* Logo en bas à droite de la vidéo */
 .logo {
-  position: absolute;
-  bottom: 0%;
-  right: 20%;
+  position: absolute; /* absolute pour qu'il reste dans le container vidéo */
+  bottom: 0%; /* distance depuis le bas de la vidéo */
+  right: 20%; /* distance depuis la droite */
   z-index: 900;
   opacity: 0;
   transition: opacity 3s ease-in-out;
 }
 
 .logo img {
-  width: 12vw;
-  max-width: 200px;
-  height: auto;
+  width: 12vw; /* largeur relative à la largeur de l'écran */
+  width: 200px; /* limite maximale pour les grands écrans */
+  height: auto; /* garde les proportions */
 }
 
-/* ===== Bouton son ===== */
 .sound-toggle {
   position: absolute;
   bottom: 10px;
@@ -208,6 +257,7 @@
     transform 0.3s ease, color 0.35s ease, opacity 3s ease-in-out;
 }
 
+/* état actif (son on) */
 .sound-toggle.on {
   background: rgba(212, 175, 55, 0.12);
   border-color: rgba(212, 175, 55, 0.4);
@@ -229,43 +279,86 @@
   outline-offset: 3px;
 }
 
-/* ===== Media Queries ===== */
 @media (max-width: 900px) {
-  :root {
-    --video-height: 68%;
-    --video-mid-height: 58%;
+  .crossfade-container {
+    height: 100vh;
   }
 
   .main-title {
-    transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0); /* ajuste le centrage */
     text-align: center;
     margin-top: 5px;
   }
 
   .video-container {
+    position: relative; /* permet de scroller */
+    z-index: 1000; /* plus haut que H1 et ligne à 800 */
     width: 100%;
-    height: var(--video-height);
+    height: 68%;
+    left: 0;
   }
+
   .fade-video,
   .background-video {
     height: 100%;
   }
 
-  .crossfade-container::after {
-    left: 2.5%;
-    width: 95vw;
+  @keyframes curtainUpDown {
+    0% {
+      top: 21%; /* fixe le haut */
+      height: 68%; /* départ fermé */
+    }
+    50% {
+      top: 21%;
+      height: 58%; /* ouverture max */
+    }
+    100% {
+      top: 21%;
+      height: 68%; /* referme */
+    }
   }
+
+  /* .fade-video,
+  .background-video {
+    top: 16%; 
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: openVerticalRes 3s ease forwards;
+  } */
+
+  /* @keyframes openVerticalRes {
+    0% {
+      height: 0%;
+      top: 50%;
+      opacity: 0;
+    }
+    100% {
+      height: 60%;
+      top: 23%;
+      opacity: 1;
+    }
+  } */
+
+  .crossfade-container::after {
+    left: 2.5%; /* commence à zéro à droite */
+    width: 95vw; /* prend toute la largeur de l’écran */
+  }
+
   .scroll-arrow-down {
     display: none;
   }
+
   .logo {
     right: 15%;
-    width: 20vw;
+    width: 20vw; /* ajuste la taille si besoin */
     z-index: 0;
   }
+
   .sound-toggle {
-    bottom: 1.5%;
+    bottom: 0.8%;
     z-index: 11000;
+    bottom: 1.5%;
   }
 
   .bottom-line-responsive {
@@ -273,47 +366,68 @@
     bottom: 9%;
     left: 2.5%;
     width: 95%;
-    height: 1.5px;
-    background: white;
-    z-index: 1000;
-    opacity: 0;
+    height: 1.5px; /* épaisseur */
+    background: white; /* couleur de la ligne */
+    z-index: 1000; /* au-dessus des vidéos */
+    opacity: 0; /* départ invisible */
     animation: fadeLineTop 5s ease-in forwards;
-    animation-delay: 0.5s;
+    animation-delay: 0.5s; /* décalage pour effet plus élégant */
   }
 }
 
 @media (max-width: 500px) {
-  :root {
-    --video-height: 80%;
-    --video-mid-height: 70%;
+  .crossfade-container {
+    height: 100vh;
   }
 
   .main-title {
-    margin-top: 13%;
+    margin-top: 10%;
     left: 10%;
   }
+
   .logo {
     display: none;
   }
+
   .video-container {
     width: 100%;
-    height: var(--video-height);
-    margin-top: 13.5%;
+    height: 80%;
+    left: 0;
+    margin-top: 10%;
   }
+
+  @keyframes curtainUpDown {
+    0% {
+      top: 21%; /* position initiale */
+      height: 80%;
+    }
+    50% {
+      top: 21%; /* monte à 20% du top */
+      height: 70%; /* ajuste si besoin */
+    }
+    100% {
+      top: 21%; /* redescend */
+      height: 80%;
+    }
+  }
+
   .fade-video {
     height: 68%;
   }
+
   .sound-toggle {
     bottom: 5%;
   }
+
   .crossfade-container::after {
-    top: 28%;
+    top: 26%;
     left: 4%;
     width: 92vw;
   }
+
   .bottom-line-responsive {
     left: 4%;
     width: 92vw;
-    bottom: 14%;
+    bottom: 16%;
   }
 }
