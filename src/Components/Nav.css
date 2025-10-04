@@ -127,7 +127,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 2000;
+  z-index: 22000;
 }
 
 .burger span {
@@ -187,7 +187,7 @@
     display: flex;
     top: 16px;
     right: 16px;
-    z-index: 12000;
+    z-index: 22000;
   }
 
   .navbar .nav-link {
@@ -197,7 +197,7 @@
   .burger-arrow {
     display: block;
     margin: 40px 200px 80px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: white;
     animation: bounceDown 1.6s infinite ease-in-out;
   }

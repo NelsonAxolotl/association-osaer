@@ -293,7 +293,7 @@
 
 @media (max-width: 500px) {
   .crossfade-container {
-    height: 100vh;
+    height: 105vh;
   }
 
   .main-title {
@@ -302,12 +302,12 @@
   }
 
   .logo {
-    display: none;
+    bottom: 3%;
+    right: 30%;
   }
 
   .video-container {
     height: 80%;
-
     left: 0;
     margin-top: 5%;
   }
