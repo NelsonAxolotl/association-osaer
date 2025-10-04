@@ -356,7 +356,6 @@
   }
 
   .sound-toggle {
-    bottom: 0.8%;
     z-index: 11000;
     bottom: 1.5%;
   }
@@ -416,7 +415,8 @@
   }
 
   .sound-toggle {
-    bottom: 5%;
+    bottom: 6%;
+    font-size: 1.5rem;
   }
 
   .crossfade-container::after {
