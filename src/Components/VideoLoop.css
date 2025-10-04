@@ -3,7 +3,6 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-
   background: rgb(0, 0, 0);
 }
 
@@ -49,28 +48,6 @@
     opacity: 0;
   }
 }
-
-/* 
-.video-container {
-  position: absolute;
-  top: 5%; 
-  left: 0%;
-  width: 80%; 
-  height: 95%;
-  overflow: hidden; 
-  z-index: 900;
-  border: 1px solid rgba(3, 3, 3, 0.292);
-} */
-
-/* .fade-video {
-  padding: 10px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
 
 .video-container {
   position: relative; /* permet de scroller */
@@ -129,35 +106,6 @@
 .video-container.right-animate {
   animation: curtainRightUpDown 7s ease-in-out forwards;
 }
-
-/* .fade-video {
-  position: relative;
-  top: 21%;
-  left: 0%;
-  width: 80%;
-  height: 70%;
-  object-position: 50% 30%;
-  z-index: 900;
-  opacity: 1;
-  object-fit: fill;
-  animation: openVertical 8s ease forwards;
-  pointer-events: none;
-  padding: 15px;
-} */
-
-/* Animation rideau vertical */
-/* @keyframes openVertical {
-  0% {
-    height: 0%;
-    top: 50%;
-    opacity: 0;
-  }
-  100% {
-    height: 60%;
-    top: 30%;
-    opacity: 0.7;
-  }
-} */
 
 /* H1 centré */
 .main-title {
@@ -280,10 +228,6 @@
 }
 
 @media (max-width: 900px) {
-  .crossfade-container {
-    height: 100vh;
-  }
-
   .main-title {
     transform: translateX(-50%) translateY(0); /* ajuste le centrage */
     text-align: center;
@@ -296,11 +240,6 @@
     width: 100%;
     height: 68%;
     left: 0;
-  }
-
-  .fade-video,
-  .background-video {
-    height: 100%;
   }
 
   @keyframes curtainUpDown {
@@ -317,28 +256,6 @@
       height: 68%; /* referme */
     }
   }
-
-  /* .fade-video,
-  .background-video {
-    top: 16%; 
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    animation: openVerticalRes 3s ease forwards;
-  } */
-
-  /* @keyframes openVerticalRes {
-    0% {
-      height: 0%;
-      top: 50%;
-      opacity: 0;
-    }
-    100% {
-      height: 60%;
-      top: 23%;
-      opacity: 1;
-    }
-  } */
 
   .crossfade-container::after {
     left: 2.5%; /* commence à zéro à droite */
@@ -380,7 +297,7 @@
   }
 
   .main-title {
-    margin-top: 10%;
+    margin-top: 7%;
     left: 10%;
   }
 
@@ -389,10 +306,10 @@
   }
 
   .video-container {
-    width: 100%;
     height: 80%;
+
     left: 0;
-    margin-top: 9%;
+    margin-top: 5%;
   }
 
   @keyframes curtainUpDown {
@@ -415,12 +332,12 @@
   }
 
   .sound-toggle {
-    bottom: 6%;
+    bottom: 8%;
     font-size: 1.5rem;
   }
 
   .crossfade-container::after {
-    top: 26%;
+    top: 24%;
     left: 4%;
     width: 92vw;
   }
@@ -428,6 +345,6 @@
   .bottom-line-responsive {
     left: 4%;
     width: 92vw;
-    bottom: 16%;
+    bottom: 18%;
   }
 }
