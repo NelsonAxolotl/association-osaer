@@ -48,6 +48,7 @@
 /* Variante VideoLoop avec délai différent */
 .videoloop-footer::after {
   animation: fadeLine 16s ease-in forwards;
+  z-index: 10;
 }
 
 /* animation unique */
@@ -99,6 +100,7 @@
 
   .videoloop-footer {
     margin-top: -5px;
+    z-index: 10;
   }
 }
 
