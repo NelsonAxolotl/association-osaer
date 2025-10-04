@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+    <title>Association Osaer</title>
+
+    <link rel="icon" type="image/png" href="/Pics/logo.jpg" />
+    <link
+      rel="preload"
+      href="/Fonts/Caveat-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://kit.fontawesome.com https://unpkg.com https://vercel.live;
+    style-src 'self' 'unsafe-inline' https://ka-f.fontawesome.com;
+    img-src 'self' data: https://associationosaer.com https://unpkg.com;
+    font-src 'self';
+    connect-src 'self' https://ka-f.fontawesome.com https://api.emailjs.com;
+  "
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="font-preload-check" aria-hidden="true"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+/* =========================
+   Container principal
+   ========================= */
+.asso {
+  position: relative;
+  min-height: 100vh;
+  color: white;
+  background: black;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Fond diagonal */
+.asso::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 701;
+  background-image: repeating-linear-gradient(
+    -135deg,
+    rgba(255, 255, 255, 0.07) 0px,
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 250px,
+    transparent 460px
+  );
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 6s ease-in-out;
+  pointer-events: none;
+}
+
+.crossfade-visible::before {
+  opacity: 1;
+}
+
+/* Ligne horizontale */
+.asso::after {
+  content: "";
+  position: fixed;
+  top: 20.9%;
+  left: 1%;
+  width: 88.5%;
+  height: 2px;
+  background: white;
+  opacity: 0;
+  animation: fadeLineTop 4s ease-in forwards;
+  animation-delay: 0.5s;
+}
+
+/* =========================
+   Titre
+   ========================= */
+.asso-title {
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  margin: 0;
+  font-size: 3.5rem;
+  font-family: "Caveat", cursive;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+}
+
+.visible-after-video {
+  opacity: 0.8 !important;
+  transform: translateY(0);
+}
+
+/* =========================
+   Rectangle décoratif
+   ========================= */
+.asso-rectangle {
+  position: relative;
+  top: 155px;
+  left: 1%;
+  width: 78%;
+  height: 100vh;
+  background: black;
+  padding: 50px;
+  border-radius: 3px;
+  z-index: 700;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 2s ease-in-out;
+}
+
+.crossfade-visible .asso-rectangle {
+  opacity: 1;
+}
+
+.asso-rectangle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/Pics/tulle.jpg") no-repeat top center;
+  background-size: cover;
+  opacity: 0;
+  animation: fadeInOverlay 10s ease forwards;
+  animation-delay: 3.5s;
+  pointer-events: none;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.15;
+  }
+}
+
+/* =========================
+   Logo
+   ========================= */
+.logoasso {
+  position: fixed;
+  top: 14%;
+  right: 21%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.logoasso img {
+  width: min(200px, 12vw);
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* =========================
+   Animations
+   ========================= */
+@keyframes fadeLineTop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   Media queries
+   ========================= */
+@media (max-width: 900px) {
+  .asso::after {
+    top: 22.5%;
+    width: 98vw;
+    right: 0;
+  }
+
+  .asso-rectangle {
+    width: 98%;
+    margin-top: 15px;
+  }
+
+  .logoasso {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .asso-title {
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .bottom-asso-line-responsive {
+    bottom: 7%;
+  }
+}

@@ -1,0 +1,319 @@
+/* ===== Conteneur principal ===== */
+.crossfade-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  background: black;
+}
+
+/* lignes diagonales */
+.crossfade-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 9000;
+  background-image: repeating-linear-gradient(
+    -135deg,
+    rgba(255, 255, 255, 0.074) 0px,
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 250px,
+    transparent 460px
+  );
+  pointer-events: none;
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 6s ease-in-out;
+}
+
+.crossfade-container.crossfade-visible::before {
+  opacity: 1;
+}
+
+/* ligne horizontale */
+.crossfade-container::after {
+  content: "";
+  position: fixed;
+  top: 20.9%;
+  left: 1.1%;
+  width: 88.5%;
+  height: 1.9px;
+  background: white;
+  opacity: 0;
+  z-index: 0;
+  animation: fadeLineTop 10s ease-in forwards;
+  animation-delay: 0.5s;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeLineTop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInH1 {
+  0%,
+  50% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+/* animation rideau pour le bas de la vidéo */
+@keyframes curtainUpDown {
+  0% {
+    top: 21%; /* position initiale */
+    height: 70%;
+  }
+  50% {
+    top: 21%; /* monte à 20% du top */
+    height: 60%; /* ajuste si besoin */
+  }
+  100% {
+    top: 21%; /* redescend */
+    height: 70%;
+  }
+}
+
+@keyframes curtainRightUpDown {
+  0% {
+    clip-path: inset(0 0 0 0);
+  }
+  40%,
+  60% {
+    clip-path: inset(0 50% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* ===== Vidéo ===== */
+.video-container {
+  position: relative;
+  z-index: 1000;
+  width: 80%;
+  height: 70%;
+  top: 21%;
+  left: 0;
+}
+
+.video-container.right-animate {
+  animation: curtainRightUpDown 7s ease-in-out forwards;
+}
+
+.video-curtain {
+  animation: curtainUpDown 6s ease-in-out;
+}
+
+.fade-video,
+.background-video {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  padding: 15px 15px 0 15px;
+  object-fit: fill;
+  opacity: 1 !important;
+  z-index: 1001;
+}
+
+/* ===== H1 ===== */
+.main-title {
+  position: fixed;
+  top: 10%;
+  left: 3%;
+  font-size: 3rem;
+  color: white;
+  font-family: "Caveat", cursive;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  margin: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 8s ease-in-out, transform 8s ease-in-out;
+  animation: fadeInH1 14s forwards;
+}
+
+/* ===== Flèche descendante ===== */
+.scroll-arrow-down {
+  position: fixed;
+  top: 8%;
+  left: 89%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  animation: bounceDown 1.6s infinite ease-in-out;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 5s ease-in-out;
+  z-index: 3;
+}
+
+/* ===== Logo ===== */
+.logo {
+  position: absolute;
+  bottom: 0%;
+  right: 20%;
+  z-index: 900;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+}
+
+.logo img {
+  width: 12vw;
+  max-width: 200px;
+  height: auto;
+}
+
+/* ===== Bouton son ===== */
+.sound-toggle {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  z-index: 9000;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.4rem;
+  color: white;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 0;
+  transition: background 0.35s ease, border-color 0.35s ease,
+    transform 0.3s ease, color 0.35s ease, opacity 3s ease-in-out;
+}
+
+.sound-toggle.on {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: rgba(212, 175, 55, 0.4);
+  color: #d4af37;
+}
+
+.sound-toggle:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.sound-toggle:active {
+  transform: scale(0.96);
+}
+
+.sound-toggle:focus {
+  outline: 2px solid rgba(212, 175, 55, 0.18);
+  outline-offset: 3px;
+}
+
+/* ===== Media Queries ===== */
+@media (max-width: 900px) {
+  :root {
+    --video-height: 68%;
+    --video-mid-height: 58%;
+  }
+
+  .main-title {
+    transform: translateX(-50%) translateY(0);
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .video-container {
+    width: 100%;
+    height: var(--video-height);
+  }
+  .fade-video,
+  .background-video {
+    height: 100%;
+  }
+
+  .crossfade-container::after {
+    left: 2.5%;
+    width: 95vw;
+  }
+  .scroll-arrow-down {
+    display: none;
+  }
+  .logo {
+    right: 15%;
+    width: 20vw;
+    z-index: 0;
+  }
+  .sound-toggle {
+    bottom: 1.5%;
+    z-index: 11000;
+  }
+
+  .bottom-line-responsive {
+    position: absolute;
+    bottom: 9%;
+    left: 2.5%;
+    width: 95%;
+    height: 1.5px;
+    background: white;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeLineTop 5s ease-in forwards;
+    animation-delay: 0.5s;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    --video-height: 80%;
+    --video-mid-height: 70%;
+  }
+
+  .main-title {
+    margin-top: 13%;
+    left: 10%;
+  }
+  .logo {
+    display: none;
+  }
+  .video-container {
+    width: 100%;
+    height: var(--video-height);
+    margin-top: 13.5%;
+  }
+  .fade-video {
+    height: 68%;
+  }
+  .sound-toggle {
+    bottom: 5%;
+  }
+  .crossfade-container::after {
+    top: 28%;
+    left: 4%;
+    width: 92vw;
+  }
+  .bottom-line-responsive {
+    left: 4%;
+    width: 92vw;
+    bottom: 14%;
+  }
+}

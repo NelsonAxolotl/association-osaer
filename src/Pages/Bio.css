@@ -1,0 +1,442 @@
+.bio {
+  position: relative;
+  color: white;
+  background: transparent; /* pour test, à adapter */
+  min-height: 160vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bio::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 801; /* derrière le titre et la photo */
+  background-image: repeating-linear-gradient(
+    -135deg,
+    rgba(255, 255, 255, 0.06) 0px,
+    rgba(255, 255, 255, 0.07) 1px,
+    transparent 250px,
+    transparent 450px
+  );
+  pointer-events: none;
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 5s ease-in-out;
+}
+
+.bio::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  top: 20.9%;
+  left: 1%;
+  width: 88.5%;
+  height: 1.9px;
+  background: white;
+  opacity: 0; /* départ invisible */
+  animation: fadeLineTop 4s ease-in forwards;
+  animation-delay: 0.5s; /* décalage pour effet plus élégant */
+}
+
+/* animation pour la verticale */
+@keyframes fadeLineVertical {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bio-title {
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  font-size: 3.5rem;
+  color: white;
+  font-family: "Caveat", cursive;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  margin: 0;
+  white-space: nowrap;
+  opacity: 0;
+  /* décalage initial pour le glissement */
+  transform: translateY(20px); /* décalage initial pour le glissement */
+  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+}
+
+.visible-after-video {
+  opacity: 0.8 !important;
+  transform: translateY(0);
+}
+
+.bio-content {
+  position: relative;
+  z-index: 800;
+  display: flex;
+  /* pour que ça passe en colonne sur petit écran */
+  justify-content: space-evenly; /* centrer sur les grands écrans */
+  align-items: flex-start;
+  gap: 6rem;
+  max-width: 1000px;
+}
+
+.bio-photo {
+  z-index: 801;
+  position: relative; /* nécessaire pour ::after */
+}
+
+.bio-photo img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  animation: fadeInPhoto 3s ease forwards;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  animation: fadeInPhoto 3s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin-top: 100px;
+  z-index: 802;
+  cursor: pointer;
+}
+
+/* Effet "eau" au hover */
+.bio-photo img:hover {
+  transform: scale(1.05) rotate(0.5deg); /* léger zoom + rotation subtile */
+  filter: blur(1px) contrast(1.1) saturate(1.2); /* effet léger flou et couleurs */
+}
+
+@keyframes fadeInPhoto {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bio-text {
+  margin-top: 60px;
+  max-width: 580px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInPhoto 1.5s ease forwards;
+  z-index: 801;
+  background: rgba(0, 0, 0, 0.674);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h2 {
+  font-size: 1.7rem;
+  opacity: 0;
+  animation: fadeInPhoto 3s ease forwards;
+  z-index: 801;
+}
+
+/* rectangle vert derrière la photo */
+.bio-rectangle {
+  position: relative;
+  top: 155px;
+  /* commence au-dessus de la photo, ajuster selon besoin */
+  left: 1%;
+  width: 78%; /* jusqu'à la ligne blanche à droite */
+  padding: 50px;
+  background: rgb(0, 0, 0);
+  z-index: 700; /* derrière la photo */
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Logo en bas à droite de la vidéo */
+.logobio {
+  position: fixed; /* Au lieu de fixed */ /* absolute pour qu'il reste dans le container vidéo */
+  top: 13%; /* distance depuis le bas de la vidéo */
+  right: 21%; /* distance depuis la droite */
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.logobio img {
+  width: 12vw; /* largeur relative à la largeur de l'écran */
+  width: 200px; /* limite maximale pour les grands écrans */
+  height: auto; /* garde les proportions */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Apparition progressive */
+.crossfade-visible .bio-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* apparition progressive avec contentVisible */
+.crossfade-visible .bio-rectangle {
+  opacity: 1;
+}
+
+.crossfade-visible::before {
+  opacity: 1;
+}
+
+.bio-content2 {
+  position: relative;
+  z-index: 801;
+  display: flex;
+  /* pour que ça passe en colonne sur petit écran */
+  justify-content: space-evenly; /* centrer sur les grands écrans */
+  align-items: flex-start;
+  gap: 6rem;
+  max-width: 1000px;
+}
+
+.bio-photo2 {
+  margin-top: 150px;
+  z-index: 801;
+  position: relative;
+}
+
+/* .bio-photo2 {
+  width: 100%;
+  max-width: 400px;
+  height: 400px; 
+  overflow: hidden; 
+  position: relative;
+  margin: 0 auto;
+  border-radius: 2px;
+  z-index: 801;
+} */
+
+.bio-photo2 video {
+  width: 100%;
+  height: auto; /* laisse la vidéo garder ses proportions */
+  min-height: 120%; /* un peu plus grande que le conteneur */
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  border: 1px solid black;
+}
+
+.bio-photo2 img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  animation: fadeInPhoto 3s ease forwards;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+  opacity: 0;
+  animation: fadeInPhoto 3s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  z-index: 801;
+  outline: 1px solid rgb(43, 8, 8);
+}
+
+.bio-text2 {
+  margin-top: 120px;
+  /* margin-top: 30px; */
+  max-width: 580px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInPhoto 1.5s ease forwards;
+  z-index: 801;
+  background: rgba(0, 0, 0, 0.674);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.bio-rectangle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/Pics/color13.jpg") no-repeat top center;
+  background-size: cover;
+  opacity: 0.4; /* ajuste ici l’opacité */
+  pointer-events: none; /* pour ne pas bloquer le scroll ou les clics */
+}
+
+@media (max-width: 900px) {
+  .bio {
+    min-height: 215vh;
+  }
+
+  .bio-bg {
+    position: fixed;
+    height: 22.5vh;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    background: black; /* ton rouge */
+    z-index: 1; /* au-dessus du rectangle (700) mais en dessous du titre/nav */
+    pointer-events: none; /* n'interfère pas avec les clics */
+  }
+
+  .bio-bg::before {
+    content: "";
+    position: absolute; /* important pour que ça reste dans .bio-bg */
+    inset: 0;
+    z-index: 0;
+    background-image: repeating-linear-gradient(
+      -135deg,
+      rgba(255, 255, 255, 0.06) 0px,
+      rgba(255, 255, 255, 0.136) 1px,
+      transparent 250px,
+      transparent 530px
+    );
+    filter: blur(8px);
+    opacity: 1; /* visible */
+    pointer-events: none;
+  }
+
+  .bio::after {
+    top: 22.5%;
+    z-index: 1;
+    right: 0; /* commence à zéro à droite */
+    width: 97vw; /* prend toute la largeur de l’écran */
+    left: 1.5%;
+  }
+
+  .bio-rectangle {
+    margin-top: 15px;
+    position: absolute;
+    z-index: 0;
+    width: calc(100% - 1rem); /* laisse 1rem de marge de chaque côté */
+    left: 0.5rem; /* même marge à gauche */
+    padding: 2rem; /* padding intérieur pour que le contenu ne touche pas les bords */
+    border-radius: 5px; /* optionnel : un peu d’arrondi pour le mobile */
+  }
+
+  .logobio {
+    display: none;
+  }
+
+  .bio-content {
+    flex-direction: column; /* passe en colonne */
+    align-items: center; /* centre horizontalement */
+    gap: 2rem; /* réduit l’espace entre les blocs */
+    max-width: 100%; /* prend toute la largeur */
+    padding: 0 1rem; /* ajoute un peu de marge intérieure */
+  }
+
+  .bio-photo {
+    margin-top: 20px; /* réduit la marge en haut */
+    z-index: 801;
+  }
+
+  .bio-photo img {
+    max-width: 280px; /* limite la taille de l’image */
+    width: 100%; /* prend 80% de l’écran */
+    margin: 0 auto; /* centre */
+  }
+
+  .bio-text {
+    margin-top: 20px; /* réduit l’espace au-dessus du texte */
+    font-size: 1.3rem; /* texte un peu plus petit */
+    line-height: 1.4;
+    text-align: justify; /* centré sur mobile */
+    text-justify: inter-word; /* ajuste les espaces entre mots */
+    word-spacing: 0.01em; /* limite l’écart entre les mots */
+    hyphens: auto;
+  }
+
+  h2 {
+    font-size: 1.3rem; /* réduit le sous-titre */
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .bio-content2 {
+    flex-direction: column-reverse; /* passe en colonne */
+    align-items: center; /* centre horizontalement */
+    gap: 2rem; /* réduit l’espace entre les blocs */
+    max-width: 100%; /* pleine largeur */
+    padding: 0 1rem;
+  }
+
+  .bio-photo2 {
+    margin-top: 60px; /* réduit l’espace en haut */
+    z-index: 801;
+  }
+
+  .bio-photo2 img {
+    max-width: 280px; /* un peu plus petit que desktop */
+    width: 100%; /* prend 80% de la largeur */
+    margin: 0 auto; /* centré */
+  }
+
+  .bio-text2 {
+    margin-top: 20px; /* réduit l’espace */
+    max-width: 100%;
+    font-size: 1.3rem; /* texte plus lisible sur petit écran */
+    line-height: 1.4;
+    text-align: justify; /* centré sur mobile */
+    text-justify: inter-word; /* ajuste les espaces entre mots */
+    word-spacing: 0em; /* limite l’écart entre les mots */
+    hyphens: auto;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin-top: -15px;
+  }
+
+  h2 .role {
+    display: block; /* passe en dessous du nom */
+    margin-top: 0.5rem;
+  }
+
+  h2 .dash {
+    display: none;
+  }
+
+  .bio-video-diamond {
+    margin: 30px auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .bio-title {
+    transform: none;
+    left: 40%; /* centre horizontalement */
+  }
+
+  .bio {
+    height: 255vh;
+  }
+}
+
+.bio-video-diamond {
+  position: relative;
+  width: 230px; /* taille du losange */
+  height: 230px;
+
+  overflow: hidden;
+  transform: rotate(45deg); /* carré tourné */
+  border: 2px solid white; /* bordure élégante */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  z-index: 500;
+}
+
+.bio-video-diamond video {
+  width: 100%;
+  height: 100%;
+  margin-left: 15px;
+  margin-top: -15px;
+  object-fit: cover;
+  transform: rotate(-45deg); /* remet la vidéo droite */
+  scale: 1.4; /* évite les coins vides */
+}

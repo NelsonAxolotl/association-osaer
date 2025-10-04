@@ -1,0 +1,36 @@
+/* ===== Réinitialisation et styles globaux ===== */
+@font-face {
+  font-family: "Caveat";
+  src: url("/Fonts/Caveat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html,
+body {
+  font-family: "Caveat", sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #000; /* noir pur */
+  font-family: "Caveat", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* hérite de la couleur du parent */
+}

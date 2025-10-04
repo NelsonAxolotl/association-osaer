@@ -1,0 +1,109 @@
+.footer {
+  background: black;
+  color: #f5f5f5;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-family: "Caveat", cursive;
+  width: 100%;
+  z-index: 10000;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  background-image: repeating-linear-gradient(
+    -135deg,
+    rgba(255, 255, 255, 0.074) 0px,
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 250px,
+    transparent 450px
+  );
+  pointer-events: none;
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 6s ease-in-out;
+}
+
+/* activation du fondu */
+.footer.crossfade-visible::before {
+  opacity: 1;
+}
+
+/* ligne animée */
+.footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 80%;
+  width: 3%;
+  height: 2px;
+  background: white;
+  opacity: 0;
+  animation: fadeLine 6s ease-in forwards;
+}
+
+/* Variante VideoLoop avec délai différent */
+.videoloop-footer::after {
+  animation: fadeLine 16s ease-in forwards;
+}
+
+/* animation unique */
+@keyframes fadeLine {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* typographie */
+.footer-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+.footer-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin: 0.1rem 0 1rem 0;
+  z-index: 2;
+}
+
+.footer-copy {
+  font-size: 1.1rem;
+  opacity: 0.6;
+  margin: 0;
+  z-index: 2;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10px;
+    z-index: 500;
+  }
+
+  .footer::after {
+    display: none;
+  }
+
+  .videoloop-footer {
+    margin-top: -5px;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    margin-top: -15px;
+  }
+}
