@@ -290,7 +290,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .crossfade-container {
     height: 105vh;
   }
@@ -301,9 +301,9 @@
     animation: none !important;
     transition: none !important;
     left: 10%;
-    transform: translateX(-50%); /* centrage horizontal */
+
     text-align: center;
-    margin-top: 15px;
+    margin-top: 20px;
   }
 
   .logo {
