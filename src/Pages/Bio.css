@@ -412,6 +412,14 @@ h2 {
   .bio {
     height: 200vh;
   }
+
+  .bio::after {
+    display: none;
+  }
+
+  .bio-rectangle {
+    border-top: 2px solid white;
+  }
 }
 
 .bio-video-diamond {

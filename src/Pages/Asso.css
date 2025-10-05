@@ -161,4 +161,12 @@
     left: 40%; /* centre horizontalement */
     transform: translateX(-50%) translateY(0);
   }
+
+  .asso-rectangle {
+    border-top: 2px solid white;
+  }
+
+  .asso::after {
+    display: none;
+  }
 }

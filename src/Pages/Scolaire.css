@@ -151,4 +151,12 @@
     left: 30%; /* centre horizontalement */
     transform: translateX(-50%) translateY(0);
   }
+
+  .scolaire-rectangle {
+    border-top: 2px solid white;
+  }
+
+  .scolaire::after {
+    display: none;
+  }
 }

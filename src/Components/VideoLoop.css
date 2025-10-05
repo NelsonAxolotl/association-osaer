@@ -308,7 +308,8 @@
   .video-container {
     height: 80%;
     left: 0;
-    margin-top: 3%;
+    margin-top: 2%;
+    border-top: 2px solid white;
   }
 
   @keyframes curtainUpDown {
@@ -331,19 +332,19 @@
   }
 
   .sound-toggle {
-    bottom: 11%;
+    bottom: 13%;
     font-size: 1.5rem;
   }
 
   .crossfade-container::after {
-    top: 24%;
-    left: 4%;
-    width: 92vw;
+    display: none;
   }
 
   .bottom-line-responsive {
-    left: 4%;
-    width: 92vw;
+    left: 0%;
+    width: 100vw;
     bottom: 20%;
+    animation: none;
+    opacity: 1;
   }
 }

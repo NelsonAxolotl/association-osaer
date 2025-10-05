@@ -160,5 +160,10 @@
   .contact-rectangle {
     width: 97%;
     left: 1.5%;
+    border-top: 2px solid white;
+  }
+
+  .maincontact::after {
+    display: none;
   }
 }
