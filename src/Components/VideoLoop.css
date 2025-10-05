@@ -308,7 +308,7 @@
   .video-container {
     height: 80%;
     left: 0;
-    margin-top: 4%;
+    margin-top: 3%;
   }
 
   @keyframes curtainUpDown {
@@ -331,7 +331,7 @@
   }
 
   .sound-toggle {
-    bottom: 10%;
+    bottom: 11%;
     font-size: 1.5rem;
   }
 
@@ -344,6 +344,6 @@
   .bottom-line-responsive {
     left: 4%;
     width: 92vw;
-    bottom: 18%;
+    bottom: 20%;
   }
 }
