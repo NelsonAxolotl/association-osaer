@@ -172,7 +172,7 @@
 .logo {
   position: absolute; /* absolute pour qu'il reste dans le container vidéo */
   bottom: 0%; /* distance depuis le bas de la vidéo */
-  right: 20%; /* distance depuis la droite */
+  right: 20.5%; /* distance depuis la droite */
   z-index: 900;
   opacity: 0;
   transition: opacity 3s ease-in-out;
@@ -302,8 +302,7 @@
   }
 
   .logo {
-    bottom: 5%;
-    right: 30%;
+    display: none;
   }
 
   .video-container {
