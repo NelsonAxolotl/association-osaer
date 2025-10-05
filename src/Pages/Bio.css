@@ -351,12 +351,6 @@ h2 {
     hyphens: auto;
   }
 
-  h2 {
-    font-size: 1.3rem; /* réduit le sous-titre */
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
   .bio-content2 {
     flex-direction: column-reverse; /* passe en colonne */
     align-items: center; /* centre horizontalement */
@@ -412,6 +406,7 @@ h2 {
   .bio-title {
     transform: none;
     left: 40%; /* centre horizontalement */
+    transform: translateX(-50%) translateY(0);
   }
 
   .bio {

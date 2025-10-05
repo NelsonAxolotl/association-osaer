@@ -148,30 +148,13 @@
   .logocontact {
     display: none;
   }
-
-  .bottom-contact-line-responsive {
-    position: absolute;
-    bottom: 6%;
-    left: 1%;
-    width: 98%;
-    height: 1.5px; /* épaisseur */
-    background: white; /* couleur de la ligne */
-    z-index: 1000; /* au-dessus des vidéos */
-    opacity: 0; /* départ invisible */
-    animation: fadeLineTop 5s ease-in forwards;
-    animation-delay: 0.5s; /* décalage pour effet plus élégant */
-  }
 }
 
 @media (max-width: 500px) {
   .contact-title {
     transform: none;
     left: 50%; /* centre horizontalement */
-    transform: translateX(-50%) translateY(0);
-  }
-
-  .bottom-contact-line-responsive {
-    bottom: 7%;
+    transform: translateX(-50%) translateY(0px);
   }
 
   .contact-rectangle {
