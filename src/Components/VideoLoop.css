@@ -111,7 +111,6 @@
 .main-title {
   position: fixed;
   top: 10%;
-  /* right: 25%; */
   left: 3%;
   font-size: 3rem;
   color: white;
@@ -122,7 +121,7 @@
   white-space: nowrap;
   opacity: 0;
   transform: translateY(20px); /* décalage initial pour le glissement */
-  transition: opacity 8s ease-in-out, transform 8s ease-in-out;
+
   animation: fadeInH1 14s forwards; /* 36s de délai + 2s de fondu */
 }
 
