@@ -97,19 +97,10 @@
   .footer::after {
     display: none;
   }
-
-  .videoloop-footer {
-    margin-top: -5px;
-    z-index: 2000;
-  }
 }
 
 @media (max-width: 500px) {
   .footer {
-    margin-top: -15px;
-  }
-
-  .videoloop-footer {
     margin-top: -15px;
   }
 }
