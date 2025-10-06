@@ -303,7 +303,7 @@
     text-align: center;
     position: absolute;
     font-size: 2.5rem;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .logo {
@@ -313,7 +313,6 @@
   .video-container {
     height: 80%;
     left: 0;
-    margin-top: 2%;
   }
 
   @keyframes curtainUpDown {
@@ -336,21 +335,20 @@
   }
 
   .sound-toggle {
-    bottom: 11%;
+    bottom: 13%;
     font-size: 1.5rem;
   }
 
   .crossfade-container::after {
     width: 92vw; /* prend toute la largeur de l’écran */
     left: 4%;
-    margin-top: 2%;
     position: absolute;
   }
 
   .bottom-line-responsive {
     left: 4%;
     width: 92vw;
-    bottom: 19%;
+    bottom: 21%;
     height: 2px;
     animation: fadeLineTop 9s ease-in forwards;
   }
