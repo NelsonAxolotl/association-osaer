@@ -327,11 +327,11 @@
   }
 
   .fade-video {
-    height: 70%;
+    height: 80%;
   }
 
   .sound-toggle {
-    bottom: 11%;
+    bottom: 5%;
     font-size: 1.5rem;
   }
 
@@ -344,7 +344,7 @@
   .bottom-line-responsive {
     left: 4%;
     width: 92vw;
-    bottom: 21%;
+    bottom: 13%;
     height: 2px;
     animation: fadeLineTop 9s ease-in forwards;
   }
