@@ -100,7 +100,8 @@
 }
 
 @media (max-width: 500px) {
-  .footer {
+  .videoloop-footer {
+    margin-top: -80px;
   }
 
   .footer-copy {
