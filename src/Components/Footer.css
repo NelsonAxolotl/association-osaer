@@ -106,5 +106,18 @@
 
   .footer-copy {
     font-size: 1.3rem;
+    opacity: 0;
+    animation: fadeInFooter 2.5s ease-in forwards;
+    animation-delay: 1s; /* petit délai avant l'apparition */
+  }
+  @keyframes fadeInFooter {
+    from {
+      opacity: 0;
+      transform: translateY(10px); /* léger mouvement vers le haut */
+    }
+    to {
+      opacity: 0.6;
+      transform: translateY(0);
+    }
   }
 }
