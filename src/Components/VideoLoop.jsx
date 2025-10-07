@@ -38,7 +38,7 @@ const VideoLoop = forwardRef((props, externalRef) => {
     const t = setTimeout(() => {
       setRightAnimate(true);
       setTimeout(() => setRightAnimate(false), 8000);
-    }, 21500); // 15000ms = 15s
+    }, 21500);
     return () => clearTimeout(t);
   }, []);
 
