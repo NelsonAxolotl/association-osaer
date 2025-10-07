@@ -10,6 +10,20 @@ const VideoLoop = forwardRef((props, externalRef) => {
   const [contentVisible, setContentVisible] = useState(false);
   const [rightAnimate, setRightAnimate] = useState(false);
   const [curtainActive, setCurtainActive] = useState(false);
+  const [lineAnimate, setLineAnimate] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setCurtainActive(true);
+      setLineAnimate(true); // démarre la ligne au même moment
+      // on retire les classes après l'animation pour reset si besoin
+      setTimeout(() => {
+        setCurtainActive(false);
+        setLineAnimate(false);
+      }, 3000); // même durée que l'animation CSS (6s)
+    }, 15000); // démarre après 15 secondes
+    return () => clearTimeout(t);
+  }, []);
 
   useEffect(() => {
     const t = setTimeout(() => {
@@ -114,7 +128,11 @@ const VideoLoop = forwardRef((props, externalRef) => {
           {soundOn ? "🔊" : "🔇"}
         </button>
         <audio ref={audioRef} src="/Son/ring2.mp3" loop preload="auto" />
-        <div className="bottom-line-responsive"></div>
+        <div
+          className={`bottom-line-responsive ${
+            lineAnimate ? "line-animate" : ""
+          }`}
+        />
       </div>
       <Footer className="videoloop-footer" />
     </>
