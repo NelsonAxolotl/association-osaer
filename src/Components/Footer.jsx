@@ -16,6 +16,7 @@ const Footer = forwardRef((props, externalRef) => {
       }`}
       ref={externalRef}
     >
+      <p className="footer-title">Association OSAER</p>
       <p className="footer-subtitle"></p>
       <p className="footer-copy">
         &copy; {new Date().getFullYear()} OSAER — The Cool Axolotl

@@ -90,7 +90,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -10px;
     z-index: 500;
   }
 
@@ -104,12 +103,17 @@
     margin-top: -50px;
   }
 
+  .footer-title {
+    display: none;
+  }
+
   .footer-copy {
     font-size: 1.3rem;
     opacity: 0;
     animation: fadeInFooter 2.5s ease-in forwards;
     animation-delay: 1s; /* petit délai avant l'apparition */
   }
+
   @keyframes fadeInFooter {
     from {
       opacity: 0;

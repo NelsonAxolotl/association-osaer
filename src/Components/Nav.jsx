@@ -27,7 +27,9 @@ function Navbar({ className }) {
       </button>
 
       <nav className={`navbar ${isOpen ? "active" : ""} ${className || ""}`}>
-        <div className="burger-arrow">↓</div>
+        <div className="burger-container">
+          <div className="burger-arrow">↓</div>
+        </div>
         <ul className="nav-links">
           {links.map(({ label, to, side }) => (
             <li key={to}>
