@@ -143,9 +143,6 @@
   border: 1px solid rgb(244, 207, 20);
 }
 
-.bio-photo img:hover {
-}
-
 @keyframes fadeInPhoto {
   from {
     opacity: 0;
@@ -718,7 +715,7 @@ h2 {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .bio-title {
     transform: none;
     left: 40%; /* centre horizontalement */
@@ -730,7 +727,9 @@ h2 {
   }
 
   .bio-rectangle {
+    position: relative;
     border-top: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.2); /* pour tester la visibilité */
   }
 
   h2 {
@@ -855,6 +854,6 @@ h2 {
 
   /* conteneur vidéo panoramique */
   .bio-video-diamond {
-    height: 300px; /* hauteur "panoramique" */
+    height: 270px; /* hauteur "panoramique" */
   }
 }
