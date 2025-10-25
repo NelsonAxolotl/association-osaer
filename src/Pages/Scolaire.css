@@ -145,11 +145,10 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .scolaire-title {
     transform: none;
     left: 30%; /* centre horizontalement */
-    transform: translateX(-50%) translateY(0);
   }
 
   .scolaire-rectangle {

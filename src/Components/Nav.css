@@ -254,11 +254,14 @@
   }
 
   .navbar ul {
-    margin-top: 15px;
     gap: 50px;
   }
 
   .navbar ul {
-    margin-top: 100px;
+    margin-top: 60px;
+  }
+
+  .burger-arrow {
+    margin-top: 30px;
   }
 }
