@@ -236,7 +236,7 @@
   }
 
   .maincontact {
-    height: 80vh;
+    height: 100vh;
   }
 
   .maincontact::after {
@@ -264,5 +264,9 @@
     top: 0%;
     right: -5%;
     width: 100%;
+  }
+
+  .contact-rectangle {
+    height: 80vh;
   }
 }
