@@ -101,6 +101,11 @@
   .footer::after {
     display: none;
   }
+
+  /* Variante VideoLoop avec délai différent */
+  .contact-footer::after {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
