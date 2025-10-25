@@ -240,7 +240,7 @@
   }
 
   .maincontact {
-    height: 90vh;
+    height: 80vh;
   }
 
   .maincontact::after {
@@ -260,7 +260,7 @@
   }
 
   .contact-info {
-    top: 30%;
+    top: 35%;
     left: 6%;
   }
 
