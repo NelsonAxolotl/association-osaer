@@ -529,19 +529,6 @@ h2 {
   display: block;
 }
 
-.bio-rectangle::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  background-size: cover;
-  opacity: 0.4; /* ajuste ici l’opacité */
-  pointer-events: none; /* pour ne pas bloquer le scroll ou les clics */
-}
-
 .overlay {
   position: fixed;
   inset: 0;

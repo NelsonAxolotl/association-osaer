@@ -3,7 +3,7 @@
   color: white;
   background-color: black; /* pour test, à adapter */
   overflow: hidden;
-  min-height: 100vh;
+  height: 100vh;
   z-index: 0;
 }
 
@@ -12,7 +12,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 701;
+  z-index: 801;
   background-image: repeating-linear-gradient(
     -135deg,
     rgba(255, 255, 255, 0.074) 0px,
@@ -235,6 +235,10 @@
     transform: translateX(-50%) translateY(0px);
   }
 
+  .maincontact {
+    height: 90vh;
+  }
+
   .maincontact::after {
     display: none;
   }
@@ -244,11 +248,11 @@
   }
 
   .contact-mail {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .contact-phone {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
   .contact-info {
