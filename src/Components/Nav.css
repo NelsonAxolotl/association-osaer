@@ -15,16 +15,24 @@
   top: -41.5%;
   right: 99.5%;
   width: 1.9px;
-  height: 170%;
+  height: 175%;
   background: white;
   opacity: 0;
+  z-index: 500;
   animation: fadeLineVertical 5s ease-in forwards;
 }
 
 /* override pour page VideoLoop */
 .videoloop-page .navbar::before {
-  height: 154.5%;
+  height: 159.5%;
   animation: fadeLineVertical 14s ease-in forwards;
+}
+
+/* override pour page VideoLoop */
+.contact-page .navbar::before {
+  height: 175%;
+  background: #d4af37;
+  animation: fadeLineVertical 5s ease-in forwards;
 }
 
 @keyframes fadeLineTop {
@@ -151,6 +159,10 @@
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
+.burger-arrow {
+  display: none;
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .navbar {
@@ -247,6 +259,6 @@
   }
 
   .navbar ul {
-    margin-top: 80px;
+    margin-top: 100px;
   }
 }

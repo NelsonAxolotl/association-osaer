@@ -6,6 +6,8 @@ import "./Bio.css";
 
 const Bio = forwardRef((props, externalRef) => {
   const [contentVisible, setContentVisible] = useState(false);
+  const [zoomedImage1, setZoomedImage1] = useState(null);
+  const [zoomedImage2, setZoomedImage2] = useState(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setContentVisible(true), 200);
@@ -30,11 +32,14 @@ const Bio = forwardRef((props, externalRef) => {
           <h2>
             ✨ <span className="name">Stéphanie Pignon</span>
             <span className="dash"> – </span>
-            <span className="role">Danseuse et Interprète</span>
+            <span className="role">Interprète & Chorégraphe</span>
           </h2>
 
           <div className="bio-content">
-            <div className="bio-photo">
+            <div
+              className="bio-photo"
+              onClick={() => setZoomedImage1("/Pics/steph.jpg")}
+            >
               <img src="/Pics/steph.jpg" alt="Stéphanie en danse" />
             </div>
             <div className={`bio-text ${visibleClass}`}>
@@ -104,11 +109,14 @@ const Bio = forwardRef((props, externalRef) => {
             <h2>
               ✨ <span className="name">Olivia Caillaud</span>
               <span className="dash"> – </span>
-              <span className="role">Danseuse et Chorégraphe</span>
+              <span className="role">Danseuse & Chorégraphe</span>
             </h2>
           </div>
           <div className="bio-content20">
-            <div className="bio-photo20">
+            <div
+              className="bio-photo20"
+              onClick={() => setZoomedImage2("/Pics/Olivia.jpeg")}
+            >
               <img src="/Pics/Olivia.jpeg" alt="Olivia en danse" />
             </div>
 
@@ -162,6 +170,35 @@ const Bio = forwardRef((props, externalRef) => {
 
         <div className={`scroll-arrow-down ${visibleClass}`}>↓</div>
       </div>
+      {/* Lightbox image 1 */}
+      {zoomedImage1 && (
+        <div className="overlay" onClick={() => setZoomedImage1(null)}>
+          <div className="enlarged-media" onClick={(e) => e.stopPropagation()}>
+            <img src={zoomedImage1} alt="Zoom 1" />
+          </div>
+          <button
+            className="close-button"
+            onClick={() => setZoomedImage1(null)}
+          >
+            ×
+          </button>
+        </div>
+      )}
+
+      {/* Lightbox image 2 */}
+      {zoomedImage2 && (
+        <div className="overlay" onClick={() => setZoomedImage2(null)}>
+          <div className="enlarged-media2" onClick={(e) => e.stopPropagation()}>
+            <img src={zoomedImage2} alt="Zoom 2" />
+          </div>
+          <button
+            className="close-button2"
+            onClick={() => setZoomedImage2(null)}
+          >
+            ×
+          </button>
+        </div>
+      )}
 
       <Footer />
     </>

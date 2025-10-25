@@ -37,7 +37,7 @@
   left: 1%;
   width: 88.5%;
   height: 1.9px;
-  background: white;
+  background: #d4af37;
   opacity: 0; /* départ invisible */
   animation: fadeLineTop 4s ease-in forwards;
   animation-delay: 0.5s; /* décalage pour effet plus élégant */
@@ -104,29 +104,84 @@
   width: 78%; /* jusqu'à la ligne blanche à droite */
   height: 100vh;
   background: rgb(0, 0, 0);
-  padding: 50px;
   z-index: 700; /* derrière la photo */
   opacity: 0;
   overflow: hidden;
   transition: opacity 2s ease-in-out;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-radius: 3px;
+}
+
+.contact-video-background {
+  position: absolute;
+  top: -3%;
+  right: -5%;
+  width: 70%;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+  opacity: 1; /* semi-transparent comme avant */
+  z-index: 800;
   pointer-events: none;
 }
 
-.contact-rectangle::after {
+/* bloc texte à gauche */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: "Caveat", cursive;
+  position: absolute;
+  top: 35%;
+  left: 6%;
+  z-index: 900;
+  color: white;
+  opacity: 0; /* départ invisible */
+  transform: translateY(30px); /* léger décalage vers le bas */
+  transition: opacity 4s ease, transform 2s ease;
+}
+
+/* class ajoutée pour fade-in */
+.contact-info.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-info h3 {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+  color: #d4af37; /* doré pour le titre */
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6);
+}
+
+.contact-mail {
+  position: relative;
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.contact-mail:after {
   content: "";
   position: absolute;
-  top: 0;
   left: 0;
-  width: 100%;
-  height: 85%;
+  bottom: -3px;
+  height: 2px;
+  width: 0%;
+  background-color: #ffffff;
+  transition: width 0.4s ease;
+}
 
-  background-size: cover;
-  opacity: 0.5;
-  pointer-events: none;
+.contact-mail:hover::after {
+  width: 100%;
+}
+
+.contact-info p {
+  font-size: 1.8rem;
+  margin: 0.4rem 0;
+  color: white;
 }
 
 @media (max-width: 900px) {
@@ -148,22 +203,62 @@
   .logocontact {
     display: none;
   }
+
+  .contact-name {
+    font-size: 1.8rem;
+  }
+
+  .contact-mail {
+    font-size: 1.6rem;
+  }
+
+  .contact-phone {
+    font-size: 1.5rem;
+  }
+
+  .contact-video-background {
+    top: 5%;
+    right: -5%;
+    width: 80%;
+  }
+
+  .contact-info {
+    top: 15%;
+    left: 6%;
+  }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .contact-title {
     transform: none;
     left: 50%; /* centre horizontalement */
     transform: translateX(-50%) translateY(0px);
   }
 
-  .contact-rectangle {
-    width: 97%;
-    left: 1.5%;
-    border-top: 2px solid white;
-  }
-
   .maincontact::after {
     display: none;
+  }
+
+  .contact-name {
+    font-size: 1.5rem;
+  }
+
+  .contact-mail {
+    font-size: 1.4rem;
+  }
+
+  .contact-phone {
+    font-size: 1.3rem;
+  }
+
+  .contact-info {
+    top: 30%;
+    left: 6%;
+  }
+
+  .contact-video-background {
+    top: 0%;
+    right: -5%;
+    width: 100%;
   }
 }

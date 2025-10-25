@@ -51,6 +51,11 @@
   z-index: 10;
 }
 
+/* Variante VideoLoop avec délai différent */
+.contact-footer::after {
+  background: #d4af37;
+}
+
 /* animation unique */
 @keyframes fadeLine {
   from {

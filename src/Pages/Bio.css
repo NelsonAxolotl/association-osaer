@@ -123,7 +123,7 @@
   z-index: 802;
   cursor: pointer;
   margin-bottom: 20px;
-  border: 1px solid rgb(244, 207, 20);
+  border: 2px solid #d4af37;
 }
 
 .bio-photo20 img {
@@ -135,12 +135,12 @@
   animation: fadeInPhoto 3s ease forwards;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   object-fit: cover; /* recadre sans déformer */
-  object-position: center 35%; /* centre le sujet */
+  object-position: center 31%; /* centre le sujet */
   border-radius: 12px;
   z-index: 802;
   cursor: pointer;
   margin-bottom: 20px;
-  border: 1px solid rgb(244, 207, 20);
+  border: 2px solid #d4af37;
 }
 
 @keyframes fadeInPhoto {
@@ -159,7 +159,7 @@
   width: 90%;
   font-size: 1.2rem;
   line-height: 1.4;
-  text-align: left;
+  text-align: justify;
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
@@ -189,7 +189,7 @@
   width: 90%;
   font-size: 1.2rem;
   line-height: 1.4;
-  text-align: left;
+  text-align: justify;
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
@@ -218,7 +218,7 @@
   width: 90%;
   font-size: 1.2rem;
   line-height: 1.4;
-  text-align: left;
+  text-align: justify;
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
@@ -256,7 +256,7 @@
   font-family: "Quicksand", serif;
   font-size: 1.2rem;
   line-height: 1.4;
-  text-align: left;
+  text-align: justify;
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
@@ -286,7 +286,7 @@
   font-size: 1.2rem;
   width: 90%;
   line-height: 1.4;
-  text-align: left;
+  text-align: justify;
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
@@ -315,7 +315,7 @@
   font-family: "Quicksand";
   font-size: 1.2rem;
   line-height: 1.4;
-  text-align: left;
+  text-align: justify;
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
@@ -343,7 +343,7 @@
   font-family: "Quicksand";
   font-size: 1.2rem;
   line-height: 1.4;
-  text-align: left;
+  text-align: justify;
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
@@ -372,7 +372,7 @@
   font-family: "Quicksand";
   font-size: 1.2rem;
   line-height: 1.4;
-  text-align: left;
+  text-align: justify;
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
@@ -401,7 +401,7 @@
   font-family: "Quicksand";
   font-size: 1.2rem;
   line-height: 1.4;
-  text-align: left;
+  text-align: justify;
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
@@ -441,6 +441,7 @@ h2 {
 /* rectangle vert derrière la photo */
 .bio-rectangle {
   position: relative;
+  overflow: hidden;
   top: 155px;
   /* commence au-dessus de la photo, ajuster selon besoin */
   left: 1%;
@@ -503,16 +504,19 @@ h2 {
   border-radius: 12px;
   max-width: 1000px; /* tu peux ajuster selon ton layout */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* conteneur vidéo panoramique */
 .bio-video-diamond {
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 350px; /* hauteur "panoramique" */
   overflow: hidden;
   border-radius: 12px;
-  border: 1px solid white;
+  border: 2px solid white;
 }
 
 /* la vidéo elle-même */
@@ -536,6 +540,109 @@ h2 {
   background-size: cover;
   opacity: 0.4; /* ajuste ici l’opacité */
   pointer-events: none; /* pour ne pas bloquer le scroll ou les clics */
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.enlarged-media {
+  position: relative;
+  max-width: 60%;
+  max-height: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+  animation: zoomIn 0.4s ease-out forwards;
+}
+
+.enlarged-media img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: white;
+  border: none;
+  font-size: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  text-align: center;
+  padding: 0;
+  z-index: 9999; /* très haut pour passer devant tout */
+}
+
+/* overlay qui prend tout l’écran */
+.overlay-video {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.enlarged-media2 {
+  position: relative;
+  max-width: 40%;
+  max-height: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+  animation: zoomIn 0.4s ease-out forwards;
+}
+
+.enlarged-media2 img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+}
+
+.close-button2 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: white;
+  border: none;
+  font-size: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  text-align: center;
+  padding: 0;
+  z-index: 9999; /* très haut pour passer devant tout */
 }
 
 @media (max-width: 900px) {
@@ -713,6 +820,31 @@ h2 {
   h2 .dash {
     display: none;
   }
+
+  /* Overlay plein écran */
+  .overlay {
+    z-index: 99999; /* au-dessus de tout */
+  }
+
+  .enlarged-media {
+    max-width: 80%;
+  }
+
+  .enlarged-media2 {
+    max-width: 80%;
+  }
+
+  /* Animation */
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0.6;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -724,16 +856,6 @@ h2 {
 
   .bio::after {
     display: none;
-  }
-
-  .bio-rectangle {
-    position: relative;
-    border-top: 2px solid white;
-    background-color: rgba(0, 0, 0, 0.2); /* pour tester la visibilité */
-  }
-
-  h2 {
-    margin-top: 15px;
   }
 
   .bio-text {
@@ -855,5 +977,6 @@ h2 {
   /* conteneur vidéo panoramique */
   .bio-video-diamond {
     height: 270px; /* hauteur "panoramique" */
+    width: 100%;
   }
 }

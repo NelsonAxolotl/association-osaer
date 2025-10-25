@@ -256,8 +256,8 @@
   }
 
   .crossfade-container::after {
-    left: 2.5%; /* commence à zéro à droite */
-    width: 95vw; /* prend toute la largeur de l’écran */
+    left: 1.5%; /* commence à zéro à droite */
+    width: 97vw; /* prend toute la largeur de l’écran */
   }
 
   .scroll-arrow-down {
@@ -277,19 +277,19 @@
 
   .bottom-line-responsive {
     position: absolute;
-    bottom: 9%;
-    left: 2.5%;
-    width: 95%;
+    bottom: 8.5%;
+    left: 2%;
+    width: 96%;
     height: 1.5px; /* épaisseur */
     background: white; /* couleur de la ligne */
     z-index: 1000; /* au-dessus des vidéos */
     opacity: 0; /* départ invisible */
-    animation: fadeLineTop 5s ease-in forwards;
+    animation: fadeLineTop 10s ease-in forwards;
     animation-delay: 0.5s; /* décalage pour effet plus élégant */
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .crossfade-container {
     height: 90vh;
   }
@@ -352,7 +352,7 @@
     position: absolute;
     left: 4%;
     width: 92vw;
-    bottom: 21%;
+    bottom: 22%;
     height: 2px;
     background: white;
     opacity: 0;
@@ -375,13 +375,13 @@
   /* Animation de mouvement “rideau” */
   @keyframes lineCurtainUpDown {
     0% {
-      bottom: 21%;
+      bottom: 22%;
     }
     50% {
       bottom: 26%;
     }
     100% {
-      bottom: 21%;
+      bottom: 22%;
     }
   }
   @keyframes lineCurtainRight {
