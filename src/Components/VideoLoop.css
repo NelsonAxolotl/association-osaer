@@ -345,7 +345,7 @@
     animation: fadeInLine 8s ease-in forwards,
       /* apparition progressive */ lineCurtainUpDown 6s ease-in-out 15s forwards,
       /* effet rideau vertical après 15s */ lineCurtainRight 7s ease-in-out
-        21.5s forwards; /* effet horizontal juste après */
+        21.7s forwards; /* effet horizontal juste après */
   }
 
   .bottom-line-responsive {
@@ -359,7 +359,7 @@
     animation: fadeInLine 8s ease-in forwards,
       /* apparition progressive */ lineCurtainUpDown 6s ease-in-out 15s forwards,
       /* effet rideau vertical après 15s */ lineCurtainRight 7s ease-in-out
-        21.5s forwards; /* effet horizontal juste après */
+        21.55s forwards; /* effet horizontal juste après */
   }
 
   /* Animation du fondu d’apparition */
@@ -384,6 +384,7 @@
       bottom: 22%;
     }
   }
+
   @keyframes lineCurtainRight {
     0% {
       width: 92vw;

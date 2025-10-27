@@ -1,0 +1,105 @@
+.bio-references {
+  display: flex;
+  flex-direction: column; /* vertical par défaut */
+  gap: 5rem;
+  width: 100%;
+  align-items: center;
+  margin-top: 120px;
+  text-align: center;
+}
+
+.bio-references h3 {
+  position: relative;
+  font-size: 1.6rem;
+  font-family: "Quicksand", cursive;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+  color: rgb(230, 225, 217);
+  display: inline-block; /* nécessaire pour que ::after suive la largeur du texte */
+}
+
+.bio-references h3::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  opacity: 0.8;
+  transform-origin: center;
+}
+
+.bio-columns {
+  display: flex;
+  flex-wrap: nowrap; /* reste côte à côte jusqu'à 768px */
+  justify-content: center;
+  width: 100%;
+}
+
+.column {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.column h4 {
+  font-family: "Caveat", cursive;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #d4af37;
+  text-align: center; /* centre le titre au-dessus de la colonne */
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  text-align: center; /* centre les items */
+}
+
+.column li {
+  margin-bottom: 0.5rem;
+}
+
+.highlight-link {
+  color: #e5d7a6;
+  text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.3s ease;
+}
+
+.highlight-link:hover {
+  color: #c9b56d;
+  text-shadow: 0 0 8px rgba(213, 173, 38, 0.7);
+}
+
+.column2 {
+  margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .bio-references {
+    margin-top: 80px;
+  }
+
+  .bio-columns {
+    flex-direction: column; /* empile les colonnes verticalement */
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: -50px;
+    margin-top: -20px;
+  }
+
+  .column {
+    width: 100%; /* prend toute la largeur du rectangle */
+    text-align: center;
+  }
+
+  .bio-references h3 {
+    font-size: 1.2rem;
+  }
+
+  .column2 {
+    margin-top: 50px;
+  }
+}

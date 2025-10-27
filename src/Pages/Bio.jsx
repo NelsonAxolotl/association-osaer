@@ -3,6 +3,8 @@ import { useState, useEffect, forwardRef } from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import "./Bio.css";
+import "../Components/BioReferences";
+import BioReferences from "../Components/BioReferences";
 
 const Bio = forwardRef((props, externalRef) => {
   const [contentVisible, setContentVisible] = useState(false);
@@ -176,6 +178,7 @@ const Bio = forwardRef((props, externalRef) => {
               </p>
             </div>
           </div>
+          <BioReferences />
         </div>
 
         <div className={`logobio ${visibleClass}`}>
