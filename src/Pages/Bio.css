@@ -581,7 +581,7 @@ h2 {
 
 .close-button {
   position: absolute;
-  top: 20px;
+  top: 25px;
   left: 20px;
   background: white;
   border: none;
@@ -638,7 +638,7 @@ h2 {
 
 .close-button2 {
   position: absolute;
-  top: 20px;
+  top: 25px;
   left: 20px;
   background: white;
   border: none;
@@ -1002,5 +1002,8 @@ h2 {
   .bio-video-diamond {
     height: 270px; /* hauteur "panoramique" */
     width: 100%;
+  }
+  .olivia {
+    margin-top: 100px;
   }
 }
