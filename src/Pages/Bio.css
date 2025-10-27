@@ -876,10 +876,6 @@ h2 {
     hyphens: auto;
   }
 
-  .bio-rectangle {
-    margin-top: 20px;
-  }
-
   .bio-text p::first-letter {
     font-size: 2rem; /* taille plus grande */
     margin-right: 2px;
