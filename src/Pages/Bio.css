@@ -702,7 +702,7 @@ h2 {
     z-index: 0;
     width: calc(100% - 1rem); /* laisse 1rem de marge de chaque côté */
 
-    padding: 2rem 2rem 3rem; /* padding intérieur pour que le contenu ne touche pas les bords */
+    padding: 1rem 1rem 3rem; /* padding intérieur pour que le contenu ne touche pas les bords */
     border-radius: 5px; /* optionnel : un peu d’arrondi pour le mobile */
   }
 
