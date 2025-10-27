@@ -3,7 +3,7 @@ import "./BioReferences.css";
 export default function BioReferences() {
   return (
     <div className="bio-references">
-      <h3>- Rencontres & collaborations artistiques -</h3>
+      <h3>- Collaborations artistiques -</h3>
       <div className="bio-columns">
         <div className="column">
           <h4>Chorégraphes</h4>
