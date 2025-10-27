@@ -46,8 +46,15 @@ const Bio = forwardRef((props, externalRef) => {
               <p>
                 Installée en Normandie, Stéphanie Pignon est née le 2 mai 1982 à
                 Rennes. Dès son enfance, elle se forme à la danse contemporaine
-                à Rennes, avant d’intégrer le CNDC d’Angers, qu’elle fréquente
-                entre 2000 et 2002.
+                à Rennes, avant d’intégrer{" "}
+                <a
+                  href="https://www.cndc.fr"
+                  target="_blank"
+                  className="highlight-link"
+                >
+                  CNDC d’Angers
+                </a>
+                , qu’elle fréquente entre 2000 et 2002.
               </p>
             </div>
             <div className={`bio-text3 ${visibleClass}`}>
@@ -124,9 +131,18 @@ const Bio = forwardRef((props, externalRef) => {
               <p>
                 Olivia Caillaud est danseuse, chorégraphe et pédagogue. Elle
                 fait ses études en danses contemporaine à Angers et à Lyon au
-                CNSMD. Sa carrière s’articule auprès de créations avec des
-                chorégraphes comme Sylvie Giron, Mitia Fedotenko, Philippe Jamet
-                et Joelle Bouvier.
+                <a
+                  href="https://www.cnsmd-lyon.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="highlight-link"
+                >
+                  {" "}
+                  CNSMD.
+                </a>{" "}
+                Sa carrière s’articule auprès de créations avec des chorégraphes
+                comme Sylvie Giron, Mitia Fedotenko, Philippe Jamet et Joelle
+                Bouvier.
               </p>
             </div>
 

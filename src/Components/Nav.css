@@ -25,6 +25,7 @@
 /* override pour page VideoLoop */
 .videoloop-page .navbar::before {
   height: 159.5%;
+  right: 99.8%;
   animation: fadeLineVertical 14s ease-in forwards;
 }
 
@@ -258,7 +259,7 @@
   }
 
   .navbar ul {
-    margin-top: 60px;
+    margin-top: 70px;
   }
 
   .burger-arrow {

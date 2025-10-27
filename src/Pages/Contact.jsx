@@ -1,5 +1,7 @@
 import "./Contact.css";
 import { useState, useEffect, forwardRef, useRef } from "react";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
+
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 
@@ -55,6 +57,24 @@ const Contact = forwardRef((props, externalRef) => {
               </a>
             </p>
             <p>Siret: </p>
+            <div className="contact-socials">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <FaFacebook />
+              </a>
+            </div>
           </div>
         </div>
         <div

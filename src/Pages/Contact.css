@@ -187,6 +187,23 @@
   color: white;
 }
 
+.contact-socials {
+  display: flex;
+  gap: 20px;
+  margin-top: 1rem;
+}
+
+.contact-socials a {
+  color: #fefdfb; /* ton doré élégant */
+  font-size: 1.8rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-socials a:hover {
+  color: #d4af37;
+  transform: scale(1.1);
+}
+
 @media (max-width: 900px) {
   .maincontact::after {
     top: 22.5%;
@@ -240,7 +257,7 @@
   }
 
   .maincontact {
-    height: 80vh;
+    height: 90vh;
   }
 
   .maincontact::after {

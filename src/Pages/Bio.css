@@ -163,7 +163,6 @@
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
-
   /* Fond derrière le texte */
   background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
   padding: 25px 20px 15px;
@@ -182,6 +181,16 @@
   line-height: 1;
   margin-right: 2px;
   margin-top: -22px;
+}
+
+.highlight-link {
+  color: #f0e6c2; /* doré */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.highlight-link:hover {
+  color: #dbce9e; /* légère variation de doré */
 }
 
 .bio-text3 {
