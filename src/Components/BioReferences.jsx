@@ -248,7 +248,7 @@ export default function BioReferences() {
             </li>
           </ul>
           <div className="column2">
-            <h4>Artistes & Collaborateurs</h4>
+            <h4>Artistes pluridisciplinaires</h4>
             <ul>
               <li>
                 <a

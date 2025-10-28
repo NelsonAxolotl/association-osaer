@@ -257,11 +257,15 @@
   }
 
   .maincontact {
-    height: 80vh;
+    height: 90vh;
   }
 
   .maincontact::after {
     display: none;
+  }
+
+  .contact-rectangle {
+    margin-top: 30px;
   }
 
   .contact-name {

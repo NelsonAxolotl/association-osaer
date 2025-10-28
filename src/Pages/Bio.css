@@ -1000,6 +1000,10 @@ h2 {
     width: 100%;
   }
   .olivia {
-    margin-top: 100px;
+    margin-top: 90px;
+  }
+
+  h2 {
+    margin-top: 20px;
   }
 }
