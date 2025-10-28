@@ -257,7 +257,7 @@
   }
 
   .maincontact {
-    height: 90vh;
+    min-height: 80vh;
   }
 
   .maincontact::after {
@@ -265,7 +265,7 @@
   }
 
   .contact-rectangle {
-    margin-top: 30px;
+    margin-top: 50px;
   }
 
   .contact-name {
