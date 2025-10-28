@@ -3,7 +3,7 @@
   color: white;
   background-color: black; /* pour test, à adapter */
   overflow: hidden;
-  height: 100vh;
+  min-height: 100vh;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -141,7 +141,7 @@
   color: white;
   opacity: 0; /* départ invisible */
   transform: translateY(30px); /* léger décalage vers le bas */
-  transition: opacity 4s ease, transform 2s ease;
+  transition: opacity 5s ease, transform 2s ease;
 }
 
 /* class ajoutée pour fade-in */
@@ -257,7 +257,7 @@
   }
 
   .maincontact {
-    height: 95vh;
+    height: 90vh;
   }
 
   .maincontact::after {
@@ -281,7 +281,7 @@
   }
 
   .contact-info {
-    top: 38%;
+    top: 35%;
     left: 6%;
   }
 
