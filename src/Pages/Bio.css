@@ -697,7 +697,7 @@ h2 {
   }
 
   .bio-rectangle {
-    margin-top: 80px;
+    margin-top: 50px;
     z-index: 0;
     width: calc(100% - 0.5rem); /* laisse 1rem de marge de chaque côté */
     padding: 1rem 1rem 3rem; /* padding intérieur pour que le contenu ne touche pas les bords */
@@ -998,9 +998,5 @@ h2 {
   }
   .olivia {
     margin-top: 90px;
-  }
-
-  h2 {
-    margin-top: 20px;
   }
 }
