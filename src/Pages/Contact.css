@@ -274,4 +274,8 @@
     top: 30%;
     left: 6%;
   }
+
+  .contact-rectangle {
+    margin-top: -20px;
+  }
 }
