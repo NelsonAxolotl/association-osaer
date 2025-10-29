@@ -460,10 +460,11 @@ h2 {
   z-index: 700; /* derrière la photo */
   opacity: 0;
   transition: opacity 2s ease-in-out;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /* Logo en bas à droite de la vidéo */
@@ -699,7 +700,7 @@ h2 {
   .bio-rectangle {
     margin-top: 50px;
     z-index: 0;
-    width: calc(100% - 0.5rem); /* laisse 1rem de marge de chaque côté */
+    width: calc(100% - 1rem); /* laisse 1rem de marge de chaque côté */
     padding: 1rem 1rem 3rem; /* padding intérieur pour que le contenu ne touche pas les bords */
     border-radius: 5px; /* optionnel : un peu d’arrondi pour le mobile */
   }
@@ -860,7 +861,7 @@ h2 {
   .bio-title {
     text-align: center;
     position: sticky;
-    top: 10%;
+    top: 12%;
     left: 0;
   }
 
@@ -1003,6 +1004,6 @@ h2 {
   }
 
   .bio-rectangle {
-    margin-top: 20px;
+    margin-top: -10px;
   }
 }
