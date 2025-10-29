@@ -16,7 +16,7 @@ const Contact = forwardRef((props, externalRef) => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.7;
+      videoRef.current.playbackRate = 0.6;
     }
   }, []);
 
@@ -41,7 +41,8 @@ const Contact = forwardRef((props, externalRef) => {
           <video
             ref={videoRef}
             className="contact-video-background"
-            src="/Videos/flaw.mp4"
+            src="/Videos/pissenlit4.mp4"
+            loop
             autoPlay
             muted
             playsInline
