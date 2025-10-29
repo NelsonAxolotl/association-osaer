@@ -238,9 +238,6 @@
     font-size: 1.5rem;
   }
 
-  .contact-video-background {
-  }
-
   .contact-info {
     top: 15%;
     left: 6%;
@@ -251,8 +248,6 @@
   .contact-title {
     text-align: center;
     position: sticky;
-    top: 12%;
-    left: 0;
   }
 
   .maincontact {
@@ -261,10 +256,6 @@
 
   .maincontact::after {
     display: none;
-  }
-
-  .contact-rectangle {
-    margin-top: 20px;
   }
 
   .contact-name {
@@ -280,7 +271,7 @@
   }
 
   .contact-info {
-    top: 35%;
+    top: 30%;
     left: 6%;
   }
 }
