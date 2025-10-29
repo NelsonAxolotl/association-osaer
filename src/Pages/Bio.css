@@ -858,8 +858,10 @@ h2 {
   }
 
   .bio-title {
-    transform: none;
-    left: 40%; /* centre horizontalement */
+    text-align: center;
+    position: sticky;
+    top: 10%;
+    left: 0;
   }
 
   .bio::after {
@@ -998,5 +1000,9 @@ h2 {
   }
   .olivia {
     margin-top: 90px;
+  }
+
+  .bio-rectangle {
+    margin-top: 20px;
   }
 }
