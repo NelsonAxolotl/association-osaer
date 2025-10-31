@@ -164,6 +164,14 @@
   display: none;
 }
 
+.navbar.mobile {
+  display: none; /* caché par défaut sur mobile, s'affiche seulement si burger ouvert */
+}
+
+.navbar.mobile.active {
+  display: flex;
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .navbar {
@@ -214,6 +222,7 @@
   }
 
   .burger-arrow {
+    margin-top: 30px;
     display: block;
     font-size: 3rem;
     color: white;
@@ -249,11 +258,6 @@
 }
 
 @media (max-width: 768px) {
-  .burger {
-    top: 36px;
-    right: 16px;
-  }
-
   .navbar ul {
     gap: 50px;
   }
@@ -261,8 +265,11 @@
   .navbar ul {
     margin-top: 80px;
   }
+}
 
-  .burger-arrow {
-    margin-top: 30px;
+@media (max-width: 500px) {
+  .burger {
+    top: 36px;
+    right: 20px;
   }
 }

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./Nav.css";
 
 function Navbar({ className }) {
-  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
 
   const links = [
     { label: "Accueil", to: "/", side: "right" },
@@ -14,22 +15,41 @@ function Navbar({ className }) {
     { label: "Contact", to: "/contact", side: "right" },
   ];
 
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 900;
+      setIsMobile(mobile);
+      if (!mobile) setIsOpen(false); // ferme le menu sur desktop
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
-      <button
-        className={`burger ${isOpen ? "open" : ""}`}
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      {isMobile && (
+        <button
+          className={`burger ${isOpen ? "open" : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      )}
 
-      <nav className={`navbar ${isOpen ? "active" : ""} ${className || ""}`}>
-        <div className="burger-container">
-          <div className="burger-arrow">↓</div>
-        </div>
+      <nav
+        className={`navbar ${isOpen ? "active" : ""} ${className || ""} ${
+          isMobile ? "mobile" : "desktop"
+        }`}
+      >
+        {isMobile && (
+          <div className="burger-container">
+            <div className="burger-arrow">↓</div>
+          </div>
+        )}
         <ul className="nav-links">
           {links.map(({ label, to, side }) => (
             <li key={to}>
@@ -39,7 +59,7 @@ function Navbar({ className }) {
                 } ${side}`}
                 onClick={() => {
                   setIsOpen(false);
-                  window.location.href = to; // force reload
+                  window.location.href = to;
                 }}
               >
                 {label}

@@ -853,7 +853,7 @@ h2 {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .bio {
     padding: 0rem 0.5rem 12rem;
   }

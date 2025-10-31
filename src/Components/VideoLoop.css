@@ -289,7 +289,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .crossfade-container {
     height: 90vh;
   }
