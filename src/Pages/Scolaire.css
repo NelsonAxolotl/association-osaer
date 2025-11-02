@@ -86,10 +86,7 @@
   opacity: 0;
   overflow: hidden;
   transition: opacity 2s ease-in-out;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-radius: 3px;
   pointer-events: none;
 }
 

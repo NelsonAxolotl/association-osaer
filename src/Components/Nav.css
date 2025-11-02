@@ -213,6 +213,7 @@
 
   .navbar .nav-link {
     font-size: 2.2rem;
+    animation: none !important;
   }
 
   .burger-container {
@@ -258,10 +259,6 @@
 }
 
 @media (max-width: 768px) {
-  .navbar ul {
-    gap: 50px;
-  }
-
   .navbar ul {
     margin-top: 80px;
   }
