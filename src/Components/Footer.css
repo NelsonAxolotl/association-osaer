@@ -56,6 +56,20 @@
   background: #d4af37;
 }
 
+.asso-footer::after {
+  background: rgb(248, 119, 6);
+}
+
+.contact-footer::before {
+  background-image: repeating-linear-gradient(
+    -135deg,
+    rgba(255, 255, 255, 0.074) 0px,
+    rgba(212, 175, 55, 0.07) 1px,
+    transparent 250px,
+    transparent 450px
+  );
+}
+
 /* animation unique */
 @keyframes fadeLine {
   from {

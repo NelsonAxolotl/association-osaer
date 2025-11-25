@@ -3,7 +3,10 @@
   color: white;
   background: rgb(0, 0, 0); /* pour test, à adapter */
   min-height: 100vh;
-  overflow: hidden;
+  height: auto;
+  overflow: visible;
+  padding: 0rem 0.5rem 10rem;
+  height: auto;
   z-index: 0;
 }
 
@@ -15,7 +18,7 @@
   background-image: repeating-linear-gradient(
     -135deg,
     rgba(255, 255, 255, 0.074) 0px,
-    rgba(255, 255, 255, 0.06) 1px,
+    rgb(248, 119, 6, 0.1) 1px,
     transparent 250px,
     transparent 460px
   );
@@ -32,14 +35,14 @@
   left: 1%;
   width: 88.5%;
   height: 1.9px;
-  background: white;
+  background: rgb(248, 119, 6);
   opacity: 0; /* départ invisible */
   animation: fadeLineTop 4s ease-in forwards;
   animation-delay: 0.5s; /* décalage pour effet plus élégant */
 }
 
 /* animation pour la verticale */
-@keyframes fadeLineVertical {
+@keyframes fadeLineTop {
   from {
     opacity: 0;
   }
@@ -74,17 +77,12 @@
   top: 155px; /* commence au-dessus de la photo, ajuster selon besoin */
   left: 1%;
   width: 78%; /* jusqu'à la ligne blanche à droite */
-  height: 100vh;
   background: rgb(0, 0, 0);
-  padding: 50px;
+  padding: 0 20px;
   z-index: 700; /* derrière la photo */
   opacity: 1;
   overflow: hidden;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  pointer-events: none;
+  border-radius: 3px;
 }
 
 /* apparition progressive avec contentVisible */
@@ -109,28 +107,272 @@
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.asso-rectangle::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.assowrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
   width: 100%;
-  height: 100%;
-  background: url("/Pics/tulle.jpg") no-repeat top center;
-  background-size: cover;
-  opacity: 0;
-  animation: fadeInOverlay 10s ease forwards;
-  animation-delay: 3.5s;
-  pointer-events: none;
+  max-width: 1200px; /* ✨ limite la largeur totale */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
 }
 
-@keyframes fadeInOverlay {
+.assowrap3 {
+  display: flex;
+  flex-direction: row; /* 🔒 Photo → Texte */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto 40px;
+  padding: 0 20px;
+}
+
+/* IMAGE : reste fluide */
+.asso-image-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 600px; /* ✨ limite la taille max */
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeImage 2.5s ease forwards;
+  animation-delay: 1s;
+  cursor: pointer;
+  margin-top: 20px;
+  border: 1px solid rgb(248, 119, 6);
+  border-radius: 3px;
+}
+
+.asso-image-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  display: block;
+}
+
+/* --- IMAGE --- */
+.asso-image-wrapper2 {
+  flex: 1;
+  max-width: 400px;
+  min-width: 280px;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeImage 2s ease forwards;
+  animation-delay: 1s;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.asso-image-wrapper2 img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  display: block;
+}
+
+@keyframes fadeImage {
   from {
     opacity: 0;
   }
   to {
-    opacity: 0.3;
+    opacity: 1;
   }
+}
+
+/* TEXTE : lisible + fluide + largeur maximale */
+.asso-text {
+  flex: 1;
+  max-width: 500px; /* ✨ limite la largeur du bloc texte */
+  font-family: "Quicksand", serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-align: justify;
+  opacity: 0;
+  animation: fadeText 2s ease forwards;
+  animation-delay: 1s;
+  text-justify: inter-word;
+  hyphens: auto;
+  word-spacing: 0.001em;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-top: 12px;
+}
+
+/* TEXT2 spacing */
+.text2 {
+  margin-top: 15px;
+}
+
+.text3 {
+  margin-top: 15px;
+}
+
+/* --- TEXTE --- */
+.asso-text2 {
+  flex: 1;
+  max-width: 550px;
+  min-width: 280px;
+  font-family: "Quicksand", serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  word-spacing: 0.001em; /* limite l’écart entre les mots */
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeText 2s ease forwards;
+  animation-delay: 0.4s;
+  margin-top: 50px;
+}
+
+/* --- TEXTE --- */
+.asso-text3 {
+  flex: 1;
+  max-width: 550px;
+  min-width: 280px;
+  font-family: "Quicksand", serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  word-spacing: 0.001em;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeText 1.6s ease forwards;
+  animation-delay: 0.7s;
+  margin-top: 40px;
+}
+
+@keyframes fadeText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.asso-text span {
+  color: rgb(248, 119, 6);
+  font-size: 1.2rem;
+}
+
+.asso-text3 span {
+  color: rgb(248, 119, 6);
+  font-size: 1.2rem;
+}
+
+/* FORCE L’OVERLAY À PASSER AU-DESSUS DE TOUT TON SITE */
+.overlay {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999 !important;
+}
+
+.enlarged-media img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  z-index: 1000000 !important;
+}
+
+.close-button {
+  position: fixed !important;
+  top: 20px;
+  right: 20px;
+  font-size: 45px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000001 !important;
+}
+
+/* Version inversée : texte à gauche et photo à droite */
+
+/* Empêche reverse de casser le layout */
+.assowrap.reverse {
+  flex-direction: row !important; /* 🔒 On verrouille */
+  margin-top: 100px;
+  gap: 80px;
+}
+
+/* Conteneur du bloc */
+.asso-vertical-block {
+  width: 100%;
+  max-width: 900px;
+  margin: 100px auto 60px;
+  text-align: center;
+  animation: fadeImage 2s ease forwards;
+  opacity: 0;
+}
+
+/* Image verticale */
+.asso-vertical-image img {
+  width: 100%;
+  height: 350px; /* un peu plus long, plus élégant */
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 6px;
+  display: block;
+  cursor: pointer;
+  margin: 0 auto; /* supprimé le margin-top énorme */
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 3px;
+}
+
+/* Texte dessous */
+.asso-vertical-text {
+  margin-top: 40px;
+  font-size: 1.1rem;
+  font-family: "Quicksand", serif;
+  line-height: 1.4;
+  text-align: justify;
+  padding: 20px; /* padding unique */
+  color: #f1f1f1;
+  opacity: 0;
+  animation: fadeText 2s ease forwards;
+  animation-delay: 1s;
+  text-justify: inter-word;
+  word-spacing: 0.001em;
+  hyphens: auto;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.asso-vertical-text span {
+  font-weight: 600;
+  color: #e66aff;
+}
+
+.asso-vertical-text span {
+  color: rgb(248, 119, 6);
+  font-size: 1.2rem;
 }
 
 @media (max-width: 900px) {
@@ -148,6 +390,80 @@
   .logoasso {
     display: none;
   }
+
+  .assowrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .asso-text {
+    max-width: 100%;
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+
+  .asso-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .assowrap.reverse {
+    flex-direction: column-reverse !important; /* photo AU-DESSUS du texte */
+    gap: 30px;
+    margin-top: 80px;
+    align-items: center;
+  }
+
+  .asso-image-wrapper2 {
+    max-width: 80%; /* 🔥 photo plus petite */
+    min-width: 220px;
+  }
+
+  .asso-image-wrapper2 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .asso-text2 {
+    max-width: 100%; /* 🔥 texte plus fluide */
+    margin-top: 0;
+    font-size: 1rem; /* légèrement réduit pour éviter les gros pavés */
+    padding: 15px;
+  }
+
+  .assowrap3 {
+    flex-direction: column; /* Photo au-dessus du texte */
+    align-items: center;
+    gap: 30px;
+    margin-top: 60px;
+  }
+
+  .assowrap3 .asso-image-wrapper {
+    max-width: 100%; /* 🔥 photo plus petite */
+    min-width: 220px;
+  }
+
+  .assowrap3 .asso-image-wrapper img {
+    width: 100%;
+    height: auto;
+  }
+
+  .asso-text3 {
+    max-width: 100%; /* 🔥 texte plus fluide */
+    margin-top: 0;
+    padding: 15px;
+    font-size: 1rem; /* un peu plus petit pour mobile */
+  }
+
+  .asso-vertical-text {
+    max-width: 100%; /* 🔥 texte plus fluide */
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 1rem;
+  }
 }
 
 .visible-after-video {
@@ -155,17 +471,42 @@
   transform: translateY(0);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .asso-title {
     transform: none;
     left: 40%; /* centre horizontalement */
   }
 
-  .asso-rectangle {
-    border-top: 2px solid white;
-  }
-
   .asso::after {
     display: none;
+  }
+
+  .assowrap {
+    padding: 0;
+  }
+
+  .asso-text {
+    line-height: 1.3;
+    margin: auto 0;
+  }
+
+  .asso-text2 {
+    line-height: 1.3;
+  }
+
+  .asso-text3 {
+    line-height: 1.3;
+  }
+
+  .asso-vertical-text {
+    line-height: 1.3;
+  }
+
+  .asso-vertical-block {
+    margin-top: 80px;
+  }
+
+  .asso-rectangle {
+    padding: 0;
   }
 }

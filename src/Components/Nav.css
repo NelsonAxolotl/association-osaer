@@ -24,7 +24,8 @@
 
 /* override pour page VideoLoop */
 .videoloop-page .navbar::before {
-  height: 159.5%;
+  top: -42.5%;
+  height: 160%;
   right: 99.8%;
   animation: fadeLineVertical 14s ease-in forwards;
 }
@@ -33,6 +34,11 @@
 .contact-page .navbar::before {
   height: 175%;
   background: #d4af37;
+  animation: fadeLineVertical 5s ease-in forwards;
+}
+
+.asso-page .navbar::before {
+  background: rgb(248, 119, 6);
   animation: fadeLineVertical 5s ease-in forwards;
 }
 
@@ -112,6 +118,15 @@
   left: 0;
 }
 
+.navbar .nav-link.active::after {
+  background: #d4af37; /* couleur jaune fixe */
+}
+
+/* actif + hover → underline jaune animé */
+.navbar .nav-link.active:hover::after {
+  background: #d4af37;
+}
+
 /* actif */
 .navbar .nav-link.active,
 .navbar .nav-link.active:hover {
@@ -121,6 +136,16 @@
 
 .navbar .nav-link.active:hover::after {
   background: #d4af37;
+}
+
+/* Style actif SPÉCIAL pour ASOOO */
+.nav-link.asso-link.active {
+  color: rgb(248, 119, 6) !important;
+}
+
+/* actif spécial Asso */
+.nav-link.asso-link.active::after {
+  background: rgb(248, 119, 6) !important;
 }
 
 /* BURGER */

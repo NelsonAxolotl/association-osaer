@@ -1,4 +1,4 @@
-.scolaire {
+.temps {
   position: relative;
   color: white;
   background: rgb(0, 0, 0); /* pour test, à adapter */
@@ -7,7 +7,7 @@
   z-index: 0;
 }
 
-.scolaire::before {
+.temps::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -25,7 +25,7 @@
   transition: opacity 6s ease-in-out;
 }
 
-.scolaire::after {
+.temps::after {
   content: "";
   position: fixed;
   top: 20.9%;
@@ -48,7 +48,7 @@
   }
 }
 
-.scolaire-title {
+.temps-title {
   position: fixed;
   top: 10%;
   left: 5%;
@@ -74,7 +74,7 @@
 }
 
 /* rectangle vert derrière la photo */
-.scolaire-rectangle {
+.temps-rectangle {
   position: relative;
   top: 155px; /* commence au-dessus de la photo, ajuster selon besoin */
   left: 1%;
@@ -96,7 +96,7 @@
 }
 
 /* Logo en bas à droite de la vidéo */
-.logoscolaire {
+.logostemps {
   position: fixed; /* absolute pour qu'il reste dans le container vidéo */
   top: 14%; /* distance depuis le bas de la vidéo */
   right: 21%; /* distance depuis la droite */
@@ -105,14 +105,14 @@
   transition: opacity 2s ease-in-out;
 }
 
-.logoscolaire img {
+.logostemps img {
   width: 12vw; /* largeur relative à la largeur de l'écran */
   width: 200px; /* limite maximale pour les grands écrans */
   height: auto; /* garde les proportions */
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.scolaire-rectangle::after {
+.temps-rectangle::after {
   content: "";
   position: absolute;
   top: 0;
@@ -126,33 +126,33 @@
 }
 
 @media (max-width: 900px) {
-  .scolaire::after {
+  .temps::after {
     top: 22.5%;
     right: 0; /* commence à zéro à droite */
     width: 98vw; /* prend toute la largeur de l’écran */
   }
 
-  .scolaire-rectangle {
+  .temps-rectangle {
     width: 98%;
     margin-top: 15px;
   }
 
-  .logoscolaire {
+  .logostemps {
     display: none;
   }
 }
 
 @media (max-width: 768px) {
-  .scolaire-title {
+  .temps-title {
     transform: none;
     left: 30%; /* centre horizontalement */
   }
 
-  .scolaire-rectangle {
+  .temps-rectangle {
     border-top: 2px solid white;
   }
 
-  .scolaire::after {
+  .temps::after {
     display: none;
   }
 }

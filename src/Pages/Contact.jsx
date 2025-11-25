@@ -16,7 +16,7 @@ const Contact = forwardRef((props, externalRef) => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.6;
+      videoRef.current.playbackRate = 0.4;
     }
   }, []);
 

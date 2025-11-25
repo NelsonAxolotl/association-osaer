@@ -100,9 +100,37 @@ const Bio = forwardRef((props, externalRef) => {
                 Michel Abdoul, Alexandre Roccoli, Diana Lui, Julie Plus, Yann
                 Bertrand, Jeff Mills, Maria Ponti, Chloé Belloc et Nefeli
                 Papadimouli, Blandine Soulage à travers divers projets
-                performatifs, photographiques et cinématographiques (“Swing”
-                2008, “Nuit Blanche” 2010, “Introscope” TedX 2013, “2001 -
-                Midnight Zone” 2015, “Une relation affine” 2019, “Sails” 2025).
+                performatifs, photographiques et cinématographiques (
+                <a
+                  href="https://www.paris-art.com/swing-4/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="highlight-link"
+                >
+                  {" "}
+                  "SWING"{" "}
+                </a>
+                2008, “Nuit Blanche” 2010,
+                <a
+                  href="https://www.youtube.com/watch?v=kpQiWBh5vF0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="highlight-link"
+                >
+                  {" "}
+                  "Introscope"{" "}
+                </a>
+                TedX 2013,
+                <a
+                  href="http://akaplastica.com/trabajo/2001-the-midnight-zone-show-produced-by-jeff-mills"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="highlight-link"
+                >
+                  {" "}
+                  "2001 - The Midnight Zone"{" "}
+                </a>{" "}
+                2015, “Une relation affine” 2019, “Sails” 2025).
               </p>
             </div>
             <div className={`bio-text6 ${visibleClass}`}>
@@ -179,6 +207,72 @@ const Bio = forwardRef((props, externalRef) => {
             </div>
           </div>
           <BioReferences />
+          <div className="nelson">
+            <h2>
+              ✨ <span className="name">Nelson Paraïso (The Cool Axolotl)</span>
+              <span className="dash"> – </span>
+              <span className="role">Web développeur & Régisseur Lumière</span>
+            </h2>
+          </div>
+          <div className="bio-content-nelson">
+            <div className={`bio-text-nelson ${visibleClass}`}>
+              <p>
+                Musicien de formation, avec des études de musicologie à{" "}
+                <a
+                  href="https://www.gold.ac.uk/"
+                  target="_blank"
+                  className="highlight-link"
+                >
+                  Goldsmiths University
+                </a>{" "}
+                (Londres), Nelson a d'abord travaillé dans différents projets
+                artistiques. Il a ensuite suivi une formation de technicien
+                lumière à{" "}
+                <a
+                  href="https://formation-tsv.fr/"
+                  target="_blank"
+                  className="highlight-link"
+                >
+                  TSV
+                </a>
+                , il est régisseur lumière depuis 15 ans. Plus récemment il a
+                élargi ses compétences avec un bootcamp de développement web
+                front-end chez{" "}
+                <a
+                  href="https://www.lereacteur.io/"
+                  target="_blank"
+                  className="highlight-link"
+                >
+                  Le Réacteur
+                </a>{" "}
+                et propose aujourd'hui ses services sous le nom de{" "}
+                <a
+                  href="https://www.thecoolaxolotl.com/"
+                  target="_blank"
+                  className="highlight-link"
+                >
+                  The Cool Axolotl
+                </a>
+                , en choisissant des projest qui l'inspire vraiment. Il a aussi
+                suivi une formation de danse contemporaine au centre
+                chorégraphique{" "}
+                <a
+                  href="https://www.centrechoregraphiquelecycle.com/"
+                  target="_blank"
+                  className="highlight-link"
+                >
+                  Le Cycle
+                </a>{" "}
+                à Lyon, et continue à alimenter sa sensibilité artistique.
+              </p>
+            </div>
+            <div
+              className="bio-photo-nelson"
+              onClick={() => setZoomedImage1("/Pics/nelson.jpg")}
+            >
+              <img src="/Pics/nelson.jpg" alt="nelson" />
+            </div>
+          </div>
         </div>
 
         <div className={`logobio ${visibleClass}`}>

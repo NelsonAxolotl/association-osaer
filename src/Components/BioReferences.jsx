@@ -71,6 +71,26 @@ export default function BioReferences() {
             </li>
             <li>
               <a
+                href="https://pacodecina.com/"
+                className="highlight-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Paco décina
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://mimecorporel.com/etienne-decroux/"
+                className="highlight-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Etienne Decroux
+              </a>
+            </li>
+            <li>
+              <a
                 href="https://numeridanse.com/profil/dupuy-francoise/"
                 className="highlight-link"
                 target="_blank"
@@ -218,7 +238,7 @@ export default function BioReferences() {
             </li>
             <li>
               <a
-                href="https://tangible-et-cie.org/"
+                href="https://saufledimanche.com/la-compagnie/"
                 className="highlight-link"
                 target="_blank"
                 rel="noopener noreferrer"

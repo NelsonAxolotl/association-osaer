@@ -157,7 +157,7 @@
 .bio-text {
   font-family: "Quicksand", serif;
   width: 90%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.4;
   text-align: justify;
   opacity: 0;
@@ -180,7 +180,7 @@
   float: left;
   line-height: 1;
   margin-right: 2px;
-  margin-top: -22px;
+  margin-top: -24px;
 }
 
 .highlight-link {
@@ -196,7 +196,7 @@
 .bio-text3 {
   font-family: "Quicksand", serif;
   width: 90%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.4;
   text-align: justify;
   opacity: 0;
@@ -219,13 +219,13 @@
   float: left;
   line-height: 1;
   margin-right: 2px;
-  margin-top: -22px;
+  margin-top: -24px;
 }
 
 .bio-text4 {
   font-family: "Quicksand", serif;
   width: 90%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.4;
   text-align: justify;
   opacity: 0;
@@ -247,7 +247,7 @@
   float: left;
   line-height: 1;
   margin-right: 2px;
-  margin-top: -22px;
+  margin-top: -24px;
 }
 
 .bio-text4 p::first-letter {
@@ -258,12 +258,12 @@
   float: left;
   line-height: 1;
   margin-right: 2px;
-  margin-top: -22px;
+  margin-top: -24px;
 }
 
 .bio-text5 {
   font-family: "Quicksand", serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.4;
   text-align: justify;
   opacity: 0;
@@ -287,12 +287,12 @@
   float: left;
   line-height: 1;
   margin-right: 2px;
-  margin-top: -22px;
+  margin-top: -24px;
 }
 
 .bio-text6 {
   font-family: "Quicksand";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   width: 90%;
   line-height: 1.4;
   text-align: justify;
@@ -317,12 +317,12 @@
   float: left;
   line-height: 1;
   margin-right: 2px;
-  margin-top: -22px;
+  margin-top: -24px;
 }
 
 .bio-text50 {
   font-family: "Quicksand";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.4;
   text-align: justify;
   opacity: 0;
@@ -345,12 +345,12 @@
   float: left;
   line-height: 1;
   margin-right: 2px;
-  margin-top: -22px;
+  margin-top: -24px;
 }
 
 .bio-text51 {
   font-family: "Quicksand";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.4;
   text-align: justify;
   opacity: 0;
@@ -374,12 +374,12 @@
   float: left;
   line-height: 1;
   margin-right: 2px;
-  margin-top: -22px;
+  margin-top: -24px;
 }
 
 .bio-text52 {
   font-family: "Quicksand";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.4;
   text-align: justify;
   opacity: 0;
@@ -403,12 +403,12 @@
   float: left;
   line-height: 1;
   margin-right: 2px;
-  margin-top: -22px;
+  margin-top: -24px;
 }
 
 .bio-text53 {
   font-family: "Quicksand";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.4;
   text-align: justify;
   opacity: 0;
@@ -432,7 +432,7 @@
   float: left;
   line-height: 1;
   margin-right: 2px;
-  margin-top: -22px;
+  margin-top: -24px;
 }
 
 h2 {
@@ -441,10 +441,11 @@ h2 {
   opacity: 0;
   animation: fadeInPhoto 3s ease forwards;
   z-index: 801;
+  margin-top: 10px;
 }
 
-.olivia {
-  text-align: right; /* aligne le texte à droite */
+.olivia h2 {
+  margin-top: -20px;
 }
 
 /* rectangle vert derrière la photo */
@@ -654,6 +655,78 @@ h2 {
   z-index: 9999; /* très haut pour passer devant tout */
 }
 
+.nelson {
+  margin-top: 150px;
+  margin-bottom: 20px;
+}
+
+.bio-content-nelson {
+  position: relative;
+  z-index: 800;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin: 50px 0;
+}
+
+.bio-photo-nelson {
+  z-index: 801;
+  position: relative; /* nécessaire pour ::after */
+  flex: 1 1 70%; /* la photo occupe 60% environ sur grand écran */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.bio-photo-nelson img {
+  width: 100%;
+  height: 350px;
+  animation: fadeInPhoto 3s ease forwards;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  animation: fadeInPhoto 3s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  object-fit: cover; /* recadre sans déformer */
+  object-position: center; /* centre le sujet */
+  border-radius: 12px;
+  z-index: 802;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border: 2px solid #d4af37;
+}
+
+.bio-text-nelson {
+  font-family: "Quicksand", serif;
+  width: 90%;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-align: justify;
+  text-justify: inter-word; /* ajuste les espaces entre mots */
+  word-spacing: 0.001em; /* limite l’écart entre les mots */
+  hyphens: auto;
+  opacity: 0;
+  animation: fadeInPhoto 1.5s ease forwards;
+  z-index: 801;
+  /* Fond derrière le texte */
+  background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
+  padding: 25px 20px 15px;
+  border-radius: 12px; /* coins arrondis */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* léger relief */
+  margin-left: 0; /* collé à gauche */
+  margin-right: auto; /* pousse vers la gauche */
+}
+
+.bio-text-nelson p::first-letter {
+  font-size: 3rem; /* taille plus grande */
+  font-weight: bold;
+  color: #ffffff; /* ou ta couleur d’accent */
+  font-family: "Caveat", cursive; /* si tu veux une touche artistique */
+  float: left;
+  line-height: 1;
+  margin-right: 2px;
+  margin-top: -24px;
+}
+
 @media (max-width: 900px) {
   .bio-bg {
     position: fixed;
@@ -701,7 +774,7 @@ h2 {
     margin-top: 50px;
     z-index: 0;
     width: calc(100% - 1rem); /* laisse 1rem de marge de chaque côté */
-    padding: 1rem 1rem 3rem; /* padding intérieur pour que le contenu ne touche pas les bords */
+    padding: 1rem 0.5rem 3.5rem; /* padding intérieur pour que le contenu ne touche pas les bords */
     border-radius: 5px; /* optionnel : un peu d’arrondi pour le mobile */
   }
 
@@ -714,7 +787,7 @@ h2 {
     font-size: 1.1rem; /* texte un peu plus petit */
     line-height: 1.3;
     text-justify: inter-word; /* ajuste les espaces entre mots */
-    word-spacing: 0.01em; /* limite l’écart entre les mots */
+    word-spacing: 0.001em; /* limite l’écart entre les mots */
     hyphens: auto;
   }
 
@@ -727,6 +800,9 @@ h2 {
   .bio-text3 {
     font-size: 1.1rem; /* texte un peu plus petit */
     line-height: 1.3;
+    text-justify: inter-word; /* ajuste les espaces entre mots */
+    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    hyphens: auto;
   }
 
   .bio-text3 p::first-letter {
@@ -738,6 +814,9 @@ h2 {
   .bio-text4 {
     font-size: 1.1rem; /* texte un peu plus petit */
     line-height: 1.3;
+    text-justify: inter-word; /* ajuste les espaces entre mots */
+    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    hyphens: auto;
   }
 
   .bio-text4 p::first-letter {
@@ -749,6 +828,9 @@ h2 {
   .bio-text5 {
     font-size: 1.1rem; /* texte un peu plus petit */
     line-height: 1.3;
+    text-justify: inter-word; /* ajuste les espaces entre mots */
+    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    hyphens: auto;
   }
 
   .bio-text5 p::first-letter {
@@ -761,6 +843,9 @@ h2 {
     font-size: 1.1rem; /* texte un peu plus petit */
     line-height: 1.3;
     margin-bottom: 80px;
+    text-justify: inter-word; /* ajuste les espaces entre mots */
+    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    hyphens: auto;
   }
 
   .bio-text6 p::first-letter {
@@ -772,6 +857,9 @@ h2 {
   .bio-text50 {
     font-size: 1.1rem; /* texte un peu plus petit */
     line-height: 1.3;
+    text-justify: inter-word; /* ajuste les espaces entre mots */
+    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    hyphens: auto;
   }
 
   .bio-text50 p::first-letter {
@@ -783,6 +871,9 @@ h2 {
   .bio-text51 {
     font-size: 1.1rem; /* texte un peu plus petit */
     line-height: 1.3;
+    text-justify: inter-word; /* ajuste les espaces entre mots */
+    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    hyphens: auto;
   }
 
   .bio-text51 p::first-letter {
@@ -794,6 +885,9 @@ h2 {
   .bio-text52 {
     font-size: 1.1rem; /* texte un peu plus petit */
     line-height: 1.3;
+    text-justify: inter-word; /* ajuste les espaces entre mots */
+    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    hyphens: auto;
   }
 
   .bio-text52 p::first-letter {
@@ -805,6 +899,9 @@ h2 {
   .bio-text53 {
     font-size: 1.1rem; /* texte un peu plus petit */
     line-height: 1.3;
+    text-justify: inter-word; /* ajuste les espaces entre mots */
+    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    hyphens: auto;
   }
 
   .bio-text53 p::first-letter {
@@ -855,7 +952,8 @@ h2 {
 
 @media (max-width: 500px) {
   .bio {
-    padding: 0rem 0.5rem 12rem;
+    padding: 0rem 0rem 12rem;
+    left: 0.7%;
   }
 
   .bio-title {
@@ -873,7 +971,6 @@ h2 {
     font-size: 1rem;
     width: 100%;
     margin: auto 0;
-    hyphens: auto;
   }
 
   .bio-text p::first-letter {
@@ -886,7 +983,6 @@ h2 {
     font-size: 1rem;
     width: 100%;
     margin: auto 0;
-    hyphens: auto;
   }
 
   .bio-text3 p::first-letter {
@@ -899,7 +995,6 @@ h2 {
     font-size: 1rem;
     width: 100%;
     margin: auto 0;
-    hyphens: auto;
   }
 
   .bio-text4 p::first-letter {
@@ -912,7 +1007,6 @@ h2 {
     font-size: 1rem;
     width: 100%;
     margin: auto 0;
-    hyphens: auto;
   }
 
   .bio-text5 p::first-letter {
@@ -938,7 +1032,6 @@ h2 {
     font-size: 1rem;
     width: 100%;
     margin: auto 0;
-    hyphens: auto;
   }
 
   .bio-text50 p::first-letter {

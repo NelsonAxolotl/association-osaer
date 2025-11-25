@@ -8,11 +8,11 @@ function Navbar({ className }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
 
   const links = [
-    { label: "Accueil", to: "/", side: "right" },
     { label: "Asso", to: "/asso", side: "left" },
-    { label: "Scolaire", to: "/scolaire", side: "right" },
-    { label: "Bio", to: "/bio", side: "left" },
-    { label: "Contact", to: "/contact", side: "right" },
+    { label: "Bio", to: "/bio", side: "right" },
+    { label: "Médiation", to: "/mediation", side: "left" },
+    { label: "Créations", to: "/creations", side: "right" },
+    { label: "Contact", to: "/contact", side: "left" },
   ];
 
   useEffect(() => {
@@ -54,9 +54,10 @@ function Navbar({ className }) {
           {links.map(({ label, to, side }) => (
             <li key={to}>
               <button
-                className={`nav-link ${
-                  location.pathname === to ? "active" : ""
-                } ${side}`}
+                className={`nav-link 
+                  ${location.pathname === to ? "active" : ""} 
+                  ${side}
+                  ${label === "Asso" ? "asso-link" : ""}`}
                 onClick={() => {
                   setIsOpen(false);
                   window.location.href = to;

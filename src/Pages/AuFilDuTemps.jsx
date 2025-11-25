@@ -1,9 +1,9 @@
-import "./Scolaire.css";
+import "./AuFilDuTemps.css";
 import { useState, useEffect, forwardRef } from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 
-const Scolaire = forwardRef((props, externalRef) => {
+const AuFilDuTemps = forwardRef((props, externalRef) => {
   const [contentVisible, setContentVisible] = useState(false);
 
   useEffect(() => {
@@ -15,20 +15,20 @@ const Scolaire = forwardRef((props, externalRef) => {
     <>
       <Nav />
       <div
-        className={`scolaire ${contentVisible ? "crossfade-visible" : ""}`}
+        className={`temps ${contentVisible ? "crossfade-visible" : ""}`}
         ref={externalRef}
       >
         <div className="bio-bg" aria-hidden="true"></div>
         <h1
-          className={`scolaire-title ${
+          className={`temps-title ${
             contentVisible ? "visible-after-video" : ""
           }`}
         >
-          Médiation
+          Au fil du temps
         </h1>
-        <div className="scolaire-rectangle"></div>
+        <div className="temps-rectangle"></div>
         <div
-          className={`logoscolaire ${
+          className={`logostemps ${
             contentVisible ? "visible-after-video" : ""
           }`}
         >
@@ -48,4 +48,4 @@ const Scolaire = forwardRef((props, externalRef) => {
     </>
   );
 });
-export default Scolaire;
+export default AuFilDuTemps;

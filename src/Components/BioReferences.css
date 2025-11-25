@@ -31,6 +31,18 @@
   transform-origin: center;
 }
 
+.bio-references h3::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  opacity: 0.8;
+  transform-origin: center;
+}
+
 .bio-columns {
   display: flex;
   flex-wrap: nowrap; /* reste côte à côte jusqu'à 768px */
@@ -79,7 +91,7 @@
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .bio-references {
-    margin-top: 50px;
+    margin-top: 30px;
   }
 
   .bio-columns {
