@@ -8,6 +8,7 @@ function Navbar({ className }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
 
   const links = [
+    { label: "Accueil", to: "/" },
     { label: "Asso", to: "/asso", side: "left" },
     { label: "Bio", to: "/bio", side: "right" },
     { label: "Médiation", to: "/mediation", side: "left" },
@@ -51,22 +52,24 @@ function Navbar({ className }) {
           </div>
         )}
         <ul className="nav-links">
-          {links.map(({ label, to, side }) => (
-            <li key={to}>
-              <button
-                className={`nav-link 
-                  ${location.pathname === to ? "active" : ""} 
-                  ${side}
-                  ${label === "Asso" ? "asso-link" : ""}`}
-                onClick={() => {
-                  setIsOpen(false);
-                  window.location.href = to;
-                }}
-              >
-                {label}
-              </button>
-            </li>
-          ))}
+          {links
+            .filter((link) => isMobile || link.label !== "Accueil") // 🔥 Affiche Accueil UNIQUEMENT en mobile
+            .map(({ label, to, side }) => (
+              <li key={to}>
+                <button
+                  className={`nav-link 
+            ${location.pathname === to ? "active" : ""} 
+            ${side}
+            ${label === "Asso" ? "asso-link" : ""}`}
+                  onClick={() => {
+                    setIsOpen(false);
+                    window.location.href = to;
+                  }}
+                >
+                  {label}
+                </button>
+              </li>
+            ))}
         </ul>
       </nav>
     </>

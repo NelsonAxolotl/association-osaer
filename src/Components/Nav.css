@@ -221,7 +221,7 @@
   }
 
   .navbar ul {
-    margin-top: 80px;
+    margin-top: 50px;
   }
 
   .nav-links {
@@ -237,7 +237,7 @@
   }
 
   .navbar .nav-link {
-    font-size: 2.2rem;
+    font-size: 2rem;
     animation: none !important;
   }
 
@@ -285,7 +285,7 @@
 
 @media (max-width: 768px) {
   .navbar ul {
-    margin-top: 80px;
+    margin-top: 50px;
   }
 }
 
@@ -293,5 +293,10 @@
   .burger {
     top: 36px;
     right: 20px;
+  }
+
+  .navbar .nav-link {
+    font-size: 1.8rem;
+    animation: none !important;
   }
 }
