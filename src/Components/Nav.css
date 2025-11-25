@@ -42,6 +42,11 @@
   animation: fadeLineVertical 5s ease-in forwards;
 }
 
+.mediation-page .navbar::before {
+  background: rgb(195, 63, 63);
+  animation: fadeLineVertical 5s ease-in forwards;
+}
+
 @keyframes fadeLineTop {
   from {
     opacity: 0;
@@ -131,7 +136,6 @@
 .navbar .nav-link.active,
 .navbar .nav-link.active:hover {
   color: #d4af37;
-  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6);
 }
 
 .navbar .nav-link.active:hover::after {
@@ -146,6 +150,15 @@
 /* actif spécial Asso */
 .nav-link.asso-link.active::after {
   background: rgb(248, 119, 6) !important;
+}
+
+.nav-link.mediation-link.active {
+  color: rgb(195, 63, 63) !important;
+}
+
+/* actif spécial Asso */
+.nav-link.mediation-link.active::after {
+  background: rgb(195, 63, 63) !important;
 }
 
 /* BURGER */

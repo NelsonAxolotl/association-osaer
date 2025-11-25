@@ -89,8 +89,8 @@ const Bio = forwardRef((props, externalRef) => {
               <p>
                 Ouverte à différentes pratiques corporelles, expressives et
                 esthétiques, Stéphanie danse en solo aux côtés de Patricia Kass
-                lors de la tournée mondiale “Kabaret” et chorégraphie le
-                spectacle “Kaas chante Piaf”.
+                lors de la tournée mondiale "Kabaret " et chorégraphie le
+                spectacle "Kaas chante Piaf".
               </p>
             </div>
             <div className={`bio-text5 ${visibleClass}`}>
@@ -107,10 +107,9 @@ const Bio = forwardRef((props, externalRef) => {
                   rel="noopener noreferrer"
                   className="highlight-link"
                 >
-                  {" "}
                   "SWING"{" "}
                 </a>
-                2008, “Nuit Blanche” 2010,
+                2008, "Nuit Blanche" 2010,
                 <a
                   href="https://www.youtube.com/watch?v=kpQiWBh5vF0"
                   target="_blank"
@@ -130,7 +129,7 @@ const Bio = forwardRef((props, externalRef) => {
                   {" "}
                   "2001 - The Midnight Zone"{" "}
                 </a>{" "}
-                2015, “Une relation affine” 2019, “Sails” 2025).
+                2015, "Une relation affine" 2019, "Sails" 2025).
               </p>
             </div>
             <div className={`bio-text6 ${visibleClass}`}>

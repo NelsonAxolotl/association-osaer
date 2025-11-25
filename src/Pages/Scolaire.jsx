@@ -13,11 +13,13 @@ const Scolaire = forwardRef((props, externalRef) => {
 
   return (
     <>
-      <Nav />
       <div
-        className={`scolaire ${contentVisible ? "crossfade-visible" : ""}`}
+        className={`scolaire mediation-page ${
+          contentVisible ? "crossfade-visible" : ""
+        }`}
         ref={externalRef}
       >
+        <Nav />
         <div className="bio-bg" aria-hidden="true"></div>
         <h1
           className={`scolaire-title ${
@@ -44,7 +46,7 @@ const Scolaire = forwardRef((props, externalRef) => {
           ↓
         </div>
       </div>
-      <Footer />
+      <Footer className="mediation-footer" />
     </>
   );
 });

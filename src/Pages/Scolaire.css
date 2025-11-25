@@ -15,7 +15,7 @@
   background-image: repeating-linear-gradient(
     -135deg,
     rgba(255, 255, 255, 0.05) 0px,
-    rgba(255, 255, 255, 0.07) 1px,
+    rgb(195, 63, 63, 0.07) 1px,
     transparent 250px,
     transparent 460px
   );
@@ -32,7 +32,7 @@
   left: 1%;
   width: 88.5%;
   height: 1.9px;
-  background: white;
+  background: rgb(195, 63, 63);
   opacity: 0; /* départ invisible */
   animation: fadeLineTop 4s ease-in forwards;
   animation-delay: 0.5s; /* décalage pour effet plus élégant */
@@ -53,7 +53,7 @@
   top: 10%;
   left: 5%;
   font-size: 3.5rem;
-  color: white;
+  color: rgb(247, 241, 241);
   font-family: "Caveat", cursive;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
   z-index: 3;

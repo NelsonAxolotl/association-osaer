@@ -60,7 +60,10 @@ function Navbar({ className }) {
                   className={`nav-link 
             ${location.pathname === to ? "active" : ""} 
             ${side}
-            ${label === "Asso" ? "asso-link" : ""}`}
+            ${label === "Asso" ? "asso-link" : ""}
+                ${label === "Médiation" ? "mediation-link" : ""}
+
+            `}
                   onClick={() => {
                     setIsOpen(false);
                     window.location.href = to;
