@@ -753,20 +753,7 @@ h2 {
   }
 
   .bio-bg::before {
-    content: "";
-    position: absolute; /* important pour que ça reste dans .bio-bg */
-    inset: 0;
-    z-index: 0;
-    background-image: repeating-linear-gradient(
-      -135deg,
-      rgba(255, 255, 255, 0.06) 0px,
-      rgba(255, 255, 255, 0.136) 1px,
-      transparent 250px,
-      transparent 530px
-    );
-    filter: blur(8px);
-    opacity: 1; /* visible */
-    pointer-events: none;
+    display: none;
   }
 
   .bio::after {
@@ -1169,5 +1156,23 @@ h2 {
     font-size: 2rem; /* taille plus grande */
     margin-right: 2px;
     margin-top: -12px;
+  }
+
+  .bio-bg::before {
+    display: block;
+    content: "";
+    position: absolute; /* important pour que ça reste dans .bio-bg */
+    inset: 0;
+    z-index: 0;
+    background-image: repeating-linear-gradient(
+      -135deg,
+      rgba(255, 255, 255, 0.06) 0px,
+      rgba(255, 255, 255, 0.136) 1px,
+      transparent 250px,
+      transparent 530px
+    );
+    filter: blur(8px);
+    opacity: 1; /* visible */
+    pointer-events: none;
   }
 }

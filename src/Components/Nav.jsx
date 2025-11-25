@@ -42,9 +42,14 @@ function Navbar({ className }) {
       )}
 
       <nav
-        className={`navbar ${isOpen ? "active" : ""} ${className || ""} ${
-          isMobile ? "mobile" : "desktop"
-        }`}
+        className={`navbar 
+          ${isOpen ? "active" : ""} 
+          ${className || ""} 
+          ${isMobile ? "mobile" : "desktop"}
+            ${location.pathname === "/asso" ? "asso-active" : ""}
+          ${location.pathname === "/mediation" ? "mediation-active" : ""}
+             ${location.pathname === "/contact" ? "contact-active" : ""}
+          `}
       >
         {isMobile && (
           <div className="burger-container">

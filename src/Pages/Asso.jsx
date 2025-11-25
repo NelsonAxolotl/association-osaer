@@ -76,13 +76,13 @@ const Asso = forwardRef((props, externalRef) => {
               </p>
               <div className="text3">
                 <p>
-                  À l’image de ses interprètes, la compagnie demeure attentive
-                  aux besoins spécifiques des artistes. Elle met à disposition
-                  des artistes chorégraphiques pour réaliser des créations
-                  ponctuelles, transcendant les limites du langage corporel. La
-                  danse y devient un médium puissant d’expression, capable de
-                  raconter des histoires, de susciter des émotions et de
-                  rassembler les publics autour de l’esthétique collective.
+                  À l’image de ses interprètes, la compagnie <span>Osaer </span>
+                  demeure attentive aux besoins spécifiques des artistes. Elle
+                  met à disposition des artistes chorégraphiques pour réaliser
+                  des créations ponctuelles, transcendant les limites du langage
+                  corporel. La danse y devient un médium puissant d’expression,
+                  capable de raconter des histoires, de susciter des émotions et
+                  de rassembler les publics autour de l’esthétique collective.
                 </p>
               </div>
             </div>

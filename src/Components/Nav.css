@@ -22,6 +22,33 @@
   animation: fadeLineVertical 5s ease-in forwards;
 }
 
+.navbar.mobile.active.asso-active::after {
+  background-image: repeating-linear-gradient(
+    -135deg,
+    rgba(255, 255, 255, 0.074) 0,
+    rgb(248, 119, 6, 0.08) 1px,
+    transparent 240px
+  );
+}
+
+.navbar.mobile.active.mediation-active::after {
+  background-image: repeating-linear-gradient(
+    -135deg,
+    rgba(255, 255, 255, 0.074) 0,
+    rgb(195, 63, 63, 0.08) 1px,
+    transparent 240px
+  );
+}
+
+.navbar.mobile.active.contact-active::after {
+  background-image: repeating-linear-gradient(
+    -135deg,
+    rgba(255, 255, 255, 0.074) 0,
+    rgba(212, 175, 55, 0.08) 1px,
+    transparent 240px
+  );
+}
+
 /* override pour page VideoLoop */
 .videoloop-page .navbar::before {
   top: -42.5%;
