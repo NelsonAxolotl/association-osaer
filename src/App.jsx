@@ -5,7 +5,7 @@ import VideoLoop from "./Components/VideoLoop";
 import Bio from "./Pages/Bio";
 import Asso from "./Pages/Asso";
 import Scolaire from "./Pages/Scolaire";
-import AuFilDuTemps from "./Pages/Aufildutemps";
+import AuFilDuTemps from "./Pages/AuFilDuTemps";
 import Contact from "./Pages/Contact";
 import NotFound from "./Pages/NotFound";
 
