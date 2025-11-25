@@ -209,9 +209,9 @@ const Bio = forwardRef((props, externalRef) => {
           <BioReferences />
           <div className="nelson">
             <h2>
-              ✨ <span className="name">Nelson Paraïso (The Cool Axolotl)</span>
+              ✨ <span className="name">Nelson Paraïso</span>
               <span className="dash"> – </span>
-              <span className="role">Web développeur & Régisseur Lumière</span>
+              <span className="role">Développeur & Régisseur Lumière</span>
             </h2>
           </div>
           <div className="bio-content-nelson">
