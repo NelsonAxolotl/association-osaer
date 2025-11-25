@@ -142,10 +142,9 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .temps-title {
-    transform: none;
-    left: 30%; /* centre horizontalement */
+    left: 25%; /* centre horizontalement */
   }
 
   .temps-rectangle {

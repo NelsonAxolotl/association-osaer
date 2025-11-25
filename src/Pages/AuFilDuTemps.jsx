@@ -24,7 +24,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
             contentVisible ? "visible-after-video" : ""
           }`}
         >
-          Au fil du temps
+          Créations
         </h1>
         <div className="temps-rectangle"></div>
         <div

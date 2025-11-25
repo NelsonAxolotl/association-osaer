@@ -17,7 +17,7 @@ function App() {
         <Route path="/bio" element={<Bio />} />
         <Route path="/asso" element={<Asso />} />
         <Route path="/mediation" element={<Scolaire />} />
-        <Route path="/aufildutemps" element={<AuFilDuTemps />} />
+        <Route path="/creations" element={<AuFilDuTemps />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

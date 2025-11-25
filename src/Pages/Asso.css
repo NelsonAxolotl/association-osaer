@@ -473,7 +473,6 @@
 
 @media (max-width: 500px) {
   .asso-title {
-    transform: none;
     left: 40%; /* centre horizontalement */
   }
 
