@@ -20,7 +20,7 @@ const Scolaire = forwardRef((props, externalRef) => {
         ref={externalRef}
       >
         <Nav />
-        <div className="bio-bg" aria-hidden="true"></div>
+        <div className="mediation-bg" aria-hidden="true"></div>
         <h1
           className={`scolaire-title ${
             contentVisible ? "visible-after-video" : ""

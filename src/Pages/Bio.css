@@ -747,7 +747,7 @@ h2 {
     position: fixed;
     height: 22.5vh;
     inset: 0; /* top:0; right:0; bottom:0; left:0; */
-    background: black; /* ton rouge */
+    background: black;
     z-index: 1; /* au-dessus du rectangle (700) mais en dessous du titre/nav */
     pointer-events: none; /* n'interfère pas avec les clics */
   }
@@ -1167,7 +1167,7 @@ h2 {
     background-image: repeating-linear-gradient(
       -135deg,
       rgba(255, 255, 255, 0.06) 0px,
-      rgba(255, 255, 255, 0.136) 1px,
+      rgba(255, 255, 255, 0.15) 1px,
       transparent 250px,
       transparent 530px
     );

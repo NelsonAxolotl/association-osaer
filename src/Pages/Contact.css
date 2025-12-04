@@ -235,6 +235,15 @@
     width: 98%; /* prend toute la largeur de l’écran */
   }
 
+  .contact-bg {
+    position: fixed;
+    height: 22.5vh;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    background: black;
+    z-index: 1; /* au-dessus du rectangle (700) mais en dessous du titre/nav */
+    pointer-events: none; /* n'interfère pas avec les clics */
+  }
+
   .contact-rectangle {
     width: 98%;
     margin-top: 15px;
@@ -304,5 +313,23 @@
 
   .contact-info h3 {
     font-size: 2.2rem;
+  }
+
+  .contact-bg::before {
+    display: block;
+    content: "";
+    position: absolute; /* important pour que ça reste dans .bio-bg */
+    inset: 0;
+    z-index: 0;
+    background-image: repeating-linear-gradient(
+      -135deg,
+      rgba(255, 255, 255, 0.06) 0px,
+      rgba(212, 175, 55, 0.15) 1px,
+      transparent 350px,
+      transparent 530px
+    );
+    filter: blur(8px);
+    opacity: 1; /* visible */
+    pointer-events: none;
   }
 }

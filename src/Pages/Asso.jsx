@@ -24,7 +24,7 @@ const Asso = forwardRef((props, externalRef) => {
       >
         <Nav />
         {/* Fond décoratif */}
-        <div className="bio-bg" aria-hidden="true"></div>
+        <div className="asso-bg" aria-hidden="true"></div>
 
         {/* Titre */}
         <h1

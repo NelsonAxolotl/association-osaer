@@ -52,7 +52,7 @@
 /* override pour page VideoLoop */
 .videoloop-page .navbar::before {
   top: -42.5%;
-  height: 160%;
+  height: 157%;
   right: 99.8%;
   animation: fadeLineVertical 14s ease-in forwards;
 }
@@ -96,7 +96,6 @@
 
 /* override UL sur page videoloop */
 .videoloop-nav ul {
-  margin-top: -45px;
 }
 
 /* LIEN */

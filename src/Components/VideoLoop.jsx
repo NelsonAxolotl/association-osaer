@@ -84,7 +84,7 @@ const VideoLoop = forwardRef((props, externalRef) => {
         ref={externalRef}
       >
         <Nav className="videoloop-nav" />
-
+        <div className="video-bg" aria-hidden="true"></div>
         <h1 className="main-title">Association OSAER</h1>
         <div className="crossfade-line"></div>
 

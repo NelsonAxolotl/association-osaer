@@ -399,4 +399,22 @@
       left: 4%;
     }
   }
+
+  .video-bg::before {
+    display: block;
+    content: "";
+    position: absolute; /* important pour que ça reste dans .bio-bg */
+    inset: 0;
+    z-index: 0;
+    background-image: repeating-linear-gradient(
+      -135deg,
+      rgba(255, 255, 255, 0.06) 0px,
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 350px,
+      transparent 530px
+    );
+    filter: blur(8px);
+    opacity: 1; /* visible */
+    pointer-events: none;
+  }
 }

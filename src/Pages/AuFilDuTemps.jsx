@@ -13,12 +13,12 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
 
   return (
     <>
-      <Nav />
       <div
         className={`temps ${contentVisible ? "crossfade-visible" : ""}`}
         ref={externalRef}
       >
-        <div className="bio-bg" aria-hidden="true"></div>
+        <Nav />
+        <div className="creation-bg" aria-hidden="true"></div>
         <h1
           className={`temps-title ${
             contentVisible ? "visible-after-video" : ""

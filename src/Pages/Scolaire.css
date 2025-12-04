@@ -3,7 +3,10 @@
   color: white;
   background: rgb(0, 0, 0); /* pour test, à adapter */
   min-height: 100vh;
-  overflow: hidden;
+  height: auto;
+  overflow: visible;
+  padding: 0rem 0.5rem 10rem;
+  height: auto;
   z-index: 0;
 }
 
@@ -79,9 +82,9 @@
   top: 155px; /* commence au-dessus de la photo, ajuster selon besoin */
   left: 1%;
   width: 78%; /* jusqu'à la ligne blanche à droite */
-  height: 100vh;
   background: rgb(0, 0, 0);
-  padding: 50px;
+  padding: 10px;
+  height: 100vh;
   z-index: 700; /* derrière la photo */
   opacity: 0;
   overflow: hidden;
@@ -119,9 +122,19 @@
     width: 98vw; /* prend toute la largeur de l’écran */
   }
 
+  .mediation-bg {
+    position: fixed;
+    height: 22.5vh;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    background: black;
+    z-index: 1; /* au-dessus du rectangle (700) mais en dessous du titre/nav */
+    pointer-events: none; /* n'interfère pas avec les clics */
+  }
+
   .scolaire-rectangle {
     width: 98%;
     margin-top: 15px;
+    z-index: 0;
   }
 
   .logoscolaire {
@@ -136,5 +149,23 @@
 
   .scolaire::after {
     display: none;
+  }
+
+  .mediation-bg::before {
+    display: block;
+    content: "";
+    position: absolute; /* important pour que ça reste dans .bio-bg */
+    inset: 0;
+    z-index: 0;
+    background-image: repeating-linear-gradient(
+      -135deg,
+      rgba(255, 255, 255, 0.06) 0px,
+      rgb(195, 63, 63, 0.15) 1px,
+      transparent 350px,
+      transparent 530px
+    );
+    filter: blur(8px);
+    opacity: 1; /* visible */
+    pointer-events: none;
   }
 }

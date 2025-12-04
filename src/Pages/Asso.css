@@ -14,7 +14,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 701; /* derrière le titre et la photo */
+  z-index: 801; /* derrière le titre et la photo */
   background-image: repeating-linear-gradient(
     -135deg,
     rgba(255, 255, 255, 0.074) 0px,
@@ -31,6 +31,7 @@
 .asso::after {
   content: "";
   position: fixed;
+  z-index: 0;
   top: 20.9%;
   left: 1%;
   width: 88.5%;
@@ -202,7 +203,7 @@
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  margin-top: 12px;
+  margin-top: 15px;
 }
 
 /* TEXT2 spacing */
@@ -322,7 +323,7 @@
 /* Empêche reverse de casser le layout */
 .assowrap.reverse {
   flex-direction: row !important; /* 🔒 On verrouille */
-  margin-top: 100px;
+  margin-top: 120px;
   gap: 80px;
 }
 
@@ -330,7 +331,7 @@
 .asso-vertical-block {
   width: 100%;
   max-width: 900px;
-  margin: 100px auto 60px;
+  margin: 120px auto 60px;
   text-align: center;
   animation: fadeImage 2s ease forwards;
   opacity: 0;
@@ -387,9 +388,19 @@
     width: 98vw; /* prend toute la largeur de l’écran */
   }
 
+  .asso-bg {
+    position: fixed;
+    height: 22.5vh;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    background: black;
+    z-index: 1; /* au-dessus du rectangle (700) mais en dessous du titre/nav */
+    pointer-events: none; /* n'interfère pas avec les clics */
+  }
+
   .asso-rectangle {
     margin-top: 15px;
     width: 98%;
+    z-index: 0;
   }
 
   .logoasso {
@@ -508,9 +519,28 @@
 
   .asso-vertical-block {
     margin-top: 80px;
+    margin-bottom: -20px;
   }
 
   .asso-rectangle {
     padding: 0;
+  }
+
+  .asso-bg::before {
+    display: block;
+    content: "";
+    position: absolute; /* important pour que ça reste dans .bio-bg */
+    inset: 0;
+    z-index: 0;
+    background-image: repeating-linear-gradient(
+      -135deg,
+      rgba(255, 255, 255, 0.06) 0px,
+      rgb(248, 119, 6, 0.15) 1px,
+      transparent 350px,
+      transparent 530px
+    );
+    filter: blur(8px);
+    opacity: 1; /* visible */
+    pointer-events: none;
   }
 }

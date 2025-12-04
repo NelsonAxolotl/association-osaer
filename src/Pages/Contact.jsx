@@ -29,7 +29,7 @@ const Contact = forwardRef((props, externalRef) => {
         ref={externalRef}
       >
         <Nav />
-        <div className="bio-bg" aria-hidden="true"></div>
+        <div className="contact-bg" aria-hidden="true"></div>
         <h1
           className={`contact-title ${
             contentVisible ? "visible-after-video" : ""
