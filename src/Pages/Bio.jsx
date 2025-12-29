@@ -89,7 +89,7 @@ const Bio = forwardRef((props, externalRef) => {
               <p>
                 Ouverte à différentes pratiques corporelles, expressives et
                 esthétiques, Stéphanie danse en solo aux côtés de Patricia Kass
-                lors de la tournée mondiale "Kabaret " et chorégraphie le
+                lors de la tournée mondiale "Kabaret" et chorégraphie le
                 spectacle "Kaas chante Piaf".
               </p>
             </div>
