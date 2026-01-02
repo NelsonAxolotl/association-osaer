@@ -45,7 +45,7 @@ const Asso = forwardRef((props, externalRef) => {
                 alt="Présentation de l'association"
               />
             </div>
-            <div className="asso-text">
+            <div className="asso-text" lang="fr">
               <p>
                 <span>Osaer </span>est une Compagnie de danse innovante, engagée
                 dans la création artistique multidisciplinaire. Sa mission est

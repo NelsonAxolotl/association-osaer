@@ -167,11 +167,11 @@ const Bio = forwardRef((props, externalRef) => {
                   className="highlight-link"
                 >
                   {" "}
-                  CNSMD.
-                </a>{" "}
-                Sa carrière s’articule auprès de créations avec des chorégraphes
-                comme Sylvie Giron, Mitia Fedotenko, Philippe Jamet et Joelle
-                Bouvier.
+                  CNSMD
+                </a>
+                . Sa carrière s’articule auprès de créations avec des
+                chorégraphes comme Sylvie Giron, Mitia Fedotenko, Philippe Jamet
+                et Joelle Bouvier.
               </p>
             </div>
 
@@ -214,6 +214,12 @@ const Bio = forwardRef((props, externalRef) => {
             </h2>
           </div>
           <div className="bio-content-nelson">
+            <div
+              className="bio-photo-nelson"
+              onClick={() => setZoomedImage1("/Pics/nelson.jpg")}
+            >
+              <img src="/Pics/nelson.jpg" alt="nelson" />
+            </div>
             <div className={`bio-text-nelson ${visibleClass}`}>
               <p>
                 Musicien de formation, avec des études de musicologie à{" "}
@@ -264,12 +270,6 @@ const Bio = forwardRef((props, externalRef) => {
                 </a>{" "}
                 à Lyon, et continue à alimenter sa sensibilité artistique.
               </p>
-            </div>
-            <div
-              className="bio-photo-nelson"
-              onClick={() => setZoomedImage1("/Pics/nelson.jpg")}
-            >
-              <img src="/Pics/nelson.jpg" alt="nelson" />
             </div>
           </div>
         </div>

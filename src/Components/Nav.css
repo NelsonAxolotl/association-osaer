@@ -94,10 +94,6 @@
   list-style: none;
 }
 
-/* override UL sur page videoloop */
-.videoloop-nav ul {
-}
-
 /* LIEN */
 .navbar .nav-link {
   position: relative;
