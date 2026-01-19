@@ -115,21 +115,6 @@
   gap: 40px;
   margin-top: 40px;
   width: 100%;
-  max-width: 1200px; /* ✨ limite la largeur totale */
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-}
-
-.assowrap3 {
-  display: flex;
-  flex-direction: row; /* 🔒 Photo → Texte */
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 100px auto 40px;
   padding: 0 20px;
 }
 
@@ -153,6 +138,35 @@
   height: auto;
   border-radius: 3px;
   display: block;
+}
+
+.asso-text {
+  flex: 1;
+  max-width: 500px; /* ✨ limite la largeur du bloc texte */
+  font-family: "Quicksand", serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-align: justify;
+  opacity: 0;
+  animation: fadeText 2s ease forwards;
+  animation-delay: 1s;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.assowrap3 {
+  display: flex;
+  flex-direction: row; /* 🔒 Photo → Texte */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto 40px;
+  padding: 0 20px;
 }
 
 /* --- IMAGE --- */
@@ -183,25 +197,6 @@
   to {
     opacity: 1;
   }
-}
-
-/* TEXTE : lisible + fluide + largeur maximale */
-.asso-text {
-  flex: 1;
-  max-width: 500px; /* ✨ limite la largeur du bloc texte */
-  font-family: "Quicksand", serif;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  text-align: justify;
-  opacity: 0;
-  animation: fadeText 2s ease forwards;
-  animation-delay: 1s;
-
-  background-color: rgba(255, 255, 255, 0.03);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
 }
 
 /* TEXT2 spacing */
@@ -329,7 +324,7 @@
 .asso-vertical-block {
   width: 100%;
   max-width: 900px;
-  margin: 120px auto 60px;
+  margin: 110px auto 60px;
   text-align: center;
   animation: fadeImage 2s ease forwards;
   opacity: 0;
@@ -467,6 +462,10 @@
     margin-top: 0;
     padding: 15px;
     font-size: 1rem; /* un peu plus petit pour mobile */
+  }
+
+  .asso-vertical-block {
+    margin-top: 80px;
   }
 
   .asso-vertical-text {
