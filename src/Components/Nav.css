@@ -52,7 +52,7 @@
 /* override pour page VideoLoop */
 .videoloop-page .navbar::before {
   top: -42.5%;
-  height: 152.5%;
+  height: 156.5%;
   right: 99.8%;
   animation: fadeLineVertical 14s ease-in forwards;
 }
@@ -104,7 +104,9 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: color 0.4s ease, transform 0.3s ease;
+  transition:
+    color 0.4s ease,
+    transform 0.3s ease;
   animation: ul 6s ease-in forwards;
 }
 
@@ -126,7 +128,9 @@
   height: 2px;
   width: 0;
   background: white;
-  transition: width 0.4s ease, left 0.4s ease;
+  transition:
+    width 0.4s ease,
+    left 0.4s ease;
 }
 
 /* hover gauche/droite */
