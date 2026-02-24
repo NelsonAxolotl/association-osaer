@@ -26,7 +26,7 @@ const Scolaire = forwardRef((props, externalRef) => {
             contentVisible ? "visible-after-video" : ""
           }`}
         >
-          Médiation
+          Actualités
         </h1>
         <div className="scolaire-rectangle"></div>
         <div

@@ -19,7 +19,7 @@
   background-image: repeating-linear-gradient(
     -135deg,
     rgba(255, 255, 255, 0.074) 0px,
-    rgba(212, 175, 55, 0.08) 1px,
+    rgba(212, 175, 55, 0.1) 1px,
     transparent 250px,
     transparent 460px
   );
@@ -74,7 +74,9 @@
   white-space: nowrap;
   opacity: 0;
   transform: translateY(20px); /* décalage initial pour le glissement */
-  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+  transition:
+    opacity 2s ease-in-out,
+    transform 2s ease-in-out;
 }
 
 .visible-after-video {
@@ -95,7 +97,9 @@
   width: 12vw; /* largeur relative à la largeur de l'écran */
   width: 200px; /* limite maximale pour les grands écrans */
   height: auto; /* garde les proportions */
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
 /* rectangle vert derrière la photo */
@@ -117,12 +121,12 @@
   position: absolute;
   top: -9.5%;
   width: 100%;
-  height: 100%;
+  height: 83.5%;
   max-height: 100%;
   object-fit: cover;
   opacity: 1; /* semi-transparent comme avant */
   z-index: 800;
-  filter: brightness(0.7);
+  filter: brightness(0.6);
   pointer-events: none;
   transform: scaleX(-1);
 }
@@ -135,13 +139,15 @@
   gap: 8px;
   font-family: "Caveat", cursive;
   position: absolute;
-  top: 35%;
+  top: 25%;
   left: 6%;
   z-index: 900;
   color: white;
   opacity: 0; /* départ invisible */
   transform: translateY(50px); /* léger décalage vers le bas */
-  transition: opacity 10s ease, transform 5s ease;
+  transition:
+    opacity 15s ease,
+    transform 5s ease;
 }
 
 /* class ajoutée pour fade-in */
@@ -154,7 +160,9 @@
   font-size: 2.4rem;
   margin-bottom: 0.8rem;
   color: #d4af37; /* doré pour le titre */
-  text-shadow: 0 0 5px rgba(212, 175, 55, 0.8), 0 0 10px rgba(212, 175, 55, 0.6),
+  text-shadow:
+    0 0 5px rgba(212, 175, 55, 0.8),
+    0 0 10px rgba(212, 175, 55, 0.6),
     0 0 20px rgba(255, 215, 0, 0.4);
   filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
 }
@@ -198,7 +206,9 @@
 .contact-socials a {
   color: #fefdfb; /* ton doré élégant */
   font-size: 1.8rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .contact-socials a:hover {
@@ -271,7 +281,6 @@
   }
 
   .contact-info {
-    top: 15%;
     left: 6%;
   }
 }
@@ -303,7 +312,7 @@
   }
 
   .contact-info {
-    top: 30%;
+    top: 10%;
     left: 6%;
   }
 
@@ -331,5 +340,9 @@
     filter: blur(8px);
     opacity: 1; /* visible */
     pointer-events: none;
+  }
+
+  .contact-video-background {
+    height: 87%;
   }
 }

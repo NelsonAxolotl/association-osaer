@@ -47,42 +47,40 @@ const Asso = forwardRef((props, externalRef) => {
             </div>
             <div className="asso-text" lang="fr">
               <p>
-                <span>Osaer </span>est une Compagnie de danse innovante, engagée
-                dans la création artistique multidisciplinaire. Sa mission est
-                de favoriser les échanges entre artistes, stimulant ainsi
-                l’émergence de projets collaboratifs uniques où différentes
-                formes d’expression se rencontrent pour donner naissance à une
-                vision commune.
+                <span>Osaer </span>est une Compagnie de danse émergeante, dédiée
+                à la création artistique au croisement des disciplines. Notre
+                mission est de favoriser les rencontres entre artistes,
+                permettant ainsi l’émergence de projets collaboratifs uniques,
+                où chaque expression artistique s'entrelace pour donner vie à
+                une vision commune.
               </p>
               <div className="text2">
                 <p>
                   {" "}
-                  <span>Osaer</span> agit comme un véritable catalyseur de
-                  créativité, intervenant lors d’événements variés et de projets
-                  in situ. Qu’il s’agisse de spectacles, d’expositions, de
-                  tournages, de théâtre ou de films, elle répond aux demandes
-                  d’artistes désireux d’explorer de nouvelles dimensions
-                  artistiques.
+                  <span>Osaer</span> se positionne comme un catalyseur de
+                  créativité, intervenant lors d'événements variés et de projets
+                  in situ. Que ce soit pour des spectacles, des expositions, des
+                  clips, du théâtre ou des films, nous répondons à des commandes
+                  spécifiques d'artistes désireux d'explorer de nouvelles
+                  dimensions. Chaque projet est l’occasion d’une rencontre, d'un
+                  dialogue entre différentes formes d’art, créant des œuvres
+                  éphémères qui captivent et émerveillent.
                 </p>
               </div>
             </div>
           </div>
           <div className="assowrap reverse">
             <div className="asso-text2">
-              <p>
-                Chaque projet devient une opportunité de dialogue entre
-                disciplines, aboutissant à des œuvres éphémères qui captivent,
-                intriguent et résonne.
-              </p>
               <div className="text3">
                 <p>
-                  À l’image de ses interprètes, la compagnie <span>Osaer </span>
-                  demeure attentive aux besoins spécifiques des artistes. Elle
-                  met à disposition des artistes chorégraphiques pour réaliser
-                  des créations ponctuelles, transcendant les limites du langage
-                  corporel. La danse y devient un médium puissant d’expression,
-                  capable de raconter des histoires, de susciter des émotions et
-                  de rassembler les publics autour de l’esthétique collective.
+                  Notre association, tout comme nos interprètes danseuses, est à
+                  l'écoute des besoins des artistes. Nous mettons à disposition
+                  des talents variés, permettant de réaliser des créations
+                  ponctuelles qui transcendent les frontières du langage
+                  corporel. La danse devient alors un moyen d’expression
+                  puissant, capable de raconter des histoires, de provoquer des
+                  émotions et de fédérer des publics autour de la beauté de
+                  l’art collectif.
                 </p>
               </div>
             </div>
@@ -125,13 +123,10 @@ const Asso = forwardRef((props, externalRef) => {
             <p className="asso-vertical-text">
               Chez <span>Osaer</span>, chaque collaboration est une aventure,
               chaque création une célébration de la rencontre artistique et
-              humaine. Elle aspire à bâtir des ponts entre disciplines et à
-              encourager les artistes, ainsi que le grand public, à repousser
-              leurs limites afin de concevoir des œuvres qui résonnent,
-              questionnent et laissent une empreinte durable. <br />
-              Rejoignez-la dans cette exploration sans frontières de la
-              créativité, où chaque mouvement devient une histoire subjective,
-              intime et universelle.
+              humaine. Nous avons à cœur de construire des ponts entre les
+              disciplines et d’inviter les artistes à repenser les limites de
+              leur pratique, dans le but de donner naissance à des œuvres qui
+              résonnent, marquent et interrogent.
             </p>
           </div>
         </div>

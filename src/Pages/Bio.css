@@ -17,7 +17,7 @@
   background-image: repeating-linear-gradient(
     -135deg,
     rgba(255, 255, 255, 0.06) 0px,
-    rgba(255, 255, 255, 0.07) 1px,
+    rgba(255, 255, 255, 0.08) 1px,
     transparent 250px,
     transparent 450px
   );
@@ -56,7 +56,7 @@
   top: 10%;
   left: 5%;
   font-size: 3.5rem;
-  color: rgb(247, 241, 241);
+  color: #d4af37;
   font-family: "Caveat", cursive;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
   z-index: 3;
@@ -65,7 +65,9 @@
   opacity: 0;
   /* décalage initial pour le glissement */
   transform: translateY(20px); /* décalage initial pour le glissement */
-  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+  transition:
+    opacity 2s ease-in-out,
+    transform 2s ease-in-out;
 }
 
 .visible-after-video {
@@ -116,7 +118,9 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75);
   opacity: 0;
   animation: fadeInPhoto 3s ease forwards;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
   object-fit: cover; /* recadre sans déformer */
   object-position: center 15%; /* centre le sujet */
   border-radius: 12px;
@@ -133,7 +137,9 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75);
   opacity: 0;
   animation: fadeInPhoto 3s ease forwards;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
   object-fit: cover; /* recadre sans déformer */
   object-position: center 31%; /* centre le sujet */
   border-radius: 12px;
@@ -156,7 +162,7 @@
 
 .bio-text {
   font-family: "Quicksand", serif;
-  width: 90%;
+  width: 92%;
   font-size: 1.1rem;
   line-height: 1.4;
   text-align: justify;
@@ -195,7 +201,7 @@
 
 .bio-text3 {
   font-family: "Quicksand", serif;
-  width: 90%;
+  width: 92%;
   font-size: 1.1rem;
   line-height: 1.4;
   text-align: justify;
@@ -224,7 +230,7 @@
 
 .bio-text4 {
   font-family: "Quicksand", serif;
-  width: 90%;
+  width: 92%;
   font-size: 1.1rem;
   line-height: 1.4;
   text-align: justify;
@@ -269,13 +275,13 @@
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
-  width: 90%;
+  width: 92%;
   background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
   padding: 25px 20px 15px;
   border-radius: 12px; /* coins arrondis */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* léger relief */
-  margin-left: auto; /* pousse vers la droite */
-  margin-right: 0; /* collé à droite */
+  margin-left: 0; /* collé à gauche */
+  margin-right: auto; /* pousse vers la gauche */
   margin-top: 10px;
 }
 
@@ -293,7 +299,7 @@
 .bio-text6 {
   font-family: "Quicksand";
   font-size: 1.1rem;
-  width: 90%;
+  width: 92%;
   line-height: 1.4;
   text-align: justify;
   opacity: 0;
@@ -304,8 +310,8 @@
   padding: 25px 20px 15px;
   border-radius: 12px; /* coins arrondis */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* léger relief */
-  margin-left: 0; /* collé à gauche */
-  margin-right: auto; /* pousse vers la gauche */
+  margin-left: auto; /* pousse vers la droite */
+  margin-right: 0; /* collé à droite */
   margin-top: 10px;
 }
 
@@ -328,7 +334,7 @@
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
-  width: 90%;
+  width: 92%;
   background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
   padding: 25px 20px 15px;
   border-radius: 12px; /* coins arrondis */
@@ -356,7 +362,7 @@
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
-  width: 90%;
+  width: 92%;
   background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
   padding: 25px 20px 15px;
   border-radius: 12px; /* coins arrondis */
@@ -385,7 +391,7 @@
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
-  width: 90%;
+  width: 92%;
   background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
   padding: 25px 20px 15px;
   border-radius: 12px; /* coins arrondis */
@@ -414,7 +420,7 @@
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
-  width: 90%;
+  width: 92%;
   background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
   padding: 25px 20px 15px;
   border-radius: 12px; /* coins arrondis */
@@ -482,7 +488,9 @@ h2 {
   width: 12vw; /* largeur relative à la largeur de l'écran */
   width: 200px; /* limite maximale pour les grands écrans */
   height: auto; /* garde les proportions */
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
 /* Apparition progressive */
@@ -685,7 +693,9 @@ h2 {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75);
   opacity: 0;
   animation: fadeInPhoto 3s ease forwards;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
   object-fit: cover; /* recadre sans déformer */
   object-position: center; /* centre le sujet */
   border-radius: 12px;
@@ -786,7 +796,6 @@ h2 {
     line-height: 1.3;
     text-justify: inter-word; /* ajuste les espaces entre mots */
     word-spacing: 0.001em; /* limite l’écart entre les mots */
-    hyphens: auto;
   }
 
   .bio-text p::first-letter {
@@ -800,7 +809,6 @@ h2 {
     line-height: 1.3;
     text-justify: inter-word; /* ajuste les espaces entre mots */
     word-spacing: 0.001em; /* limite l’écart entre les mots */
-    hyphens: auto;
   }
 
   .bio-text3 p::first-letter {
@@ -814,7 +822,6 @@ h2 {
     line-height: 1.3;
     text-justify: inter-word; /* ajuste les espaces entre mots */
     word-spacing: 0.001em; /* limite l’écart entre les mots */
-    hyphens: auto;
   }
 
   .bio-text4 p::first-letter {
@@ -828,7 +835,6 @@ h2 {
     line-height: 1.3;
     text-justify: inter-word; /* ajuste les espaces entre mots */
     word-spacing: 0.001em; /* limite l’écart entre les mots */
-    hyphens: auto;
   }
 
   .bio-text5 p::first-letter {
@@ -843,7 +849,6 @@ h2 {
     margin-bottom: 80px;
     text-justify: inter-word; /* ajuste les espaces entre mots */
     word-spacing: 0.001em; /* limite l’écart entre les mots */
-    hyphens: auto;
   }
 
   .bio-text6 p::first-letter {
@@ -857,7 +862,6 @@ h2 {
     line-height: 1.3;
     text-justify: inter-word; /* ajuste les espaces entre mots */
     word-spacing: 0.001em; /* limite l’écart entre les mots */
-    hyphens: auto;
   }
 
   .bio-text50 p::first-letter {
@@ -871,7 +875,6 @@ h2 {
     line-height: 1.3;
     text-justify: inter-word; /* ajuste les espaces entre mots */
     word-spacing: 0.001em; /* limite l’écart entre les mots */
-    hyphens: auto;
   }
 
   .bio-text51 p::first-letter {
@@ -885,7 +888,6 @@ h2 {
     line-height: 1.3;
     text-justify: inter-word; /* ajuste les espaces entre mots */
     word-spacing: 0.001em; /* limite l’écart entre les mots */
-    hyphens: auto;
   }
 
   .bio-text52 p::first-letter {
@@ -899,7 +901,6 @@ h2 {
     line-height: 1.3;
     text-justify: inter-word; /* ajuste les espaces entre mots */
     word-spacing: 0.001em; /* limite l’écart entre les mots */
-    hyphens: auto;
   }
 
   .bio-text53 p::first-letter {
@@ -992,6 +993,8 @@ h2 {
     font-size: 1rem;
     width: 100%;
     margin: auto 0;
+
+    line-height: 1.4;
   }
 
   .bio-text p::first-letter {
@@ -1004,6 +1007,8 @@ h2 {
     font-size: 1rem;
     width: 100%;
     margin: auto 0;
+
+    line-height: 1.4;
   }
 
   .bio-text3 p::first-letter {
@@ -1016,6 +1021,8 @@ h2 {
     font-size: 1rem;
     width: 100%;
     margin: auto 0;
+    hyphens: auto;
+    line-height: 1.4;
   }
 
   .bio-text4 p::first-letter {
@@ -1028,6 +1035,8 @@ h2 {
     font-size: 1rem;
     width: 100%;
     margin: auto 0;
+    hyphens: auto;
+    line-height: 1.4;
   }
 
   .bio-text5 p::first-letter {
@@ -1041,6 +1050,7 @@ h2 {
     width: 100%;
     margin: auto 0;
     hyphens: auto;
+    line-height: 1.4;
   }
 
   .bio-text6 p::first-letter {
@@ -1053,6 +1063,7 @@ h2 {
     font-size: 1rem;
     width: 100%;
     margin: auto 0;
+    line-height: 1.4;
   }
 
   .bio-text50 p::first-letter {
@@ -1066,6 +1077,7 @@ h2 {
     width: 100%;
     margin: auto 0;
     hyphens: auto;
+    line-height: 1.4;
   }
 
   .bio-text51 p::first-letter {
@@ -1079,6 +1091,7 @@ h2 {
     width: 100%;
     margin: auto 0;
     hyphens: auto;
+    line-height: 1.4;
   }
 
   .bio-text52 p::first-letter {
@@ -1091,7 +1104,7 @@ h2 {
     font-size: 1rem;
     width: 100%;
     margin: auto 0;
-    hyphens: auto;
+    line-height: 1.4;
   }
 
   .bio-text53 p::first-letter {
@@ -1123,6 +1136,7 @@ h2 {
 
   .bio-text-nelson {
     font-size: 1rem;
+    line-height: 1.4;
   }
 
   .bio-content-nelson {

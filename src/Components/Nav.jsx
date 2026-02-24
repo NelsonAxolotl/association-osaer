@@ -11,9 +11,8 @@ function Navbar({ className }) {
     { label: "Accueil", to: "/" },
     { label: "Asso", to: "/asso", side: "left" },
     { label: "Bio", to: "/bio", side: "right" },
-    { label: "Médiation", to: "/mediation", side: "left" },
-    { label: "Créations", to: "/creations", side: "right" },
-    { label: "Contact", to: "/contact", side: "left" },
+    { label: "Créations", to: "/creations", side: "left" },
+    { label: "Contact", to: "/contact", side: "right" },
   ];
 
   useEffect(() => {
@@ -47,7 +46,7 @@ function Navbar({ className }) {
           ${className || ""} 
           ${isMobile ? "mobile" : "desktop"}
             ${location.pathname === "/asso" ? "asso-active" : ""}
-          ${location.pathname === "/mediation" ? "mediation-active" : ""}
+   
              ${location.pathname === "/contact" ? "contact-active" : ""}
           `}
       >
@@ -66,7 +65,8 @@ function Navbar({ className }) {
             ${location.pathname === to ? "active" : ""} 
             ${side}
             ${label === "Asso" ? "asso-link" : ""}
-                ${label === "Médiation" ? "mediation-link" : ""}
+     
+                    ${label === "Créations" ? "creations-link" : ""} 
 
             `}
                   onClick={() => {

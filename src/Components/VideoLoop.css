@@ -121,7 +121,9 @@
   white-space: nowrap;
   opacity: 0;
   transform: translateY(20px); /* décalage initial pour le glissement */
-  transition: opacity 8s ease-in-out, transform 8s ease-in-out;
+  transition:
+    opacity 8s ease-in-out,
+    transform 8s ease-in-out;
   animation: fadeInH1 14s forwards; /* 36s de délai + 2s de fondu */
 }
 
@@ -200,8 +202,12 @@
   place-items: center;
   -webkit-tap-highlight-color: transparent;
   opacity: 0;
-  transition: background 0.35s ease, border-color 0.35s ease,
-    transform 0.3s ease, color 0.35s ease, opacity 3s ease-in-out;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.3s ease,
+    color 0.35s ease,
+    opacity 3s ease-in-out;
 }
 
 /* état actif (son on) */
@@ -342,7 +348,8 @@
     position: absolute;
     top: 30%;
     opacity: 0;
-    animation: fadeInLine 8s ease-in forwards,
+    animation:
+      fadeInLine 8s ease-in forwards,
       /* apparition progressive */ lineCurtainUpDown 6s ease-in-out 15s forwards,
       /* effet rideau vertical après 15s */ lineCurtainRight 7s ease-in-out
         21.7s forwards; /* effet horizontal juste après */
@@ -356,7 +363,8 @@
     height: 2px;
     background: white;
     opacity: 0;
-    animation: fadeInLine 8s ease-in forwards,
+    animation:
+      fadeInLine 8s ease-in forwards,
       /* apparition progressive */ lineCurtainUpDown 6s ease-in-out 15s forwards,
       /* effet rideau vertical après 15s */ lineCurtainRight 7s ease-in-out
         21.55s forwards; /* effet horizontal juste après */

@@ -20,12 +20,12 @@ const Bio = forwardRef((props, externalRef) => {
 
   return (
     <>
-      <Nav />
-
       <div
-        className={`bio ${contentVisible ? "crossfade-visible" : ""}`}
+        className={`bio bio-page ${contentVisible ? "crossfade-visible" : ""}`}
         ref={externalRef}
       >
+        <Nav />
+
         <div className="bio-bg" aria-hidden="true"></div>
 
         <h1 className={`bio-title ${visibleClass}`}>Bio</h1>
@@ -46,9 +46,14 @@ const Bio = forwardRef((props, externalRef) => {
             </div>
             <div className={`bio-text ${visibleClass}`}>
               <p>
-                Installée en Normandie, Stéphanie Pignon est née le 2 mai 1982 à
-                Rennes. Dès son enfance, elle se forme à la danse contemporaine
-                à Rennes, avant d’intégrer{" "}
+                Installée en Normandie, Stéphanie Pignon est danseuse,
+                chorégraphe et art-thérapeute.
+              </p>
+            </div>
+            <div className={`bio-text3 ${visibleClass}`}>
+              <p>
+                Sa carrière d’interprète chorégraphique débute à la suite de sa
+                formation au{" "}
                 <a
                   href="https://www.cndc.fr"
                   target="_blank"
@@ -56,22 +61,17 @@ const Bio = forwardRef((props, externalRef) => {
                 >
                   CNDC d’Angers
                 </a>
-                , qu’elle fréquente entre 2000 et 2002.
+                , qu’elle fréquente entre 2000 et 2002 aux côtés de Régis
+                Obadia, Suzy Block (Amsterdam) ainsi que Françoise et Dominique
+                Dupuy. Elle explore ensuite divers univers chorégraphiques
+                sensibles en collaborant avec des artistes tels que Gianni
+                Joseph, Christine Bastin, Valérie Rivière, Philippe Jamet, Paco
+                Décina, Marc Vincent, Aicha M’Barek, Hafiz Dahou, Françoise
+                Tartinville, Chloé Camus Hernandez, Orin Camus, Carole Vergne et
+                Hugo Dayot.
               </p>
             </div>
-            <div className={`bio-text3 ${visibleClass}`}>
-              <p>
-                Sa carrière d’interprète chorégraphique débute aux côtés de
-                Régis Obadia, Suzy Block (Amsterdam) ainsi que Françoise et
-                Dominique Dupuy. Elle explore ensuite divers univers
-                chorégraphiques sensibles en collaborant avec des artistes tels
-                que Gianni Joseph, Christine Bastin, Valérie Rivière, Philippe
-                Jamet, Paco Décina, Marc Vincent, Aicha M’Barek, Hafiz Dahou,
-                Françoise Tartinville, Chloé Camus Hernandez, Orin Camus, Carole
-                Vergne et Hugo Dayot.
-              </p>
-            </div>
-            <div className="bio-content2">
+            {/* <div className="bio-content2">
               <div className="bio-photo2">
                 <div className="bio-video-diamond">
                   <video
@@ -84,22 +84,17 @@ const Bio = forwardRef((props, externalRef) => {
                   />
                 </div>
               </div>
-            </div>
-            <div className={`bio-text4 ${visibleClass}`}>
-              <p>
-                Ouverte à différentes pratiques corporelles, expressives et
-                esthétiques, Stéphanie danse en solo aux côtés de Patricia Kass
-                lors de la tournée mondiale "Kabaret" et chorégraphie le
-                spectacle "Kaas chante Piaf".
-              </p>
-            </div>
+            </div> */}
+            {/* <div className={`bio-text4 ${visibleClass}`}>
+          
+            </div> */}
             <div className={`bio-text5 ${visibleClass}`}>
               <p>
                 Curieuse et avide de découvertes et de rencontres, elle
                 collabore avec de nombreux artistes pluridisciplinaires tels que
-                Michel Abdoul, Alexandre Roccoli, Diana Lui, Julie Plus, Yann
-                Bertrand, Jeff Mills, Maria Ponti, Chloé Belloc et Nefeli
-                Papadimouli, Blandine Soulage à travers divers projets
+                Michel Abdoul, Alexandre Roccoli, Diana Lui, Patricia Kass,
+                Julie Plus, Yann Bertrand, Jeff Mills, Maria Ponti, Chloé Belloc
+                et Nefeli Papadimouli, Blandine Soulage à travers divers projets
                 performatifs, photographiques et cinématographiques (
                 <a
                   href="https://www.paris-art.com/swing-4/"

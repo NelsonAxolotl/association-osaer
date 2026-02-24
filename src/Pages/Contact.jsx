@@ -1,6 +1,6 @@
 import "./Contact.css";
 import { useState, useEffect, forwardRef, useRef } from "react";
-import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
@@ -16,7 +16,7 @@ const Contact = forwardRef((props, externalRef) => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.4;
+      videoRef.current.playbackRate = 0.9;
     }
   }, []);
 
@@ -41,7 +41,7 @@ const Contact = forwardRef((props, externalRef) => {
           <video
             ref={videoRef}
             className="contact-video-background"
-            src="/Videos/pissenlit4.mp4"
+            src="/Videos/dancingbis.mp4"
             loop
             autoPlay
             muted
@@ -57,7 +57,8 @@ const Contact = forwardRef((props, externalRef) => {
                 06 66 21 34 17
               </a>
             </p>
-            <p>Siret: </p>
+            <p>Siret : 902 789 411 00011</p>
+            <p>Code APE/NAF : 90.01Z</p>
             <div className="contact-socials">
               <a
                 href="https://www.instagram.com/"
@@ -74,6 +75,14 @@ const Contact = forwardRef((props, externalRef) => {
                 aria-label="Facebook"
               >
                 <FaFacebook />
+              </a>
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Linkedin"
+              >
+                <FaLinkedin />
               </a>
             </div>
           </div>
