@@ -103,9 +103,9 @@
 }
 
 .creation-video {
-  margin: 40px auto 0 auto;
+  margin: 25px auto 0 auto;
   display: block;
-  width: 60%;
+  width: 65%;
   border-radius: 10px;
   z-index: 1000; /* au-dessus de tout */
   pointer-events: auto; /* permet de cliquer sur les contrôles */

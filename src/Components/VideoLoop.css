@@ -30,7 +30,7 @@
   content: "";
   position: fixed;
   top: 20.9%;
-  left: 1.1%;
+  left: 1%;
   width: 88.5%;
   height: 1.9px;
   background: white;
@@ -63,48 +63,78 @@
   height: 100%;
   pointer-events: none;
   padding: 15px 15px 0 15px;
-  object-fit: fill;
-  opacity: 1 !important; /* force l'opacité */
-  z-index: 1001; /* encore au-dessus du container */
+  object-fit: cover;
+  opacity: 0;
+  z-index: 1001;
+
+  animation: videoFadeIn 5s ease-out forwards;
+}
+
+@keyframes videoFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /* animation rideau pour le bas de la vidéo */
-@keyframes curtainUpDown {
+@keyframes curtainCenter {
   0% {
-    top: 21%; /* position initiale */
-    height: 70%;
+    clip-path: inset(0% 0% 0% 0%);
   }
+
   50% {
-    top: 21%; /* monte à 20% du top */
-    height: 60%; /* ajuste si besoin */
+    clip-path: inset(35% 0% 35% 0%);
   }
+
   100% {
-    top: 21%; /* redescend */
-    height: 70%;
+    clip-path: inset(0% 0% 0% 0%);
   }
 }
 
 .video-curtain {
-  animation: curtainUpDown 6s ease-in-out;
+  animation: curtainCenter 8s ease-in-out forwards;
 }
-
+/* 
 @keyframes curtainRightUpDown {
   0% {
-    clip-path: inset(0 0 0 0); /* position initiale */
+    clip-path: inset(0 0 0 0); 
   }
   40% {
-    clip-path: inset(0 50% 0 0); /* monte */
+    clip-path: inset(0 35% 0 0); 
   }
   60% {
-    clip-path: inset(0 50% 0 0); /* reste en haut un moment */
+    clip-path: inset(0 35% 0 0); 
   }
   100% {
-    clip-path: inset(0 0 0 0); /* redescend doucement */
+    clip-path: inset(0 0 0 0); 
   }
 }
 
 .video-container.right-animate {
-  animation: curtainRightUpDown 7s ease-in-out forwards;
+  animation: curtainRightUpDown 6s ease-in-out forwards;
+} */
+
+@keyframes curtainLeftUpDown {
+  0% {
+    clip-path: inset(0 0 0 0);
+  }
+  40% {
+    clip-path: inset(0 0 0 35%); /* coupe depuis la gauche */
+  }
+  60% {
+    clip-path: inset(0 0 0 35%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.video-container.left-animate {
+  animation: curtainLeftUpDown 6s ease-in-out forwards;
 }
 
 /* H1 centré */
@@ -122,9 +152,9 @@
   opacity: 0;
   transform: translateY(20px); /* décalage initial pour le glissement */
   transition:
-    opacity 8s ease-in-out,
-    transform 8s ease-in-out;
-  animation: fadeInH1 14s forwards; /* 36s de délai + 2s de fondu */
+    opacity 10s ease-in-out,
+    transform 10s ease-in-out;
+  animation: fadeInH1 16s forwards; /* 36s de délai + 2s de fondu */
 }
 
 @keyframes fadeInH1 {
@@ -151,7 +181,7 @@
   animation: bounceDown 1.6s infinite ease-in-out;
   user-select: none;
   opacity: 0;
-  transition: opacity 5s ease-in-out;
+  transition: opacity 8s ease-in-out;
   z-index: 3;
 }
 
@@ -176,7 +206,7 @@
   right: 20.5%; /* distance depuis la droite */
   z-index: 900;
   opacity: 0;
-  transition: opacity 3s ease-in-out;
+  transition: opacity 8s ease-in-out;
 }
 
 .logo img {
@@ -207,7 +237,7 @@
     border-color 0.35s ease,
     transform 0.3s ease,
     color 0.35s ease,
-    opacity 3s ease-in-out;
+    opacity 0.6s ease-in-out;
 }
 
 /* état actif (son on) */
@@ -230,6 +260,22 @@
 .sound-toggle:focus {
   outline: 2px solid rgba(212, 175, 55, 0.18);
   outline-offset: 3px;
+}
+
+.sound-toggle.off {
+  animation: pulseSound 2s infinite;
+}
+
+@keyframes pulseSound {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 900px) {

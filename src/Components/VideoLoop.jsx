@@ -11,6 +11,7 @@ const VideoLoop = forwardRef((props, externalRef) => {
   const [rightAnimate, setRightAnimate] = useState(false);
   const [curtainActive, setCurtainActive] = useState(false);
   const [lineAnimate, setLineAnimate] = useState(false);
+  const [leftAnimate, setLeftAnimate] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => {
@@ -20,7 +21,7 @@ const VideoLoop = forwardRef((props, externalRef) => {
       setTimeout(() => {
         setCurtainActive(false);
         setLineAnimate(false);
-      }, 3000); // même durée que l'animation CSS (6s)
+      }, 3300); // même durée que l'animation CSS (6s)
     }, 15000); // démarre après 15 secondes
     return () => clearTimeout(t);
   }, []);
@@ -30,27 +31,33 @@ const VideoLoop = forwardRef((props, externalRef) => {
       setCurtainActive(true);
       // on retire la classe après l'animation pour reset si besoin
       setTimeout(() => setCurtainActive(false), 3000);
-    }, 15000); // 15000ms = 15s
+    }, 18000); // 15000ms = 15s
     return () => clearTimeout(t);
   }, []);
 
   useEffect(() => {
     const t = setTimeout(() => {
       setRightAnimate(true);
-      setTimeout(() => setRightAnimate(false), 8000);
-    }, 21500);
+      setLeftAnimate(true);
+
+      setTimeout(() => {
+        setRightAnimate(false);
+        setLeftAnimate(false);
+      }, 8000);
+    }, 20000);
+
     return () => clearTimeout(t);
   }, []);
 
   useEffect(() => {
-    const t = setTimeout(() => setContentVisible(true), 2000);
+    const t = setTimeout(() => setContentVisible(true), 800);
     return () => clearTimeout(t);
   }, []);
 
   useEffect(() => {
     const enableOnFirstClick = () => {
       if (audioRef.current && !soundOn) {
-        audioRef.current.volume = 0.1;
+        audioRef.current.volume = 0.5;
         audioRef.current.play().catch(() => {});
         setSoundOn(true);
       }
@@ -68,7 +75,7 @@ const VideoLoop = forwardRef((props, externalRef) => {
       audioRef.current.pause();
       setSoundOn(false);
     } else {
-      audioRef.current.volume = 0.1;
+      audioRef.current.volume = 0.5;
       audioRef.current.play().catch(() => {});
       setSoundOn(true);
     }
@@ -91,11 +98,11 @@ const VideoLoop = forwardRef((props, externalRef) => {
         <div
           className={`video-container ${curtainActive ? "video-curtain" : ""}${
             rightAnimate ? "right-animate" : ""
-          }`}
+          }  ${leftAnimate ? "left-animate" : ""}`}
         >
           <video
             className="fade-video"
-            src="/Videos/osaer2.mp4"
+            src="/Videos/walk3.mp4"
             autoPlay
             loop
             playsInline
@@ -127,7 +134,7 @@ const VideoLoop = forwardRef((props, externalRef) => {
         >
           {soundOn ? "🔊" : "🔇"}
         </button>
-        <audio ref={audioRef} src="/Son/ring2.mp3" loop preload="auto" />
+        <audio ref={audioRef} src="/Son/zur.mp3" loop preload="auto" />
         <div
           className={`bottom-line-responsive ${
             lineAnimate ? "line-animate" : ""
