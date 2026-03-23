@@ -58,12 +58,12 @@
 }
 
 .videoloop-nav ul {
-  animation: ul 34s ease-in forwards;
+  animation: ul 24s ease-in forwards;
 }
 
 /* override pour page VideoLoop */
 .contact-page .navbar::before {
-  height: 185%;
+  height: 193%;
   top: -46%;
   background: #d4af37;
   animation: fadeLineVertical 5s ease-in forwards;
@@ -284,6 +284,9 @@
     margin-top: 50px;
   }
 
+  .videoloop-nav ul {
+    animation: ul 1s ease-in forwards;
+  }
   .nav-links {
     gap: 40px;
     align-items: center;

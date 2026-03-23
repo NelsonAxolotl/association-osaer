@@ -123,6 +123,10 @@
   font-family: "Caveat", cursive;
 }
 
+.ephe-duration br {
+  display: none;
+}
+
 .ephe-duration2 {
   color: rgb(238, 235, 232); /* orange vif pour rester dans ton univers */
   font-weight: 600; /* légèrement plus marqué */
@@ -130,6 +134,10 @@
   text-align: center; /* centré sous la vidéo */
   font-family: "Caveat", cursive;
   margin: 15px 0;
+}
+
+.ephe-duration2 br {
+  display: none;
 }
 
 .ephe-duration3 {
@@ -537,6 +545,69 @@
   }
 
   .texte-centre {
-    margin: 2rem 1.5rem 0 1.5rem; /* top spacing + centré horizontalement */
+    margin: 2.5rem 1rem 0 1rem; /* top spacing + centré horizontalement */
+  }
+
+  .tr::before {
+    left: calc(50% - 50%);
+    --translate-start: -50px; /* gauche commence à gauche */
+  }
+
+  .tr::after {
+    right: calc(50% - 50%);
+    --translate-start: 50px; /* droite commence à droite */
+  }
+
+  .creation-video {
+    width: 90%;
+  }
+
+  .ephe-duration {
+    line-height: 30px;
+  }
+
+  .ephe-duration br {
+    display: block;
+  }
+
+  .ephe-duration2 {
+    line-height: 30px;
+  }
+
+  .ephe-duration2 br {
+    display: block;
+  }
+
+  .ephe-block p {
+    width: 85%; /* même largeur que l’espace entre les traits */
+  }
+
+  .ephe-status-wrapper {
+    width: 80%;
+  }
+
+  .papier {
+    margin-top: 100px;
+  }
+
+  .papier-title {
+    margin-bottom: 2rem;
+  }
+
+  .texte {
+    width: 100%;
+  }
+
+  .ephe-status2 {
+    margin-top: 10px;
+  }
+
+  .status-diagonal-wrapper {
+    margin: 10rem 0 7rem;
+  }
+
+  .status-diagonal {
+    padding: 2rem 1rem 2rem;
+    line-height: 24px;
   }
 }

@@ -54,10 +54,12 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
               Votre navigateur ne supporte pas la vidéo.
             </video>
             <p className="ephe-duration">
-              Duo de danse contemporaine tout public de 25 min
+              Duo de danse contemporaine <br />
+              tout public de 25 min
             </p>
             <p className="ephe-duration2">
-              Interpètes : Olivia Caillaud / Stéphanie Pignon
+              Interpètes : <br />
+              Olivia Caillaud / Stéphanie Pignon
             </p>
             <p className="ephe-duration3">Musique : Christophe Zurfluh</p>
             <div className="ephe-block">
