@@ -2,7 +2,6 @@
   position: relative;
   color: white;
   background: transparent;
-  min-height: 100vh; /* occupe au moins l'écran, mais s'adapte */
   height: auto;
   overflow: visible;
   padding: 0rem 0.5rem 10rem;

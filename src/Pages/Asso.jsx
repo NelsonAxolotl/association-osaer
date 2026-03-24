@@ -38,10 +38,10 @@ const Asso = forwardRef((props, externalRef) => {
           <div className="assowrap">
             <div
               className="asso-image-wrapper"
-              onClick={() => setZoomedImage1("/Pics/assowall.png")}
+              onClick={() => setZoomedImage1("/Pics/assowall.webp")}
             >
               <img
-                src="/Pics/assowall.png"
+                src="/Pics/assowall.webp"
                 alt="Présentation de l'association"
               />
             </div>
@@ -87,17 +87,17 @@ const Asso = forwardRef((props, externalRef) => {
 
             <div
               className="asso-image-wrapper2"
-              onClick={() => setZoomedImage1("/Pics/asso4.jpg")}
+              onClick={() => setZoomedImage1("/Pics/asso4.webp")}
             >
-              <img src="/Pics/asso4.jpg" alt="Osaer illustration" />
+              <img src="/Pics/asso4.webp" alt="Osaer illustration" />
             </div>
           </div>
           <div className="assowrap3">
             <div
               className="asso-image-wrapper"
-              onClick={() => setZoomedImage1("/Pics/asso2.jpg")}
+              onClick={() => setZoomedImage1("/Pics/asso2.webp")}
             >
-              <img src="/Pics/asso2.jpg" alt="Présentation de l'association" />
+              <img src="/Pics/asso2.webp" alt="Présentation de l'association" />
             </div>
             <div className="asso-text3">
               <p>
@@ -115,9 +115,9 @@ const Asso = forwardRef((props, externalRef) => {
           <div className="asso-vertical-block">
             <div
               className="asso-vertical-image"
-              onClick={() => setZoomedImage1("/Pics/asso3.jpg")}
+              onClick={() => setZoomedImage1("/Pics/asso3.webp")}
             >
-              <img src="/Pics/asso3.jpg" alt="Présentation longue" />
+              <img src="/Pics/asso3.webp" alt="Présentation longue" />
             </div>
 
             <p className="asso-vertical-text">
@@ -135,7 +135,7 @@ const Asso = forwardRef((props, externalRef) => {
           className={`logoasso ${contentVisible ? "visible-after-video" : ""}`}
         >
           <a href="/">
-            <img src="/Pics/logo2.jpg" alt="Logo OSAER" />
+            <img src="/Pics/logo2.webp" alt="Logo OSAER" />
           </a>
         </div>
         <div

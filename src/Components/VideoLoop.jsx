@@ -119,7 +119,7 @@ const VideoLoop = forwardRef((props, externalRef) => {
         </div>
         <div className={`logo ${contentVisible ? "visible-after-video" : ""}`}>
           <a href="/">
-            <img src="/Pics/logo2.jpg" alt="Logo OSAER" />
+            <img src="/Pics/logo2.webp" alt="Logo OSAER" />
           </a>
         </div>
 

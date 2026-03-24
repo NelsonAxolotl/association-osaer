@@ -2,7 +2,6 @@
   position: relative;
   color: white;
   background: rgb(0, 0, 0); /* pour test, à adapter */
-  min-height: 100vh;
   height: auto;
   overflow: visible;
   padding: 0rem 0.5rem 10rem;

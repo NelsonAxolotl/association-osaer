@@ -92,7 +92,7 @@ const Contact = forwardRef((props, externalRef) => {
           }`}
         >
           <a href="/">
-            <img src="/Pics/logo2.jpg" alt="Logo OSAER" />
+            <img src="/Pics/logo2.webp" alt="Logo OSAER" />
           </a>
         </div>
         <div

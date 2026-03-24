@@ -40,9 +40,9 @@ const Bio = forwardRef((props, externalRef) => {
           <div className="bio-content">
             <div
               className="bio-photo"
-              onClick={() => setZoomedImage1("/Pics/steph.jpg")}
+              onClick={() => setZoomedImage1("/Pics/steph.webp")}
             >
-              <img src="/Pics/steph.jpg" alt="Stéphanie en danse" />
+              <img src="/Pics/steph.webp" alt="Stéphanie en danse" />
             </div>
             <div className={`bio-text ${visibleClass}`}>
               <p>
@@ -71,23 +71,6 @@ const Bio = forwardRef((props, externalRef) => {
                 Hugo Dayot.
               </p>
             </div>
-            {/* <div className="bio-content2">
-              <div className="bio-photo2">
-                <div className="bio-video-diamond">
-                  <video
-                    src="/Videos/dancingbis.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                  />
-                </div>
-              </div>
-            </div> */}
-            {/* <div className={`bio-text4 ${visibleClass}`}>
-          
-            </div> */}
             <div className={`bio-text5 ${visibleClass}`}>
               <p>
                 Curieuse et avide de découvertes et de rencontres, elle
@@ -146,9 +129,9 @@ const Bio = forwardRef((props, externalRef) => {
           <div className="bio-content20">
             <div
               className="bio-photo20"
-              onClick={() => setZoomedImage2("/Pics/Olivia.jpeg")}
+              onClick={() => setZoomedImage2("/Pics/Olivia.webp")}
             >
-              <img src="/Pics/Olivia.jpeg" alt="Olivia en danse" />
+              <img src="/Pics/Olivia.webp" alt="Olivia en danse" />
             </div>
 
             <div className={`bio-text50 ${visibleClass}`}>
@@ -211,9 +194,9 @@ const Bio = forwardRef((props, externalRef) => {
           <div className="bio-content-nelson">
             <div
               className="bio-photo-nelson"
-              onClick={() => setZoomedImage1("/Pics/nelson.jpg")}
+              onClick={() => setZoomedImage1("/Pics/nelson.webp")}
             >
-              <img src="/Pics/nelson.jpg" alt="nelson" />
+              <img src="/Pics/nelson.webp" alt="nelson" />
             </div>
             <div className={`bio-text-nelson ${visibleClass}`}>
               <p>
@@ -271,7 +254,7 @@ const Bio = forwardRef((props, externalRef) => {
 
         <div className={`logobio ${visibleClass}`}>
           <a href="/">
-            <img src="/Pics/logo2.jpg" alt="Logo OSAER" />
+            <img src="/Pics/logo2.webp" alt="Logo OSAER" />
           </a>
         </div>
 
