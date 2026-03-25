@@ -4,7 +4,7 @@
   background-color: black;
   height: auto;
   overflow: visible;
-  padding: 0rem 0.5rem 10rem;
+  padding: 0rem 0rem 10rem;
   z-index: 1000;
 }
 
@@ -97,6 +97,11 @@
   padding-bottom: 20px;
 }
 
+.ley {
+  padding: 0 1rem 0;
+  margin-top: 40px;
+}
+
 .mentions-legales {
   margin-top: 20px;
 }
@@ -172,6 +177,16 @@
     filter 0.3s ease;
 }
 
+.legal-rectangle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/Pics/tulle.webp") center/cover no-repeat;
+  opacity: 0.11;
+  filter: grayscale(40%) blur(2px);
+  z-index: 0;
+}
+
 @media (max-width: 1100px) {
   .logolegal {
     display: none;
@@ -180,7 +195,7 @@
 
 @media (max-width: 900px) {
   .mainlegal {
-    padding: 0rem 1.5rem 10rem;
+    padding: 0rem 0rem 10rem;
   }
 
   .legal-bg {
@@ -196,6 +211,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
   }
 
   .legal-rectangle {
@@ -217,15 +233,15 @@
     right: 0;
     width: 98vw;
   }
+
+  .politique-confidentialite {
+    margin-top: 40px;
+  }
 }
 
 @media (max-width: 500px) {
   .mainlegal::after {
     display: none;
-  }
-
-  .legal-rectangle {
-    margin-top: 20px;
   }
 
   .legal-bg {
