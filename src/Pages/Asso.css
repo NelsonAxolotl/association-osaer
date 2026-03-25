@@ -1,7 +1,7 @@
 .asso {
   position: relative;
   color: white;
-  background: rgb(0, 0, 0); /* pour test, à adapter */
+  background: rgb(0, 0, 0);
   height: auto;
   overflow: visible;
   padding: 0rem 0.5rem 10rem;
@@ -13,7 +13,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 801; /* derrière le titre et la photo */
+  z-index: 801;
   background-image: repeating-linear-gradient(
     -135deg,
     rgba(255, 255, 255, 0.074) 0px,
@@ -36,12 +36,11 @@
   width: 88.5%;
   height: 1.9px;
   background: rgb(248, 119, 6);
-  opacity: 0; /* départ invisible */
+  opacity: 0;
   animation: fadeLineTop 4s ease-in forwards;
-  animation-delay: 0.5s; /* décalage pour effet plus élégant */
+  animation-delay: 0.5s;
 }
 
-/* animation pour la verticale */
 @keyframes fadeLineTop {
   from {
     opacity: 0;
@@ -63,7 +62,7 @@
   margin: 0;
   white-space: nowrap;
   opacity: 0;
-  transform: translateY(20px); /* décalage initial pour le glissement */
+  transform: translateY(20px);
   transition:
     opacity 2s ease-in-out,
     transform 2s ease-in-out;
@@ -73,39 +72,36 @@
   opacity: 1;
 }
 
-/* rectangle vert derrière la photo */
 .asso-rectangle {
   position: relative;
-  top: 155px; /* commence au-dessus de la photo, ajuster selon besoin */
+  top: 155px;
   left: 1%;
-  width: 78%; /* jusqu'à la ligne blanche à droite */
+  width: 78%;
   background: rgb(0, 0, 0);
   padding: 0 20px;
-  z-index: 700; /* derrière la photo */
+  z-index: 700;
   opacity: 1;
   overflow: hidden;
   border-radius: 3px;
 }
 
-/* apparition progressive avec contentVisible */
 .crossfade-visible .asso-rectangle {
   opacity: 1;
 }
 
-/* Logo en bas à droite de la vidéo */
 .logoasso {
-  position: fixed; /* absolute pour qu'il reste dans le container vidéo */
-  top: 14%; /* distance depuis le bas de la vidéo */
-  right: 21%; /* distance depuis la droite */
+  position: fixed;
+  top: 14%;
+  right: 21%;
   z-index: -1;
   opacity: 0;
   transition: opacity 2s ease-in-out;
 }
 
 .logoasso img {
-  width: 12vw; /* largeur relative à la largeur de l'écran */
-  width: 200px; /* limite maximale pour les grands écrans */
-  height: auto; /* garde les proportions */
+  width: 12vw;
+  width: 200px;
+  height: auto;
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
@@ -115,7 +111,7 @@
   text-align: center;
   font-family: "Caveat", cursive;
   font-size: 2rem;
-  color: rgb(248, 119, 6); /* ton orange */
+  color: rgb(248, 119, 6);
   margin: 30px 0 0 0;
   letter-spacing: 0.5px;
   opacity: 0;
@@ -123,10 +119,10 @@
 }
 
 .asso-intro::first-letter {
-  font-size: 3rem; /* taille plus grande */
+  font-size: 3rem;
   font-weight: bold;
-  color: rgb(248, 119, 6); /* ou ta couleur d’accent */
-  font-family: "Caveat", cursive; /* si tu veux une touche artistique */
+  color: rgb(248, 119, 6);
+  font-family: "Caveat", cursive;
 }
 
 .assowrap {
@@ -139,11 +135,10 @@
   padding: 0 20px;
 }
 
-/* IMAGE : reste fluide */
 .asso-image-wrapper {
   position: relative;
   flex: 1;
-  max-width: 400px; /* ✨ limite la taille max */
+  max-width: 400px;
   overflow: hidden;
   opacity: 0;
   animation: fadeImage 3.5s ease forwards;
@@ -163,7 +158,6 @@
 
 .asso-text {
   flex: 1;
-  /* ✨ limite la largeur du bloc texte */
   font-family: "Quicksand", serif;
   font-size: 1.05rem;
   line-height: 1.4;
@@ -180,7 +174,7 @@
 
 .assowrap3 {
   display: flex;
-  flex-direction: row; /* 🔒 Photo → Texte */
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
@@ -189,7 +183,6 @@
   padding: 0 20px;
 }
 
-/* --- IMAGE --- */
 .asso-image-wrapper2 {
   flex: 1;
   max-width: 350px;
@@ -218,12 +211,10 @@
   }
 }
 
-/* TEXT2 spacing */
 .text2 {
   margin-top: 15px;
 }
 
-/* --- TEXTE --- */
 .asso-text2 {
   position: relative;
   flex: 1;
@@ -232,7 +223,7 @@
   line-height: 1.4;
   text-align: justify;
   text-justify: inter-word;
-  word-spacing: 0.001em; /* limite l’écart entre les mots */
+  word-spacing: 0.001em;
   background-color: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -242,29 +233,25 @@
   padding: 15px;
 }
 
-/* Trait du haut */
 .asso-text2::before,
 .asso-text2::after {
   content: "";
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 40%; /* largeur du trait */
-  height: 1px; /* épaisseur */
-  background: rgb(248, 119, 6); /* ton orange */
+  width: 40%;
+  height: 1px;
+  background: rgb(248, 119, 6);
 }
 
-/* Position haut */
 .asso-text2::before {
   top: -70px;
 }
 
-/* Position bas */
 .asso-text2::after {
   bottom: -70px;
 }
 
-/* --- TEXTE --- */
 .asso-text3 {
   flex: 1;
   font-family: "Quicksand", serif;
@@ -309,7 +296,6 @@
   font-size: 1.2rem;
 }
 
-/* FORCE L’OVERLAY À PASSER AU-DESSUS DE TOUT TON SITE */
 .overlay {
   position: fixed !important;
   top: 0;
@@ -342,14 +328,12 @@
   z-index: 1000001 !important;
 }
 
-/* Empêche reverse de casser le layout */
 .assowrap.reverse {
-  flex-direction: row !important; /* 🔒 On verrouille */
+  flex-direction: row !important;
   margin-top: 120px;
   gap: 80px;
 }
 
-/* Conteneur du bloc */
 .asso-vertical-block {
   width: 100%;
   max-width: 900px;
@@ -359,21 +343,19 @@
   opacity: 0;
 }
 
-/* Image verticale */
 .asso-vertical-image img {
   width: 100%;
-  height: 350px; /* un peu plus long, plus élégant */
+  height: 350px;
   object-fit: cover;
   object-position: center 30%;
   border-radius: 6px;
   display: block;
   cursor: pointer;
-  margin: 0 auto; /* supprimé le margin-top énorme */
+  margin: 0 auto;
   border: 1px solid rgb(255, 255, 255);
   border-radius: 3px;
 }
 
-/* Texte dessous */
 .asso-vertical-text {
   margin-top: 40px;
   font-size: 1.05rem;
@@ -395,20 +377,21 @@
   font-size: 1.2rem;
 }
 
+/* responsive */
 @media (max-width: 900px) {
   .asso::after {
     top: 22.5%;
-    right: 0; /* commence à zéro à droite */
-    width: 98vw; /* prend toute la largeur de l’écran */
+    right: 0;
+    width: 98vw;
   }
 
   .asso-bg {
     position: fixed;
     height: 22.5vh;
-    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    inset: 0;
     background: black;
-    z-index: 1; /* au-dessus du rectangle (700) mais en dessous du titre/nav */
-    pointer-events: none; /* n'interfère pas avec les clics */
+    z-index: 1;
+    pointer-events: none;
   }
 
   .asso-rectangle {
@@ -446,14 +429,14 @@
   }
 
   .assowrap.reverse {
-    flex-direction: column-reverse !important; /* photo AU-DESSUS du texte */
+    flex-direction: column-reverse !important;
     gap: 30px;
     margin-top: 80px;
     align-items: center;
   }
 
   .asso-image-wrapper2 {
-    max-width: 80%; /* 🔥 photo plus petite */
+    max-width: 80%;
     min-width: 220px;
   }
 
@@ -463,21 +446,21 @@
   }
 
   .asso-text2 {
-    max-width: 100%; /* 🔥 texte plus fluide */
+    max-width: 100%;
     margin-top: 0;
-    font-size: 1rem; /* légèrement réduit pour éviter les gros pavés */
+    font-size: 1rem;
     padding: 15px;
   }
 
   .assowrap3 {
-    flex-direction: column; /* Photo au-dessus du texte */
+    flex-direction: column;
     align-items: center;
     gap: 30px;
     margin-top: 60px;
   }
 
   .assowrap3 .asso-image-wrapper {
-    max-width: 100%; /* 🔥 photo plus petite */
+    max-width: 100%;
     min-width: 220px;
   }
 
@@ -487,10 +470,10 @@
   }
 
   .asso-text3 {
-    max-width: 100%; /* 🔥 texte plus fluide */
+    max-width: 100%;
     margin-top: 0;
     padding: 15px;
-    font-size: 1rem; /* un peu plus petit pour mobile */
+    font-size: 1rem;
   }
 
   .asso-vertical-block {
@@ -498,7 +481,7 @@
   }
 
   .asso-vertical-text {
-    max-width: 100%; /* 🔥 texte plus fluide */
+    max-width: 100%;
     margin-top: 30px;
     padding: 15px;
     font-size: 1rem;
@@ -512,7 +495,7 @@
 
 @media (max-width: 500px) {
   .asso-title {
-    left: 40%; /* centre horizontalement */
+    left: 40%;
   }
 
   .asso::after {
@@ -556,7 +539,7 @@
   .asso-bg::before {
     display: block;
     content: "";
-    position: absolute; /* important pour que ça reste dans .bio-bg */
+    position: absolute;
     inset: 0;
     z-index: 0;
     background-image: repeating-linear-gradient(
@@ -567,7 +550,7 @@
       transparent 530px
     );
     filter: blur(8px);
-    opacity: 1; /* visible */
+    opacity: 1;
     pointer-events: none;
   }
 }

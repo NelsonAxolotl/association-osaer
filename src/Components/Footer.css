@@ -27,12 +27,10 @@
   transition: opacity 6s ease-in-out;
 }
 
-/* activation du fondu */
 .footer.crossfade-visible::before {
   opacity: 1;
 }
 
-/* ligne animée */
 .footer::after {
   content: "";
   position: absolute;
@@ -45,13 +43,11 @@
   animation: fadeLine 6s ease-in forwards;
 }
 
-/* Variante VideoLoop avec délai différent */
 .videoloop-footer::after {
   animation: fadeLine 16s ease-in forwards;
   z-index: 10;
 }
 
-/* Variante VideoLoop avec délai différent */
 .contact-footer::after {
   background: #d4af37;
 }
@@ -94,7 +90,6 @@
   );
 }
 
-/* animation unique */
 @keyframes fadeLine {
   from {
     opacity: 0;
@@ -104,7 +99,6 @@
   }
 }
 
-/* typographie */
 .footer-title {
   font-size: 1.4rem;
   font-weight: bold;
@@ -140,7 +134,6 @@
     display: none;
   }
 
-  /* Variante VideoLoop avec délai différent */
   .contact-footer::after {
     display: none;
   }
@@ -159,13 +152,13 @@
     font-size: 1.3rem;
     opacity: 0;
     animation: fadeInFooter 2.5s ease-in forwards;
-    animation-delay: 1s; /* petit délai avant l'apparition */
+    animation-delay: 1s;
   }
 
   @keyframes fadeInFooter {
     from {
       opacity: 0;
-      transform: translateY(10px); /* léger mouvement vers le haut */
+      transform: translateY(10px);
     }
     to {
       opacity: 0.6;

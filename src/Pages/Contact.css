@@ -1,16 +1,15 @@
 .maincontact {
   position: relative;
   color: white;
-  background-color: black; /* pour test, à adapter */
+  background-color: black;
   overflow: hidden;
   height: auto;
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* pousse le footer en bas */
+  justify-content: space-between;
 }
 
-/* rectangle entre la gauche et la ligne blanche */
 .maincontact::before {
   content: "";
   position: absolute;
@@ -41,17 +40,15 @@
   width: 88.5%;
   height: 1.9px;
   background: #d4af37;
-  opacity: 0; /* départ invisible */
+  opacity: 0;
   animation: fadeLineTop 4s ease-in forwards;
-  animation-delay: 0.5s; /* décalage pour effet plus élégant */
+  animation-delay: 0.5s;
 }
 
-/* apparition progressive avec contentVisible */
 .crossfade-visible .contact-rectangle {
   opacity: 1;
 }
 
-/* animation pour la verticale */
 @keyframes fadeLineVertical {
   from {
     opacity: 0;
@@ -73,7 +70,7 @@
   margin: 0;
   white-space: nowrap;
   opacity: 0;
-  transform: translateY(20px); /* décalage initial pour le glissement */
+  transform: translateY(20px);
   transition:
     opacity 2s ease-in-out,
     transform 2s ease-in-out;
@@ -85,32 +82,31 @@
 }
 
 .logocontact {
-  position: fixed; /* absolute pour qu'il reste dans le container vidéo */
-  top: 14%; /* distance depuis le bas de la vidéo */
-  right: 21%; /* distance depuis la droite */
+  position: fixed;
+  top: 14%;
+  right: 21%;
   z-index: -1;
   opacity: 0;
   transition: opacity 2s ease-in-out;
 }
 
 .logocontact img {
-  width: 12vw; /* largeur relative à la largeur de l'écran */
-  width: 200px; /* limite maximale pour les grands écrans */
-  height: auto; /* garde les proportions */
+  width: 12vw;
+  width: 200px;
+  height: auto;
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
 }
 
-/* rectangle vert derrière la photo */
 .contact-rectangle {
   position: relative;
-  top: 155px; /* commence au-dessus de la photo, ajuster selon besoin */
+  top: 155px;
   left: 1%;
-  width: 78%; /* jusqu'à la ligne blanche à droite */
+  width: 78%;
   height: 100vh;
   background: rgb(0, 0, 0);
-  z-index: 700; /* derrière la photo */
+  z-index: 700;
   opacity: 0;
   overflow: hidden;
   transition: opacity 2s ease-in-out;
@@ -125,13 +121,12 @@
   height: 83%;
   max-height: 100%;
   object-fit: cover;
-  opacity: 1; /* semi-transparent comme avant */
+  opacity: 1;
   z-index: 800;
   filter: brightness(0.5);
   pointer-events: none;
 }
 
-/* bloc texte à gauche */
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -143,14 +138,13 @@
   left: 6%;
   z-index: 900;
   color: white;
-  opacity: 0; /* départ invisible */
-  transform: translateY(50px); /* léger décalage vers le bas */
+  opacity: 0;
+  transform: translateY(50px);
   transition:
     opacity 15s ease,
     transform 5s ease;
 }
 
-/* class ajoutée pour fade-in */
 .contact-info.visible {
   opacity: 1;
   transform: translateY(0);
@@ -159,7 +153,7 @@
 .contact-info h2 {
   font-size: 2.4rem;
   margin-bottom: 0.8rem;
-  color: #d4af37; /* doré pour le titre */
+  color: #d4af37;
   text-shadow:
     0 0 5px rgba(212, 175, 55, 0.8),
     0 0 10px rgba(212, 175, 55, 0.6),
@@ -204,7 +198,7 @@
 }
 
 .contact-socials a {
-  color: #fefdfb; /* ton doré élégant */
+  color: #fefdfb;
   font-size: 1.8rem;
   transition:
     transform 0.3s ease,
@@ -238,20 +232,21 @@
   background: rgba(0, 0, 0, 0.8);
 }
 
+/* responsive */
 @media (max-width: 900px) {
   .maincontact::after {
     top: 22.5%;
-    right: 0; /* commence à zéro à droite */
-    width: 98%; /* prend toute la largeur de l’écran */
+    right: 0;
+    width: 98%;
   }
 
   .contact-bg {
     position: fixed;
     height: 22.5vh;
-    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    inset: 0;
     background: black;
-    z-index: 1; /* au-dessus du rectangle (700) mais en dessous du titre/nav */
-    pointer-events: none; /* n'interfère pas avec les clics */
+    z-index: 1;
+    pointer-events: none;
   }
 
   .contact-rectangle {
@@ -327,7 +322,7 @@
   .contact-bg::before {
     display: block;
     content: "";
-    position: absolute; /* important pour que ça reste dans .bio-bg */
+    position: absolute;
     inset: 0;
     z-index: 0;
     background-image: repeating-linear-gradient(
@@ -338,7 +333,7 @@
       transparent 530px
     );
     filter: blur(8px);
-    opacity: 1; /* visible */
+    opacity: 1;
     pointer-events: none;
   }
 

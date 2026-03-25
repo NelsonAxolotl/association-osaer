@@ -8,7 +8,6 @@
   z-index: 1500;
 }
 
-/* ligne blanche verticale */
 .navbar::before {
   content: "";
   position: absolute;
@@ -49,7 +48,6 @@
   );
 }
 
-/* override pour page VideoLoop */
 .videoloop-page .navbar::before {
   top: -46.5%;
   height: 174%;
@@ -61,7 +59,6 @@
   animation: ul 24s ease-in forwards;
 }
 
-/* override pour page VideoLoop */
 .contact-page .navbar::before {
   height: 193%;
   top: -46%;
@@ -94,7 +91,6 @@
   }
 }
 
-/* UL commun */
 .navbar ul {
   display: flex;
   flex-direction: column;
@@ -105,7 +101,6 @@
   list-style: none;
 }
 
-/* LIEN */
 .navbar .nav-link {
   position: relative;
   color: white;
@@ -130,7 +125,6 @@
   }
 }
 
-/* underline animé */
 .navbar .nav-link::after {
   content: "";
   position: absolute;
@@ -144,7 +138,6 @@
     left 0.4s ease;
 }
 
-/* hover gauche/droite */
 .navbar .nav-link.left:hover {
   transform: translateX(-6px);
   color: #ddd;
@@ -161,15 +154,13 @@
 }
 
 .navbar .nav-link.active::after {
-  background: #d4af37; /* couleur jaune fixe */
+  background: #d4af37;
 }
 
-/* actif + hover → underline jaune animé */
 .navbar .nav-link.active:hover::after {
   background: #d4af37;
 }
 
-/* actif */
 .navbar .nav-link.active,
 .navbar .nav-link.active:hover {
   color: #d4af37;
@@ -179,22 +170,18 @@
   background: #d4af37;
 }
 
-/* Style actif SPÉCIAL pour ASOOO */
 .nav-link.asso-link.active {
   color: rgb(248, 119, 6) !important;
 }
 
-/* actif spécial Asso */
 .nav-link.asso-link.active::after {
   background: rgb(248, 119, 6) !important;
 }
 
-/* Style actif SPÉCIAL pour crea */
 .nav-link.creations-link.active {
   color: rgb(248, 119, 6) !important;
 }
 
-/* actif spécial crea */
 .nav-link.creations-link.active::after {
   background: rgb(248, 119, 6) !important;
 }
@@ -203,7 +190,6 @@
   color: rgb(195, 63, 63) !important;
 }
 
-/* actif spécial Asso */
 .nav-link.mediation-link.active::after {
   background: rgb(195, 63, 63) !important;
 }
@@ -250,7 +236,7 @@
 }
 
 .navbar.mobile {
-  display: none; /* caché par défaut sur mobile, s'affiche seulement si burger ouvert */
+  display: none;
 }
 
 .navbar.mobile.active {

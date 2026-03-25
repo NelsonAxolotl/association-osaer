@@ -1,6 +1,6 @@
 .bio-references {
   display: flex;
-  flex-direction: column; /* vertical par défaut */
+  flex-direction: column;
   gap: 5rem;
   width: 100%;
   align-items: center;
@@ -16,7 +16,7 @@
   margin-bottom: 1.5rem;
   letter-spacing: 0.5px;
   color: rgb(230, 225, 217);
-  display: inline-block; /* nécessaire pour que ::after suive la largeur du texte */
+  display: inline-block;
 }
 
 .bio-references h3::after {
@@ -45,7 +45,7 @@
 
 .bio-columns {
   display: flex;
-  flex-wrap: nowrap; /* reste côte à côte jusqu'à 768px */
+  flex-wrap: nowrap;
   justify-content: center;
   width: 100%;
 }
@@ -60,13 +60,13 @@
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #d4af37;
-  text-align: center; /* centre le titre au-dessus de la colonne */
+  text-align: center;
 }
 
 .column ul {
   list-style: none;
   padding: 0;
-  text-align: center; /* centre les items */
+  text-align: center;
 }
 
 .column li {
@@ -76,7 +76,9 @@
 .highlight-link {
   color: #e5d7a6;
   text-decoration: none;
-  transition: color 0.2s ease, text-shadow 0.3s ease;
+  transition:
+    color 0.2s ease,
+    text-shadow 0.3s ease;
 }
 
 .highlight-link:hover {
@@ -88,6 +90,7 @@
   margin-top: 80px;
 }
 
+/* responsive */
 @media (max-width: 900px) {
   .bio-references {
     margin-top: 60px;
@@ -99,7 +102,6 @@
   }
 }
 
-/* RESPONSIVE */
 @media (max-width: 500px) {
   .bio-references {
     margin-top: 30px;
@@ -114,7 +116,7 @@
   }
 
   .column {
-    width: 100%; /* prend toute la largeur du rectangle */
+    width: 100%;
     text-align: center;
   }
 

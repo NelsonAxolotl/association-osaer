@@ -6,7 +6,6 @@
   background: rgb(0, 0, 0);
 }
 
-/* lignes diagonales */
 .crossfade-container::before {
   content: "";
   position: absolute;
@@ -34,9 +33,9 @@
   width: 88.5%;
   height: 1.9px;
   background: white;
-  opacity: 0; /* départ invisible */
+  opacity: 0;
   animation: fadeLineTop 10s ease-in forwards;
-  animation-delay: 0.5s; /* décalage pour effet plus élégant */
+  animation-delay: 0.5s;
 }
 
 /* animation pour la verticale */
@@ -50,8 +49,8 @@
 }
 
 .video-container {
-  position: relative; /* permet de scroller */
-  z-index: 1000; /* plus haut que H1 et ligne à 800 */
+  position: relative;
+  z-index: 1000;
   width: 80%;
   height: 70%;
   top: 18.5%;
@@ -66,7 +65,6 @@
   object-fit: cover;
   opacity: 0;
   z-index: 1001;
-
   animation: videoFadeIn 5s ease-out forwards;
 }
 
@@ -80,7 +78,6 @@
   }
 }
 
-/* animation rideau pour le bas de la vidéo */
 @keyframes curtainCenter {
   0% {
     clip-path: inset(0% 0% 0% 0%);
@@ -104,7 +101,7 @@
     clip-path: inset(0 0 0 0);
   }
   40% {
-    clip-path: inset(0 0 0 35%); /* coupe depuis la gauche */
+    clip-path: inset(0 0 0 35%);
   }
   60% {
     clip-path: inset(0 0 0 35%);
@@ -118,7 +115,6 @@
   animation: curtainLeftUpDown 6s ease-in-out forwards;
 }
 
-/* H1 centré */
 .main-title {
   position: fixed;
   top: 10%;
@@ -131,11 +127,11 @@
   margin: 0;
   white-space: nowrap;
   opacity: 0;
-  transform: translateY(20px); /* décalage initial pour le glissement */
+  transform: translateY(20px);
   transition:
     opacity 10s ease-in-out,
     transform 10s ease-in-out;
-  animation: fadeInH1 16s forwards; /* 36s de délai + 2s de fondu */
+  animation: fadeInH1 16s forwards;
 }
 
 @keyframes fadeInH1 {
@@ -150,7 +146,6 @@
   }
 }
 
-/* Flèche descendante */
 .scroll-arrow-down {
   position: fixed;
   top: 8%;
@@ -180,20 +175,19 @@
   opacity: 1;
 }
 
-/* Logo en bas à droite de la vidéo */
 .logo {
-  position: absolute; /* absolute pour qu'il reste dans le container vidéo */
-  bottom: 0%; /* distance depuis le bas de la vidéo */
-  right: 20.5%; /* distance depuis la droite */
+  position: absolute;
+  bottom: 0%;
+  right: 20.5%;
   z-index: 900;
   opacity: 0;
   transition: opacity 8s ease-in-out;
 }
 
 .logo img {
-  width: 12vw; /* largeur relative à la largeur de l'écran */
-  width: 200px; /* limite maximale pour les grands écrans */
-  height: auto; /* garde les proportions */
+  width: 12vw;
+  width: 200px;
+  height: auto;
 }
 
 .sound-toggle {
@@ -221,7 +215,6 @@
     opacity 0.6s ease-in-out;
 }
 
-/* état actif (son on) */
 .sound-toggle.on {
   background: rgba(212, 175, 55, 0.12);
   border-color: rgba(212, 175, 55, 0.4);
@@ -259,15 +252,16 @@
   }
 }
 
+/* responsive */
 @media (max-width: 900px) {
   .main-title {
-    transform: translateX(-50%) translateY(0); /* ajuste le centrage */
+    transform: translateX(-50%) translateY(0);
     text-align: center;
   }
 
   .video-container {
-    position: relative; /* permet de scroller */
-    z-index: 1000; /* plus haut que H1 et ligne à 800 */
+    position: relative;
+    z-index: 1000;
     width: 100%;
     height: 68%;
     top: 16%;
@@ -276,22 +270,22 @@
 
   @keyframes curtainUpDown {
     0% {
-      top: 21%; /* fixe le haut */
-      height: 68%; /* départ fermé */
+      top: 21%;
+      height: 68%;
     }
     50% {
       top: 21%;
-      height: 58%; /* ouverture max */
+      height: 58%;
     }
     100% {
       top: 21%;
-      height: 68%; /* referme */
+      height: 68%;
     }
   }
 
   .crossfade-container::after {
-    left: 1.5%; /* commence à zéro à droite */
-    width: 97vw; /* prend toute la largeur de l’écran */
+    left: 1.5%;
+    width: 97vw;
   }
 
   .scroll-arrow-down {
@@ -300,7 +294,7 @@
 
   .logo {
     right: 15%;
-    width: 20vw; /* ajuste la taille si besoin */
+    width: 20vw;
     z-index: 0;
   }
 
@@ -314,12 +308,12 @@
     bottom: 8.5%;
     left: 2%;
     width: 96%;
-    height: 1.5px; /* épaisseur */
-    background: white; /* couleur de la ligne */
-    z-index: 1000; /* au-dessus des vidéos */
-    opacity: 0; /* départ invisible */
+    height: 1.5px;
+    background: white;
+    z-index: 1000;
+    opacity: 0;
     animation: fadeLineTop 10s ease-in forwards;
-    animation-delay: 0.5s; /* décalage pour effet plus élégant */
+    animation-delay: 0.5s;
   }
 }
 
@@ -358,16 +352,15 @@
   }
 
   .crossfade-container::after {
-    width: 92vw; /* prend toute la largeur de l’écran */
+    width: 92vw;
     left: 4%;
     position: absolute;
     top: 30%;
     opacity: 0;
     animation:
       fadeInLine 8s ease-in forwards,
-      /* apparition progressive */ lineCurtainUpDown 6s ease-in-out 15s forwards,
-      /* effet rideau vertical après 15s */ lineCurtainRight 7s ease-in-out
-        21.7s forwards; /* effet horizontal juste après */
+      lineCurtainUpDown 6s ease-in-out 15s forwards,
+      lineCurtainRight 7s ease-in-out 21.7s forwards;
   }
 
   .bottom-line-responsive {
@@ -380,12 +373,10 @@
     opacity: 0;
     animation:
       fadeInLine 8s ease-in forwards,
-      /* apparition progressive */ lineCurtainUpDown 6s ease-in-out 15s forwards,
-      /* effet rideau vertical après 15s */ lineCurtainRight 7s ease-in-out
-        21.55s forwards; /* effet horizontal juste après */
+      lineCurtainUpDown 6s ease-in-out 15s forwards,
+      lineCurtainRight 7s ease-in-out 21.55s forwards;
   }
 
-  /* Animation du fondu d’apparition */
   @keyframes fadeInLine {
     from {
       opacity: 0;
@@ -395,7 +386,6 @@
     }
   }
 
-  /* Animation de mouvement “rideau” */
   @keyframes lineCurtainUpDown {
     0% {
       bottom: 22%;
@@ -426,7 +416,7 @@
   .video-bg::before {
     display: block;
     content: "";
-    position: absolute; /* important pour que ça reste dans .bio-bg */
+    position: absolute;
     inset: 0;
     z-index: 0;
     background-image: repeating-linear-gradient(
@@ -437,7 +427,7 @@
       transparent 530px
     );
     filter: blur(8px);
-    opacity: 1; /* visible */
+    opacity: 1;
     pointer-events: none;
   }
 }

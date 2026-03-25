@@ -1,7 +1,7 @@
 .temps {
   position: relative;
   color: white;
-  background: rgb(0, 0, 0); /* pour test, à adapter */
+  background: rgb(0, 0, 0);
   height: auto;
   overflow: visible;
   padding: 0rem 0.5rem 10rem;
@@ -13,7 +13,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 701; /* derrière le titre et la photo */
+  z-index: 701;
   background-image: repeating-linear-gradient(
     -135deg,
     rgba(255, 255, 255, 0.05) 0px,
@@ -35,12 +35,11 @@
   width: 88.5%;
   height: 1.9px;
   background: white;
-  opacity: 0; /* départ invisible */
+  opacity: 0;
   animation: fadeLineTop 4s ease-in forwards;
-  animation-delay: 0.5s; /* décalage pour effet plus élégant */
+  animation-delay: 0.5s;
 }
 
-/* animation pour la verticale */
 @keyframes fadeLineTop {
   from {
     opacity: 0;
@@ -62,7 +61,7 @@
   margin: 0;
   white-space: nowrap;
   opacity: 0;
-  transform: translateY(20px); /* décalage initial pour le glissement */
+  transform: translateY(20px);
   transition:
     opacity 2s ease-in-out,
     transform 2s ease-in-out;
@@ -77,15 +76,14 @@
   opacity: 1;
 }
 
-/* rectangle vert derrière la photo */
 .temps-rectangle {
   position: relative;
-  top: 155px; /* commence au-dessus de la photo, ajuster selon besoin */
+  top: 155px;
   left: 1%;
-  width: 78%; /* jusqu'à la ligne blanche à droite */
+  width: 78%;
   background: rgb(0, 0, 0);
   padding: 10px;
-  z-index: 700; /* derrière la photo */
+  z-index: 700;
   opacity: 0;
   overflow: hidden;
   transition: opacity 2s ease-in-out;
@@ -94,11 +92,10 @@
 
 .temps-rectangle h2 {
   margin-top: 20px;
-  text-align: center; /* centre le texte */
-  color: white; /* ou la couleur que tu veux */
-  font-size: 2.5rem; /* taille sympa */
-  /* espace entre le texte et la vidéo */
-  font-family: "Caveat", cursive; /* si tu veux le style manuscrit */
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-family: "Caveat", cursive;
 }
 
 .creation-video {
@@ -106,19 +103,19 @@
   display: block;
   width: 65%;
   border-radius: 10px;
-  z-index: 1000; /* au-dessus de tout */
-  pointer-events: auto; /* permet de cliquer sur les contrôles */
+  z-index: 1000;
+  pointer-events: auto;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  position: relative; /* nécessaire pour caler les traits sur le parent */
+  position: relative;
   transition: transform 0.3s ease;
 }
 
 .ephe-duration {
-  color: rgb(238, 235, 232); /* orange vif pour rester dans ton univers */
-  font-weight: 600; /* légèrement plus marqué */
-  font-size: 1.6rem; /* taille lisible mais discrète */
-  text-align: center; /* centré sous la vidéo */
-  margin-top: 2.5rem; /* espace au-dessus */
+  color: rgb(238, 235, 232);
+  font-weight: 600;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-top: 2.5rem;
   font-family: "Caveat", cursive;
 }
 
@@ -127,10 +124,10 @@
 }
 
 .ephe-duration2 {
-  color: rgb(238, 235, 232); /* orange vif pour rester dans ton univers */
-  font-weight: 600; /* légèrement plus marqué */
-  font-size: 1.6rem; /* taille lisible mais discrète */
-  text-align: center; /* centré sous la vidéo */
+  color: rgb(238, 235, 232);
+  font-weight: 600;
+  font-size: 1.6rem;
+  text-align: center;
   font-family: "Caveat", cursive;
   margin: 15px 0;
 }
@@ -140,16 +137,16 @@
 }
 
 .ephe-duration3 {
-  color: rgb(238, 235, 232); /* orange vif pour rester dans ton univers */
-  font-weight: 600; /* légèrement plus marqué */
-  font-size: 1.6rem; /* taille lisible mais discrète */
-  text-align: center; /* centré sous la vidéo */
+  color: rgb(238, 235, 232);
+  font-weight: 600;
+  font-size: 1.6rem;
+  text-align: center;
   font-family: "Caveat", cursive;
 }
 
 .ephe-block p {
-  width: 70%; /* même largeur que l’espace entre les traits */
-  max-width: 900px; /* limite confortable sur grand écran */
+  width: 70%;
+  max-width: 900px;
   margin: 2rem auto;
   text-align: justify;
   text-justify: inter-word;
@@ -158,23 +155,20 @@
   font-size: 1.05rem;
 }
 
-/* Texte orange pastel pour mettre en valeur */
 .pastel-text {
-  color: #efc9a6; /* orange pastel doux */
+  color: #efc9a6;
   font-weight: 500;
 }
 
-/* Texte orange */
 .highlight {
-  color: rgb(248, 119, 6); /* orange */
+  color: rgb(248, 119, 6);
   font-weight: 500;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-/* Hover pour les liens */
 .highlight:hover {
-  color: rgb(255, 145, 50); /* orange plus clair au hover */
+  color: rgb(255, 145, 50);
 }
 
 .ephe-status-wrapper {
@@ -183,7 +177,7 @@
 }
 
 .ephe-status {
-  display: inline-block; /* 🔥 largeur = texte */
+  display: inline-block;
   font-size: 1.05rem;
   font-family: "Quicksand", serif;
   color: rgb(248, 119, 6);
@@ -191,10 +185,9 @@
   text-transform: uppercase;
   position: relative;
   margin: 2rem 0;
-  padding-left: 18px; /* espace pour trait gauche */
+  padding-left: 18px;
 }
 
-/* gauche */
 .ephe-status::before {
   content: "";
   position: absolute;
@@ -206,12 +199,11 @@
   background: rgb(248, 119, 6);
 }
 
-/* droite juste après le mot */
 .ephe-status::after {
   content: "";
   position: absolute;
-  left: 100%; /* 🔥 après le texte */
-  margin-left: 8px; /* espace après le mot */
+  left: 100%;
+  margin-left: 8px;
   top: 50%;
   transform: translateY(-50%);
   width: 10px;
@@ -223,17 +215,16 @@
   position: relative;
 }
 
-/* Traits orange à gauche et droite */
 .tr::before,
 .tr::after {
   content: "";
   position: absolute;
   top: 0;
   margin-top: 30px;
-  width: 1px; /* épaisseur du trait */
+  width: 1px;
   height: 100%;
-  background: rgb(248, 119, 6); /* orange */
-  z-index: 900; /* au-dessus du fond mais derrière la vidéo */
+  background: rgb(248, 119, 6);
+  z-index: 900;
   opacity: 0;
   transform: translateX(0);
   animation: slideIn 4.5s forwards;
@@ -242,15 +233,14 @@
 
 .tr::before {
   left: calc(50% - 41%);
-  --translate-start: -50px; /* gauche commence à gauche */
+  --translate-start: -50px;
 }
 
 .tr::after {
   right: calc(50% - 41%);
-  --translate-start: 50px; /* droite commence à droite */
+  --translate-start: 50px;
 }
 
-/* Animation slide-in */
 @keyframes slideIn {
   0% {
     opacity: 0;
@@ -278,9 +268,8 @@
   margin-bottom: 4rem;
 }
 
-/* TEXTES */
 .texte {
-  width: 45%; /* prend presque la moitié de l'espace */
+  width: 45%;
   color: white;
   text-align: justify;
   text-justify: inter-word;
@@ -298,58 +287,54 @@
   text-align: justify;
 }
 
-/* CENTRE */
 .traits {
   position: relative;
-  width: 30px; /* largeur centrale, c’est juste un container pour les traits */
-  height: 200px; /* hauteur des traits */
+  width: 30px;
+  height: 200px;
 }
 
-/* TRAITS */
 .traits::before,
 .traits::after {
   content: "";
   position: absolute;
   top: 0;
-  bottom: 0; /* 🔥 prend toute la hauteur */
+  bottom: 0;
   width: 1px;
   background: rgb(248, 119, 6);
 }
 
-/* gauche */
 .traits::before {
   left: 0;
 }
 
-/* droite */
 .traits::after {
   right: 0;
 }
 
 .texte span {
-  color: #f27908; /* orange pastel doux */
+  color: #f27908;
   font-weight: 500;
 }
 
 .texte-centre {
-  max-width: 900px; /* limite la largeur du texte */
-  margin: 2rem auto 0 auto; /* top spacing + centré horizontalement */
-  text-align: justify; /* centre le texte */
+  max-width: 900px;
+  margin: 2rem auto 0 auto;
+  text-align: justify;
   font-size: 1.05rem;
   line-height: 1.4;
-  color: #fff; /* ou autre couleur selon ton thème */
+  color: #fff;
 }
 
 .ephe-status2-wrapper {
   display: flex;
-  justify-content: center; /* centre horizontalement */
+  justify-content: center;
   margin: 3rem 0;
 }
 
 .ephe-status2 {
   display: flex;
-  align-items: center; /* centre verticalement texte et traits */
-  gap: 10px; /* espace entre texte et traits */
+  align-items: center;
+  gap: 10px;
   font-family: "Quicksand", serif;
   font-size: 1.05rem;
   color: rgb(248, 119, 6);
@@ -359,7 +344,7 @@
 
 .ephe-status2 .trait {
   display: inline-block;
-  width: 20px; /* longueur du trait */
+  width: 20px;
   height: 1px;
   background: rgb(248, 119, 6);
 }
@@ -372,26 +357,24 @@
 }
 
 .status-diagonal h2 {
-  text-align: center; /* centre le texte */
-  color: white; /* ou la couleur que tu veux */
-  font-size: 2.5rem; /* taille sympa */
-  /* espace entre le texte et la vidéo */
-  font-family: "Caveat", cursive; /* si tu veux le style manuscrit */
-  margin-bottom: 3rem; /* 🔥 espace avec le texte */
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-family: "Caveat", cursive;
+  margin-bottom: 3rem;
 }
 
 .status-diagonal {
-  max-width: 900px; /* limite la largeur du texte */
+  max-width: 900px;
   position: relative;
   font-family: "Quicksand", serif;
-  text-align: justify; /* centre le texte */
+  text-align: justify;
   font-size: 1.05rem;
   line-height: 1.4;
   color: white;
   padding: 2rem 4rem 2rem;
 }
 
-/* diagonale du haut */
 .status-diagonal::before {
   content: "";
   position: absolute;
@@ -403,7 +386,6 @@
   transform: translateX(-50%) rotate(-20deg);
 }
 
-/* diagonale du bas */
 .status-diagonal::after {
   content: "";
   position: absolute;
@@ -416,29 +398,27 @@
 }
 
 .status-diagonal span {
-  color: #f27908; /* orange pastel doux */
+  color: #f27908;
   font-weight: 500;
 }
 
-/* apparition progressive avec contentVisible */
 .crossfade-visible .temps-rectangle {
   opacity: 1;
 }
 
-/* Logo en bas à droite de la vidéo */
 .logostemps {
-  position: fixed; /* absolute pour qu'il reste dans le container vidéo */
-  top: 14%; /* distance depuis le bas de la vidéo */
-  right: 21%; /* distance depuis la droite */
+  position: fixed;
+  top: 14%;
+  right: 21%;
   z-index: -1;
   opacity: 0;
   transition: opacity 2s ease-in-out;
 }
 
 .logostemps img {
-  width: 12vw; /* largeur relative à la largeur de l'écran */
-  width: 200px; /* limite maximale pour les grands écrans */
-  height: auto; /* garde les proportions */
+  width: 12vw;
+  width: 200px;
+  height: auto;
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
@@ -448,20 +428,21 @@
   display: none;
 }
 
+/* responsive */
 @media (max-width: 900px) {
   .temps::after {
     top: 22.5%;
-    right: 0; /* commence à zéro à droite */
-    width: 98vw; /* prend toute la largeur de l’écran */
+    right: 0;
+    width: 98vw;
   }
 
   .creation-bg {
     position: fixed;
     height: 22.5vh;
-    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    inset: 0;
     background: black;
-    z-index: 1; /* au-dessus du rectangle (700) mais en dessous du titre/nav */
-    pointer-events: none; /* n'interfère pas avec les clics */
+    z-index: 1;
+    pointer-events: none;
   }
 
   .temps-rectangle {
@@ -475,7 +456,7 @@
   }
 
   .papier-row {
-    display: block; /* textes en colonne */
+    display: block;
   }
 
   .texte {
@@ -484,9 +465,9 @@
   }
 
   .traits {
-    width: 150px; /* longueur du trait horizontal */
-    height: 1px; /* épaisseur */
-    margin: 2rem auto; /* espace autour */
+    width: 150px;
+    height: 1px;
+    margin: 2rem auto;
     position: relative;
   }
 
@@ -498,31 +479,30 @@
   }
 
   .traits-bis {
-    width: 150px; /* longueur du trait horizontal */
-    height: 1px; /* épaisseur */
-    margin: 2rem auto; /* espace autour */
+    width: 150px;
+    height: 1px;
+    margin: 2rem auto;
     position: relative;
   }
 
-  /* TRAITS */
   .traits-bis::before,
   .traits-bis::after {
     content: "";
     position: absolute;
     top: 0;
-    bottom: 0; /* 🔥 prend toute la hauteur */
+    bottom: 0;
     width: 150px;
     background: rgb(248, 119, 6);
   }
 
   .texte-centre {
-    margin: 2rem 3rem 0 3rem; /* top spacing + centré horizontalement */
+    margin: 2rem 3rem 0 3rem;
   }
 }
 
 @media (max-width: 500px) {
   .temps-title {
-    left: 25%; /* centre horizontalement */
+    left: 25%;
   }
 
   .temps::after {
@@ -532,7 +512,7 @@
   .creation-bg::before {
     display: block;
     content: "";
-    position: absolute; /* important pour que ça reste dans .bio-bg */
+    position: absolute;
     inset: 0;
     z-index: 0;
     background-image: repeating-linear-gradient(
@@ -543,22 +523,22 @@
       transparent 530px
     );
     filter: blur(8px);
-    opacity: 1; /* visible */
+    opacity: 1;
     pointer-events: none;
   }
 
   .texte-centre {
-    margin: 2.5rem 1rem 0 1rem; /* top spacing + centré horizontalement */
+    margin: 2.5rem 1rem 0 1rem;
   }
 
   .tr::before {
     left: calc(50% - 50%);
-    --translate-start: -50px; /* gauche commence à gauche */
+    --translate-start: -50px;
   }
 
   .tr::after {
     right: calc(50% - 50%);
-    --translate-start: 50px; /* droite commence à droite */
+    --translate-start: 50px;
   }
 
   .creation-video {
@@ -582,7 +562,7 @@
   }
 
   .ephe-block p {
-    width: 85%; /* même largeur que l’espace entre les traits */
+    width: 85%;
   }
 
   .ephe-status-wrapper {
