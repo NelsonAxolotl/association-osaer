@@ -72,6 +72,12 @@
   height: 185%;
 }
 
+.legal-page .navbar::before {
+  background: rgb(88, 45, 205);
+  animation: fadeLineVertical 5s ease-in forwards;
+  height: 188%;
+}
+
 .temps-page .navbar::before {
   height: 185%;
   animation: fadeLineVertical 5s ease-in forwards;
@@ -273,6 +279,7 @@
   .videoloop-nav ul {
     animation: ul 1s ease-in forwards;
   }
+
   .nav-links {
     gap: 40px;
     align-items: center;
@@ -288,6 +295,7 @@
   .navbar .nav-link {
     font-size: 2rem;
     animation: none !important;
+    margin-top: -5px;
   }
 
   .burger-container {
@@ -299,7 +307,7 @@
   .burger-arrow {
     margin-top: 30px;
     display: block;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: white;
     animation: bounceDown 1.6s infinite ease-in-out;
   }

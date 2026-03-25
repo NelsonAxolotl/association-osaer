@@ -278,6 +278,10 @@
   .contact-info {
     left: 6%;
   }
+
+  .contact-video-background {
+    right: 0%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -338,8 +342,8 @@
   }
 
   .contact-video-background {
+    top: -6%;
     height: 87%;
-    right: 0%;
     filter: brightness(0.4);
   }
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect, forwardRef } from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = forwardRef((props, externalRef) => {
@@ -16,11 +17,14 @@ const Footer = forwardRef((props, externalRef) => {
       }`}
       ref={externalRef}
     >
-      <p className="footer-title">Association OSAER</p>
-      <p className="footer-subtitle"></p>
-      <p className="footer-copy">
-        &copy; {new Date().getFullYear()} OSAER — The Cool Axolotl
-      </p>
+      <div className="footer-content">
+        <p className="footer-copy">&copy; 2026 OSAER — The Cool Axolotl</p>
+        <p className="footer-legal">
+          <Link to="/mentions-politique">
+            Mentions légales & Politique de confidentialité
+          </Link>
+        </p>
+      </div>
     </footer>
   );
 });

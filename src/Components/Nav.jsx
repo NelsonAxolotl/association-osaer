@@ -28,7 +28,7 @@ function Navbar({ className }) {
   }, [location.pathname]);
 
   const links = [
-    { label: "Accueil", to: "/" },
+    { label: "Accueil", to: "/", side: "right" },
     { label: "Asso", to: "/asso", side: "left", color: "asso" },
     { label: "Bio", to: "/bio", side: "right" },
     { label: "Créations", to: "/creations", side: "left", color: "asso" },

@@ -7,6 +7,7 @@ import Bio from "./Pages/Bio";
 import Asso from "./Pages/Asso";
 import AuFilDuTemps from "./Pages/AuFilDuTemps";
 import Contact from "./Pages/Contact";
+import MentionsPolitique from "./Pages/MentionsPolitique";
 import NotFound from "./Pages/NotFound";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/asso" element={<Asso />} />
         <Route path="/creations" element={<AuFilDuTemps />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/mentions-politique" element={<MentionsPolitique />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

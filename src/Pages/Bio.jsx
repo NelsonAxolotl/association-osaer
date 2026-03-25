@@ -1,4 +1,3 @@
-// Bio.jsx
 import { useState, useEffect, forwardRef } from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
@@ -66,7 +65,6 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.cndc.fr"
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="highlight-link"
                 >
                   CNDC d’Angers
@@ -222,7 +220,6 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.gold.ac.uk/"
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="highlight-link"
                 >
                   Goldsmiths University
@@ -233,7 +230,6 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://formation-tsv.fr/"
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="highlight-link"
                 >
                   TSV
@@ -244,7 +240,6 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.lereacteur.io/"
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="highlight-link"
                 >
                   Le Réacteur
@@ -253,7 +248,6 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.thecoolaxolotl.com/"
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="highlight-link"
                 >
                   The Cool Axolotl
@@ -264,7 +258,6 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.centrechoregraphiquelecycle.com/"
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="highlight-link"
                 >
                   Le Cycle

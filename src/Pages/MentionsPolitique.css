@@ -1,0 +1,251 @@
+.mainlegal {
+  position: relative;
+  color: white;
+  background-color: black;
+  height: auto;
+  overflow: visible;
+  padding: 0rem 0.5rem 10rem;
+  z-index: 1000;
+}
+
+.mainlegal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 701;
+  background-image: repeating-linear-gradient(
+    -135deg,
+    rgba(52, 6, 202, 0.666) 0px,
+    rgba(63, 3, 226, 0.134) 1px,
+    transparent 250px,
+    transparent 460px
+  );
+  pointer-events: none;
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 6s ease-in-out;
+}
+
+.crossfade-visible::before {
+  opacity: 1;
+}
+
+.mainlegal::after {
+  content: "";
+  position: fixed;
+  top: 20.9%;
+  left: 1%;
+  width: 88.5%;
+  height: 1.9px;
+  background: rgb(88, 45, 205);
+  opacity: 0;
+  animation: fadeLineTop 4s ease-in forwards;
+  animation-delay: 0.5s;
+}
+
+.crossfade-visible .legal-rectangle {
+  opacity: 1;
+}
+
+@keyframes fadeLineVertical {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.legal-title {
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  font-size: 2.5rem;
+  color: rgb(247, 241, 241);
+  font-family: "Caveat", cursive;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  margin: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 2s ease-in-out,
+    transform 2s ease-in-out;
+}
+
+.legal-title br {
+  display: none;
+}
+
+.visible-after-video {
+  opacity: 0.8 !important;
+  transform: translateY(0);
+}
+
+.legal-rectangle {
+  position: relative;
+  top: 155px;
+  left: 1%;
+  width: 78%;
+  background: rgb(0, 0, 0);
+  z-index: 700;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 2s ease-in-out;
+  border-radius: 3px;
+  padding-bottom: 20px;
+}
+
+.mentions-legales {
+  margin-top: 20px;
+}
+
+.politique-confidentialite {
+  margin-top: 60px;
+}
+
+/* Titres des sections */
+.mentions-legales h2,
+.politique-confidentialite h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #cfcfff;
+}
+
+/* Sous-titres */
+.mentions-legales h3,
+.politique-confidentialite h3 {
+  font-size: 1.3rem;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #9fa2ff;
+}
+
+/* Paragraphes */
+.mentions-legales p,
+.politique-confidentialite p {
+  margin-bottom: 15px;
+  color: #eee;
+  font-family: "Quicksand", serif;
+  line-height: 20px;
+}
+
+/* Listes */
+.mentions-legales ul,
+.politique-confidentialite ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+  list-style: disc;
+  color: #eee;
+  line-height: 20px;
+}
+
+/* Liens */
+.mentions-legales a,
+.politique-confidentialite a {
+  color: #5852cd;
+}
+
+.mentions-legales a:hover,
+.politique-confidentialite a:hover {
+  color: #8b85ff;
+}
+
+.logolegal {
+  position: fixed; /* Au lieu de fixed */ /* absolute pour qu'il reste dans le container vidéo */
+  top: 13%; /* distance depuis le bas de la vidéo */
+  right: 21%; /* distance depuis la droite */
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.logolegal img {
+  width: 12vw; /* largeur relative à la largeur de l'écran */
+  width: 200px; /* limite maximale pour les grands écrans */
+  height: auto; /* garde les proportions */
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+@media (max-width: 1100px) {
+  .logolegal {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .mainlegal {
+    padding: 0rem 1.5rem 10rem;
+  }
+
+  .legal-bg {
+    position: fixed;
+    height: 22.5vh;
+    inset: 0;
+    background: rgb(14, 13, 13);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .ley {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .legal-rectangle {
+    width: 98%;
+    z-index: 0;
+  }
+
+  .legal-title {
+    font-size: 2.5rem;
+    top: 5%;
+  }
+
+  .legal-title br {
+    display: block;
+  }
+
+  .mainlegal::after {
+    top: 22.5%;
+    right: 0;
+    width: 98vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .mainlegal::after {
+    display: none;
+  }
+
+  .legal-rectangle {
+    margin-top: 20px;
+  }
+
+  .legal-bg {
+    position: fixed;
+    height: 24.5vh;
+    inset: 0;
+    background: rgb(14, 13, 13);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .legal-title {
+    top: 10%;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 38px;
+    left: 14%;
+  }
+
+  .politique-confidentialite {
+    margin-top: 30px;
+  }
+}

@@ -264,7 +264,7 @@
     z-index: 1000;
     width: 100%;
     height: 68%;
-    top: 16%;
+    top: 16.2%;
     left: 0;
   }
 
@@ -336,7 +336,7 @@
 
   .video-container {
     height: 90%;
-    top: 5%;
+    top: 7.5%;
     left: 0;
   }
 
@@ -422,7 +422,7 @@
     background-image: repeating-linear-gradient(
       -135deg,
       rgba(255, 255, 255, 0.06) 0px,
-      rgba(255, 255, 255, 0.15) 1px,
+      rgba(255, 255, 255, 0.1) 1px,
       transparent 350px,
       transparent 530px
     );

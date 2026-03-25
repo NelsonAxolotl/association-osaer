@@ -2,7 +2,7 @@
   background: rgb(0, 0, 0);
   color: #f5f5f5;
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 1.8rem 1rem;
   font-family: "Caveat", cursive;
   width: 100%;
   z-index: 10000;
@@ -60,6 +60,10 @@
   background: rgb(195, 63, 63);
 }
 
+.legal-footer::after {
+  background: rgb(88, 45, 205);
+}
+
 .contact-footer::before {
   background-image: repeating-linear-gradient(
     -135deg,
@@ -90,6 +94,16 @@
   );
 }
 
+.legal-footer::before {
+  background-image: repeating-linear-gradient(
+    -135deg,
+    rgba(52, 6, 202, 0.666) 0px,
+    rgba(63, 3, 226, 0.134) 1px,
+    transparent 250px,
+    transparent 450px
+  );
+}
+
 @keyframes fadeLine {
   from {
     opacity: 0;
@@ -99,26 +113,28 @@
   }
 }
 
-.footer-title {
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin: 0;
-  letter-spacing: 1px;
-  z-index: 2;
-}
-
-.footer-subtitle {
-  font-size: 1.2rem;
-  opacity: 0.7;
-  margin: 0.1rem 0 1rem 0;
-  z-index: 2;
+.footer-content {
+  display: flex;
+  flex-direction: column; /* deux lignes par défaut */
+  align-items: center; /* centré horizontalement */
+  gap: 0.8rem; /* petit espace entre branding et lien légal */
 }
 
 .footer-copy {
-  font-size: 1.1rem;
-  opacity: 0.6;
   margin: 0;
-  z-index: 2;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.footer-legal a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #f5f5f5; /* contraste avec le fond noir */
+  font-style: italic; /* subtil style artistique */
+  transition:
+    color 0.3s ease,
+    text-decoration 0.3s ease;
 }
 
 /* responsive */
@@ -144,12 +160,13 @@
     margin-top: -50px;
   }
 
-  .footer-title {
-    display: none;
+  .footer-copy {
+    opacity: 0;
+    animation: fadeInFooter 2.5s ease-in forwards;
+    animation-delay: 1s;
   }
 
-  .footer-copy {
-    font-size: 1.3rem;
+  .footer-legal a {
     opacity: 0;
     animation: fadeInFooter 2.5s ease-in forwards;
     animation-delay: 1s;
@@ -161,7 +178,7 @@
       transform: translateY(10px);
     }
     to {
-      opacity: 0.6;
+      opacity: 0.8;
       transform: translateY(0);
     }
   }
