@@ -23,13 +23,18 @@ const Bio = forwardRef((props, externalRef) => {
       <div
         className={`bio bio-page ${contentVisible ? "crossfade-visible" : ""}`}
         ref={externalRef}
+        role="main"
       >
         <Nav />
 
         <div className="bio-bg" aria-hidden="true"></div>
 
         <h1 className={`bio-title ${visibleClass}`}>Bio</h1>
-
+        <p className="seo-hidden">
+          Découvrez les artistes de la compagnie OSAER : danseuses, chorégraphes
+          et créateurs engagés dans la danse contemporaine et les projets
+          artistiques pluridisciplinaires.
+        </p>
         <div className="bio-rectangle">
           <h2>
             ✨ <span className="name">Stéphanie Pignon</span>
@@ -42,7 +47,11 @@ const Bio = forwardRef((props, externalRef) => {
               className="bio-photo"
               onClick={() => setZoomedImage1("/Pics/steph.webp")}
             >
-              <img src="/Pics/steph.webp" alt="Stéphanie en danse" />
+              <img
+                src="/Pics/steph.webp"
+                alt="Stéphanie Pignon en danse contemporaine"
+                loading="lazy"
+              />
             </div>
             <div className={`bio-text ${visibleClass}`}>
               <p>
@@ -57,6 +66,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.cndc.fr"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight-link"
                 >
                   CNDC d’Angers
@@ -131,7 +141,11 @@ const Bio = forwardRef((props, externalRef) => {
               className="bio-photo20"
               onClick={() => setZoomedImage2("/Pics/Olivia.webp")}
             >
-              <img src="/Pics/Olivia.webp" alt="Olivia en danse" />
+              <img
+                src="/Pics/Olivia.webp"
+                alt="Olivia Caillaud danseuse"
+                loading="lazy"
+              />
             </div>
 
             <div className={`bio-text50 ${visibleClass}`}>
@@ -196,7 +210,11 @@ const Bio = forwardRef((props, externalRef) => {
               className="bio-photo-nelson"
               onClick={() => setZoomedImage1("/Pics/nelson.webp")}
             >
-              <img src="/Pics/nelson.webp" alt="nelson" />
+              <img
+                src="/Pics/nelson.webp"
+                alt="Nelson Paraïso régisseur lumière"
+                loading="lazy"
+              />
             </div>
             <div className={`bio-text-nelson ${visibleClass}`}>
               <p>
@@ -204,6 +222,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.gold.ac.uk/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight-link"
                 >
                   Goldsmiths University
@@ -214,6 +233,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://formation-tsv.fr/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight-link"
                 >
                   TSV
@@ -224,6 +244,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.lereacteur.io/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight-link"
                 >
                   Le Réacteur
@@ -232,6 +253,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.thecoolaxolotl.com/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight-link"
                 >
                   The Cool Axolotl
@@ -242,6 +264,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.centrechoregraphiquelecycle.com/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight-link"
                 >
                   Le Cycle
@@ -254,7 +277,11 @@ const Bio = forwardRef((props, externalRef) => {
 
         <div className={`logobio ${visibleClass}`}>
           <a href="/">
-            <img src="/Pics/logo2.webp" alt="Logo OSAER" />
+            <img
+              src="/Pics/logo2.webp"
+              alt="Logo de la compagnie OSAER"
+              loading="lazy"
+            />
           </a>
         </div>
 
@@ -264,7 +291,7 @@ const Bio = forwardRef((props, externalRef) => {
       {zoomedImage1 && (
         <div className="overlay" onClick={() => setZoomedImage1(null)}>
           <div className="enlarged-media" onClick={(e) => e.stopPropagation()}>
-            <img src={zoomedImage1} alt="Zoom 1" />
+            <img src={zoomedImage1} alt="Image agrandie OSAER" />
           </div>
           <button
             className="close-button"
@@ -279,7 +306,7 @@ const Bio = forwardRef((props, externalRef) => {
       {zoomedImage2 && (
         <div className="overlay" onClick={() => setZoomedImage2(null)}>
           <div className="enlarged-media2" onClick={(e) => e.stopPropagation()}>
-            <img src={zoomedImage2} alt="Zoom 2" />
+            <img src={zoomedImage2} alt="Image agrandie OSAER" />
           </div>
           <button
             className="close-button2"

@@ -27,6 +27,7 @@ const Contact = forwardRef((props, externalRef) => {
           contentVisible ? "crossfade-visible" : ""
         }`}
         ref={externalRef}
+        role="main"
       >
         <Nav />
         <div className="contact-bg" aria-hidden="true"></div>
@@ -37,7 +38,7 @@ const Contact = forwardRef((props, externalRef) => {
         >
           Contact
         </h1>
-        <div className="contact-rectangle">
+        <div className="contact-rectangle" aria-labelledby="contact-heading">
           <video
             ref={videoRef}
             className="contact-video-background"
@@ -45,9 +46,10 @@ const Contact = forwardRef((props, externalRef) => {
             autoPlay
             muted
             playsInline
+            preload="metadata"
           />
           <div className={`contact-info ${contentVisible ? "visible" : ""}`}>
-            <h3>ASSOCIATION OSAER</h3>
+            <h2>ASSOCIATION OSAER</h2>
             <a href="mailto:cie.osaer@yahoo.com" className="contact-mail">
               cie.osaer@yahoo.com
             </a>
@@ -58,7 +60,7 @@ const Contact = forwardRef((props, externalRef) => {
             </p>
             <p>Siret : 902 789 411 00011</p>
             <p>Code APE/NAF : 90.01Z</p>
-            <div className="contact-socials">
+            <div className="contact-socials" aria-label="Réseaux sociaux">
               <a
                 href="https://www.instagram.com/"
                 target="_blank"
@@ -92,13 +94,18 @@ const Contact = forwardRef((props, externalRef) => {
           }`}
         >
           <a href="/">
-            <img src="/Pics/logo2.webp" alt="Logo OSAER" />
+            <img
+              src="/Pics/logo2.webp"
+              alt="Logo de l'association OSAER"
+              loading="lazy"
+            />
           </a>
         </div>
         <div
           className={`scroll-arrow-down ${
             contentVisible ? "visible-after-video" : ""
           }`}
+          aria-hidden="true"
         >
           ↓
         </div>

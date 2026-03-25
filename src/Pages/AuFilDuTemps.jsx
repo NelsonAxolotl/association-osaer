@@ -28,6 +28,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
       <div
         className={`temps temps-page ${contentVisible ? "crossfade-visible" : ""}`}
         ref={externalRef}
+        role="main"
       >
         <Nav />
         <div className="creation-bg" aria-hidden="true"></div>
@@ -38,6 +39,12 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
         >
           Créations
         </h1>
+        {/* Texte SEO caché */}
+        <p className="seo-hidden">
+          Découvrez les créations de la compagnie OSAER : spectacles de danse
+          contemporaine, performances artistiques et projets chorégraphiques en
+          cours.
+        </p>
         <div className="temps-rectangle">
           <div className="tr">
             <h2> "É.phe"</h2>
@@ -49,6 +56,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
               muted // start muet pour l’autoplay
               autoPlay // autoplay initial
               controlsList="nodownload"
+              preload="metadata"
             >
               <source src="/Videos/ephe.mp4" type="video/mp4" />
               Votre navigateur ne supporte pas la vidéo.
@@ -73,6 +81,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
                 <a
                   href="https://fr.wikipedia.org/wiki/Jean-Claude_Monet"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight"
                 >
                   Claude Monet
@@ -100,6 +109,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
                 <a
                   href="https://fr.wikipedia.org/wiki/Charles_P%C3%A9pin"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight"
                 >
                   Charles Pepin
@@ -118,6 +128,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
                 <a
                   href="https://fr.wikipedia.org/wiki/Cyril_Dion"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight"
                 >
                   Cyril Dion
@@ -141,6 +152,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
                   <a
                     href="https://www.paroles-paroles.fr/"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="highlight"
                   >
                     Paroles-Paroles
@@ -164,6 +176,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
               <a
                 href="https://www.musees-honfleur.fr/"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="highlight"
               >
                 musée Eugène Boudin
@@ -193,6 +206,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
                 <a
                   href="https://marceline-putnai.fr/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight"
                 >
                   Marceline Putnaï

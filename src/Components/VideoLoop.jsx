@@ -6,35 +6,51 @@ import Footer from "../Components/Footer";
 const VideoLoop = forwardRef((props, externalRef) => {
   const videoRef = useRef(null);
   const audioRef = useRef(null);
+
+  // ===== STATES =====
   const [soundOn, setSoundOn] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
+
   const [rightAnimate, setRightAnimate] = useState(false);
+  const [leftAnimate, setLeftAnimate] = useState(false);
   const [curtainActive, setCurtainActive] = useState(false);
   const [lineAnimate, setLineAnimate] = useState(false);
-  const [leftAnimate, setLeftAnimate] = useState(false);
 
+  // ===== FADE IN =====
+  useEffect(() => {
+    const t = setTimeout(() => setContentVisible(true), 800);
+    return () => clearTimeout(t);
+  }, []);
+
+  // ===== TIMELINE 1 (15s) =====
   useEffect(() => {
     const t = setTimeout(() => {
       setCurtainActive(true);
-      setLineAnimate(true); // démarre la ligne au même moment
-      // on retire les classes après l'animation pour reset si besoin
+      setLineAnimate(true);
+
       setTimeout(() => {
         setCurtainActive(false);
         setLineAnimate(false);
-      }, 3300); // même durée que l'animation CSS (6s)
-    }, 15000); // démarre après 15 secondes
+      }, 3300);
+    }, 15000);
+
     return () => clearTimeout(t);
   }, []);
 
+  // ===== TIMELINE 2 (18s) =====
   useEffect(() => {
     const t = setTimeout(() => {
       setCurtainActive(true);
-      // on retire la classe après l'animation pour reset si besoin
-      setTimeout(() => setCurtainActive(false), 3000);
-    }, 18000); // 15000ms = 15s
+
+      setTimeout(() => {
+        setCurtainActive(false);
+      }, 3000);
+    }, 18000);
+
     return () => clearTimeout(t);
   }, []);
 
+  // ===== LEFT / RIGHT =====
   useEffect(() => {
     const t = setTimeout(() => {
       setRightAnimate(true);
@@ -49,22 +65,19 @@ const VideoLoop = forwardRef((props, externalRef) => {
     return () => clearTimeout(t);
   }, []);
 
+  // ===== AUDIO (1er clic) =====
   useEffect(() => {
-    const t = setTimeout(() => setContentVisible(true), 800);
-    return () => clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-    const enableOnFirstClick = () => {
+    const enableAudio = () => {
       if (audioRef.current && !soundOn) {
         audioRef.current.volume = 0.5;
         audioRef.current.play().catch(() => {});
         setSoundOn(true);
       }
-      window.removeEventListener("click", enableOnFirstClick);
+      window.removeEventListener("click", enableAudio);
     };
-    window.addEventListener("click", enableOnFirstClick);
-    return () => window.removeEventListener("click", enableOnFirstClick);
+
+    window.addEventListener("click", enableAudio);
+    return () => window.removeEventListener("click", enableAudio);
   }, [soundOn]);
 
   const toggleSound = (e) => {
@@ -81,6 +94,7 @@ const VideoLoop = forwardRef((props, externalRef) => {
     }
   };
 
+  // ===== JSX =====
   return (
     <>
       <div
@@ -91,14 +105,28 @@ const VideoLoop = forwardRef((props, externalRef) => {
         ref={externalRef}
       >
         <Nav className="videoloop-nav" />
+
         <div className="video-bg" aria-hidden="true"></div>
+
         <h1 className="main-title">Association OSAER</h1>
+
         <div className="crossfade-line"></div>
 
+        {/* SEO */}
+        <section className="video-description">
+          <p>
+            L’association OSAER propose des performances de danse contemporaine,
+            et chorégraphie.
+          </p>
+        </section>
+
+        {/* VIDEO + ANIMATIONS */}
         <div
-          className={`video-container ${curtainActive ? "video-curtain" : ""}${
-            rightAnimate ? "right-animate" : ""
-          }  ${leftAnimate ? "left-animate" : ""}`}
+          className={`video-container
+            ${curtainActive ? "video-curtain" : ""}
+            ${rightAnimate ? "right-animate" : ""}
+            ${leftAnimate ? "left-animate" : ""}
+          `}
         >
           <video
             className="fade-video"
@@ -108,8 +136,18 @@ const VideoLoop = forwardRef((props, externalRef) => {
             playsInline
             muted
             ref={videoRef}
+            preload="metadata"
           />
         </div>
+
+        {/* LOGO */}
+        <div className={`logo ${contentVisible ? "visible-after-video" : ""}`}>
+          <a href="/">
+            <img src="/Pics/logo2.webp" alt="Logo OSAER" loading="lazy" />
+          </a>
+        </div>
+
+        {/* SCROLL */}
         <div
           className={`scroll-arrow-down ${
             contentVisible ? "visible-after-video" : ""
@@ -117,30 +155,27 @@ const VideoLoop = forwardRef((props, externalRef) => {
         >
           ↓
         </div>
-        <div className={`logo ${contentVisible ? "visible-after-video" : ""}`}>
-          <a href="/">
-            <img src="/Pics/logo2.webp" alt="Logo OSAER" />
-          </a>
-        </div>
 
+        {/* SOUND */}
         <button
           className={`sound-toggle ${soundOn ? "on" : "off"} ${
             contentVisible ? "visible-after-video" : ""
           }`}
           onClick={toggleSound}
-          aria-pressed={soundOn}
-          aria-label={soundOn ? "Couper le son" : "Activer le son"}
-          title={soundOn ? "Couper le son" : "Activer le son"}
         >
           {soundOn ? "🔊" : "🔇"}
         </button>
-        <audio ref={audioRef} src="/Son/zur.mp3" loop preload="auto" />
+
+        <audio ref={audioRef} src="/Son/zur.mp3" loop preload="none" />
+
+        {/* LIGNE RESPONSIVE */}
         <div
           className={`bottom-line-responsive ${
             lineAnimate ? "line-animate" : ""
           }`}
         />
       </div>
+
       <Footer className="videoloop-footer" />
     </>
   );

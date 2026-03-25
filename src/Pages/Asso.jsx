@@ -21,6 +21,7 @@ const Asso = forwardRef((props, externalRef) => {
           contentVisible ? "crossfade-visible" : ""
         }`}
         ref={externalRef}
+        role="main"
       >
         <Nav />
         {/* Fond décoratif */}
@@ -34,6 +35,11 @@ const Asso = forwardRef((props, externalRef) => {
         >
           Asso
         </h1>
+        <p className="seo-hidden">
+          OSAER est une compagnie de danse contemporaine développant des projets
+          artistiques collaboratifs mêlant chorégraphie, performance et
+          médiation culturelle.
+        </p>
         <div className="asso-rectangle">
           <div className="assowrap">
             <div
@@ -43,6 +49,7 @@ const Asso = forwardRef((props, externalRef) => {
               <img
                 src="/Pics/assowall.webp"
                 alt="Présentation de l'association"
+                loading="lazy"
               />
             </div>
             <div className="asso-text" lang="fr">
@@ -89,7 +96,11 @@ const Asso = forwardRef((props, externalRef) => {
               className="asso-image-wrapper2"
               onClick={() => setZoomedImage1("/Pics/asso4.webp")}
             >
-              <img src="/Pics/asso4.webp" alt="Osaer illustration" />
+              <img
+                src="/Pics/asso4.webp"
+                alt="Osaer illustration"
+                loading="lazy"
+              />
             </div>
           </div>
           <div className="assowrap3">
@@ -97,7 +108,11 @@ const Asso = forwardRef((props, externalRef) => {
               className="asso-image-wrapper"
               onClick={() => setZoomedImage1("/Pics/asso2.webp")}
             >
-              <img src="/Pics/asso2.webp" alt="Présentation de l'association" />
+              <img
+                src="/Pics/asso2.webp"
+                alt="Projet artistique par la compagnie OSAER"
+                loading="lazy"
+              />
             </div>
             <div className="asso-text3">
               <p>
@@ -117,7 +132,11 @@ const Asso = forwardRef((props, externalRef) => {
               className="asso-vertical-image"
               onClick={() => setZoomedImage1("/Pics/asso3.webp")}
             >
-              <img src="/Pics/asso3.webp" alt="Présentation longue" />
+              <img
+                src="/Pics/asso3.webp"
+                alt="Création chorégraphique contemporaine OSAER"
+                loading="lazy"
+              />
             </div>
 
             <p className="asso-vertical-text">
@@ -135,7 +154,7 @@ const Asso = forwardRef((props, externalRef) => {
           className={`logoasso ${contentVisible ? "visible-after-video" : ""}`}
         >
           <a href="/">
-            <img src="/Pics/logo2.webp" alt="Logo OSAER" />
+            <img src="/Pics/logo2.webp" alt="Logo de l'association OSAER" />
           </a>
         </div>
         <div
@@ -149,7 +168,7 @@ const Asso = forwardRef((props, externalRef) => {
       {zoomedImage1 && (
         <div className="overlay" onClick={() => setZoomedImage1(null)}>
           <div className="enlarged-media" onClick={(e) => e.stopPropagation()}>
-            <img src={zoomedImage1} alt="Zoom 1" />
+            <img src={zoomedImage1} alt="Image agrandie OSAER" />
           </div>
           <button
             className="close-button"

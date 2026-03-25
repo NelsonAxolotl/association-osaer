@@ -444,6 +444,10 @@
     filter 0.3s ease;
 }
 
+.seo-hidden {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .temps::after {
     top: 22.5%;
