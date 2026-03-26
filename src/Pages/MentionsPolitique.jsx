@@ -35,9 +35,12 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
               <h2>1. Mentions légales</h2>
 
               <p>
-                Le présent site est édité par l’association{" "}
-                <strong>OSAER</strong>, association loi 1901 dédiée à la
-                création artistique et au spectacle vivant.
+                Le présent site est édité par{" "}
+                <span>
+                  l’association <strong>OSAER</strong>
+                </span>
+                , association loi 1901 dédiée à la création artistique et au
+                spectacle vivant.
               </p>
 
               <p>
@@ -55,7 +58,7 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
               </p>
 
               <p>
-                <strong>Directeur de la publication :</strong> [Nom Prénom]
+                <strong>Directeur de la publication :</strong> Stéphanie Pignon
               </p>
 
               <p>
@@ -72,8 +75,8 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
               <p>
                 <strong>Hébergement :</strong>
                 <br />
-                Le site est hébergé par [Nom de l’hébergeur] – [Adresse] – [Site
-                web]
+                Le site est hébergé par par Vercel Inc. ,440 N Barranca Ave 4133
+                Covina, CA 91723 États-Unis, https://vercel.com
               </p>
 
               <p>
