@@ -10,7 +10,6 @@ const VideoLoop = forwardRef((props, externalRef) => {
   // ===== STATES =====
   const [soundOn, setSoundOn] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
-
   const [rightAnimate, setRightAnimate] = useState(false);
   const [leftAnimate, setLeftAnimate] = useState(false);
   const [curtainActive, setCurtainActive] = useState(false);
@@ -97,12 +96,13 @@ const VideoLoop = forwardRef((props, externalRef) => {
   // ===== JSX =====
   return (
     <>
-      <div
+      <main
         id="page-container"
         className={`crossfade-container videoloop-page ${
           contentVisible ? "crossfade-visible" : ""
         }`}
         ref={externalRef}
+        role="main"
       >
         <Nav className="videoloop-nav" />
 
@@ -181,7 +181,7 @@ const VideoLoop = forwardRef((props, externalRef) => {
             lineAnimate ? "line-animate" : ""
           }`}
         />
-      </div>
+      </main>
 
       <Footer className="videoloop-footer" />
     </>
