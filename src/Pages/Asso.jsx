@@ -49,6 +49,8 @@ const Asso = forwardRef((props, externalRef) => {
               <img
                 src="/Pics/assowall.webp"
                 alt="Présentation de l'association"
+                width={400}
+                height={400}
                 loading="lazy"
               />
             </div>
@@ -99,6 +101,8 @@ const Asso = forwardRef((props, externalRef) => {
               <img
                 src="/Pics/asso4.webp"
                 alt="Osaer illustration"
+                width={400}
+                height={400}
                 loading="lazy"
               />
             </div>
@@ -111,6 +115,8 @@ const Asso = forwardRef((props, externalRef) => {
               <img
                 src="/Pics/asso2.webp"
                 alt="Projet artistique par la compagnie OSAER"
+                width={400}
+                height={400}
                 loading="lazy"
               />
             </div>
@@ -135,6 +141,8 @@ const Asso = forwardRef((props, externalRef) => {
               <img
                 src="/Pics/asso3.webp"
                 alt="Création chorégraphique contemporaine OSAER"
+                width={400}
+                height={400}
                 loading="lazy"
               />
             </div>
@@ -157,6 +165,8 @@ const Asso = forwardRef((props, externalRef) => {
             <img
               src="/Pics/logo2.webp"
               alt="Logo de l'association OSAER"
+              width={200}
+              height={200}
               fetchpriority="high"
             />
           </a>

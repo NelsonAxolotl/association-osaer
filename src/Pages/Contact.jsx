@@ -101,7 +101,6 @@ const Contact = forwardRef((props, externalRef) => {
               width={200}
               height={200}
               fetchpriority="high"
-              loading="eager"
             />
           </a>
         </div>

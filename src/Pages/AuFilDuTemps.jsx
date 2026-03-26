@@ -231,7 +231,13 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
           }`}
         >
           <a href="/">
-            <img src="/Pics/logo2.webp" alt="Logo OSAER" fetchpriority="high" />
+            <img
+              src="/Pics/logo2.webp"
+              alt="Logo OSAER"
+              width={200}
+              height={200}
+              loading="lazy"
+            />
           </a>
         </div>
         <div

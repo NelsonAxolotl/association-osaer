@@ -137,7 +137,7 @@ const VideoLoop = forwardRef((props, externalRef) => {
             muted
             ref={videoRef}
             preload="metadata"
-            fetchPriority="high"
+            fetchpriority="high"
           />
         </div>
 
@@ -149,39 +149,38 @@ const VideoLoop = forwardRef((props, externalRef) => {
               alt="Logo OSAER"
               width={200}
               height={200}
-              loading="lazy"
+              fetchpriority="high"
             />
           </a>
         </div>
-
-        {/* SCROLL */}
-        <div
-          className={`scroll-arrow-down ${
-            contentVisible ? "visible-after-video" : ""
-          }`}
-        >
-          ↓
-        </div>
-
-        {/* SOUND */}
-        <button
-          className={`sound-toggle ${soundOn ? "on" : "off"} ${
-            contentVisible ? "visible-after-video" : ""
-          }`}
-          onClick={toggleSound}
-        >
-          {soundOn ? "🔊" : "🔇"}
-        </button>
-
-        <audio ref={audioRef} src="/Son/zur.mp3" loop preload="none" />
-
-        {/* LIGNE RESPONSIVE */}
-        <div
-          className={`bottom-line-responsive ${
-            lineAnimate ? "line-animate" : ""
-          }`}
-        />
       </main>
+      {/* SCROLL */}
+      <div
+        className={`scroll-arrow-down ${
+          contentVisible ? "visible-after-video" : ""
+        }`}
+      >
+        ↓
+      </div>
+
+      {/* SOUND */}
+      <button
+        className={`sound-toggle ${soundOn ? "on" : "off"} ${
+          contentVisible ? "visible-after-video" : ""
+        }`}
+        onClick={toggleSound}
+      >
+        {soundOn ? "🔊" : "🔇"}
+      </button>
+
+      <audio ref={audioRef} src="/Son/zur.mp3" loop preload="none" />
+
+      {/* LIGNE RESPONSIVE */}
+      <div
+        className={`bottom-line-responsive ${
+          lineAnimate ? "line-animate" : ""
+        }`}
+      />
 
       <Footer className="videoloop-footer" />
     </>

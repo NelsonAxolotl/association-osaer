@@ -16,6 +16,7 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
   return (
     <>
       <main
+        id="main-content"
         className={`mainlegal legal-page ${contentVisible ? "crossfade-visible" : ""}`}
         ref={externalRef}
         role="main"
@@ -177,6 +178,8 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
             <img
               src="/Pics/logo2.webp"
               alt="Logo de l'association OSAER"
+              width={200}
+              height={200}
               fetchpriority="high"
               loading="lazy"
             />
