@@ -50,7 +50,7 @@
 
 .videoloop-page .navbar::before {
   top: -46.5%;
-  height: 174%;
+  height: 174.5%;
   right: 99.8%;
   animation: fadeLineVertical 14s ease-in forwards;
 }

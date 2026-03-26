@@ -338,6 +338,7 @@
     height: 90%;
     top: 7.5%;
     left: 0;
+    animation: curtainCenter 8s ease-in-out 13s forwards;
   }
 
   .fade-video {
@@ -359,7 +360,7 @@
     opacity: 0;
     animation:
       fadeInLine 8s ease-in forwards,
-      lineCurtainUpDown 6s ease-in-out 15s forwards,
+      lineCurtainUp 8s ease-in-out 15s forwards,
       lineCurtainRight 7s ease-in-out 21.7s forwards;
   }
 
@@ -373,7 +374,7 @@
     opacity: 0;
     animation:
       fadeInLine 8s ease-in forwards,
-      lineCurtainUpDown 6s ease-in-out 15s forwards,
+      lineCurtainUpDown 8s ease-in-out 15s forwards,
       lineCurtainRight 7s ease-in-out 21.55s forwards;
   }
 
@@ -395,6 +396,18 @@
     }
     100% {
       bottom: 22%;
+    }
+  }
+
+  @keyframes lineCurtainUp {
+    0% {
+      top: 30%;
+    }
+    50% {
+      top: 34%;
+    }
+    100% {
+      top: 30%;
     }
   }
 
