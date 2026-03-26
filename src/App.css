@@ -1,7 +1,7 @@
 /* ===== Réinitialisation et styles globaux ===== */
 @font-face {
   font-family: "Quicksand";
-  src: url("/Fonts/Quicksand-Regular.woff2") format("woff2");
+  src: url("/fonts/Quicksand-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: "Caveat";
-  src: url("/Fonts/Caveat-Regular.woff2") format("woff2");
+  src: url("/fonts/Caveat-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

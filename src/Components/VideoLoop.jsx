@@ -137,7 +137,7 @@ const VideoLoop = forwardRef((props, externalRef) => {
             muted
             ref={videoRef}
             preload="metadata"
-            fetchpriority="high"
+            fetchPriority="high"
           />
         </div>
 
