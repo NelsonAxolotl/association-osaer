@@ -98,6 +98,8 @@ const Contact = forwardRef((props, externalRef) => {
             <img
               src="/Pics/logo2.webp"
               alt="Logo de l'association OSAER"
+              width={200}
+              height={200}
               fetchpriority="high"
               loading="eager"
             />
