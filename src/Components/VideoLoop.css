@@ -318,10 +318,6 @@
 }
 
 @media (max-width: 500px) {
-  .crossfade-container {
-    height: 90vh;
-  }
-
   .main-title {
     left: 15%;
     text-align: center;
@@ -392,7 +388,7 @@
       bottom: 24%;
     }
     50% {
-      bottom: 26%;
+      bottom: 28%;
     }
     100% {
       bottom: 24%;

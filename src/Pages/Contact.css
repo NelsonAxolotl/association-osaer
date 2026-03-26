@@ -291,7 +291,7 @@
   }
 
   .maincontact {
-    height: 80vh;
+    height: 90vh;
   }
 
   .maincontact::after {
@@ -344,6 +344,6 @@
   .contact-video-background {
     top: -6%;
     height: 87%;
-    filter: brightness(0.4);
+    filter: brightness(0.3);
   }
 }
