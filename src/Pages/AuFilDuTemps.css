@@ -151,7 +151,7 @@
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.4;
-  font-family: "Quicksand", serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 1.05rem;
 }
 
@@ -179,7 +179,7 @@
 .ephe-status {
   display: inline-block;
   font-size: 1.05rem;
-  font-family: "Quicksand", serif;
+  font-family: "Quicksand", sans-serif;
   color: rgb(248, 119, 6);
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -274,7 +274,7 @@
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.4;
-  font-family: "Quicksand", serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 1.05rem;
   padding: 10px;
 }
@@ -335,7 +335,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: "Quicksand", serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 1.05rem;
   color: rgb(248, 119, 6);
   text-transform: uppercase;
@@ -367,7 +367,7 @@
 .status-diagonal {
   max-width: 900px;
   position: relative;
-  font-family: "Quicksand", serif;
+  font-family: "Quicksand", sans-serif;
   text-align: justify;
   font-size: 1.05rem;
   line-height: 1.4;

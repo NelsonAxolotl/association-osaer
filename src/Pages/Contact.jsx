@@ -47,6 +47,7 @@ const Contact = forwardRef((props, externalRef) => {
             muted
             playsInline
             preload="metadata"
+            fetchpriority="high"
           />
           <div className={`contact-info ${contentVisible ? "visible" : ""}`}>
             <h2>ASSOCIATION OSAER</h2>
@@ -97,7 +98,8 @@ const Contact = forwardRef((props, externalRef) => {
             <img
               src="/Pics/logo2.webp"
               alt="Logo de l'association OSAER"
-              loading="lazy"
+              fetchpriority="high"
+              loading="eager"
             />
           </a>
         </div>

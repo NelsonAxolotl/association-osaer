@@ -137,13 +137,20 @@ const VideoLoop = forwardRef((props, externalRef) => {
             muted
             ref={videoRef}
             preload="metadata"
+            fetchpriority="high"
           />
         </div>
 
         {/* LOGO */}
         <div className={`logo ${contentVisible ? "visible-after-video" : ""}`}>
           <a href="/">
-            <img src="/Pics/logo2.webp" alt="Logo OSAER" loading="lazy" />
+            <img
+              src="/Pics/logo2.webp"
+              alt="Logo OSAER"
+              width={200}
+              height={200}
+              loading="lazy"
+            />
           </a>
         </div>
 

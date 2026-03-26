@@ -158,7 +158,7 @@
 
 .asso-text {
   flex: 1;
-  font-family: "Quicksand", serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 1.05rem;
   line-height: 1.4;
   text-align: justify;
@@ -218,7 +218,7 @@
 .asso-text2 {
   position: relative;
   flex: 1;
-  font-family: "Quicksand", serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 1.05rem;
   line-height: 1.4;
   text-align: justify;
@@ -254,7 +254,7 @@
 
 .asso-text3 {
   flex: 1;
-  font-family: "Quicksand", serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 1.05rem;
   line-height: 1.4;
   text-align: justify;
@@ -359,7 +359,7 @@
 .asso-vertical-text {
   margin-top: 40px;
   font-size: 1.05rem;
-  font-family: "Quicksand", serif;
+  font-family: "Quicksand", sans-serif;
   line-height: 1.4;
   text-align: justify;
   color: #f1f1f1;

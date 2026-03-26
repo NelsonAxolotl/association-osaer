@@ -273,6 +273,7 @@ const Bio = forwardRef((props, externalRef) => {
             <img
               src="/Pics/logo2.webp"
               alt="Logo de la compagnie OSAER"
+              fetchpriority="high"
               loading="lazy"
             />
           </a>

@@ -177,6 +177,7 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
             <img
               src="/Pics/logo2.webp"
               alt="Logo de l'association OSAER"
+              fetchpriority="high"
               loading="lazy"
             />
           </a>

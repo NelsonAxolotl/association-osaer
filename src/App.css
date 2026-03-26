@@ -1,25 +1,3 @@
-/* ===== Réinitialisation et styles globaux ===== */
-@font-face {
-  font-family: "Caveat";
-  src: url("/Fonts/Caveat-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Quicksand";
-  src: url("/Fonts/Quicksand-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Permanent Marker";
-  src: url("/Fonts/PermanentMarker-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 *,
 *::before,
 *::after {

@@ -154,7 +154,11 @@ const Asso = forwardRef((props, externalRef) => {
           className={`logoasso ${contentVisible ? "visible-after-video" : ""}`}
         >
           <a href="/">
-            <img src="/Pics/logo2.webp" alt="Logo de l'association OSAER" />
+            <img
+              src="/Pics/logo2.webp"
+              alt="Logo de l'association OSAER"
+              fetchpriority="high"
+            />
           </a>
         </div>
         <div
