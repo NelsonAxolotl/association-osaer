@@ -47,7 +47,7 @@ const Contact = forwardRef((props, externalRef) => {
             muted
             playsInline
             preload="metadata"
-            fetchpriority="high"
+            fetchPriority="high"
           />
           <div className={`contact-info ${contentVisible ? "visible" : ""}`}>
             <h2>ASSOCIATION OSAER</h2>
