@@ -12,7 +12,7 @@
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 801; /* derrière le titre et la photo */
+  z-index: 801;
   background-image: repeating-linear-gradient(
     -135deg,
     rgba(255, 255, 255, 0.06) 0px,
@@ -35,12 +35,11 @@
   width: 88.5%;
   height: 1.9px;
   background: rgb(255, 255, 255);
-  opacity: 0; /* départ invisible */
+  opacity: 0;
   animation: fadeLineTop 4s ease-in forwards;
-  animation-delay: 0.5s; /* décalage pour effet plus élégant */
+  animation-delay: 0.5s;
 }
 
-/* animation pour la verticale */
 @keyframes fadeLineVertical {
   from {
     opacity: 0;
@@ -62,8 +61,7 @@
   margin: 0;
   white-space: nowrap;
   opacity: 0;
-  /* décalage initial pour le glissement */
-  transform: translateY(20px); /* décalage initial pour le glissement */
+  transform: translateY(20px);
   transition:
     opacity 2s ease-in-out,
     transform 2s ease-in-out;
@@ -96,16 +94,16 @@
 
 .bio-photo {
   z-index: 801;
-  position: relative; /* nécessaire pour ::after */
-  flex: 1 1 70%; /* la photo occupe 60% environ sur grand écran */
+  position: relative;
+  flex: 1 1 70%;
   overflow: hidden;
   border-radius: 12px;
 }
 
 .bio-photo20 {
   z-index: 801;
-  position: relative; /* nécessaire pour ::after */
-  flex: 1 1 60%; /* la photo occupe 60% environ sur grand écran */
+  position: relative;
+  flex: 1 1 60%;
   overflow: hidden;
   border-radius: 12px;
 }
@@ -120,8 +118,8 @@
   transition:
     transform 0.4s ease,
     box-shadow 0.4s ease;
-  object-fit: cover; /* recadre sans déformer */
-  object-position: center 15%; /* centre le sujet */
+  object-fit: cover;
+  object-position: center 15%;
   border-radius: 12px;
   z-index: 802;
   cursor: pointer;
@@ -139,8 +137,8 @@
   transition:
     transform 0.4s ease,
     box-shadow 0.4s ease;
-  object-fit: cover; /* recadre sans déformer */
-  object-position: center 31%; /* centre le sujet */
+  object-fit: cover;
+  object-position: center 31%;
   border-radius: 12px;
   z-index: 802;
   cursor: pointer;
@@ -168,20 +166,19 @@
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
-  /* Fond derrière le texte */
-  background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 25px 20px 15px;
-  border-radius: 12px; /* coins arrondis */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* léger relief */
-  margin-left: 0; /* collé à gauche */
-  margin-right: auto; /* pousse vers la gauche */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .bio-text p::first-letter {
-  font-size: 3rem; /* taille plus grande */
+  font-size: 3rem;
   font-weight: bold;
-  color: #ffffff; /* ou ta couleur d’accent */
-  font-family: "Caveat", cursive; /* si tu veux une touche artistique */
+  color: #ffffff;
+  font-family: "Caveat", cursive;
   float: left;
   line-height: 1;
   margin-right: 2px;
@@ -189,13 +186,13 @@
 }
 
 .highlight-link {
-  color: #f0e6c2; /* doré */
+  color: #f0e6c2;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .highlight-link:hover {
-  color: #dbce9e; /* légère variation de doré */
+  color: #a58308;
 }
 
 .bio-text3 {
@@ -207,20 +204,20 @@
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
-  background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 25px 20px 15px;
-  border-radius: 12px; /* coins arrondis */
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  margin-left: auto; /* pousse vers la droite */
-  margin-right: 0; /* collé à droite */
+  margin-left: auto;
+  margin-right: 0;
   margin-top: 10px;
 }
 
 .bio-text3 p::first-letter {
-  font-size: 3rem; /* taille plus grande */
+  font-size: 3rem;
   font-weight: bold;
-  color: #ffffff; /* ou ta couleur d’accent */
-  font-family: "Caveat", cursive; /* si tu veux une touche artistique */
+  color: #ffffff;
+  font-family: "Caveat", cursive;
   float: left;
   line-height: 1;
   margin-right: 2px;
@@ -236,19 +233,19 @@
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
-  background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 25px 20px 15px;
-  border-radius: 12px; /* coins arrondis */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* léger relief */
-  margin-left: 0; /* collé à gauche */
-  margin-right: auto; /* pousse vers la gauche */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .bio-text4 p::first-letter {
-  font-size: 3rem; /* taille plus grande */
+  font-size: 3rem;
   font-weight: bold;
-  color: #ffffff; /* ou ta couleur d’accent */
-  font-family: "Caveat", cursive; /* si tu veux une touche artistique */
+  color: #ffffff;
+  font-family: "Caveat", cursive;
   float: left;
   line-height: 1;
   margin-right: 2px;
@@ -256,10 +253,10 @@
 }
 
 .bio-text4 p::first-letter {
-  font-size: 3rem; /* taille plus grande */
+  font-size: 3rem;
   font-weight: bold;
-  color: #ffffff; /* ou ta couleur d’accent */
-  font-family: "Caveat", cursive; /* si tu veux une touche artistique */
+  color: #ffffff;
+  font-family: "Caveat", cursive;
   float: left;
   line-height: 1;
   margin-right: 2px;
@@ -275,20 +272,20 @@
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
   width: 92%;
-  background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 25px 20px 15px;
-  border-radius: 12px; /* coins arrondis */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* léger relief */
-  margin-left: 0; /* collé à gauche */
-  margin-right: auto; /* pousse vers la gauche */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-left: 0;
+  margin-right: auto;
   margin-top: 10px;
 }
 
 .bio-text5 p::first-letter {
-  font-size: 3rem; /* taille plus grande */
+  font-size: 3rem;
   font-weight: bold;
-  color: #ffffff; /* ou ta couleur d’accent */
-  font-family: "Caveat", cursive; /* si tu veux une touche artistique */
+  color: #ffffff;
+  font-family: "Caveat", cursive;
   float: left;
   line-height: 1;
   margin-right: 2px;
@@ -305,20 +302,20 @@
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
   margin-bottom: 100px;
-  background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 25px 20px 15px;
-  border-radius: 12px; /* coins arrondis */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* léger relief */
-  margin-left: auto; /* pousse vers la droite */
-  margin-right: 0; /* collé à droite */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  margin-right: 0;
   margin-top: 10px;
 }
 
 .bio-text6 p::first-letter {
-  font-size: 3rem; /* taille plus grande */
+  font-size: 3rem;
   font-weight: bold;
-  color: #ffffff; /* ou ta couleur d’accent */
-  font-family: "Caveat", cursive; /* si tu veux une touche artistique */
+  color: #ffffff;
+  font-family: "Caveat", cursive;
   float: left;
   line-height: 1;
   margin-right: 2px;
@@ -334,19 +331,19 @@
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
   width: 92%;
-  background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 25px 20px 15px;
-  border-radius: 12px; /* coins arrondis */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* léger relief */
-  margin-left: auto; /* pousse vers la droite */
-  margin-right: 0; /* collé à droite */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .bio-text50 p::first-letter {
-  font-size: 3rem; /* taille plus grande */
+  font-size: 3rem;
   font-weight: bold;
-  color: #ffffff; /* ou ta couleur d’accent */
-  font-family: "Caveat", cursive; /* si tu veux une touche artistique */
+  color: #ffffff;
+  font-family: "Caveat", cursive;
   float: left;
   line-height: 1;
   margin-right: 2px;
@@ -362,20 +359,20 @@
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
   width: 92%;
-  background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 25px 20px 15px;
-  border-radius: 12px; /* coins arrondis */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* léger relief */
-  margin-left: 0; /* collé à gauche */
-  margin-right: auto; /* pousse vers la gauche */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-left: 0;
+  margin-right: auto;
   margin-top: 10px;
 }
 
 .bio-text51 p::first-letter {
-  font-size: 3rem; /* taille plus grande */
+  font-size: 3rem;
   font-weight: bold;
-  color: #ffffff; /* ou ta couleur d’accent */
-  font-family: "Caveat", cursive; /* si tu veux une touche artistique */
+  color: #ffffff;
+  font-family: "Caveat", cursive;
   float: left;
   line-height: 1;
   margin-right: 2px;
@@ -391,20 +388,20 @@
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
   width: 92%;
-  background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 25px 20px 15px;
-  border-radius: 12px; /* coins arrondis */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* léger relief */
-  margin-left: auto; /* pousse vers la droite */
-  margin-right: 0; /* collé à droite */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  margin-right: 0;
   margin-top: 10px;
 }
 
 .bio-text52 p::first-letter {
-  font-size: 3rem; /* taille plus grande */
+  font-size: 3rem;
   font-weight: bold;
-  color: #ffffff; /* ou ta couleur d’accent */
-  font-family: "Caveat", cursive; /* si tu veux une touche artistique */
+  color: #ffffff;
+  font-family: "Caveat", cursive;
   float: left;
   line-height: 1;
   margin-right: 2px;
@@ -420,20 +417,20 @@
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
   width: 92%;
-  background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 25px 20px 15px;
-  border-radius: 12px; /* coins arrondis */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* léger relief */
-  margin-left: 0; /* collé à gauche */
-  margin-right: auto; /* pousse vers la gauche */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-left: 0;
+  margin-right: auto;
   margin-top: 10px;
 }
 
 .bio-text53 p::first-letter {
-  font-size: 3rem; /* taille plus grande */
+  font-size: 3rem;
   font-weight: bold;
-  color: #ffffff; /* ou ta couleur d’accent */
-  font-family: "Caveat", cursive; /* si tu veux une touche artistique */
+  color: #ffffff;
+  font-family: "Caveat", cursive;
   float: left;
   line-height: 1;
   margin-right: 2px;
@@ -453,17 +450,15 @@ h2 {
   margin-top: -20px;
 }
 
-/* rectangle vert derrière la photo */
 .bio-rectangle {
   position: relative;
   overflow: hidden;
   top: 155px;
-  /* commence au-dessus de la photo, ajuster selon besoin */
   left: 1%;
-  width: 78%; /* jusqu'à la ligne blanche à droite */
+  width: 78%;
   padding: 50px;
   background: rgb(0, 0, 0);
-  z-index: 700; /* derrière la photo */
+  z-index: 700;
   opacity: 0;
   transition: opacity 2s ease-in-out;
   border-radius: 3px;
@@ -473,32 +468,29 @@ h2 {
   text-align: center;
 }
 
-/* Logo en bas à droite de la vidéo */
 .logobio {
-  position: fixed; /* Au lieu de fixed */ /* absolute pour qu'il reste dans le container vidéo */
-  top: 13%; /* distance depuis le bas de la vidéo */
-  right: 21%; /* distance depuis la droite */
+  position: fixed;
+  top: 13%;
+  right: 21%;
   z-index: 100;
   opacity: 0;
   transition: opacity 2s ease-in-out;
 }
 
 .logobio img {
-  width: 12vw; /* largeur relative à la largeur de l'écran */
-  width: 200px; /* limite maximale pour les grands écrans */
-  height: auto; /* garde les proportions */
+  width: 12vw;
+  width: 200px;
+  height: auto;
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
 }
 
-/* Apparition progressive */
 .crossfade-visible .bio-text {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* apparition progressive avec contentVisible */
 .crossfade-visible .bio-rectangle {
   opacity: 1;
 }
@@ -520,28 +512,26 @@ h2 {
   flex: 1 1 100%;
   overflow: hidden;
   border-radius: 12px;
-  max-width: 1000px; /* tu peux ajuster selon ton layout */
+  max-width: 1000px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* conteneur vidéo panoramique */
 .bio-video-diamond {
   position: relative;
   width: 80%;
-  height: 350px; /* hauteur "panoramique" */
+  height: 350px;
   overflow: hidden;
   border-radius: 12px;
   border: 2px solid white;
 }
 
-/* la vidéo elle-même */
 .bio-video-diamond video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* recadre sans déformer */
+  object-fit: cover;
   object-position: center 35%;
   border-radius: 12px;
   display: block;
@@ -555,8 +545,8 @@ h2 {
   width: 100%;
   height: 100%;
   background-size: cover;
-  opacity: 0.4; /* ajuste ici l’opacité */
-  pointer-events: none; /* pour ne pas bloquer le scroll ou les clics */
+  opacity: 0.4;
+  pointer-events: none;
 }
 
 .overlay {
@@ -602,10 +592,9 @@ h2 {
   line-height: 36px;
   text-align: center;
   padding: 0;
-  z-index: 9999; /* très haut pour passer devant tout */
+  z-index: 9999;
 }
 
-/* overlay qui prend tout l’écran */
 .overlay-video {
   position: fixed;
   inset: 0;
@@ -659,7 +648,7 @@ h2 {
   line-height: 36px;
   text-align: center;
   padding: 0;
-  z-index: 9999; /* très haut pour passer devant tout */
+  z-index: 9999;
 }
 
 .nelson {
@@ -679,8 +668,8 @@ h2 {
 
 .bio-photo-nelson {
   z-index: 801;
-  position: relative; /* nécessaire pour ::after */
-  flex: 1 1 65%; /* la photo occupe 60% environ sur grand écran */
+  position: relative;
+  flex: 1 1 65%;
   overflow: hidden;
   border-radius: 12px;
 }
@@ -695,8 +684,8 @@ h2 {
   transition:
     transform 0.4s ease,
     box-shadow 0.4s ease;
-  object-fit: cover; /* recadre sans déformer */
-  object-position: center; /* centre le sujet */
+  object-fit: cover;
+  object-position: center;
   border-radius: 12px;
   z-index: 802;
   cursor: pointer;
@@ -712,20 +701,19 @@ h2 {
   opacity: 0;
   animation: fadeInPhoto 1.5s ease forwards;
   z-index: 801;
-  /* Fond derrière le texte */
-  background-color: rgba(255, 255, 255, 0.05); /* blanc semi-transparent */
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 25px 20px 15px;
-  border-radius: 12px; /* coins arrondis */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* léger relief */
-  margin-left: 0; /* collé à gauche */
-  margin-right: auto; /* pousse vers la gauche */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .bio-text-nelson p::first-letter {
-  font-size: 3rem; /* taille plus grande */
+  font-size: 3rem;
   font-weight: bold;
-  color: #ffffff; /* ou ta couleur d’accent */
-  font-family: "Caveat", cursive; /* si tu veux une touche artistique */
+  color: #ffffff;
+  font-family: "Caveat", cursive;
   float: left;
   line-height: 1;
   margin-right: 2px;
@@ -751,10 +739,10 @@ h2 {
   .bio-bg {
     position: fixed;
     height: 22.5vh;
-    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    inset: 0;
     background: black;
-    z-index: 1; /* au-dessus du rectangle (700) mais en dessous du titre/nav */
-    pointer-events: none; /* n'interfère pas avec les clics */
+    z-index: 1;
+    pointer-events: none;
   }
 
   .bio-bg::before {
@@ -764,8 +752,8 @@ h2 {
   .bio::after {
     top: 22.5%;
     z-index: 1;
-    right: 0; /* commence à zéro à droite */
-    width: 97vw; /* prend toute la largeur de l’écran */
+    right: 0;
+    width: 97vw;
     left: 1.5%;
   }
 
@@ -780,9 +768,9 @@ h2 {
   .bio-rectangle {
     margin-top: 50px;
     z-index: 0;
-    width: calc(100% - 1rem); /* laisse 1rem de marge de chaque côté */
-    padding: 1rem 0.5rem 3.5rem; /* padding intérieur pour que le contenu ne touche pas les bords */
-    border-radius: 5px; /* optionnel : un peu d’arrondi pour le mobile */
+    width: calc(100% - 1rem);
+    padding: 1rem 0.5rem 3.5rem;
+    border-radius: 5px;
   }
 
   .logobio {
@@ -790,120 +778,120 @@ h2 {
   }
 
   .bio-text {
-    margin-top: 10px; /* réduit l’espace au-dessus du texte */
-    font-size: 1rem; /* texte un peu plus petit */
+    margin-top: 10px;
+    font-size: 1rem;
     line-height: 1.3;
-    text-justify: inter-word; /* ajuste les espaces entre mots */
-    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    text-justify: inter-word;
+    word-spacing: 0.001em;
   }
 
   .bio-text p::first-letter {
-    font-size: 2rem; /* taille plus grande */
+    font-size: 2rem;
     margin-right: 2px;
     margin-top: -10px;
   }
 
   .bio-text3 {
-    font-size: 1rem; /* texte un peu plus petit */
+    font-size: 1rem;
     line-height: 1.3;
-    text-justify: inter-word; /* ajuste les espaces entre mots */
-    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    text-justify: inter-word;
+    word-spacing: 0.001em;
   }
 
   .bio-text3 p::first-letter {
-    font-size: 2rem; /* taille plus grande */
+    font-size: 2rem;
     margin-right: 2px;
     margin-top: -10px;
   }
 
   .bio-text4 {
-    font-size: 1rem; /* texte un peu plus petit */
+    font-size: 1rem;
     line-height: 1.3;
-    text-justify: inter-word; /* ajuste les espaces entre mots */
-    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    text-justify: inter-word;
+    word-spacing: 0.001em;
   }
 
   .bio-text4 p::first-letter {
-    font-size: 2rem; /* taille plus grande */
+    font-size: 2rem;
     margin-right: 2px;
     margin-top: -10px;
   }
 
   .bio-text5 {
-    font-size: 1rem; /* texte un peu plus petit */
+    font-size: 1rem;
     line-height: 1.3;
-    text-justify: inter-word; /* ajuste les espaces entre mots */
-    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    text-justify: inter-word;
+    word-spacing: 0.001em;
   }
 
   .bio-text5 p::first-letter {
-    font-size: 2rem; /* taille plus grande */
+    font-size: 2rem;
     margin-right: 2px;
     margin-top: -10px;
   }
 
   .bio-text6 {
-    font-size: 1rem; /* texte un peu plus petit */
+    font-size: 1rem;
     line-height: 1.3;
     margin-bottom: 80px;
-    text-justify: inter-word; /* ajuste les espaces entre mots */
-    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    text-justify: inter-word;
+    word-spacing: 0.001em;
   }
 
   .bio-text6 p::first-letter {
-    font-size: 2rem; /* taille plus grande */
+    font-size: 2rem;
     margin-right: 2px;
     margin-top: -10px;
   }
 
   .bio-text50 {
-    font-size: 1rem; /* texte un peu plus petit */
+    font-size: 1rem;
     line-height: 1.3;
-    text-justify: inter-word; /* ajuste les espaces entre mots */
-    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    text-justify: inter-word;
+    word-spacing: 0.001em;
   }
 
   .bio-text50 p::first-letter {
-    font-size: 2rem; /* taille plus grande */
+    font-size: 2rem;
     margin-right: 2px;
     margin-top: -10px;
   }
 
   .bio-text51 {
-    font-size: 1rem; /* texte un peu plus petit */
+    font-size: 1rem;
     line-height: 1.3;
-    text-justify: inter-word; /* ajuste les espaces entre mots */
-    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    text-justify: inter-word;
+    word-spacing: 0.001em;
   }
 
   .bio-text51 p::first-letter {
-    font-size: 2rem; /* taille plus grande */
+    font-size: 2rem;
     margin-right: 2px;
     margin-top: -10px;
   }
 
   .bio-text52 {
-    font-size: 1rem; /* texte un peu plus petit */
+    font-size: 1rem;
     line-height: 1.3;
-    text-justify: inter-word; /* ajuste les espaces entre mots */
-    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    text-justify: inter-word;
+    word-spacing: 0.001em;
   }
 
   .bio-text52 p::first-letter {
-    font-size: 2rem; /* taille plus grande */
+    font-size: 2rem;
     margin-right: 2px;
     margin-top: -10px;
   }
 
   .bio-text53 {
-    font-size: 1rem; /* texte un peu plus petit */
+    font-size: 1rem;
     line-height: 1.3;
-    text-justify: inter-word; /* ajuste les espaces entre mots */
-    word-spacing: 0.001em; /* limite l’écart entre les mots */
+    text-justify: inter-word;
+    word-spacing: 0.001em;
   }
 
   .bio-text53 p::first-letter {
-    font-size: 2rem; /* taille plus grande */
+    font-size: 2rem;
     margin-right: 2px;
     margin-top: -10px;
   }
@@ -915,16 +903,15 @@ h2 {
   }
 
   h2 .role {
-    display: block; /* passe en dessous du nom */
+    display: block;
   }
 
   h2 .dash {
     display: none;
   }
 
-  /* Overlay plein écran */
   .overlay {
-    z-index: 99999; /* au-dessus de tout */
+    z-index: 99999;
   }
 
   .enlarged-media {
@@ -935,7 +922,6 @@ h2 {
     max-width: 90%;
   }
 
-  /* Animation */
   @keyframes zoomIn {
     from {
       transform: scale(0.8);
@@ -960,12 +946,12 @@ h2 {
   }
 
   .bio-text-nelson {
-    font-size: 1rem; /* texte un peu plus petit */
+    font-size: 1rem;
     line-height: 1.3;
   }
 
   .bio-text-nelson p::first-letter {
-    font-size: 2rem; /* taille plus grande */
+    font-size: 2rem;
     margin-right: 2px;
     margin-top: -10px;
   }
@@ -1098,9 +1084,8 @@ h2 {
     height: 300px;
   }
 
-  /* conteneur vidéo panoramique */
   .bio-video-diamond {
-    height: 270px; /* hauteur "panoramique" */
+    height: 270px;
     width: 100%;
   }
   .olivia {
@@ -1128,7 +1113,7 @@ h2 {
   .bio-bg::before {
     display: block;
     content: "";
-    position: absolute; /* important pour que ça reste dans .bio-bg */
+    position: absolute;
     inset: 0;
     z-index: 0;
     background-image: repeating-linear-gradient(
@@ -1139,7 +1124,7 @@ h2 {
       transparent 530px
     );
     filter: blur(8px);
-    opacity: 1; /* visible */
+    opacity: 1;
     pointer-events: none;
   }
 }

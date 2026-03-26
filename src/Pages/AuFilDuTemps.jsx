@@ -57,6 +57,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
               autoPlay // autoplay initial
               controlsList="nodownload"
               preload="metadata"
+              fetchPriority="high"
             >
               <source src="/Videos/ephe.mp4" type="video/mp4" />
               Votre navigateur ne supporte pas la vidéo.
