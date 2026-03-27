@@ -490,6 +490,10 @@
 }
 
 @media (max-width: 500px) {
+  .asso {
+    padding-bottom: 12rem;
+  }
+
   .asso-title {
     left: 40%;
   }
