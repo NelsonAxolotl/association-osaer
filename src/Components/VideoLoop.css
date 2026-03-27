@@ -335,7 +335,7 @@
 
   .video-container {
     height: 90%;
-    top: 11%;
+    top: 10%;
     left: 0;
     animation: curtainCenter 8s ease-in-out 13s forwards;
   }
