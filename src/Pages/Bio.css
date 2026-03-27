@@ -936,6 +936,7 @@ h2 {
 
   .bio-content-nelson {
     margin-top: 20px;
+    hyphens: auto;
   }
 
   .bio-text-nelson {
@@ -986,13 +987,6 @@ h2 {
     margin-top: -12px;
   }
 
-  .bio-text4 {
-    width: 100%;
-    margin: auto 0;
-    hyphens: auto;
-    line-height: 1.4;
-  }
-
   .bio-text4 p::first-letter {
     margin-right: 2px;
     margin-top: -12px;
@@ -1001,7 +995,6 @@ h2 {
   .bio-text5 {
     width: 100%;
     margin: auto 0;
-    hyphens: auto;
     line-height: 1.4;
   }
 
@@ -1013,7 +1006,6 @@ h2 {
   .bio-text6 {
     width: 100%;
     margin: auto 0;
-    hyphens: auto;
     line-height: 1.4;
   }
 
@@ -1036,7 +1028,6 @@ h2 {
   .bio-text51 {
     width: 100%;
     margin: auto 0;
-    hyphens: auto;
     line-height: 1.4;
   }
 
@@ -1048,7 +1039,6 @@ h2 {
   .bio-text52 {
     width: 100%;
     margin: auto 0;
-    hyphens: auto;
     line-height: 1.4;
   }
 

@@ -317,6 +317,10 @@
 }
 
 @media (max-width: 500px) {
+  .crossfade-container {
+    height: 90vh;
+  }
+
   .main-title {
     left: 15%;
     text-align: center;
@@ -331,7 +335,7 @@
 
   .video-container {
     height: 90%;
-    top: 7.5%;
+    top: 8%;
     left: 0;
     animation: curtainCenter 8s ease-in-out 13s forwards;
   }
@@ -343,7 +347,7 @@
   }
 
   .sound-toggle {
-    bottom: 12%;
+    bottom: 19%;
     font-size: 1.5rem;
   }
 
@@ -363,7 +367,7 @@
     position: absolute;
     left: 4%;
     width: 92vw;
-    bottom: 24%;
+    bottom: 28%;
     height: 2px;
     background: white;
     opacity: 0;
@@ -384,13 +388,13 @@
 
   @keyframes lineCurtainUpDown {
     0% {
-      bottom: 24%;
-    }
-    50% {
       bottom: 28%;
     }
+    50% {
+      bottom: 32%;
+    }
     100% {
-      bottom: 24%;
+      bottom: 28%;
     }
   }
 
