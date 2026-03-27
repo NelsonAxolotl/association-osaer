@@ -17,7 +17,7 @@
   background-image: repeating-linear-gradient(
     -135deg,
     rgba(255, 255, 255, 0.074) 0px,
-    rgb(248, 119, 6, 0.08) 1px,
+    rgb(248, 119, 6, 0.1) 1px,
     transparent 250px,
     transparent 460px
   );
@@ -222,8 +222,6 @@
   font-size: 1.05rem;
   line-height: 1.4;
   text-align: justify;
-  text-justify: inter-word;
-  word-spacing: 0.001em;
   background-color: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -258,8 +256,6 @@
   font-size: 1.05rem;
   line-height: 1.4;
   text-align: justify;
-  text-justify: inter-word;
-  word-spacing: 0.001em;
   background-color: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);

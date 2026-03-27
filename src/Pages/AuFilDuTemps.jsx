@@ -123,8 +123,8 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
               <p className="ephe-texte">
                 La création interroge enfin la notion de trace : qu’est-ce qui
                 demeure d’une rencontre éphémère ? Quelle empreinte sur moi ?
-                Quel geste cela va m'influencer? À l’instar des réflexions
-                portées par{" "}
+                Quel geste cela va t'il m'influencer ? À l’instar des grandes
+                réflexions portées par{" "}
                 <a
                   href="https://fr.wikipedia.org/wiki/Cyril_Dion"
                   target="_blank"
@@ -163,7 +163,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
               </div>
               <div className="traits"></div>
               <div className="texte droite">
-                Pensée comme une oeuvre collective,{" "}
+                Pensée comme une oeuvre dense et collective,{" "}
                 <span>"Couleur papier"</span> accompagne les jeunes interprètes
                 dans un véritable processus de création chorégraphique, mêlant
                 exigence artistique, engagement du corps et du travail sensible

@@ -55,7 +55,7 @@ const Bio = forwardRef((props, externalRef) => {
             <div className={`bio-text ${visibleClass}`}>
               <p>
                 Installée en Normandie, Stéphanie Pignon est danseuse,
-                chorégraphe et art-thérapeute.
+                interprète, chorégraphe et art-thérapeute.
               </p>
             </div>
             <div className={`bio-text3 ${visibleClass}`}>

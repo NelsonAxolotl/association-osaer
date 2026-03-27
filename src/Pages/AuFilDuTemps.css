@@ -149,7 +149,6 @@
   max-width: 900px;
   margin: 2rem auto;
   text-align: justify;
-  text-justify: inter-word;
   line-height: 1.4;
   font-family: "Quicksand", sans-serif;
   font-size: 1.05rem;
@@ -157,11 +156,10 @@
 
 .pastel-text {
   color: #efc9a6;
-  font-weight: 500;
 }
 
 .highlight {
-  color: rgb(248, 119, 6);
+  color: rgb(238, 177, 8);
   font-weight: 500;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -451,6 +449,10 @@
     z-index: 0;
   }
 
+  .ephe-block p {
+    font-size: 1rem;
+  }
+
   .logostemps {
     display: none;
   }
@@ -462,6 +464,7 @@
   .texte {
     width: 90%;
     margin: 1rem auto;
+    font-size: 1rem;
   }
 
   .traits {
@@ -497,6 +500,55 @@
 
   .texte-centre {
     margin: 2rem 3rem 0 3rem;
+  }
+
+  .status-diagonal {
+    font-size: 1rem;
+  }
+
+  .ephe-status {
+    display: inline-block; /* 🔥 clé du problème */
+    text-align: center;
+    margin: 2rem auto;
+    padding: 0 20px; /* espace pour les traits */
+  }
+
+  .ephe-status::before {
+    left: 0;
+  }
+
+  .ephe-status::after {
+    left: auto;
+    right: 0;
+    margin-left: 0;
+  }
+
+  .ephe-status-wrapper {
+    text-align: center;
+  }
+
+  .ephe-duration {
+    font-size: 1.5rem;
+  }
+
+  .ephe-duration2 {
+    font-size: 1.5rem;
+  }
+
+  .ephe-duration3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .tr::before {
+    left: calc(50% - 49%);
+    --translate-start: -50px;
+  }
+
+  .tr::after {
+    right: calc(50% - 49%);
+    --translate-start: 50px;
   }
 }
 
@@ -546,7 +598,8 @@
   }
 
   .ephe-duration {
-    line-height: 30px;
+    line-height: 28px;
+    margin-top: 20px;
   }
 
   .ephe-duration br {
@@ -554,7 +607,7 @@
   }
 
   .ephe-duration2 {
-    line-height: 30px;
+    line-height: 28px;
   }
 
   .ephe-duration2 br {
@@ -562,15 +615,17 @@
   }
 
   .ephe-block p {
-    width: 85%;
+    width: 90%;
+    hyphens: auto;
   }
 
   .ephe-status-wrapper {
-    width: 80%;
+    width: 90%;
   }
 
   .papier {
     margin-top: 100px;
+    hyphens: auto;
   }
 
   .papier-title {
@@ -592,5 +647,6 @@
   .status-diagonal {
     padding: 2rem 1rem 2rem;
     line-height: 24px;
+    hyphens: auto;
   }
 }
