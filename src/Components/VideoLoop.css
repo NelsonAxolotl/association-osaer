@@ -346,7 +346,7 @@
   }
 
   .sound-toggle {
-    bottom: 18%;
+    bottom: 16%;
     font-size: 1.5rem;
   }
 
@@ -366,7 +366,7 @@
     position: absolute;
     left: 4%;
     width: 92vw;
-    bottom: 28%;
+    bottom: 26%;
     height: 2px;
     background: white;
     opacity: 0;
@@ -387,13 +387,13 @@
 
   @keyframes lineCurtainUpDown {
     0% {
-      bottom: 28%;
+      bottom: 26%;
     }
     50% {
-      bottom: 32%;
+      bottom: 30%;
     }
     100% {
-      bottom: 28%;
+      bottom: 26%;
     }
   }
 
