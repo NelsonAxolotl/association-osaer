@@ -112,7 +112,7 @@
   }
 
   .bio-columns {
-    flex-direction: column; /* empile les colonnes verticalement */
+    flex-direction: column;
     align-items: center;
     gap: 3rem;
     margin-bottom: -50px;

@@ -1,4 +1,3 @@
-// Asso.jsx
 import "./Asso.css";
 import { useState, useEffect, forwardRef } from "react";
 import Nav from "../Components/Nav";
@@ -8,7 +7,6 @@ const Asso = forwardRef((props, externalRef) => {
   const [contentVisible, setContentVisible] = useState(false);
   const [zoomedImage1, setZoomedImage1] = useState(null);
 
-  // Apparition progressive
   useEffect(() => {
     const t = setTimeout(() => setContentVisible(true), 200);
     return () => clearTimeout(t);

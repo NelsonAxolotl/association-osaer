@@ -38,7 +38,6 @@
   animation-delay: 0.5s;
 }
 
-/* animation pour la verticale */
 @keyframes fadeLineVertical {
   from {
     opacity: 1;

@@ -5,21 +5,20 @@ import Footer from "../Components/Footer";
 
 const AuFilDuTemps = forwardRef((props, externalRef) => {
   const [contentVisible, setContentVisible] = useState(false);
-  const videoRef = useRef(null); // <- ref pour la vidéo
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const t = setTimeout(() => setContentVisible(true), 200);
     return () => clearTimeout(t);
   }, []);
 
-  // Déclenche le son après 3 secondes
   useEffect(() => {
     const timer = setTimeout(() => {
       if (videoRef.current) {
-        videoRef.current.muted = false; // active le son
-        videoRef.current.volume = 0.8; // volume initial 0-1
+        videoRef.current.muted = false;
+        videoRef.current.volume = 0.8;
       }
-    }, 4000); // 3s après l'affichage
+    }, 4000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -39,7 +38,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
         >
           Créations
         </h1>
-        {/* Texte SEO caché */}
+
         <p className="seo-hidden">
           Découvrez les créations de la compagnie OSAER : spectacles de danse
           contemporaine, performances artistiques et projets chorégraphiques en
@@ -49,12 +48,12 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
           <div className="tr">
             <h2> "É.phe"</h2>
             <video
-              ref={videoRef} // <- on branche la ref
+              ref={videoRef}
               className="creation-video"
               controls
               playsInline
-              muted // start muet pour l’autoplay
-              autoPlay // autoplay initial
+              muted
+              autoPlay
               controlsList="nodownload"
               preload="metadata"
               fetchPriority="high"

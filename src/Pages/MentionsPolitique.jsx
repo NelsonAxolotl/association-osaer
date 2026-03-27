@@ -23,13 +23,12 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
       >
         <Nav />
         <div className="legal-bg" aria-hidden="true"></div>
-        {/* Titre */}
+
         <h1 className={`legal-title ${visibleClass}`}>
           Mentions légales & <br />
           Politique de confidentialité
         </h1>
 
-        {/* Contenu */}
         <div className="legal-rectangle">
           <div className="ley">
             <section class="mentions-legales">
@@ -172,7 +171,6 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
           </div>
         </div>
 
-        {/* Logo */}
         <div className={`logolegal ${visibleClass}`}>
           <a href="/">
             <img
@@ -186,7 +184,6 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
           </a>
         </div>
 
-        {/* Flèche */}
         <div className={`scroll-arrow-down ${visibleClass}`}>↓</div>
       </main>
 

@@ -7,7 +7,6 @@ const VideoLoop = forwardRef((props, externalRef) => {
   const videoRef = useRef(null);
   const audioRef = useRef(null);
 
-  // ===== STATES =====
   const [soundOn, setSoundOn] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
   const [rightAnimate, setRightAnimate] = useState(false);
@@ -15,13 +14,11 @@ const VideoLoop = forwardRef((props, externalRef) => {
   const [curtainActive, setCurtainActive] = useState(false);
   const [lineAnimate, setLineAnimate] = useState(false);
 
-  // ===== FADE IN =====
   useEffect(() => {
     const t = setTimeout(() => setContentVisible(true), 800);
     return () => clearTimeout(t);
   }, []);
 
-  // ===== TIMELINE 1 (15s) =====
   useEffect(() => {
     const t = setTimeout(() => {
       setCurtainActive(true);
@@ -49,7 +46,6 @@ const VideoLoop = forwardRef((props, externalRef) => {
     return () => clearTimeout(t);
   }, []);
 
-  // ===== LEFT / RIGHT =====
   useEffect(() => {
     const t = setTimeout(() => {
       setRightAnimate(true);
@@ -64,7 +60,6 @@ const VideoLoop = forwardRef((props, externalRef) => {
     return () => clearTimeout(t);
   }, []);
 
-  // ===== AUDIO (1er clic) =====
   useEffect(() => {
     const enableAudio = () => {
       if (audioRef.current && !soundOn) {
@@ -93,7 +88,6 @@ const VideoLoop = forwardRef((props, externalRef) => {
     }
   };
 
-  // ===== JSX =====
   return (
     <>
       <main
@@ -112,7 +106,6 @@ const VideoLoop = forwardRef((props, externalRef) => {
 
         <div className="crossfade-line"></div>
 
-        {/* SEO */}
         <section className="video-description">
           <p>
             L’association OSAER propose des performances de danse contemporaine,
@@ -120,7 +113,6 @@ const VideoLoop = forwardRef((props, externalRef) => {
           </p>
         </section>
 
-        {/* VIDEO + ANIMATIONS */}
         <div
           className={`video-container
             ${curtainActive ? "video-curtain" : ""}
@@ -154,7 +146,7 @@ const VideoLoop = forwardRef((props, externalRef) => {
           </a>
         </div>
       </main>
-      {/* SCROLL */}
+
       <div
         className={`scroll-arrow-down ${
           contentVisible ? "visible-after-video" : ""
@@ -163,7 +155,6 @@ const VideoLoop = forwardRef((props, externalRef) => {
         ↓
       </div>
 
-      {/* SOUND */}
       <button
         className={`sound-toggle ${soundOn ? "on" : "off"} ${
           contentVisible ? "visible-after-video" : ""
@@ -175,7 +166,6 @@ const VideoLoop = forwardRef((props, externalRef) => {
 
       <audio ref={audioRef} src="/Son/zur.mp3" loop preload="none" />
 
-      {/* LIGNE RESPONSIVE */}
       <div
         className={`bottom-line-responsive ${
           lineAnimate ? "line-animate" : ""

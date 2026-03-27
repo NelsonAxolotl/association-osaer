@@ -9,20 +9,18 @@ function Navbar({ className }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Détecte le mobile
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth <= 900;
       setIsMobile(mobile);
-      if (!mobile) setIsOpen(false); // ferme le menu si desktop
+      if (!mobile) setIsOpen(false);
     };
 
-    handleResize(); // initialise au chargement
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Ferme le menu automatiquement lors du changement de page
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);

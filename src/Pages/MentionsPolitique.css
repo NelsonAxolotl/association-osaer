@@ -110,7 +110,6 @@
   margin-top: 60px;
 }
 
-/* Titres des sections */
 .mentions-legales h2,
 .politique-confidentialite h2 {
   font-size: 1.8rem;
@@ -119,7 +118,6 @@
   color: #cfcfff;
 }
 
-/* Sous-titres */
 .mentions-legales h3,
 .politique-confidentialite h3 {
   font-size: 1.3rem;
@@ -129,7 +127,6 @@
   color: #9fa2ff;
 }
 
-/* Paragraphes */
 .mentions-legales p,
 .politique-confidentialite p {
   margin-bottom: 15px;
@@ -138,7 +135,6 @@
   line-height: 20px;
 }
 
-/* Listes */
 .mentions-legales ul,
 .politique-confidentialite ul {
   margin-left: 20px;
@@ -148,7 +144,6 @@
   line-height: 20px;
 }
 
-/* Liens */
 .mentions-legales a,
 .politique-confidentialite a {
   color: #5852cd;
@@ -164,18 +159,18 @@
 }
 
 .logolegal {
-  position: fixed; /* Au lieu de fixed */ /* absolute pour qu'il reste dans le container vidéo */
-  top: 13%; /* distance depuis le bas de la vidéo */
-  right: 21%; /* distance depuis la droite */
+  position: fixed;
+  top: 13%;
+  right: 21%;
   z-index: 100;
   opacity: 0;
   transition: opacity 2s ease-in-out;
 }
 
 .logolegal img {
-  width: 12vw; /* largeur relative à la largeur de l'écran */
-  width: 200px; /* limite maximale pour les grands écrans */
-  height: auto; /* garde les proportions */
+  width: 12vw;
+  width: 200px;
+  height: auto;
   transition:
     transform 0.3s ease,
     filter 0.3s ease;

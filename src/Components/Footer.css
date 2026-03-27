@@ -115,9 +115,9 @@
 
 .footer-content {
   display: flex;
-  flex-direction: column; /* deux lignes par défaut */
-  align-items: center; /* centré horizontalement */
-  gap: 0.8rem; /* petit espace entre branding et lien légal */
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .footer-copy {
@@ -130,8 +130,8 @@
 .footer-legal a {
   font-size: 1.2rem;
   text-decoration: none;
-  color: #f5f5f5; /* contraste avec le fond noir */
-  font-style: italic; /* subtil style artistique */
+  color: #f5f5f5;
+  font-style: italic;
   transition:
     color 0.3s ease,
     text-decoration 0.3s ease;
