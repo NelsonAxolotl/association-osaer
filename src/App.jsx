@@ -2,10 +2,10 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
 import VideoLoop from "./Components/VideoLoop";
-
+import ScrollToTop from "./Components/ScrollToTop";
 import Bio from "./Pages/Bio";
 import Asso from "./Pages/Asso";
-import AuFilDuTemps from "./Pages/AuFilDuTemps";
+import AuFilDuTemps from "./Pages/Aufildutemps";
 import Contact from "./Pages/Contact";
 import MentionsPolitique from "./Pages/MentionsPolitique";
 import NotFound from "./Pages/NotFound";
@@ -13,6 +13,7 @@ import NotFound from "./Pages/NotFound";
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<VideoLoop />} />
         <Route path="/bio" element={<Bio />} />

@@ -67,15 +67,31 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
             </p>
             <p className="ephe-duration2">
               Interpètes : <br />
-              Olivia Caillaud / Stéphanie Pignon
+              <a href="/bio#olivia-caillaud" className="highlight-link">
+                Olivia Caillaud
+              </a>{" "}
+              /{" "}
+              <a href="/bio#stephanie-pignon" className="highlight-link">
+                Stéphanie Pignon
+              </a>
             </p>
-            <p className="ephe-duration3">Musique : Christophe Zurfluh</p>
+            <p className="ephe-duration3">
+              Musique :{" "}
+              <a
+                href="https://www.cieburnout.com/fr/equipe/collaborations-artistiques/christophe-zurfluh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="highlight-link"
+              >
+                Christophe Zurfluh
+              </a>
+            </p>
             <div className="ephe-block">
               <p className="ephe-texte">
                 <span className="pastel-text">
-                  " Mon atelier ! Mais je n’ai jamais eu d’atelier, moi. Je ne
+                  "Mon atelier ! Mais je n’ai jamais eu d’atelier, moi. Je ne
                   comprends pas qu’on s’enferme dans une chambre. Pour dessiner,
-                  oui, mais pour peindre, non "
+                  oui, mais pour peindre, non"
                 </span>
                 , déclarait{" "}
                 <a
@@ -114,7 +130,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
                 >
                   Charles Pepin
                 </a>{" "}
-                " La rencontre, une philosophie ", nous tendons à souligner
+                "La rencontre, une philosophie", nous tendons à souligner
                 l’importance d’une bienveillance à l’instar de l’autre, de
                 l’écoute pour soigner la qualité des échanges et conserver le
                 lien entre tous.

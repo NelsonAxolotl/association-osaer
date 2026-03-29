@@ -17,6 +17,32 @@ const Bio = forwardRef((props, externalRef) => {
 
   const visibleClass = contentVisible ? "visible-after-video" : "";
 
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+
+      const scrollToElement = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          let yOffset = -110;
+
+          // 🎯 Ajustement spécifique
+          if (id === "stephanie-pignon") {
+            yOffset = -150;
+          }
+
+          const y =
+            el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+          window.scrollTo({ top: y, behavior: "smooth" });
+        } else {
+          setTimeout(scrollToElement, 100);
+        }
+      };
+
+      scrollToElement();
+    }
+  }, [location]);
   return (
     <>
       <div
@@ -35,7 +61,7 @@ const Bio = forwardRef((props, externalRef) => {
           artistiques pluridisciplinaires.
         </p>
         <div className="bio-rectangle">
-          <h2>
+          <h2 id="stephanie-pignon" data-offset="-150">
             ✨ <span className="name">Stéphanie Pignon</span>
             <span className="dash"> – </span>
             <span className="role">Interprète & Chorégraphe</span>
@@ -128,7 +154,7 @@ const Bio = forwardRef((props, externalRef) => {
             </div>
           </div>
           <div className="olivia">
-            <h2>
+            <h2 id="olivia-caillaud">
               ✨ <span className="name">Olivia Caillaud</span>
               <span className="dash"> – </span>
               <span className="role">Danseuse & Chorégraphe</span>
@@ -256,7 +282,7 @@ const Bio = forwardRef((props, externalRef) => {
                 suivi une formation de danse contemporaine au centre
                 chorégraphique{" "}
                 <a
-                  href="https://www.centrechoregraphiquelecycle.com/"
+                  href="https://www.le-cycle.fr/"
                   target="_blank"
                   className="highlight-link"
                 >

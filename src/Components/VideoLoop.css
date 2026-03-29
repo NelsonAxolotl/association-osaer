@@ -28,7 +28,7 @@
   z-index: 0;
   content: "";
   position: fixed;
-  top: 20.9%;
+  top: 20.6%;
   left: 1%;
   width: 88.5%;
   height: 1.9px;
@@ -130,7 +130,7 @@
   transition:
     opacity 10s ease-in-out,
     transform 10s ease-in-out;
-  animation: fadeInH1 16s forwards;
+  animation: fadeInH1 18s forwards;
 }
 
 @keyframes fadeInH1 {

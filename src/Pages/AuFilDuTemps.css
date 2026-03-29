@@ -54,7 +54,7 @@
   top: 10%;
   left: 5%;
   font-size: 3.5rem;
-  color: rgb(248, 119, 6);
+  color: rgba(248, 119, 6, 0.843);
   font-family: "Caveat", cursive;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
   z-index: 3;

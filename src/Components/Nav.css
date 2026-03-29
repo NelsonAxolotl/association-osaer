@@ -49,8 +49,7 @@
 }
 
 .videoloop-page .navbar::before {
-  top: -46.5%;
-  height: 174.5%;
+  height: 188%;
   right: 99.8%;
   animation: fadeLineVertical 14s ease-in forwards;
 }
@@ -60,8 +59,8 @@
 }
 
 .contact-page .navbar::before {
-  height: 193%;
-  top: -46%;
+  height: 200%;
+
   background: #d4af37;
   animation: fadeLineVertical 5s ease-in forwards;
 }
@@ -69,7 +68,7 @@
 .asso-page .navbar::before {
   background: rgb(248, 119, 6);
   animation: fadeLineVertical 5s ease-in forwards;
-  height: 185%;
+  height: 200%;
 }
 
 .legal-page .navbar::before {
@@ -79,12 +78,12 @@
 }
 
 .temps-page .navbar::before {
-  height: 185%;
+  height: 200%;
   animation: fadeLineVertical 5s ease-in forwards;
 }
 
 .bio-page .navbar::before {
-  height: 185%;
+  height: 200%;
   animation: fadeLineVertical 5s ease-in forwards;
 }
 
