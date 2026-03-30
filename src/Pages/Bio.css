@@ -443,7 +443,6 @@ h2 {
   opacity: 0;
   animation: fadeInPhoto 3s ease forwards;
   z-index: 801;
-  margin-top: 10px;
 }
 
 .olivia h2 {

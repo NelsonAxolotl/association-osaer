@@ -24,7 +24,7 @@ const Bio = forwardRef((props, externalRef) => {
       const scrollToElement = () => {
         const el = document.getElementById(id);
         if (el) {
-          let yOffset = -110;
+          let yOffset = -100;
 
           // 🎯 Ajustement spécifique
           if (id === "stephanie-pignon") {
