@@ -6,9 +6,9 @@ import ScrollToTop from "./Components/ScrollToTop";
 
 import Bio from "./Pages/Bio";
 import Asso from "./Pages/Asso";
-import AuFilDuTemps from "./Pages/Aufildutemps";
 import Contact from "./Pages/Contact";
 import MentionsPolitique from "./Pages/MentionsPolitique";
+import AuFilDuTemps from "./Pages/AuFilDuTemps";
 import NotFound from "./Pages/NotFound";
 
 function App() {
