@@ -91,7 +91,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.cndc.fr"
                   target="_blank"
-                  className="highlight-link"
+                  className="highlight-link-bio"
                 >
                   CNDC d’Angers
                 </a>
@@ -117,7 +117,7 @@ const Bio = forwardRef((props, externalRef) => {
                   href="https://www.paris-art.com/swing-4/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="highlight-link"
+                  className="highlight-link-bio"
                 >
                   "SWING"{" "}
                 </a>
@@ -126,7 +126,7 @@ const Bio = forwardRef((props, externalRef) => {
                   href="https://www.youtube.com/watch?v=kpQiWBh5vF0"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="highlight-link"
+                  className="highlight-link-bio"
                 >
                   {" "}
                   "Introscope"{" "}
@@ -136,7 +136,7 @@ const Bio = forwardRef((props, externalRef) => {
                   href="http://akaplastica.com/trabajo/2001-the-midnight-zone-show-produced-by-jeff-mills"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="highlight-link"
+                  className="highlight-link-bio"
                 >
                   {" "}
                   "2001 - The Midnight Zone"{" "}
@@ -180,7 +180,7 @@ const Bio = forwardRef((props, externalRef) => {
                   href="https://www.cnsmd-lyon.fr/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="highlight-link"
+                  className="highlight-link-bio"
                 >
                   {" "}
                   CNSMD
@@ -246,7 +246,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.gold.ac.uk/"
                   target="_blank"
-                  className="highlight-link"
+                  className="highlight-link-bio"
                 >
                   Goldsmiths University
                 </a>{" "}
@@ -256,7 +256,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://formation-tsv.fr/"
                   target="_blank"
-                  className="highlight-link"
+                  className="highlight-link-bio"
                 >
                   TSV
                 </a>
@@ -266,7 +266,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.lereacteur.io/"
                   target="_blank"
-                  className="highlight-link"
+                  className="highlight-link-bio"
                 >
                   Le Réacteur
                 </a>{" "}
@@ -274,7 +274,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.thecoolaxolotl.com/"
                   target="_blank"
-                  className="highlight-link"
+                  className="highlight-link-bio"
                 >
                   The Cool Axolotl
                 </a>
@@ -284,7 +284,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.le-cycle.fr/"
                   target="_blank"
-                  className="highlight-link"
+                  className="highlight-link-bio"
                 >
                   Le Cycle
                 </a>{" "}

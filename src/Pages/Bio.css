@@ -185,14 +185,14 @@
   margin-top: -24px;
 }
 
-.highlight-link {
-  color: #f0e6c2;
+.highlight-link-bio {
+  color: #f3c10d;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.highlight-link:hover {
-  color: #a58308;
+.highlight-link-bio:hover {
+  color: #ffdd00;
 }
 
 .bio-text3 {
