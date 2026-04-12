@@ -2,7 +2,6 @@ import { useState, useEffect, forwardRef } from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import "./Bio.css";
-import "../Components/BioReferences";
 import BioReferences from "../Components/BioReferences";
 
 const Bio = forwardRef((props, externalRef) => {
@@ -18,31 +17,30 @@ const Bio = forwardRef((props, externalRef) => {
   const visibleClass = contentVisible ? "visible-after-video" : "";
 
   useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace("#", "");
+    if (!window.location.hash) return;
 
-      const scrollToElement = () => {
-        const el = document.getElementById(id);
-        if (el) {
-          let yOffset = -100;
+    const id = window.location.hash.replace("#", "");
 
-          // 🎯 Ajustement spécifique
-          if (id === "stephanie-pignon") {
-            yOffset = -150;
-          }
+    const scrollToElement = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        let yOffset = -100;
 
-          const y =
-            el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-          window.scrollTo({ top: y, behavior: "smooth" });
-        } else {
-          setTimeout(scrollToElement, 100);
+        if (id === "stephanie-pignon") {
+          yOffset = -150;
         }
-      };
 
-      scrollToElement();
-    }
-  }, [location]);
+        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({ top: y, behavior: "smooth" });
+      } else {
+        setTimeout(scrollToElement, 100);
+      }
+    };
+
+    scrollToElement();
+  }, []);
+
   return (
     <>
       <div
@@ -52,16 +50,20 @@ const Bio = forwardRef((props, externalRef) => {
       >
         <Nav />
 
-        <div className="bio-bg" aria-hidden="true"></div>
+        <div className="bio-bg" aria-hidden="true" />
 
         <h1 className={`bio-title ${visibleClass}`}>Bio</h1>
+
         <p className="seo-hidden">
           Découvrez les artistes de la compagnie OSAER : danseuses, chorégraphes
           et créateurs engagés dans la danse contemporaine et les projets
           artistiques pluridisciplinaires.
         </p>
+
         <div className="bio-rectangle">
-          <h2 id="stephanie-pignon" data-offset="-150">
+          {/* ================= STEPHANIE ================= */}
+
+          <h2 id="stephanie-pignon">
             ✨ <span className="name">Stéphanie Pignon</span>
             <span className="dash"> – </span>
             <span className="role">Interprète & Chorégraphe</span>
@@ -78,12 +80,14 @@ const Bio = forwardRef((props, externalRef) => {
                 loading="lazy"
               />
             </div>
+
             <div className={`bio-text ${visibleClass}`}>
               <p>
                 Installée en Normandie, Stéphanie Pignon est danseuse,
                 interprète, chorégraphe et art-thérapeute.
               </p>
             </div>
+
             <div className={`bio-text3 ${visibleClass}`}>
               <p>
                 Sa carrière d’interprète chorégraphique débute à la suite de sa
@@ -91,6 +95,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.cndc.fr"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight-link-bio"
                 >
                   CNDC d’Angers
@@ -105,6 +110,7 @@ const Bio = forwardRef((props, externalRef) => {
                 Hugo Dayot.
               </p>
             </div>
+
             <div className={`bio-text5 ${visibleClass}`}>
               <p>
                 Curieuse et avide de découvertes et de rencontres, elle
@@ -119,31 +125,30 @@ const Bio = forwardRef((props, externalRef) => {
                   rel="noopener noreferrer"
                   className="highlight-link-bio"
                 >
-                  "SWING"{" "}
-                </a>
-                2008, "Nuit Blanche" 2010,
+                  "SWING"
+                </a>{" "}
+                2008, "Nuit Blanche" 2010,{" "}
                 <a
                   href="https://www.youtube.com/watch?v=kpQiWBh5vF0"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="highlight-link-bio"
                 >
-                  {" "}
-                  "Introscope"{" "}
-                </a>
-                TedX 2013,
+                  "Introscope"
+                </a>{" "}
+                TedX 2013,{" "}
                 <a
                   href="http://akaplastica.com/trabajo/2001-the-midnight-zone-show-produced-by-jeff-mills"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="highlight-link-bio"
                 >
-                  {" "}
-                  "2001 - The Midnight Zone"{" "}
+                  "2001 - The Midnight Zone"
                 </a>{" "}
                 2015, "Une relation affine" 2019, "Sails" 2025).
               </p>
             </div>
+
             <div className={`bio-text6 ${visibleClass}`}>
               <p>
                 Parallèlement à son parcourt d’interprète, Stépahnie mêne
@@ -153,6 +158,9 @@ const Bio = forwardRef((props, externalRef) => {
               </p>
             </div>
           </div>
+
+          {/* ================= OLIVIA ================= */}
+
           <div className="olivia">
             <h2 id="olivia-caillaud">
               ✨ <span className="name">Olivia Caillaud</span>
@@ -160,6 +168,7 @@ const Bio = forwardRef((props, externalRef) => {
               <span className="role">Danseuse & Chorégraphe</span>
             </h2>
           </div>
+
           <div className="bio-content20">
             <div
               className="bio-photo20"
@@ -175,14 +184,13 @@ const Bio = forwardRef((props, externalRef) => {
             <div className={`bio-text50 ${visibleClass}`}>
               <p>
                 Olivia Caillaud est danseuse, chorégraphe et pédagogue. Elle
-                fait ses études en danses contemporaine à Angers et à Lyon au
+                fait ses études en danses contemporaine à Angers et à Lyon au{" "}
                 <a
                   href="https://www.cnsmd-lyon.fr/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="highlight-link-bio"
                 >
-                  {" "}
                   CNSMD
                 </a>
                 . Sa carrière s’articule auprès de créations avec des
@@ -202,6 +210,7 @@ const Bio = forwardRef((props, externalRef) => {
                 compagnie Tangible.
               </p>
             </div>
+
             <div className={`bio-text52 ${visibleClass}`}>
               <p>
                 Son parcours de pédagogue s’enrichit en 2024 en obtenant son
@@ -213,6 +222,7 @@ const Bio = forwardRef((props, externalRef) => {
                 publics.
               </p>
             </div>
+
             <div className={`bio-text53 ${visibleClass}`}>
               <p>
                 En 2021, elle crée la compagnie Pilote qui lui permet de libérer
@@ -221,7 +231,11 @@ const Bio = forwardRef((props, externalRef) => {
               </p>
             </div>
           </div>
+
           <BioReferences />
+
+          {/* ================= NELSON ================= */}
+
           <div className="nelson">
             <h2>
               ✨ <span className="name">Nelson Paraïso</span>
@@ -229,6 +243,7 @@ const Bio = forwardRef((props, externalRef) => {
               <span className="role">Régisseur Lumière & Développeur</span>
             </h2>
           </div>
+
           <div className="bio-content-nelson">
             <div
               className="bio-photo-nelson"
@@ -240,12 +255,14 @@ const Bio = forwardRef((props, externalRef) => {
                 loading="lazy"
               />
             </div>
+
             <div className={`bio-text-nelson ${visibleClass}`}>
               <p>
                 Musicien de formation, avec des études de musicologie à{" "}
                 <a
                   href="https://www.gold.ac.uk/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight-link-bio"
                 >
                   Goldsmiths University
@@ -256,6 +273,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://formation-tsv.fr/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight-link-bio"
                 >
                   TSV
@@ -266,6 +284,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.lereacteur.io/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight-link-bio"
                 >
                   Le Réacteur
@@ -274,6 +293,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.thecoolaxolotl.com/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight-link-bio"
                 >
                   The Cool Axolotl
@@ -284,6 +304,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <a
                   href="https://www.le-cycle.fr/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="highlight-link-bio"
                 >
                   Le Cycle
@@ -293,6 +314,8 @@ const Bio = forwardRef((props, externalRef) => {
             </div>
           </div>
         </div>
+
+        {/* ================= LOGO ================= */}
 
         <div className={`logobio ${visibleClass}`}>
           <a href="/">
@@ -308,7 +331,9 @@ const Bio = forwardRef((props, externalRef) => {
 
         <div className={`scroll-arrow-down ${visibleClass}`}>↓</div>
       </div>
-      {/* Lightbox image 1 */}
+
+      {/* LIGHTBOX STEPH + NELSON */}
+
       {zoomedImage1 && (
         <div className="overlay" onClick={() => setZoomedImage1(null)}>
           <div className="enlarged-media" onClick={(e) => e.stopPropagation()}>
@@ -323,7 +348,6 @@ const Bio = forwardRef((props, externalRef) => {
         </div>
       )}
 
-      {/* Lightbox image 2 */}
       {zoomedImage2 && (
         <div className="overlay" onClick={() => setZoomedImage2(null)}>
           <div className="enlarged-media2" onClick={(e) => e.stopPropagation()}>

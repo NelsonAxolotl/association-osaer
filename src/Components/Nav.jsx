@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./Nav.css";
 
 function Navbar({ className }) {
-  const location = useLocation();
+  const { pathname } = useLocation();
   const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,7 @@ function Navbar({ className }) {
 
   useEffect(() => {
     setIsOpen(false);
-  }, [location.pathname]);
+  }, [pathname]);
 
   const links = [
     { label: "Accueil", to: "/", side: "right" },
@@ -33,14 +33,21 @@ function Navbar({ className }) {
     { label: "Contact", to: "/contact", side: "right" },
   ];
 
-  const navClasses = `
-    navbar
-    ${isOpen ? "active" : ""}
-    ${className || ""}
-    ${isMobile ? "mobile" : "desktop"}
-    ${location.pathname === "/asso" ? "asso-active" : ""}
-    ${location.pathname === "/contact" ? "contact-active" : ""}
-  `;
+  const navClasses = [
+    "navbar",
+    isOpen && "active",
+    className,
+    isMobile ? "mobile" : "desktop",
+    pathname === "/asso" && "asso-active",
+    pathname === "/contact" && "contact-active",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const showLink = (link) => {
+    if (!isMobile && link.label === "Accueil") return false;
+    return true;
+  };
 
   return (
     <>
@@ -49,32 +56,38 @@ function Navbar({ className }) {
           className={`burger ${isOpen ? "open" : ""}`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Menu"
+          aria-expanded={isOpen}
+          aria-controls="nav-menu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span />
+          <span />
+          <span />
         </button>
       )}
 
-      <nav className={navClasses}>
+      <nav className={navClasses} id="nav-menu">
         {isMobile && isOpen && (
           <div className="burger-container">
             <div className="burger-arrow">↓</div>
           </div>
         )}
+
         <ul className="nav-links">
-          {links
-            .filter((link) => isMobile || link.label !== "Accueil") // Accueil seulement visible en mobile
-            .map(({ label, to, side, color }) => (
-              <li key={to}>
-                <button
-                  className={`nav-link ${location.pathname === to ? "active" : ""} ${side || ""} ${color ? `${color}-link` : ""}`}
-                  onClick={() => navigate(to)}
-                >
-                  {label}
-                </button>
-              </li>
-            ))}
+          {links.filter(showLink).map(({ label, to, side, color }) => (
+            <li key={to}>
+              <button
+                className={`nav-link ${
+                  pathname === to ? "active" : ""
+                } ${side || ""} ${color ? `${color}-link` : ""}`}
+                onClick={() => {
+                  setIsOpen(false);
+                  navigate(to);
+                }}
+              >
+                {label}
+              </button>
+            </li>
+          ))}
         </ul>
       </nav>
     </>

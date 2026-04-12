@@ -1,80 +1,96 @@
+:root {
+  --color-text: rgb(230, 225, 217);
+  --color-accent: #d4af37;
+  --color-link: #e5d7a6;
+  --color-link-hover: #c9b56d;
+  --color-line: #ffffff;
+
+  --font-main: "Quicksand", sans-serif;
+  --font-accent: "Caveat", cursive;
+}
+
+/* ================= BASE ================= */
+
 .bio-references {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5rem;
   width: 100%;
-  align-items: center;
   margin-top: 100px;
   text-align: center;
 }
 
+/* ================= TITLE ================= */
+
 .bio-references h3 {
   position: relative;
-  font-size: 1.6rem;
-  font-family: "Quicksand", sans-serif;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.5px;
-  color: rgb(230, 225, 217);
   display: inline-block;
+  margin-bottom: 1.5rem;
+
+  font-size: 1.6rem;
+  font-family: var(--font-main);
+  letter-spacing: 0.5px;
+  color: var(--color-text);
 }
 
+.bio-references h3::before,
 .bio-references h3::after {
   content: "";
   position: absolute;
-  bottom: -6px;
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: #ffffff;
+  background-color: var(--color-line);
   opacity: 0.8;
-  transform-origin: center;
 }
 
 .bio-references h3::before {
-  content: "";
-  position: absolute;
   top: -6px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #ffffff;
-  opacity: 0.8;
-  transform-origin: center;
 }
+
+.bio-references h3::after {
+  bottom: -6px;
+}
+
+/* ================= LAYOUT ================= */
 
 .bio-columns {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: center;
   width: 100%;
+  flex-wrap: nowrap;
 }
 
 .column {
   flex: 1 1 300px;
-  text-align: center;
 }
 
+/* ================= HEADINGS ================= */
+
 .column h4 {
-  font-family: "Caveat", cursive;
-  font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: #d4af37;
-  text-align: center;
+
+  font-family: var(--font-accent);
+  font-size: 1.8rem;
+  color: var(--color-accent);
 }
+
+/* ================= LIST ================= */
 
 .column ul {
   list-style: none;
   padding: 0;
-  text-align: center;
 }
 
 .column li {
   margin-bottom: 0.5rem;
 }
 
+/* ================= LINKS ================= */
+
 .highlight-link {
-  color: #e5d7a6;
+  color: var(--color-link);
   text-decoration: none;
   transition:
     color 0.2s ease,
@@ -82,15 +98,23 @@
 }
 
 .highlight-link:hover {
-  color: #c9b56d;
+  color: var(--color-link-hover);
   text-shadow: 0 0 8px rgba(213, 173, 38, 0.7);
 }
+
+.no-link {
+  color: var(--color-link);
+  opacity: 0.6;
+}
+
+/* ================= SPACING ================= */
 
 .column2 {
   margin-top: 80px;
 }
 
-/* responsive */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 900px) {
   .bio-references {
     margin-top: 60px;
@@ -115,13 +139,12 @@
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    margin-bottom: -50px;
     margin-top: -40px;
+    margin-bottom: -50px;
   }
 
   .column {
     width: 100%;
-    text-align: center;
   }
 
   .bio-references h3 {

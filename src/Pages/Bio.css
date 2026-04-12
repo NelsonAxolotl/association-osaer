@@ -186,9 +186,9 @@
 }
 
 .highlight-link-bio {
-  color: #f3c10d;
+  color: #d4af37;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
 }
 
 .highlight-link-bio:hover {

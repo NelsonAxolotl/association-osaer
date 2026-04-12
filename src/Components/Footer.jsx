@@ -2,20 +2,18 @@ import { useState, useEffect, forwardRef } from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
-const Footer = forwardRef((props, externalRef) => {
-  const [contentVisible, setContentVisible] = useState(false);
+const Footer = forwardRef(({ className = "" }, ref) => {
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setContentVisible(true), 1000);
-    return () => clearTimeout(t);
+    const timer = setTimeout(() => setVisible(true), 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <footer
-      className={`footer ${props.className || ""} ${
-        contentVisible ? "crossfade-visible" : ""
-      }`}
-      ref={externalRef}
+      ref={ref}
+      className={`footer ${className} ${visible ? "crossfade-visible" : ""}`}
     >
       <div className="footer-content">
         <p className="footer-copy">
@@ -28,6 +26,7 @@ const Footer = forwardRef((props, externalRef) => {
             The Cool Axolotl
           </a>
         </p>
+
         <p className="footer-legal">
           <Link to="/mentions-politique">
             Mentions légales & Politique de confidentialité
@@ -37,4 +36,5 @@ const Footer = forwardRef((props, externalRef) => {
     </footer>
   );
 });
+
 export default Footer;
