@@ -50,7 +50,7 @@ const Contact = forwardRef((props, externalRef) => {
             fetchPriority="high"
           />
           <div className={`contact-info ${contentVisible ? "visible" : ""}`}>
-            <h2>ASSOCIATION OSAER</h2>
+            <h2>CIE OSAER</h2>
             <a href="mailto:cie.osaer@yahoo.com" className="contact-mail">
               cie.osaer@yahoo.com
             </a>

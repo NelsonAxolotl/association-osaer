@@ -17,7 +17,7 @@ const Footer = forwardRef(({ className = "" }, ref) => {
     >
       <div className="footer-content">
         <p className="footer-copy">
-          &copy; 2026 OSAER —{" "}
+          &copy; 2026 Cie OSAER —{" "}
           <a
             href="https://www.thecoolaxolotl.com/"
             target="_blank"

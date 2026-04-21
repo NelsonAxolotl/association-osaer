@@ -102,7 +102,7 @@ const VideoLoop = forwardRef((props, externalRef) => {
 
         <div className="video-bg" aria-hidden="true"></div>
 
-        <h1 className="main-title">Association OSAER</h1>
+        <h1 className="main-title">Cie OSAER</h1>
 
         <div className="crossfade-line"></div>
 

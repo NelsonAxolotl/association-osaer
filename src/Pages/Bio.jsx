@@ -24,10 +24,10 @@ const Bio = forwardRef((props, externalRef) => {
     const scrollToElement = () => {
       const el = document.getElementById(id);
       if (el) {
-        let yOffset = -100;
+        let yOffset = -90;
 
         if (id === "stephanie-pignon") {
-          yOffset = -150;
+          yOffset = -130;
         }
 
         const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -64,10 +64,15 @@ const Bio = forwardRef((props, externalRef) => {
           {/* ================= STEPHANIE ================= */}
 
           <h2 id="stephanie-pignon">
-            ✨ <span className="name">Stéphanie Pignon</span>
-            <span className="dash"> – </span>
-            <span className="role">Interprète & Chorégraphe</span>
+            ✨{" "}
+            <span className="name">
+              Stéphanie Pignon – Directrice artistique
+            </span>
           </h2>
+
+          <p className="bio-role-detail">
+            Chorégraphe & Artiste chorégraphique
+          </p>
 
           <div className="bio-content">
             <div
@@ -163,10 +168,13 @@ const Bio = forwardRef((props, externalRef) => {
 
           <div className="olivia">
             <h2 id="olivia-caillaud">
-              ✨ <span className="name">Olivia Caillaud</span>
-              <span className="dash"> – </span>
-              <span className="role">Danseuse & Chorégraphe</span>
+              ✨{" "}
+              <span className="name">
+                Olivia Caillaud – Collaboratrice artistique
+              </span>
             </h2>
+
+            <p className="bio-role-detail">Danseuse & Chorégraphe</p>
           </div>
 
           <div className="bio-content20">

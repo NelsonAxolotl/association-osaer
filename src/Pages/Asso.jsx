@@ -54,12 +54,26 @@ const Asso = forwardRef((props, externalRef) => {
             </div>
             <div className="asso-text" lang="fr">
               <p>
-                <span>Osaer </span>est une Compagnie de danse émergeante, dédiée
+                <span>Osaer </span>est une Compagnie de danse émergente, dédiée
                 à la création artistique au croisement des disciplines. Notre
                 mission est de favoriser les rencontres entre artistes,
                 permettant ainsi l’émergence de projets collaboratifs uniques,
                 où chaque expression artistique s'entrelace pour donner vie à
-                une vision commune.
+                une vision commune. La direction artistique est assurée par{" "}
+                <span className="name-highlight stephanie">
+                  {" "}
+                  <a href="/bio#stephanie-pignon" className="light-link">
+                    Stéphanie Pignon
+                  </a>
+                </span>
+                , en collaboration avec{" "}
+                <span className="name-highlight olivia">
+                  {" "}
+                  <a href="/bio#olivia-caillaud" className="light-link">
+                    Olivia Caillaud
+                  </a>
+                </span>
+                .
               </p>
               <div className="text2">
                 <p>

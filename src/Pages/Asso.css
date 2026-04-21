@@ -156,6 +156,26 @@
   display: block;
 }
 
+.name-highlight {
+  position: relative;
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.name-highlight.stephanie,
+.name-highlight.olivia {
+  color: #f7a43f;
+  opacity: 0.85;
+}
+
+/* hover */
+.name-highlight:hover {
+  opacity: 1;
+  color: #ffcc70;
+}
+
 .asso-text {
   flex: 1;
   font-family: "Quicksand", sans-serif;
@@ -168,7 +188,7 @@
   background-color: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 10px;
 }
 
