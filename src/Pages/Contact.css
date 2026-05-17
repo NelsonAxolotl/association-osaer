@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 0rem 0rem 2rem;
 }
 
 .maincontact::before {
@@ -101,9 +102,9 @@
 
 .contact-rectangle {
   position: relative;
-  top: 155px;
+  top: 200px;
   left: 1%;
-  width: 78%;
+  width: 77.8%;
   height: 100vh;
   background: rgb(0, 0, 0);
   z-index: 700;
@@ -134,7 +135,7 @@
   gap: 8px;
   font-family: "Caveat", cursive;
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 6%;
   z-index: 900;
   color: white;
@@ -213,23 +214,10 @@
     drop-shadow(0 0 24px rgba(255, 215, 0, 0.5));
 }
 
-.toggle-sound-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 900;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-
-.toggle-sound-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
+@media (max-width: 1450px) {
+  .contact-rectangle {
+    margin-top: -40px;
+  }
 }
 
 /* responsive */
@@ -251,7 +239,7 @@
 
   .contact-rectangle {
     width: 98%;
-    margin-top: 15px;
+    margin-top: -10px;
     z-index: 0;
   }
 
@@ -277,10 +265,6 @@
 
   .contact-info {
     left: 6%;
-  }
-
-  .contact-video-background {
-    right: 0%;
   }
 }
 
@@ -311,7 +295,7 @@
   }
 
   .contact-info {
-    top: 10%;
+    top: 5%;
     left: 6%;
   }
 
@@ -345,5 +329,9 @@
     top: -6%;
     height: 87%;
     filter: brightness(0.3);
+  }
+
+  .contact-video-background {
+    right: 0%;
   }
 }

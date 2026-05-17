@@ -37,18 +37,18 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
               <p>
                 Le présent site est édité par{" "}
                 <span>
-                  l’association <strong>OSAER</strong>
+                  la Compagnie <strong>OSAER</strong>
                 </span>
                 , association loi 1901 dédiée à la création artistique et au
                 spectacle vivant.
               </p>
-
               <p>
-                <strong>Dénomination :</strong> Association OSAER
+                <strong>Dénomination :</strong> Compagnie OSAER
               </p>
               <p>
-                <strong>Statut :</strong> Association loi 1901
+                <strong>Statut :</strong> Entrepreneur de spectacles vivants
               </p>
+              <p>Récépissé de déclaration d’activité n° 2-011787</p>
               <p>
                 <strong>SIRET :</strong> 902 789 411 00011
               </p>

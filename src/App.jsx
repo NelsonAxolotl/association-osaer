@@ -9,6 +9,7 @@ import Asso from "./Pages/Asso";
 import Contact from "./Pages/Contact";
 import MentionsPolitique from "./Pages/MentionsPolitique";
 import AuFilDuTemps from "./Pages/AuFilDuTemps";
+import Mouvements from "./Pages/Mouvements";
 import NotFound from "./Pages/NotFound";
 
 function App() {
@@ -17,10 +18,11 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<VideoLoop />} />
-        <Route path="/bio" element={<Bio />} />
-        <Route path="/asso" element={<Asso />} />
+        <Route path="/artistes" element={<Bio />} />
+        <Route path="/compagnie" element={<Asso />} />
         <Route path="/creations" element={<AuFilDuTemps />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/mouvements" element={<Mouvements />} />
         <Route path="/mentions-politique" element={<MentionsPolitique />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

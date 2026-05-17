@@ -4,7 +4,7 @@
   background: rgb(0, 0, 0);
   height: auto;
   overflow: visible;
-  padding: 0rem 0.5rem 10rem;
+  padding: 0rem 0.5rem 16rem;
   height: auto;
   z-index: 0;
 }
@@ -17,7 +17,7 @@
   background-image: repeating-linear-gradient(
     -135deg,
     rgba(255, 255, 255, 0.05) 0px,
-    rgba(255, 255, 255, 0.08) 1px,
+    rgba(19, 213, 213, 0.15) 1px,
     transparent 250px,
     transparent 460px
   );
@@ -54,7 +54,7 @@
   top: 10%;
   left: 5%;
   font-size: 3.5rem;
-  color: rgba(248, 119, 6, 0.843);
+  color: rgba(19, 213, 213, 0.843);
   font-family: "Caveat", cursive;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
   z-index: 3;
@@ -78,7 +78,7 @@
 
 .temps-rectangle {
   position: relative;
-  top: 155px;
+  top: 220px;
   left: 1%;
   width: 78%;
   background: rgb(0, 0, 0);
@@ -91,7 +91,7 @@
 }
 
 .temps-rectangle h2 {
-  margin-top: 20px;
+  margin-top: -15px;
   text-align: center;
   color: white;
   font-size: 2.5rem;
@@ -129,11 +129,19 @@
   font-size: 1.6rem;
   text-align: center;
   font-family: "Caveat", cursive;
-  margin: 15px 0;
+  margin: 35px 0;
+}
+
+.ephe-duration2 a {
+  color: bisque;
 }
 
 .ephe-duration2 br {
   display: none;
+}
+
+.ephe-texte span {
+  color: rgba(19, 213, 213, 0.843);
 }
 
 .ephe-duration3 {
@@ -178,7 +186,7 @@
   display: inline-block;
   font-size: 1.05rem;
   font-family: "Quicksand", sans-serif;
-  color: rgb(248, 119, 6);
+  color: rgba(19, 213, 213, 0.843);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   position: relative;
@@ -194,7 +202,7 @@
   transform: translateY(-50%);
   width: 10px;
   height: 1px;
-  background: rgb(248, 119, 6);
+  background: rgba(19, 213, 213, 0.843);
 }
 
 .ephe-status::after {
@@ -206,11 +214,12 @@
   transform: translateY(-50%);
   width: 10px;
   height: 1px;
-  background: rgb(248, 119, 6);
+  background: rgba(19, 213, 213, 0.843);
 }
 
 .tr {
   position: relative;
+  margin-top: 40px;
 }
 
 .tr::before,
@@ -221,7 +230,7 @@
   margin-top: 30px;
   width: 1px;
   height: 100%;
-  background: rgb(248, 119, 6);
+  background: rgba(19, 213, 213, 0.843);
   z-index: 900;
   opacity: 0;
   transform: translateX(0);
@@ -250,156 +259,6 @@
   }
 }
 
-.papier {
-  margin-top: 150px;
-}
-
-.papier-row {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  position: relative;
-}
-
-.papier-title {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.texte {
-  width: 45%;
-  color: white;
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.4;
-  font-family: "Quicksand", sans-serif;
-  font-size: 1.05rem;
-  padding: 10px;
-}
-
-.gauche {
-  text-align: justify;
-}
-
-.droite {
-  text-align: justify;
-}
-
-.traits {
-  position: relative;
-  width: 30px;
-  height: 200px;
-}
-
-.traits::before,
-.traits::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: rgb(248, 119, 6);
-}
-
-.traits::before {
-  left: 0;
-}
-
-.traits::after {
-  right: 0;
-}
-
-.texte span {
-  color: #f27908;
-  font-weight: 500;
-}
-
-.texte-centre {
-  max-width: 900px;
-  margin: 2rem auto 0 auto;
-  text-align: justify;
-  font-size: 1.05rem;
-  line-height: 1.4;
-  color: #fff;
-}
-
-.ephe-status2-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: 3rem 0;
-}
-
-.ephe-status2 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: "Quicksand", sans-serif;
-  font-size: 1.05rem;
-  color: rgb(248, 119, 6);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-}
-
-.ephe-status2 .trait {
-  display: inline-block;
-  width: 20px;
-  height: 1px;
-  background: rgb(248, 119, 6);
-}
-
-.status-diagonal-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 12rem 0 7rem;
-}
-
-.status-diagonal h2 {
-  text-align: center;
-  color: white;
-  font-size: 2.5rem;
-  font-family: "Caveat", cursive;
-  margin-bottom: 3rem;
-}
-
-.status-diagonal {
-  max-width: 900px;
-  position: relative;
-  font-family: "Quicksand", sans-serif;
-  text-align: justify;
-  font-size: 1.05rem;
-  line-height: 1.4;
-  color: white;
-  padding: 2rem 4rem 2rem;
-}
-
-.status-diagonal::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 20%;
-  width: 300px;
-  height: 1px;
-  background: white;
-  transform: translateX(-50%) rotate(-20deg);
-}
-
-.status-diagonal::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 80%;
-  width: 300px;
-  height: 1px;
-  background: white;
-  transform: translateX(-50%) rotate(-20deg);
-}
-
-.status-diagonal span {
-  color: #f27908;
-  font-weight: 500;
-}
-
 .crossfade-visible .temps-rectangle {
   opacity: 1;
 }
@@ -426,6 +285,40 @@
   display: none;
 }
 
+.ephe-premiere {
+  margin-top: 15px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.ephe-premiere br {
+  display: none;
+}
+
+.ephe-premiere-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.ephe-date {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 5px 0 10px;
+}
+
+.ephe-festival {
+  color: rgba(19, 213, 213, 0.843); /* ton bleu */
+  font-weight: 500;
+}
+
+@media (max-width: 1450px) {
+  .temps-rectangle {
+    margin-top: -60px;
+  }
+}
+
 /* responsive */
 @media (max-width: 900px) {
   .temps::after {
@@ -449,82 +342,16 @@
     z-index: 0;
   }
 
+  .tr {
+    margin-top: -20px;
+  }
+
   .ephe-block p {
     font-size: 1rem;
   }
 
   .logostemps {
     display: none;
-  }
-
-  .papier-row {
-    display: block;
-  }
-
-  .texte {
-    width: 90%;
-    margin: 1rem auto;
-    font-size: 1rem;
-  }
-
-  .traits {
-    width: 150px;
-    height: 1px;
-    margin: 2rem auto;
-    position: relative;
-  }
-
-  .traits::before,
-  .traits::after {
-    width: 100%;
-    height: 1px;
-    background: rgb(248, 119, 6);
-  }
-
-  .traits-bis {
-    width: 150px;
-    height: 1px;
-    margin: 2rem auto;
-    position: relative;
-  }
-
-  .traits-bis::before,
-  .traits-bis::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 150px;
-    background: rgb(248, 119, 6);
-  }
-
-  .texte-centre {
-    margin: 2rem 3rem 0 3rem;
-  }
-
-  .status-diagonal {
-    font-size: 1rem;
-  }
-
-  .ephe-status {
-    display: inline-block; /* 🔥 clé du problème */
-    text-align: center;
-    margin: 2rem auto;
-    padding: 0 20px; /* espace pour les traits */
-  }
-
-  .ephe-status::before {
-    left: 0;
-  }
-
-  .ephe-status::after {
-    left: auto;
-    right: 0;
-    margin-left: 0;
-  }
-
-  .ephe-status-wrapper {
-    text-align: center;
   }
 
   .ephe-duration {
@@ -579,6 +406,10 @@
     pointer-events: none;
   }
 
+  .temps-rectangle {
+    margin-top: -20px;
+  }
+
   .texte-centre {
     margin: 2.5rem 1rem 0 1rem;
   }
@@ -607,7 +438,7 @@
   }
 
   .ephe-duration2 {
-    line-height: 28px;
+    line-height: 32px;
   }
 
   .ephe-duration2 br {
@@ -648,5 +479,13 @@
     padding: 2rem 1rem 2rem;
     line-height: 24px;
     hyphens: auto;
+  }
+
+  .ephe-premiere br {
+    display: block;
+  }
+
+  .ephe-premiere strong {
+    display: none;
   }
 }

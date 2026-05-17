@@ -27,10 +27,16 @@ function Navbar({ className }) {
 
   const links = [
     { label: "Accueil", to: "/", side: "right" },
-    { label: "Asso", to: "/asso", side: "left", color: "asso" },
-    { label: "Bio", to: "/bio", side: "right" },
-    { label: "Créations", to: "/creations", side: "left", color: "asso" },
-    { label: "Contact", to: "/contact", side: "right" },
+    { label: "Compagnie", to: "/compagnie", side: "left", color: "asso" },
+    { label: "Artistes", to: "/artistes", side: "right" },
+    { label: "Créations", to: "/creations", side: "left", color: "creations" },
+    {
+      label: "Rencontres",
+      to: "/mouvements",
+      side: "right",
+      color: "mouvements",
+    },
+    { label: "Contact", to: "/contact", side: "left" },
   ];
 
   const navClasses = [
@@ -38,8 +44,10 @@ function Navbar({ className }) {
     isOpen && "active",
     className,
     isMobile ? "mobile" : "desktop",
-    pathname === "/asso" && "asso-active",
+    pathname === "/compagnie" && "asso-active",
     pathname === "/contact" && "contact-active",
+    pathname === "/mouvements" && "mouvements-active",
+    pathname === "/creations" && "creations-active",
   ]
     .filter(Boolean)
     .join(" ");

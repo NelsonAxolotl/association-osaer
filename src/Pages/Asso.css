@@ -4,7 +4,7 @@
   background: rgb(0, 0, 0);
   height: auto;
   overflow: visible;
-  padding: 0rem 0.5rem 10rem;
+  padding: 0rem 0.5rem 14rem;
   height: auto;
   z-index: 0;
 }
@@ -17,7 +17,7 @@
   background-image: repeating-linear-gradient(
     -135deg,
     rgba(255, 255, 255, 0.074) 0px,
-    rgb(248, 119, 6, 0.1) 1px,
+    rgb(248, 119, 6, 0.15) 1px,
     transparent 250px,
     transparent 460px
   );
@@ -74,7 +74,7 @@
 
 .asso-rectangle {
   position: relative;
-  top: 155px;
+  top: 230px;
   left: 1%;
   width: 78%;
   background: rgb(0, 0, 0);
@@ -107,24 +107,6 @@
     filter 0.3s ease;
 }
 
-.asso-intro {
-  text-align: center;
-  font-family: "Caveat", cursive;
-  font-size: 2rem;
-  color: rgb(248, 119, 6);
-  margin: 30px 0 0 0;
-  letter-spacing: 0.5px;
-  opacity: 0;
-  transition: opacity 6s ease-in-out;
-}
-
-.asso-intro::first-letter {
-  font-size: 3rem;
-  font-weight: bold;
-  color: rgb(248, 119, 6);
-  font-family: "Caveat", cursive;
-}
-
 .assowrap {
   display: flex;
   flex-direction: row;
@@ -137,43 +119,53 @@
 
 .asso-image-wrapper {
   position: relative;
-  flex: 1;
-  max-width: 400px;
+  flex: none; /* ⛔ enlève le comportement flex qui gêne */
+  max-width: 750px; /* ← tu peux augmenter ici */
+  width: 100%;
+  margin: 0 auto 0; /* ✅ centre horizontal */
   overflow: hidden;
   opacity: 0;
   animation: fadeImage 3.5s ease forwards;
   animation-delay: 1s;
   cursor: pointer;
-  margin-top: 20px;
   border: 1px solid rgb(248, 119, 6);
   border-radius: 3px;
 }
 
 .asso-image-wrapper img {
   width: 100%;
-  height: auto;
+  height: 380px; /* ← allonge visuellement */
+  object-fit: cover; /* garde un rendu clean */
   border-radius: 3px;
   display: block;
 }
 
-.name-highlight {
-  position: relative;
-  transition:
-    color 0.3s ease,
-    opacity 0.3s ease;
-  cursor: pointer;
+.asso-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.name-highlight.stephanie,
-.name-highlight.olivia {
-  color: #f7a43f;
-  opacity: 0.85;
+.asso-titre {
+  font-family: "Caveat", cursive;
+  font-size: 2.2rem;
+  color: white;
+  margin: 40px 0 30px;
+  opacity: 0;
+  transition: opacity 5s ease-in-out;
 }
 
-/* hover */
-.name-highlight:hover {
-  opacity: 1;
-  color: #ffcc70;
+.asso-section {
+  width: 100%;
+  margin-top: 100px;
+}
+
+.asso-section-title {
+  text-align: center;
+  font-family: "Caveat", cursive;
+  font-size: 2.2rem;
+  color: rgb(241, 236, 236);
+  padding-top: 100px;
 }
 
 .asso-text {
@@ -251,23 +243,15 @@
   padding: 15px;
 }
 
-.asso-text2::before,
-.asso-text2::after {
+.asso-section::before,
+.asso-section::after {
   content: "";
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 40%;
+  width: 30%;
   height: 1px;
   background: rgb(248, 119, 6);
-}
-
-.asso-text2::before {
-  top: -70px;
-}
-
-.asso-text2::after {
-  bottom: -70px;
 }
 
 .asso-text3 {
@@ -303,6 +287,11 @@
 }
 
 .asso-text3 span {
+  color: rgb(248, 119, 6);
+  font-size: 1.2rem;
+}
+
+.text2 span {
   color: rgb(248, 119, 6);
   font-size: 1.2rem;
 }
@@ -346,14 +335,15 @@
 
 .assowrap.reverse {
   flex-direction: row !important;
-  margin-top: 120px;
+  margin-top: 40px;
+  margin-bottom: 100px;
   gap: 80px;
 }
 
 .asso-vertical-block {
   width: 100%;
   max-width: 900px;
-  margin: 110px auto 60px;
+  margin: 50px auto 60px;
   text-align: center;
   animation: fadeImage 2s ease forwards;
   opacity: 0;
@@ -368,7 +358,7 @@
   display: block;
   cursor: pointer;
   margin: 0 auto;
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid rgb(248, 119, 6);
   border-radius: 3px;
 }
 
@@ -388,9 +378,30 @@
   padding: 10px;
 }
 
+.asso-vertical-text2 {
+  font-size: 1.05rem;
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.4;
+  text-align: justify;
+  color: #f1f1f1;
+  opacity: 0;
+  animation: fadeText 2s ease forwards;
+  animation-delay: 1s;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+}
+
 .asso-vertical-text span {
   color: rgb(248, 119, 6);
   font-size: 1.2rem;
+}
+
+@media (max-width: 1450px) {
+  .asso-rectangle {
+    margin-top: -40px;
+  }
 }
 
 /* responsive */
@@ -447,7 +458,7 @@
   .assowrap.reverse {
     flex-direction: column-reverse !important;
     gap: 30px;
-    margin-top: 80px;
+    margin-top: 40px;
     align-items: center;
   }
 
@@ -493,7 +504,7 @@
   }
 
   .asso-vertical-block {
-    margin-top: 80px;
+    margin-top: 40px;
   }
 
   .asso-vertical-text {
@@ -511,11 +522,15 @@
 
 @media (max-width: 500px) {
   .asso {
-    padding-bottom: 12rem;
+    padding-bottom: 15rem;
   }
 
   .asso-title {
-    left: 40%;
+    left: 25%;
+  }
+
+  .asso-titre {
+    margin-top: 30px;
   }
 
   .asso::after {
@@ -524,6 +539,7 @@
 
   .assowrap {
     padding: 0;
+    margin-bottom: -40px;
   }
 
   .asso-text {
@@ -535,6 +551,7 @@
   .asso-text2 {
     line-height: 1.4;
     hyphens: auto;
+    margin-bottom: -40px;
   }
 
   .asso-text3 {
@@ -547,8 +564,12 @@
   }
 
   .asso-vertical-block {
-    margin-top: 80px;
+    margin-top: 40px;
     margin-bottom: 0px;
+  }
+
+  .asso-vertical-image {
+    margin-top: -30px;
   }
 
   .asso-rectangle {
@@ -571,5 +592,18 @@
     filter: blur(8px);
     opacity: 1;
     pointer-events: none;
+  }
+
+  .asso-section-title {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  .asso-image-wrapper2 {
+    margin-top: -40px;
+  }
+
+  .asso-block {
+    margin-top: 30px;
   }
 }

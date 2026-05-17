@@ -31,7 +31,7 @@ const Asso = forwardRef((props, externalRef) => {
             contentVisible ? "visible-after-video" : ""
           }`}
         >
-          Asso
+          Compagnie
         </h1>
         <p className="seo-hidden">
           OSAER est une compagnie de danse contemporaine développant des projets
@@ -40,133 +40,162 @@ const Asso = forwardRef((props, externalRef) => {
         </p>
         <div className="asso-rectangle">
           <div className="assowrap">
-            <div
-              className="asso-image-wrapper"
-              onClick={() => setZoomedImage1("/Pics/assowall.webp")}
-            >
-              <img
-                src="/Pics/assowall.webp"
-                alt="Présentation de l'association"
-                width={400}
-                height={400}
-                loading="lazy"
-              />
-            </div>
-            <div className="asso-text" lang="fr">
-              <p>
-                <span>Osaer </span>est une Compagnie de danse émergente, dédiée
-                à la création artistique au croisement des disciplines. Notre
-                mission est de favoriser les rencontres entre artistes,
-                permettant ainsi l’émergence de projets collaboratifs uniques,
-                où chaque expression artistique s'entrelace pour donner vie à
-                une vision commune. La direction artistique est assurée par{" "}
-                <span className="name-highlight stephanie">
-                  {" "}
-                  <a href="/bio#stephanie-pignon" className="light-link">
-                    Stéphanie Pignon
-                  </a>
-                </span>
-                , en collaboration avec{" "}
-                <span className="name-highlight olivia">
-                  {" "}
-                  <a href="/bio#olivia-caillaud" className="light-link">
-                    Olivia Caillaud
-                  </a>
-                </span>
-                .
-              </p>
-              <div className="text2">
-                <p>
-                  {" "}
-                  <span>Osaer</span> se positionne comme un catalyseur de
-                  créativité, intervenant lors d'événements variés et de projets
-                  in situ. Que ce soit pour des spectacles, des expositions, des
-                  clips, du théâtre ou des films, nous répondons à des commandes
-                  spécifiques d'artistes désireux d'explorer de nouvelles
-                  dimensions. Chaque projet est l’occasion d’une rencontre, d'un
-                  dialogue entre différentes formes d’art, créant des œuvres
-                  éphémères qui captivent et émerveillent.
-                </p>
+            <div className="asso-block">
+              {/* IMAGE */}
+              <div
+                className="asso-image-wrapper"
+                onClick={() => setZoomedImage1("/Pics/assowall.webp")}
+              >
+                <img
+                  src="/Pics/assowall.webp"
+                  alt="Présentation de l'association"
+                  width={400}
+                  height={400}
+                  loading="lazy"
+                />
               </div>
-            </div>
-          </div>
-          <div className="assowrap reverse">
-            <div className="asso-text2">
-              <div className="text3">
-                <p>
-                  Notre association, tout comme nos interprètes danseuses, est à
-                  l'écoute des besoins des artistes. Nous mettons à disposition
-                  des talents variés, permettant de réaliser des créations
-                  ponctuelles qui transcendent les frontières du langage
-                  corporel. La danse devient alors un moyen d’expression
-                  puissant, capable de raconter des histoires, de provoquer des
-                  émotions et de fédérer des publics autour de la beauté de
-                  l’art collectif.
-                </p>
-              </div>
-            </div>
 
-            <div
-              className="asso-image-wrapper2"
-              onClick={() => setZoomedImage1("/Pics/asso4.webp")}
-            >
-              <img
-                src="/Pics/asso4.webp"
-                alt="Osaer illustration"
-                width={400}
-                height={400}
-                loading="lazy"
-              />
+              {/* TITRE */}
+              <h3
+                className={`asso-titre ${contentVisible ? "visible-after-video" : ""}`}
+              >
+                Au cœur de la création
+              </h3>
+
+              {/* TEXTE */}
+              <div className="asso-text" lang="fr">
+                <p>
+                  Compagnie émergente, <span>OSAER</span> se positionne comme un
+                  catalyseur de créativité, à la croisée des disciplines
+                  artistiques et des projets in situ.
+                </p>
+
+                <div className="text2">
+                  <p>
+                    Elle développe également ses propres créations, portées par
+                    une écriture chorégraphique nourrie des corps, des parcours
+                    et des rencontres qui les traversent.
+                  </p>
+                </div>
+
+                <div className="text2">
+                  <p>
+                    La compagnie accompagne artistes et structures en imaginant
+                    des formes plurielles — spectacles, expositions, théâtre ou
+                    films — avec une attention particulière portée à l’écoute
+                    des besoins et des intentions.
+                  </p>
+                </div>
+
+                <div className="text2">
+                  <p>
+                    En mettant à disposition des interprètes aux présences
+                    singulières,{""} <span>OSAER</span> favorise l’émergence de
+                    créations où les langages artistiques dialoguent et se
+                    transforment.
+                  </p>
+                </div>
+
+                <div className="text2">
+                  <p>
+                    La danse y est envisagée comme un langage incarné, où le
+                    geste naît de l’expérience et de la relation à l’autre.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="assowrap3">
+          <div className="asso-section">
+            <h3 className="asso-section-title">La médiation / Transmission</h3>
+            <div className="assowrap reverse">
+              <div className="asso-text2">
+                <div className="text3">
+                  <p>
+                    <span>OSAER</span> place la médiation artistique au cœur de
+                    son travail. La compagnie conçoit des projets avec les
+                    écoles, collèges, lycées, crèches et structures sociales, en
+                    lien étroit avec les jeunes, les équipes pédagogiques et les
+                    encadrants.
+                  </p>
+                </div>
+                <div className="text2">
+                  <p>
+                    Ces temps de création ouvrent des espaces d’expression
+                    sensibles, où le corps devient un langage permettant
+                    d’explorer, de ressentir et de réfléchir autrement. Ils
+                    favorisent l’émergence de la créativité, de la parole et de
+                    la confiance en soi.
+                  </p>
+                </div>
+                <div className="text2">
+                  <p>
+                    En rencontrant les artistes et leurs démarches, les
+                    participants développent une meilleure compréhension des
+                    processus de création et un regard plus attentif sur le
+                    spectacle vivant.
+                  </p>
+                </div>
+                <div className="text2">
+                  <p>
+                    Chaque projet est élaboré sur mesure, en collaboration avec
+                    les structures partenaires, afin de s’adapter aux publics et
+                    aux contextes d’intervention : milieu scolaire, crèche,
+                    milieu hospitalier ou carcéral, ainsi qu’auprès
+                    d’associations culturelles.
+                  </p>
+                </div>
+                <div className="text2">
+                  <p>
+                    N’hésitez pas à nous contacter pour imaginer ensemble un
+                    projet adapté à vos besoins.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                className="asso-image-wrapper2"
+                onClick={() => setZoomedImage1("/Pics/asso4.webp")}
+              >
+                <img
+                  src="/Pics/asso4.webp"
+                  alt="Osaer illustration"
+                  width={400}
+                  height={400}
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+          <h3 className="asso-section-title">L’art de la rencontre</h3>
+          <div className="asso-vertical-block">
             <div
-              className="asso-image-wrapper"
+              className="asso-vertical-image"
               onClick={() => setZoomedImage1("/Pics/asso2.webp")}
             >
               <img
                 src="/Pics/asso2.webp"
-                alt="Projet artistique par la compagnie OSAER"
-                width={400}
-                height={400}
-                loading="lazy"
-              />
-            </div>
-            <div className="asso-text3">
-              <p>
-                Par ailleurs, la compagnie <span>Osaer</span> porte une
-                attention particulière à la médiation artistique. Elle a à cœur
-                de collaborer avec des jeunes, des enseignant et accompagnants
-                issus des écoles, collèges, lycées et centres sociaux, en leur
-                offrant un espace d’expression différent, au-delà des mots. À
-                travers ces projets, elle souhaite leur permettre de développer
-                leur parole, leur créativité et leur confiance, en utilisant le
-                corps comme vecteur d’émotion et de réflexion.
-              </p>
-            </div>
-          </div>
-          <div className="asso-vertical-block">
-            <div
-              className="asso-vertical-image"
-              onClick={() => setZoomedImage1("/Pics/asso3.webp")}
-            >
-              <img
-                src="/Pics/asso3.webp"
                 alt="Création chorégraphique contemporaine OSAER"
                 width={400}
                 height={400}
                 loading="lazy"
               />
             </div>
-
-            <p className="asso-vertical-text">
-              Chez <span>Osaer</span>, chaque collaboration est une aventure,
-              chaque création une célébration de la rencontre artistique et
-              humaine. Nous avons à cœur de construire des ponts entre les
-              disciplines et d’inviter les artistes à repenser les limites de
-              leur pratique, dans le but de donner naissance à des œuvres qui
-              résonnent, marquent et interrogent.
-            </p>
+            <div className="text2">
+              <p className="asso-vertical-text">
+                Chez <span>OSAER</span>, chaque collaboration est une
+                exploration, chaque création une célébration de la rencontre
+                artistique et humaine. La compagnie a pour ambition de tisser
+                des ponts entre les disciplines et d’accompagner les artistes
+                dans la construction collective d’écritures artistiques.
+              </p>
+            </div>
+            <div className="text2">
+              <p className="asso-vertical-text2">
+                De ces échanges naissent des œuvres qui résonnent, marquent et
+                interrogent, ouvrant des espaces sensibles où l’art se vit comme
+                une expérience partagée, à la fois intime et collective.
+              </p>
+            </div>
           </div>
         </div>
 

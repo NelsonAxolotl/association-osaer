@@ -62,6 +62,10 @@
   background: rgb(88, 45, 205);
 }
 
+.mouv-footer::after {
+  background: rgb(26, 179, 128);
+}
+
 /* ===== VARIANTS BACKGROUND EFFECTS ===== */
 .contact-footer::before {
   background-image: repeating-linear-gradient(
@@ -155,10 +159,6 @@
 }
 
 @media (max-width: 768px) {
-  .videoloop-footer {
-    margin-top: -50px;
-  }
-
   .footer-copy,
   .footer-legal a {
     opacity: 0;

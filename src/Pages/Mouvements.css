@@ -1,0 +1,574 @@
+.mouv {
+  position: relative;
+  color: white;
+  background: rgb(0, 0, 0);
+  height: auto;
+  overflow: visible;
+  padding: 0rem 0.5rem 14rem;
+  height: auto;
+  z-index: 0;
+}
+
+.mouv::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 701;
+  background-image: repeating-linear-gradient(
+    -135deg,
+    rgba(255, 255, 255, 0.074) 0px,
+    rgb(26, 179, 128, 0.15) 1px,
+    transparent 250px,
+    transparent 460px
+  );
+  pointer-events: none;
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 6s ease-in-out;
+}
+
+.crossfade-visible::before {
+  opacity: 1;
+}
+
+.mouv::after {
+  content: "";
+  position: fixed;
+  top: 20.9%;
+  left: 1%;
+  width: 88.5%;
+  height: 1.9px;
+  background: rgb(26, 179, 128);
+  opacity: 0;
+  animation: fadeLineTop 4s ease-in forwards;
+  animation-delay: 0.5s;
+}
+
+.crossfade-visible .mouv-rectangle {
+  opacity: 1;
+}
+
+@keyframes fadeLineVertical {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mouv-title {
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  font-size: 3.5rem;
+  color: rgb(255, 255, 255);
+  font-family: "Caveat", cursive;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  margin: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 2s ease-in-out,
+    transform 2s ease-in-out;
+}
+
+.visible-after-video {
+  opacity: 0.8 !important;
+  transform: translateY(0);
+}
+
+.logomouv {
+  position: fixed;
+  top: 14%;
+  right: 21%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.logomouv img {
+  width: 12vw;
+  width: 200px;
+  height: auto;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.mouv-rectangle {
+  position: relative;
+  top: 220px;
+  left: 1%;
+  width: 78%;
+  background: rgb(0, 0, 0);
+  z-index: 700;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 2s ease-in-out;
+  border-radius: 3px;
+}
+
+.status-diagonal-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15rem 0 7rem;
+}
+
+.status-diagonal h2 {
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-family: "Caveat", cursive;
+  margin-bottom: 3rem;
+}
+
+.status-diagonal {
+  max-width: 1000px;
+  position: relative;
+  font-family: "Quicksand", sans-serif;
+  text-align: justify;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: white;
+  padding: 2rem 4rem 2rem;
+}
+
+.text-parol {
+  margin-bottom: 20px;
+}
+
+.papier {
+  margin-top: 60px;
+}
+
+.papier-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+
+.papier-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.texte {
+  width: 45%;
+  color: white;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.4;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.05rem;
+  padding: 10px;
+}
+
+.gauche {
+  text-align: justify;
+}
+
+.droite {
+  text-align: justify;
+}
+
+.traits {
+  position: relative;
+  width: 30px;
+  height: 200px;
+}
+
+.traits::before,
+.traits::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgb(44, 168, 127);
+}
+
+.traits::before {
+  left: 0;
+}
+
+.traits::after {
+  right: 0;
+}
+
+.texte span {
+  color: rgb(26, 179, 128);
+  font-weight: 500;
+}
+
+.texte-centre {
+  max-width: 1000px;
+  margin: 3rem auto 0 auto;
+  text-align: justify;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: #fff;
+  text-align: center;
+}
+
+.creation-lieu {
+  margin-bottom: 10px;
+}
+
+.creation-lieu br {
+  display: none;
+}
+
+.direction-artistique {
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.direction-artistique br {
+  display: none;
+}
+
+.texte-centre a {
+  color: rgb(75, 222, 173);
+}
+
+.texte-centre a:hover {
+  color: rgb(16, 245, 107);
+}
+
+.ephe-status2-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.ephe-status2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.05rem;
+  color: rgb(44, 168, 127);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.ephe-status2 .trait {
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: rgb(44, 168, 127);
+}
+
+.status-diagonal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 300px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.938);
+  transform: translateX(-50%) rotate(-20deg);
+}
+
+.status-diagonal::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 80%;
+  width: 300px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.938);
+  transform: translateX(-50%) rotate(-20deg);
+}
+
+.status-diagonal span {
+  color: rgb(44, 168, 127);
+  font-weight: 500;
+}
+
+.text-parol a {
+  color: rgb(75, 222, 173);
+}
+
+.text-parol a:hover {
+  color: rgb(16, 245, 107);
+}
+
+.papier-image {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.papier-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+.papier-image img:hover {
+  transform: scale(1.03);
+}
+
+.parole-image.pano {
+  width: 100%;
+  height: 500px; /* hauteur fixe = effet panoramique */
+  overflow: hidden;
+  border-radius: 6px;
+  margin: 35px 0;
+  cursor: pointer;
+  border: 1px solid rgb(44, 168, 127);
+}
+
+.parole-image.pano img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔥 clé du panoramique */
+  object-position: top;
+  transition: transform 0.4s ease;
+}
+
+.parole-image.pano:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999 !important;
+}
+
+.enlarged-media img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  z-index: 1000000 !important;
+}
+
+.close-button {
+  position: fixed !important;
+  top: 20px;
+  right: 20px;
+  font-size: 45px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000001 !important;
+}
+
+@media (max-width: 1450px) {
+  .mouv-rectangle {
+    margin-top: -60px;
+  }
+}
+
+@media (max-width: 900px) {
+  .mouv::after {
+    top: 22.5%;
+    right: 0;
+    width: 98vw;
+  }
+
+  .mouv-bg {
+    position: fixed;
+    height: 22.5vh;
+    inset: 0;
+    background: black;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .mouv-rectangle {
+    width: 98%;
+    margin-top: 15px;
+    z-index: 0;
+  }
+
+  .logosmouv {
+    display: none;
+  }
+
+  .papier {
+    margin-top: 0px;
+  }
+
+  .papier-row {
+    display: block;
+    margin-top: -20px;
+  }
+
+  .texte {
+    width: 90%;
+    margin: 1rem auto;
+    font-size: 1rem;
+  }
+
+  .traits {
+    width: 150px;
+    height: 1px;
+    margin: 2rem auto;
+    position: relative;
+  }
+
+  .traits::before,
+  .traits::after {
+    width: 100%;
+    height: 1px;
+    background: rgb(44, 168, 127);
+  }
+
+  .traits-bis {
+    width: 150px;
+    height: 1px;
+    margin: 2rem auto;
+    position: relative;
+  }
+
+  .traits-bis::before,
+  .traits-bis::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    background: rgb(44, 168, 127);
+  }
+
+  .texte-centre {
+    margin: 2rem 3rem 0 3rem;
+  }
+
+  .status-diagonal {
+    font-size: 1rem;
+    margin-top: -20px;
+  }
+
+  .ephe-status {
+    display: inline-block; /* 🔥 clé du problème */
+    text-align: center;
+    margin: 2rem auto;
+    padding: 0 20px; /* espace pour les traits */
+  }
+
+  .ephe-status::before {
+    left: 0;
+  }
+
+  .ephe-status::after {
+    left: auto;
+    right: 0;
+    margin-left: 0;
+  }
+
+  .ephe-status-wrapper {
+    text-align: center;
+  }
+
+  .text-parol {
+    margin-top: 30px;
+  }
+
+  .parole-image.pano {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .mouv-title {
+    left: 25%;
+  }
+
+  .mouv::after {
+    display: none;
+  }
+
+  .mouv-bg::before {
+    display: block;
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: repeating-linear-gradient(
+      -135deg,
+      rgba(255, 255, 255, 0.06) 0px,
+      rgb(26, 179, 128, 0.15) 1px,
+      transparent 350px,
+      transparent 530px
+    );
+    filter: blur(8px);
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  .mouv-rectangle {
+    margin-top: -40px;
+  }
+  .texte-centre {
+    margin: 2.5rem 1rem 0 1rem;
+  }
+
+  .ephe-duration br {
+    display: block;
+  }
+
+  .ephe-status-wrapper {
+    width: 90%;
+  }
+
+  .papier-title {
+    margin-bottom: 4rem;
+  }
+
+  .texte {
+    width: 100%;
+  }
+
+  .ephe-status2 {
+    margin-top: 10px;
+  }
+
+  .status-diagonal-wrapper {
+    margin: 10rem 0 7rem;
+  }
+
+  .status-diagonal {
+    padding: 2rem 1rem 2rem;
+    line-height: 24px;
+  }
+
+  .creation-lieu,
+  .direction-artistique {
+    line-height: 1.6;
+  }
+
+  .creation-lieu a {
+    display: inline-block;
+    margin-top: 6px;
+  }
+
+  .direction-artistique br {
+    display: block;
+  }
+
+  .direction-artistique {
+    margin-top: 30px;
+  }
+}

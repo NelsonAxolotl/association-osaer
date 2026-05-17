@@ -4,7 +4,7 @@
   background-color: black;
   height: auto;
   overflow: visible;
-  padding: 0rem 0rem 10rem;
+  padding: 0rem 0rem 15rem;
   z-index: 1000;
 }
 
@@ -85,9 +85,9 @@
 
 .legal-rectangle {
   position: relative;
-  top: 155px;
+  top: 210px;
   left: 1%;
-  width: 78%;
+  width: 79%;
   background: rgb(0, 0, 0);
   z-index: 700;
   opacity: 0;
@@ -185,6 +185,12 @@
   filter: grayscale(40%) blur(2px);
   z-index: 0;
   pointer-events: none;
+}
+
+@media (max-width: 1450px) {
+  .legal-rectangle {
+    margin-top: -50px;
+  }
 }
 
 @media (max-width: 1100px) {

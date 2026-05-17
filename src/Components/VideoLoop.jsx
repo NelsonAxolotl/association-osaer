@@ -5,174 +5,98 @@ import Footer from "../Components/Footer";
 
 const VideoLoop = forwardRef((props, externalRef) => {
   const videoRef = useRef(null);
-  const audioRef = useRef(null);
 
-  const [soundOn, setSoundOn] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
   const [contentVisible, setContentVisible] = useState(false);
-  const [rightAnimate, setRightAnimate] = useState(false);
-  const [leftAnimate, setLeftAnimate] = useState(false);
-  const [curtainActive, setCurtainActive] = useState(false);
-  const [lineAnimate, setLineAnimate] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setContentVisible(true), 800);
-    return () => clearTimeout(t);
-  }, []);
+    // intro disparaît après 5s
+    const introTimer = setTimeout(() => {
+      setShowIntro(false);
 
-  useEffect(() => {
-    const t = setTimeout(() => {
-      setCurtainActive(true);
-      setLineAnimate(true);
-
+      // apparition du contenu ensuite
       setTimeout(() => {
-        setCurtainActive(false);
-        setLineAnimate(false);
-      }, 3300);
-    }, 15000);
+        setContentVisible(true);
+      }, 300);
+    }, 5000);
 
-    return () => clearTimeout(t);
+    return () => clearTimeout(introTimer);
   }, []);
-
-  // ===== TIMELINE 2 (18s) =====
-  useEffect(() => {
-    const t = setTimeout(() => {
-      setCurtainActive(true);
-
-      setTimeout(() => {
-        setCurtainActive(false);
-      }, 3000);
-    }, 18000);
-
-    return () => clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-    const t = setTimeout(() => {
-      setRightAnimate(true);
-      setLeftAnimate(true);
-
-      setTimeout(() => {
-        setRightAnimate(false);
-        setLeftAnimate(false);
-      }, 8000);
-    }, 20000);
-
-    return () => clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-    const enableAudio = () => {
-      if (audioRef.current && !soundOn) {
-        audioRef.current.volume = 0.5;
-        audioRef.current.play().catch(() => {});
-        setSoundOn(true);
-      }
-      window.removeEventListener("click", enableAudio);
-    };
-
-    window.addEventListener("click", enableAudio);
-    return () => window.removeEventListener("click", enableAudio);
-  }, [soundOn]);
-
-  const toggleSound = (e) => {
-    e.stopPropagation();
-    if (!audioRef.current) return;
-
-    if (soundOn) {
-      audioRef.current.pause();
-      setSoundOn(false);
-    } else {
-      audioRef.current.volume = 0.5;
-      audioRef.current.play().catch(() => {});
-      setSoundOn(true);
-    }
-  };
 
   return (
     <>
-      <main
-        id="page-container"
-        className={`crossfade-container videoloop-page ${
-          contentVisible ? "crossfade-visible" : ""
-        }`}
+      <div
+        className={`mainvideo videoloop-page ${contentVisible ? "crossfade-visible" : ""}`}
         ref={externalRef}
         role="main"
       >
-        <Nav className="videoloop-nav" />
-
-        <div className="video-bg" aria-hidden="true"></div>
-
-        <h1 className="main-title">Cie OSAER</h1>
-
-        <div className="crossfade-line"></div>
-
-        <section className="video-description">
-          <p>
-            L’association OSAER propose des performances de danse contemporaine,
-            et chorégraphie.
-          </p>
-        </section>
-
-        <div
-          className={`video-container
-            ${curtainActive ? "video-curtain" : ""}
-            ${rightAnimate ? "right-animate" : ""}
-            ${leftAnimate ? "left-animate" : ""}
-          `}
-        >
-          <video
-            className="fade-video"
-            src="/Videos/walk3.mp4"
-            autoPlay
-            loop
-            playsInline
-            muted
-            ref={videoRef}
-            preload="metadata"
-            fetchpriority="high"
-          />
-        </div>
-
-        {/* LOGO */}
-        <div className={`logo ${contentVisible ? "visible-after-video" : ""}`}>
-          <a href="/">
-            <img
-              src="/Pics/logo2.webp"
-              alt="Logo OSAER"
-              width={200}
-              height={200}
-              fetchpriority="high"
+        {showIntro && (
+          <div className="intro-video">
+            <video
+              className="intro-video-player"
+              src="/Videos/oz.mp4"
+              autoPlay
+              muted
+              playsInline
             />
-          </a>
-        </div>
-      </main>
+          </div>
+        )}
 
-      <div
-        className={`scroll-arrow-down ${
-          contentVisible ? "visible-after-video" : ""
-        }`}
-      >
-        ↓
+        {!showIntro && (
+          <>
+            <main
+              id="page-container"
+              className={`crossfade-container videoloop-page ${
+                contentVisible ? "crossfade-visible" : ""
+              }`}
+              ref={externalRef}
+              role="main"
+            >
+              <Nav className="videoloop-nav" />
+
+              <div className="video-bg" aria-hidden="true"></div>
+
+              <h1
+                className={`main-title ${
+                  contentVisible ? "visible-after-video" : ""
+                }`}
+              >
+                Cie OSAER
+              </h1>
+
+              <div className="video-rectangle"></div>
+
+              {/* logo */}
+              <div
+                className={`logovideo ${
+                  contentVisible ? "visible-after-video" : ""
+                }`}
+              >
+                <a href="/">
+                  <img
+                    src="/Pics/logo2.webp"
+                    alt="Logo de l'association OSAER"
+                    width={200}
+                    height={200}
+                  />
+                </a>
+              </div>
+
+              {/* flèche */}
+              <div
+                className={`scroll-arrow-down ${
+                  contentVisible ? "visible-after-video" : ""
+                }`}
+                aria-hidden="true"
+              >
+                ↓
+              </div>
+            </main>
+
+            <Footer className="videoloop-footer" />
+          </>
+        )}
       </div>
-
-      <button
-        className={`sound-toggle ${soundOn ? "on" : "off"} ${
-          contentVisible ? "visible-after-video" : ""
-        }`}
-        onClick={toggleSound}
-      >
-        {soundOn ? "🔊" : "🔇"}
-      </button>
-
-      <audio ref={audioRef} src="/Son/zur.mp3" loop preload="none" />
-
-      <div
-        className={`bottom-line-responsive ${
-          lineAnimate ? "line-animate" : ""
-        }`}
-      />
-
-      <Footer className="videoloop-footer" />
     </>
   );
 });

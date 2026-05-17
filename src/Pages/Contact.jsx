@@ -100,7 +100,7 @@ const Contact = forwardRef((props, externalRef) => {
               alt="Logo de l'association OSAER"
               width={200}
               height={200}
-              fetchpriority="high"
+              fetchPriority="high"
             />
           </a>
         </div>
