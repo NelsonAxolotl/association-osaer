@@ -1,18 +1,35 @@
+:root {
+  --black: rgb(0, 0, 0);
+  --white: rgb(255, 255, 255);
+  --font-title: "Caveat", cursive;
+  --z-base: 0;
+  --z-content: 700;
+  --z-overlay: 9000;
+  --z-intro: 99999;
+}
+
+/* =======================
+   CONTAINER
+======================= */
+
 .crossfade-container {
   position: relative;
-  color: white;
-  background: rgb(0, 0, 0);
+  color: var(--white);
+  background: var(--black);
   height: auto;
   overflow: visible;
   padding: 0rem 0.5rem 10rem;
-  height: auto;
 }
+
+/* =======================
+   BEFORE / AFTER LAYER
+======================= */
 
 .crossfade-container::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 9000;
+  z-index: var(--z-overlay);
   background-image: repeating-linear-gradient(
     -135deg,
     rgba(255, 255, 255, 0.074) 0px,
@@ -27,28 +44,28 @@
 }
 
 .crossfade-container::after {
-  z-index: 0;
   content: "";
   position: fixed;
   top: 20.9%;
   left: 1%;
   width: 88.5%;
   height: 1.9px;
-  background: white;
+  background: var(--white);
+  z-index: var(--z-base);
   opacity: 0;
   animation: fadeLineTop 5s ease-in forwards;
   animation-delay: 0.5s;
 }
 
-.video-description {
-  display: none;
-}
+/* =======================
+   INTRO VIDEO
+======================= */
 
 .intro-video {
   position: fixed;
   inset: 0;
-  background: black;
-  z-index: 99999;
+  background: var(--black);
+  z-index: var(--z-intro);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +73,7 @@
   animation: introFadeOut 7.5s cubic-bezier(0.76, 0, 0.24, 1) 3.5s forwards;
 }
 
-/* texture légère */
+/* texture intro (IDENTIQUE) */
 .intro-video::before {
   content: "";
   position: absolute;
@@ -75,51 +92,21 @@
   animation-delay: 0.8s;
 }
 
-@keyframes introLinesFade {
-  from {
-    opacity: 0;
-    filter: blur(10px);
-  }
-
-  to {
-    opacity: 0.5;
-    filter: blur(0px);
-  }
-}
-
+/* overlay noir */
 .intro-video::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: black;
+  background: var(--black);
   opacity: 0;
   z-index: 3;
   animation: cinematicBlackFade 5.5s ease-in-out 4s forwards;
 }
 
-@keyframes cinematicBlackFade {
-  0% {
-    opacity: 0;
-  }
+/* =======================
+   VIDEO
+======================= */
 
-  35% {
-    opacity: 0.08;
-  }
-
-  55% {
-    opacity: 0.22;
-  }
-
-  75% {
-    opacity: 0.45;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-/* VIDEO */
 .intro-video-player {
   position: relative;
   z-index: 1;
@@ -135,70 +122,17 @@
     introSlowZoom 5s ease-out forwards;
 }
 
-/* fade */
-@keyframes introFadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* micro mouvement cinéma */
-@keyframes introSlowZoom {
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes introFadeOut {
-  0% {
-    opacity: 1;
-    filter: blur(0px) brightness(1);
-    transform: scale(1);
-  }
-
-  40% {
-    opacity: 0.92;
-  }
-
-  65% {
-    opacity: 0.65;
-    filter: blur(6px) brightness(0.7);
-  }
-
-  85% {
-    opacity: 0.28;
-    filter: blur(14px) brightness(0.35);
-  }
-
-  100% {
-    opacity: 0;
-    filter: blur(26px) brightness(0.15);
-    transform: scale(1.025);
-  }
-}
-
-/* apparition homepage */
-@keyframes homeReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(18px);
-    filter: blur(10px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
+/* =======================
+   TITLE
+======================= */
 
 .main-title {
   position: fixed;
   top: 10%;
   left: 5%;
   font-size: 3.5rem;
-  color: rgb(247, 241, 241);
-  font-family: "Caveat", cursive;
+  color: #f7f1f1;
+  font-family: var(--font-title);
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
   z-index: 3;
   margin: 0;
@@ -210,56 +144,39 @@
     transform 2s ease-in-out;
 }
 
+/* =======================
+   VIDEO RECTANGLE
+======================= */
+
 .video-rectangle {
   position: relative;
   top: 200px;
   left: 1%;
   width: 78%;
   height: 100vh;
-  background: rgb(0, 0, 0);
+  background: var(--black);
   padding: 10px;
-  z-index: 700;
+  z-index: var(--z-content);
   opacity: 0;
   overflow: hidden;
-  transition: opacity 2s ease-in-out;
   border-radius: 3px;
+  transition: opacity 2s ease-in-out;
 }
 
-.crossfade-visible::before {
-  opacity: 1;
-}
-
-.crossfade-visible .video-rectangle {
-  opacity: 1;
-}
+/* =======================
+   UI ELEMENTS
+======================= */
 
 .scroll-arrow-down {
   position: fixed;
   top: 8%;
   left: 89%;
-  transform: translateX(-50%);
   font-size: 2rem;
-  color: white;
-  text-align: center;
+  color: var(--white);
   animation: bounceDown 1.6s infinite ease-in-out;
   user-select: none;
   opacity: 0;
-  transition: opacity 8s ease-in-out;
   z-index: 3;
-}
-
-@keyframes bounceDown {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(12px);
-  }
-}
-
-.crossfade-visible::before {
-  opacity: 1;
 }
 
 .logovideo {
@@ -272,7 +189,6 @@
 }
 
 .logovideo img {
-  width: 12vw;
   width: 200px;
   height: auto;
   transition:
@@ -280,49 +196,127 @@
     filter 0.3s ease;
 }
 
-@media (max-width: 1450px) {
-  .video-rectangle {
-    margin-top: -40px;
+/* =======================
+   ACTIVE STATE
+======================= */
+
+.crossfade-visible::before {
+  opacity: 1;
+}
+
+.crossfade-visible .video-rectangle {
+  opacity: 1;
+}
+
+/* =======================
+   KEYFRAMES (UNCHANGED)
+======================= */
+
+@keyframes fadeLineTop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-/* responsive */
-@media (max-width: 900px) {
-  .main-title {
-    transform: translateX(-50%) translateY(0);
-    text-align: center;
+@keyframes introLinesFade {
+  from {
+    opacity: 0;
+    filter: blur(10px);
   }
+  to {
+    opacity: 0.5;
+    filter: blur(0);
+  }
+}
 
-  .crossfade-container::after {
-    left: 1.5%;
-    width: 97vw;
+@keyframes cinematicBlackFade {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.08;
+  }
+  55% {
+    opacity: 0.22;
+  }
+  75% {
+    opacity: 0.45;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes introFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes introSlowZoom {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes introFadeOut {
+  0% {
+    opacity: 1;
+    filter: blur(0px) brightness(1);
+    transform: scale(1);
+  }
+  40% {
+    opacity: 0.92;
+  }
+  65% {
+    opacity: 0.65;
+    filter: blur(6px) brightness(0.7);
+  }
+  85% {
+    opacity: 0.28;
+    filter: blur(14px) brightness(0.35);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(26px) brightness(0.15);
+    transform: scale(1.025);
+  }
+}
+
+@keyframes bounceDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+@media (max-width: 900px) {
+  .video-rectangle {
+    width: 98%;
+    margin-top: -10px;
   }
 
   .scroll-arrow-down {
     display: none;
   }
 
-  .video-bg {
-    position: fixed;
-    height: 22.5vh;
-    inset: 0;
-    background: black;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .video-rectangle {
-    width: 98%;
-    margin-top: -10px;
-    z-index: 0;
-  }
-
-  .video-title {
-    top: 12%;
-  }
-
   .logovideo {
     display: none;
+  }
+
+  .main-title {
+    transform: translateX(-50%) translateY(0);
+    text-align: center;
   }
 }
 
@@ -333,31 +327,17 @@
 
   .main-title {
     left: 28%;
-    top: 10%;
-  }
-
-  .logo {
-    display: none;
   }
 
   .crossfade-container::after {
     width: 92vw;
     left: 4%;
-    position: absolute;
-    top: 32%;
-    opacity: 0;
-    animation:
-      fadeInLine 8s ease-in forwards,
-      lineCurtainUp 8s ease-in-out 15s forwards,
-      lineCurtainRight 7s ease-in-out 21.7s forwards;
   }
 
   .video-bg::before {
-    display: block;
     content: "";
     position: absolute;
     inset: 0;
-    z-index: 0;
     background-image: repeating-linear-gradient(
       -135deg,
       rgba(255, 255, 255, 0.06) 0px,
@@ -367,6 +347,5 @@
     );
     filter: blur(8px);
     opacity: 1;
-    pointer-events: none;
   }
 }

@@ -5,7 +5,25 @@ import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 
-const Contact = forwardRef((props, externalRef) => {
+const SOCIALS = [
+  {
+    href: "https://www.instagram.com/",
+    icon: FaInstagram,
+    label: "Instagram",
+  },
+  {
+    href: "https://www.facebook.com/",
+    icon: FaFacebook,
+    label: "Facebook",
+  },
+  {
+    href: "https://www.linkedin.com/",
+    icon: FaLinkedin,
+    label: "LinkedIn",
+  },
+];
+
+const Contact = forwardRef(function Contact(props, ref) {
   const [contentVisible, setContentVisible] = useState(false);
   const videoRef = useRef(null);
 
@@ -22,23 +40,29 @@ const Contact = forwardRef((props, externalRef) => {
 
   return (
     <>
-      <div
+      <main
+        ref={ref}
         className={`maincontact contact-page ${
           contentVisible ? "crossfade-visible" : ""
         }`}
-        ref={externalRef}
-        role="main"
       >
         <Nav />
-        <div className="contact-bg" aria-hidden="true"></div>
+
+        <div className="contact-bg" aria-hidden="true" />
+
         <h1
+          id="contact-heading"
           className={`contact-title ${
             contentVisible ? "visible-after-video" : ""
           }`}
         >
           Contact
         </h1>
-        <div className="contact-rectangle" aria-labelledby="contact-heading">
+
+        <section
+          className="contact-rectangle"
+          aria-labelledby="contact-heading"
+        >
           <video
             ref={videoRef}
             className="contact-video-background"
@@ -47,63 +71,56 @@ const Contact = forwardRef((props, externalRef) => {
             muted
             playsInline
             preload="metadata"
-            fetchPriority="high"
+            loop
           />
+
           <div className={`contact-info ${contentVisible ? "visible" : ""}`}>
             <h2>CIE OSAER</h2>
+
             <a href="mailto:cie.osaer@yahoo.com" className="contact-mail">
               cie.osaer@yahoo.com
             </a>
-            <p>
-              <a href="tel:+33666213417" className="contact-phone">
-                06 66 21 34 17
-              </a>
-            </p>
-            <p>Siret : 902 789 411 00011</p>
+
+            <a href="tel:+33666213417" className="contact-phone">
+              06 66 21 34 17
+            </a>
+
+            <p>SIRET : 902 789 411 00011</p>
             <p>Code APE/NAF : 90.01Z</p>
+
             <div className="contact-socials" aria-label="Réseaux sociaux">
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <FaInstagram />
-              </a>
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              >
-                <FaFacebook />
-              </a>
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Linkedin"
-              >
-                <FaLinkedin />
-              </a>
+              {SOCIALS.map(({ href, icon: Icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  title={label}
+                >
+                  <Icon />
+                </a>
+              ))}
             </div>
           </div>
-        </div>
+        </section>
+
         <div
           className={`logocontact ${
             contentVisible ? "visible-after-video" : ""
           }`}
         >
-          <a href="/">
+          <a href="/" aria-label="Retour à l'accueil">
             <img
               src="/Pics/logo2.webp"
               alt="Logo de l'association OSAER"
               width={200}
               height={200}
-              fetchPriority="high"
+              loading="eager"
             />
           </a>
         </div>
+
         <div
           className={`scroll-arrow-down ${
             contentVisible ? "visible-after-video" : ""
@@ -112,9 +129,11 @@ const Contact = forwardRef((props, externalRef) => {
         >
           ↓
         </div>
-      </div>
+      </main>
+
       <Footer className="contact-footer" />
     </>
   );
 });
+
 export default Contact;

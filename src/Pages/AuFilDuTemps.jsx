@@ -3,7 +3,7 @@ import { useState, useEffect, useRef, forwardRef } from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 
-const AuFilDuTemps = forwardRef((props, externalRef) => {
+const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
   const [contentVisible, setContentVisible] = useState(false);
   const videoRef = useRef(null);
 
@@ -12,41 +12,34 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
     return () => clearTimeout(t);
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (videoRef.current) {
-        videoRef.current.muted = false;
-        videoRef.current.volume = 0.8;
-      }
-    }, 4000);
-    return () => clearTimeout(timer);
-  }, []);
+  const visibleClass = contentVisible ? "visible-after-video" : "";
 
   return (
     <>
-      <div
-        className={`temps temps-page ${contentVisible ? "crossfade-visible" : ""}`}
-        ref={externalRef}
+      <main
+        className={`temps temps-page ${
+          contentVisible ? "crossfade-visible" : ""
+        }`}
+        ref={ref}
         role="main"
       >
         <Nav />
-        <div className="creation-bg" aria-hidden="true"></div>
-        <h1
-          className={`temps-title ${
-            contentVisible ? "visible-after-video" : ""
-          }`}
-        >
-          Créations
-        </h1>
 
+        <div className="creation-bg" aria-hidden="true" />
+
+        <h1 className={`temps-title ${visibleClass}`}>Créations</h1>
+
+        {/* Texte SEO séparé du H1 (HTML valide) */}
         <p className="seo-hidden">
           Découvrez les créations de la compagnie OSAER : spectacles de danse
           contemporaine, performances artistiques et projets chorégraphiques en
           cours.
         </p>
-        <div className="temps-rectangle">
-          <div className="tr">
-            <h2> "É.phe"</h2>
+
+        <section className="temps-rectangle">
+          <article className="tr">
+            <h2>É.phe</h2>
+
             <video
               ref={videoRef}
               className="creation-video"
@@ -54,16 +47,15 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
               playsInline
               muted
               autoPlay
-              controlsList="nodownload"
               preload="metadata"
-              fetchPriority="high"
+              controlsList="nodownload"
             >
               <source src="/Videos/ephe2.mp4" type="video/mp4" />
               Votre navigateur ne supporte pas la vidéo.
             </video>
 
             <p className="ephe-duration2">
-              Interpètes : <br />
+              Interprètes :{" "}
               <a href="/artistes#olivia-caillaud" className="highlight-link">
                 Olivia Caillaud
               </a>{" "}
@@ -75,7 +67,7 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
 
             <div className="ephe-block">
               <p className="ephe-texte">
-                La création <span>« É.phe »</span> naît de la rencontre entre
+                La création <span>« É.phe »</span> naît de la rencontre entre
                 deux interprètes devenues autrices de leur propre écriture.
               </p>
 
@@ -90,42 +82,37 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
                 rencontre se vit plus qu’elle ne se raconte.
               </p>
             </div>
+
             <div className="ephe-status-wrapper">
               <p className="ephe-status">En cours de création</p>
             </div>
+
             <div className="ephe-premiere">
               <p className="ephe-premiere-title">Première</p>
 
               <p className="ephe-date">23 juillet 2026</p>
 
               <p>
-                <span className="ephe-festival">
-                  <a
-                    href="https://www.facebook.com/estivalesdecomberge/?locale=fr_FR"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ephe-festival"
-                  >
-                    Festival Les Estivales de Comberge
-                  </a>{" "}
-                </span>{" "}
-                <strong> – </strong>
-                <br />
-                Saint-Michel-Chef-Chef
+                <a
+                  href="https://www.facebook.com/estivalesdecomberge/?locale=fr_FR"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ephe-festival"
+                >
+                  Festival Les Estivales de Comberge
+                </a>{" "}
+                – Saint-Michel-Chef-Chef
               </p>
 
               <p>Esplanade du Port de Comberge</p>
               <p>Boulevard de l’Océan</p>
               <p>44730 Saint-Michel-Chef-Chef</p>
             </div>
-          </div>
-        </div>
-        <div
-          className={`logostemps ${
-            contentVisible ? "visible-after-video" : ""
-          }`}
-        >
-          <a href="/">
+          </article>
+        </section>
+
+        <div className={`logostemps ${visibleClass}`}>
+          <a href="/" aria-label="Retour à l'accueil">
             <img
               src="/Pics/logo2.webp"
               alt="Logo OSAER"
@@ -135,14 +122,12 @@ const AuFilDuTemps = forwardRef((props, externalRef) => {
             />
           </a>
         </div>
-        <div
-          className={`scroll-arrow-down ${
-            contentVisible ? "visible-after-video" : ""
-          }`}
-        >
+
+        <div className={`scroll-arrow-down ${visibleClass}`} aria-hidden="true">
           ↓
         </div>
-      </div>
+      </main>
+
       <Footer />
     </>
   );

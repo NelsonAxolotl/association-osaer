@@ -3,7 +3,7 @@ import "./MentionsPolitique.css";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 
-const MentionsPolitique = forwardRef((props, externalRef) => {
+const MentionsPolitique = forwardRef(function MentionsPolitique(props, ref) {
   const [contentVisible, setContentVisible] = useState(false);
 
   useEffect(() => {
@@ -17,12 +17,15 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
     <>
       <main
         id="main-content"
-        className={`mainlegal legal-page ${contentVisible ? "crossfade-visible" : ""}`}
-        ref={externalRef}
+        ref={ref}
+        className={`mainlegal legal-page ${
+          contentVisible ? "crossfade-visible" : ""
+        }`}
         role="main"
       >
         <Nav />
-        <div className="legal-bg" aria-hidden="true"></div>
+
+        <div className="legal-bg" aria-hidden="true" />
 
         <h1 className={`legal-title ${visibleClass}`}>
           Mentions légales & <br />
@@ -31,7 +34,7 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
 
         <div className="legal-rectangle">
           <div className="ley">
-            <section class="mentions-legales">
+            <section className="mentions-legales">
               <h2>1. Mentions légales</h2>
 
               <p>
@@ -42,16 +45,21 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
                 , association loi 1901 dédiée à la création artistique et au
                 spectacle vivant.
               </p>
+
               <p>
                 <strong>Dénomination :</strong> Compagnie OSAER
               </p>
+
               <p>
                 <strong>Statut :</strong> Entrepreneur de spectacles vivants
               </p>
+
               <p>Récépissé de déclaration d’activité n° 2-011787</p>
+
               <p>
                 <strong>SIRET :</strong> 902 789 411 00011
               </p>
+
               <p>
                 <strong>Code APE / NAF :</strong> 90.01Z – Arts du spectacle
                 vivant
@@ -64,10 +72,12 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
               <p>
                 <strong>Contact :</strong>
               </p>
+
               <p>
                 Email :{" "}
                 <a href="mailto:cie.osaer@yahoo.com">cie.osaer@yahoo.com</a>
               </p>
+
               <p>
                 Téléphone : <a href="tel:+33666213417">06 66 21 34 17</a>
               </p>
@@ -75,7 +85,7 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
               <p>
                 <strong>Hébergement :</strong>
                 <br />
-                Le site est hébergé par Vercel Inc. ,440 N Barranca Ave 4133
+                Le site est hébergé par Vercel Inc., 440 N Barranca Ave 4133
                 Covina, CA 91723 États-Unis,{" "}
                 <a
                   href="https://vercel.com"
@@ -89,20 +99,20 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
               <p>
                 L’ensemble du contenu du site (textes, images, vidéos,
                 graphismes, logo) est protégé par le droit d’auteur. Toute
-                reproduction, représentation, modification ou diffusion, sans
-                autorisation préalable, est interdite.
+                reproduction, représentation, modification ou diffusion sans
+                autorisation préalable est interdite.
               </p>
             </section>
 
-            <section class="politique-confidentialite">
+            <section className="politique-confidentialite">
               <h2>2. Politique de confidentialité</h2>
 
               <h3>2.1 Données collectées</h3>
               <p>
                 Le site peut collecter certaines données personnelles lorsque
-                vous contactez l’association via le formulaire ou par email,
-                notamment :
+                vous contactez l’association, notamment :
               </p>
+
               <ul>
                 <li>Nom et prénom</li>
                 <li>Adresse email</li>
@@ -110,81 +120,71 @@ const MentionsPolitique = forwardRef((props, externalRef) => {
               </ul>
 
               <h3>2.2 Finalité de la collecte</h3>
-              <p>Ces données sont collectées uniquement dans le but de :</p>
+              <p>Ces données sont utilisées uniquement pour :</p>
+
               <ul>
                 <li>Répondre à vos demandes</li>
-                <li>
-                  Échanger avec vous dans un cadre professionnel ou artistique
-                </li>
+                <li>Échanger dans un cadre professionnel ou artistique</li>
               </ul>
 
               <h3>2.3 Durée de conservation</h3>
               <p>
-                Les données sont conservées pendant une durée maximale de 3 ans
-                après le dernier contact, sauf obligation légale contraire.
+                Les données sont conservées jusqu’à 3 ans après le dernier
+                contact, sauf obligation légale contraire.
               </p>
 
               <h3>2.4 Partage des données</h3>
-              <p>
-                Les données personnelles ne sont jamais vendues ni cédées à des
-                tiers. Elles peuvent être traitées par des services techniques
-                nécessaires au fonctionnement du site (ex : service d’email).
-              </p>
+              <p>Les données ne sont jamais vendues ni cédées à des tiers.</p>
 
               <h3>2.5 Sécurité</h3>
               <p>
-                L’association met en œuvre des mesures techniques et
-                organisationnelles afin de protéger les données personnelles
-                contre toute perte, accès non autorisé ou divulgation.
+                Des mesures techniques et organisationnelles sont mises en place
+                pour protéger vos données personnelles.
               </p>
 
               <h3>2.6 Vos droits</h3>
-              <p>
-                Conformément au Règlement Général sur la Protection des Données
-                (RGPD), vous disposez des droits suivants :
-              </p>
+              <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+
               <ul>
-                <li>Droit d’accès à vos données</li>
+                <li>Droit d’accès</li>
                 <li>Droit de rectification</li>
                 <li>Droit de suppression</li>
                 <li>Droit d’opposition</li>
               </ul>
 
               <p>
-                Pour exercer ces droits, vous pouvez nous contacter à :
+                Pour exercer vos droits :
                 <a href="mailto:cie.osaer@yahoo.com"> cie.osaer@yahoo.com</a>
               </p>
 
               <h3>2.7 Cookies</h3>
               <p>
-                Le site peut utiliser des cookies afin d’améliorer l’expérience
-                utilisateur et mesurer l’audience. Vous pouvez configurer votre
-                navigateur pour refuser ces cookies.
+                Le site peut utiliser des cookies pour améliorer l’expérience
+                utilisateur et mesurer l’audience.
               </p>
 
               <h3>2.8 Modification</h3>
-              <p>
-                La présente politique de confidentialité peut être modifiée à
-                tout moment. Nous vous invitons à la consulter régulièrement.
-              </p>
+              <p>Cette politique peut être modifiée à tout moment.</p>
             </section>
           </div>
         </div>
 
         <div className={`logolegal ${visibleClass}`}>
-          <a href="/">
+          <a href="/" aria-label="Retour à l'accueil">
             <img
               src="/Pics/logo2.webp"
               alt="Logo de l'association OSAER"
               width={200}
               height={200}
-              fetchpriority="high"
-              loading="lazy"
+              fetchPriority="high"
+              loading="eager"
             />
           </a>
         </div>
 
-        <div className={`scroll-arrow-down ${visibleClass}`}>↓</div>
+        <div className={`scroll-arrow-down ${visibleClass}`} aria-hidden="true">
+          ↓
+        </div>
       </main>
 
       <Footer className="legal-footer" />

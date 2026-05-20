@@ -15,29 +15,26 @@ const Asso = forwardRef((props, externalRef) => {
   return (
     <>
       <div
-        className={`asso asso-page ${
-          contentVisible ? "crossfade-visible" : ""
-        }`}
+        className={`asso asso-page ${contentVisible ? "crossfade-visible" : ""}`}
         ref={externalRef}
         role="main"
       >
         <Nav />
-        {/* Fond décoratif */}
+
         <div className="asso-bg" aria-hidden="true"></div>
 
-        {/* Titre */}
         <h1
-          className={`asso-title ${
-            contentVisible ? "visible-after-video" : ""
-          }`}
+          className={`asso-title ${contentVisible ? "visible-after-video" : ""}`}
         >
           Compagnie
         </h1>
+
         <p className="seo-hidden">
           OSAER est une compagnie de danse contemporaine développant des projets
           artistiques collaboratifs mêlant chorégraphie, performance et
           médiation culturelle.
         </p>
+
         <div className="asso-rectangle">
           <div className="assowrap">
             <div className="asso-block">
@@ -52,6 +49,7 @@ const Asso = forwardRef((props, externalRef) => {
                   width={400}
                   height={400}
                   loading="lazy"
+                  fetchPriority="high"
                 />
               </div>
 
@@ -90,7 +88,7 @@ const Asso = forwardRef((props, externalRef) => {
                 <div className="text2">
                   <p>
                     En mettant à disposition des interprètes aux présences
-                    singulières,{""} <span>OSAER</span> favorise l’émergence de
+                    singulières, <span>OSAER</span> favorise l’émergence de
                     créations où les langages artistiques dialoguent et se
                     transforment.
                   </p>
@@ -105,8 +103,11 @@ const Asso = forwardRef((props, externalRef) => {
               </div>
             </div>
           </div>
+
+          {/* ================= MEDIATION ================= */}
           <div className="asso-section">
             <h3 className="asso-section-title">La médiation / Transmission</h3>
+
             <div className="assowrap reverse">
               <div className="asso-text2">
                 <div className="text3">
@@ -118,6 +119,7 @@ const Asso = forwardRef((props, externalRef) => {
                     encadrants.
                   </p>
                 </div>
+
                 <div className="text2">
                   <p>
                     Ces temps de création ouvrent des espaces d’expression
@@ -127,6 +129,7 @@ const Asso = forwardRef((props, externalRef) => {
                     la confiance en soi.
                   </p>
                 </div>
+
                 <div className="text2">
                   <p>
                     En rencontrant les artistes et leurs démarches, les
@@ -135,6 +138,7 @@ const Asso = forwardRef((props, externalRef) => {
                     spectacle vivant.
                   </p>
                 </div>
+
                 <div className="text2">
                   <p>
                     Chaque projet est élaboré sur mesure, en collaboration avec
@@ -144,6 +148,7 @@ const Asso = forwardRef((props, externalRef) => {
                     d’associations culturelles.
                   </p>
                 </div>
+
                 <div className="text2">
                   <p>
                     N’hésitez pas à nous contacter pour imaginer ensemble un
@@ -166,7 +171,10 @@ const Asso = forwardRef((props, externalRef) => {
               </div>
             </div>
           </div>
+
+          {/* ================= RENCONTRE ================= */}
           <h3 className="asso-section-title">L’art de la rencontre</h3>
+
           <div className="asso-vertical-block">
             <div
               className="asso-vertical-image"
@@ -180,6 +188,7 @@ const Asso = forwardRef((props, externalRef) => {
                 loading="lazy"
               />
             </div>
+
             <div className="text2">
               <p className="asso-vertical-text">
                 Chez <span>OSAER</span>, chaque collaboration est une
@@ -189,6 +198,7 @@ const Asso = forwardRef((props, externalRef) => {
                 dans la construction collective d’écritures artistiques.
               </p>
             </div>
+
             <div className="text2">
               <p className="asso-vertical-text2">
                 De ces échanges naissent des œuvres qui résonnent, marquent et
@@ -199,6 +209,7 @@ const Asso = forwardRef((props, externalRef) => {
           </div>
         </div>
 
+        {/* LOGO */}
         <div
           className={`logoasso ${contentVisible ? "visible-after-video" : ""}`}
         >
@@ -208,26 +219,34 @@ const Asso = forwardRef((props, externalRef) => {
               alt="Logo de l'association OSAER"
               width={200}
               height={200}
-              fetchPriority="high"
+              loading="eager"
             />
           </a>
         </div>
+
         <div
-          className={`scroll-arrow-down ${
-            contentVisible ? "visible-after-video" : ""
-          }`}
+          className={`scroll-arrow-down ${contentVisible ? "visible-after-video" : ""}`}
         >
           ↓
         </div>
       </div>
+
+      {/* Overlay image */}
       {zoomedImage1 && (
-        <div className="overlay" onClick={() => setZoomedImage1(null)}>
+        <div
+          className="overlay"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setZoomedImage1(null)}
+        >
           <div className="enlarged-media" onClick={(e) => e.stopPropagation()}>
             <img src={zoomedImage1} alt="Image agrandie OSAER" />
           </div>
+
           <button
             className="close-button"
             onClick={() => setZoomedImage1(null)}
+            aria-label="Fermer l'image"
           >
             ×
           </button>

@@ -22,7 +22,7 @@ function App() {
         <Route path="/compagnie" element={<Asso />} />
         <Route path="/creations" element={<AuFilDuTemps />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/mouvements" element={<Mouvements />} />
+        <Route path="/rencontres" element={<Mouvements />} />
         <Route path="/mentions-politique" element={<MentionsPolitique />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

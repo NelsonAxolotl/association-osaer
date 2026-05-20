@@ -80,8 +80,9 @@
   background: rgb(0, 0, 0);
   padding: 0 20px;
   z-index: 700;
-  opacity: 1;
+  opacity: 0;
   overflow: hidden;
+  transition: opacity 2s ease-in-out;
   border-radius: 3px;
 }
 
@@ -302,35 +303,60 @@
 }
 
 .overlay {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999999 !important;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.enlarged-media {
+  position: relative;
+  max-height: 90%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+  animation: zoomIn 0.4s ease-out forwards;
+  max-width: 60%;
 }
 
 .enlarged-media img {
-  max-width: 90vw;
-  max-height: 90vh;
-  border-radius: 10px;
-  z-index: 1000000 !important;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
 }
 
 .close-button {
-  position: fixed !important;
-  top: 20px;
-  right: 20px;
-  font-size: 45px;
-  color: white;
-  background: none;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   border: none;
+  border-radius: 50%;
+  background: white;
+  font-size: 2rem;
+  line-height: 36px;
+  text-align: center;
   cursor: pointer;
-  z-index: 1000001 !important;
+  z-index: 9999;
 }
 
 .assowrap.reverse {
