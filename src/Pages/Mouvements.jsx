@@ -90,7 +90,7 @@ const Mouv = forwardRef(function Mouv(props, ref) {
                 aria-label="Agrandir l'image Couleur Papier"
               >
                 <img
-                  src="/Pics/papier.jpg"
+                  src="/Pics/papier.webp"
                   alt="Couleur Papier - création chorégraphique"
                   width={500}
                   height={300}
@@ -155,7 +155,7 @@ const Mouv = forwardRef(function Mouv(props, ref) {
                 aria-label="Agrandir l'image Parole Portée"
               >
                 <img
-                  src="/Pics/parole.jpg"
+                  src="/Pics/parole.webp"
                   alt="Parole Portée - projet chorégraphique"
                   width={500}
                   height={300}
