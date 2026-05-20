@@ -54,11 +54,11 @@ const Asso = forwardRef((props, externalRef) => {
               </div>
 
               {/* TITRE */}
-              <h3
+              <h2
                 className={`asso-titre ${contentVisible ? "visible-after-video" : ""}`}
               >
                 Au cœur de la création
-              </h3>
+              </h2>
 
               {/* TEXTE */}
               <div className="asso-text" lang="fr">
@@ -106,7 +106,7 @@ const Asso = forwardRef((props, externalRef) => {
 
           {/* ================= MEDIATION ================= */}
           <div className="asso-section">
-            <h3 className="asso-section-title">La médiation / Transmission</h3>
+            <h2 className="asso-section-title">La médiation / Transmission</h2>
 
             <div className="assowrap reverse">
               <div className="asso-text2">
@@ -173,7 +173,7 @@ const Asso = forwardRef((props, externalRef) => {
           </div>
 
           {/* ================= RENCONTRE ================= */}
-          <h3 className="asso-section-title">L’art de la rencontre</h3>
+          <h2 className="asso-section-title">L’art de la rencontre</h2>
 
           <div className="asso-vertical-block">
             <div

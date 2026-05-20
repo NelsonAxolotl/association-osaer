@@ -600,6 +600,7 @@
 
   .asso-rectangle {
     padding: 0;
+    margin-top: -60px;
   }
 
   .asso-bg::before {

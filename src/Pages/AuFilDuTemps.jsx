@@ -55,7 +55,7 @@ const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
             </video>
 
             <p className="ephe-duration2">
-              Interprètes :{" "}
+              Interprètes : <br />
               <a href="/artistes#olivia-caillaud" className="highlight-link">
                 Olivia Caillaud
               </a>{" "}
@@ -101,7 +101,8 @@ const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
                 >
                   Festival Les Estivales de Comberge
                 </a>{" "}
-                – Saint-Michel-Chef-Chef
+                <span>–</span> <br />
+                Saint-Michel-Chef-Chef
               </p>
 
               <p>Esplanade du Port de Comberge</p>

@@ -91,14 +91,14 @@ const Bio = forwardRef((props, externalRef) => {
         if (id === "stephanie-pignon") {
           yOffset =
             window.innerWidth <= 500
-              ? -220
+              ? -260
               : window.innerWidth <= 900
                 ? -240
                 : -120;
         } else if (id === "olivia-caillaud") {
           yOffset =
             window.innerWidth <= 500
-              ? -220
+              ? -260
               : window.innerWidth <= 900
                 ? -240
                 : -90;
@@ -162,7 +162,9 @@ const Bio = forwardRef((props, externalRef) => {
                 alt="Stéphanie Pignon en danse contemporaine"
                 width={400}
                 height={400}
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
             </div>
 
@@ -193,10 +195,10 @@ const Bio = forwardRef((props, externalRef) => {
                 divers univers chorégraphiques sensibles en collaborant avec des
                 artistes tels que <SmartLink name="Gianni Joseph" />,{" "}
                 <SmartLink name="Christine Bastin" />,{" "}
-                <SmartLink name="Valérie Rivière" />, ,{" "}
+                <SmartLink name="Valérie Rivière" />,{" "}
                 <SmartLink name="Philippe Jamet" />,{" "}
                 <SmartLink name="Paco Décina" />,{" "}
-                <SmartLink name="Marc Vincent" />, ,{" "}
+                <SmartLink name="Marc Vincent" />,{" "}
                 <SmartLink name="Aicha M’Barek, Hafiz Dahou" />,{" "}
                 <SmartLink name="Françoise Tartinville" />,{" "}
                 <SmartLink name="Chloé Camus Hernandez" />,{" "}

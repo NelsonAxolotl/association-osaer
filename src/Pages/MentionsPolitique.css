@@ -309,4 +309,8 @@
     line-height: 38px;
     font-size: 2rem;
   }
+
+  .legal-rectangle {
+    padding-top: 30px;
+  }
 }

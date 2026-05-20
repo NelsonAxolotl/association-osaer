@@ -492,10 +492,6 @@ h2 {
     display: block;
     margin-top: 10px;
   }
-
-  .bio-content-nelson {
-    margin-top: 20px;
-  }
 }
 
 @media (max-width: 900px) {
@@ -540,8 +536,7 @@ h2 {
   .bio-text50,
   .bio-text51,
   .bio-text52,
-  .bio-text53,
-  .bio-text-nelson {
+  .bio-text53 {
     font-size: 1rem;
     line-height: 1.4;
     hyphens: auto;
@@ -559,8 +554,7 @@ h2 {
   .bio-text50 p::first-letter,
   .bio-text51 p::first-letter,
   .bio-text52 p::first-letter,
-  .bio-text53 p::first-letter,
-  .bio-text-nelson p::first-letter {
+  .bio-text53 p::first-letter {
     font-size: 2rem;
     margin-right: 2px;
     margin-top: -10px;
@@ -579,21 +573,12 @@ h2 {
     display: none;
   }
 
-  .enlarged-media,
-  .enlarged-media2 {
+  .enlarged-media {
     max-width: 90%;
   }
 
   .role {
     margin-top: -5px;
-  }
-
-  .nelson {
-    margin-top: 100px;
-  }
-
-  .bio-content-nelson {
-    hyphens: auto;
   }
 }
 
@@ -633,8 +618,7 @@ h2 {
   .bio-text50 p::first-letter,
   .bio-text51 p::first-letter,
   .bio-text52 p::first-letter,
-  .bio-text53 p::first-letter,
-  .bio-text-nelson p::first-letter {
+  .bio-text53 p::first-letter {
     margin-right: 2px;
     margin-top: -12px;
   }
@@ -644,22 +628,12 @@ h2 {
     height: 300px;
   }
 
-  .bio-video-diamond {
-    width: 100%;
-    height: 270px;
-  }
-
   .olivia {
     margin-top: 50px;
   }
 
   .bio-rectangle {
-    margin-top: -40px;
-  }
-
-  .bio-content-nelson {
-    margin-top: -5px;
-    margin-bottom: -40px;
+    margin-top: -20px;
   }
 
   .bio-bg::before {

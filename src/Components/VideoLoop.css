@@ -326,12 +326,11 @@
   }
 
   .main-title {
-    left: 28%;
+    left: 22%;
   }
 
   .crossfade-container::after {
-    width: 92vw;
-    left: 4%;
+    display: none;
   }
 
   .video-bg::before {

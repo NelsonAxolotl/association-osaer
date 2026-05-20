@@ -407,7 +407,7 @@
   }
 
   .temps-rectangle {
-    margin-top: -20px;
+    margin-top: 0;
   }
 
   .texte-centre {
@@ -483,6 +483,10 @@
 
   .ephe-premiere br {
     display: block;
+  }
+
+  .ephe-premiere span {
+    display: none;
   }
 
   .ephe-premiere strong {
