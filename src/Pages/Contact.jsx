@@ -33,9 +33,18 @@ const Contact = forwardRef(function Contact(props, ref) {
   }, []);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.5;
-    }
+    const video = videoRef.current;
+    if (!video) return;
+
+    const onLoaded = () => {
+      video.playbackRate = 0.5;
+    };
+
+    video.addEventListener("loadeddata", onLoaded);
+
+    return () => {
+      video.removeEventListener("loadeddata", onLoaded);
+    };
   }, []);
 
   return (
@@ -70,7 +79,7 @@ const Contact = forwardRef(function Contact(props, ref) {
             autoPlay
             muted
             playsInline
-            preload="metadata"
+            preload="auto"
             loop
           />
 
