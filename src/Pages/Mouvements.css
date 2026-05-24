@@ -542,7 +542,11 @@
 
 @media (max-width: 500px) {
   .mouv-title {
-    left: 25%;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
   }
 
   .mouv::after {
