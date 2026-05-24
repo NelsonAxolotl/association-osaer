@@ -97,7 +97,6 @@ const Mouv = forwardRef(function Mouv(props, ref) {
                   loading="eager"
                   fetchpriority="high"
                   decoding="async"
-                  style={{ width: "100%", height: "auto" }}
                 />
               </button>
             </div>
