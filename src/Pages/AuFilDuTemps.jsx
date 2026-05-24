@@ -42,12 +42,14 @@ const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
 
             <video
               ref={videoRef}
+              fetchpriority="high"
               className="creation-video"
               controls
               playsInline
               muted
               autoPlay
-              preload="metadata"
+              preload="auto"
+              poster="/Pics/poster.webp"
               controlsList="nodownload"
             >
               <source src="/Videos/ephe2.mp4" type="video/mp4" />

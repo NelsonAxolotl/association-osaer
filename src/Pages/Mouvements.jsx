@@ -91,11 +91,13 @@ const Mouv = forwardRef(function Mouv(props, ref) {
               >
                 <img
                   src="/Pics/papier.webp"
+                  width="500"
+                  height="300"
+                  alt="Projet papier"
                   loading="eager"
                   fetchpriority="high"
-                  width={500}
-                  height={300}
-                  alt="Projet papier"
+                  decoding="async"
+                  style={{ width: "100%", height: "auto" }}
                 />
               </button>
             </div>
@@ -157,8 +159,7 @@ const Mouv = forwardRef(function Mouv(props, ref) {
               >
                 <img
                   src="/Pics/parole.webp"
-                  loading="eager"
-                  fetchpriority="high"
+                  loading="lazy"
                   width={500}
                   height={300}
                   alt="Parole Portée - projet chorégraphique"
