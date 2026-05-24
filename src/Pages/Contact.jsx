@@ -81,6 +81,7 @@ const Contact = forwardRef(function Contact(props, ref) {
             playsInline
             preload="auto"
             loop
+            poster="/Pics/poster.webp"
           />
 
           <div className={`contact-info ${contentVisible ? "visible" : ""}`}>
