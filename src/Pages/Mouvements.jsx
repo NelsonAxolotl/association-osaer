@@ -86,7 +86,10 @@ const Mouv = forwardRef(function Mouv(props, ref) {
               <button
                 type="button"
                 className="papier-image"
-                onClick={() => setZoomedImage1("/Pics/papier.webp")}
+                onClick={() => {
+                  if (window.innerWidth <= 768) return;
+                  setZoomedImage1("/Pics/papier.webp");
+                }}
                 aria-label="Agrandir l'image Couleur Papier"
               >
                 <img
@@ -153,7 +156,10 @@ const Mouv = forwardRef(function Mouv(props, ref) {
               <button
                 type="button"
                 className="parole-image pano"
-                onClick={() => setZoomedImage1("/Pics/parole.webp")}
+                onClick={() => {
+                  if (window.innerWidth <= 768) return;
+                  setZoomedImage1("/Pics/parole.webp");
+                }}
                 aria-label="Agrandir l'image Parole Portée"
               >
                 <img

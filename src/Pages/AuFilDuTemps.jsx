@@ -132,7 +132,7 @@ const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
         </div>
       </main>
 
-      <Footer />
+      <Footer className="temps-footer" />
     </>
   );
 });

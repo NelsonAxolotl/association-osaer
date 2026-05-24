@@ -38,9 +38,9 @@ const MentionsPolitique = forwardRef(function MentionsPolitique(props, ref) {
               <h2>1. Mentions légales</h2>
 
               <p>
-                Le présent site est édité par{" "}
+                Le présent site est édité par : <br />
                 <span>
-                  la Compagnie <strong>OSAER</strong>
+                  la Compagnie <strong> OSAER</strong>
                 </span>
                 , association loi 1901 dédiée à la création artistique et au
                 spectacle vivant.
@@ -94,6 +94,7 @@ const MentionsPolitique = forwardRef(function MentionsPolitique(props, ref) {
                 >
                   Vercel
                 </a>
+                .
               </p>
 
               <p>

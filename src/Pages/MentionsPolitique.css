@@ -16,7 +16,7 @@
   padding: 0 0 15rem;
   color: white;
   background-color: black;
-  z-index: 1000;
+  z-index: 0;
 }
 
 .mainlegal::before,
@@ -160,6 +160,10 @@
   margin-top: 20px;
 }
 
+.mentions-legales br {
+  display: none;
+}
+
 .politique-confidentialite {
   margin-top: clamp(30px, 5vw, 60px);
 }
@@ -219,6 +223,10 @@
 .mentions-legales a:hover,
 .politique-confidentialite a:hover {
   color: var(--legal-primary-light);
+}
+
+.mentions-legales a {
+  font-size: 1.2rem;
 }
 
 /* =========================
@@ -312,5 +320,21 @@
 
   .legal-rectangle {
     padding-top: 30px;
+  }
+
+  .politique-confidentialite h2 {
+    margin-top: 10px;
+  }
+
+  .mentions-legales p {
+    line-height: 1.4;
+  }
+
+  .mentions-legales span {
+    font-size: 1.3rem;
+  }
+
+  .mentions-legales br {
+    display: block;
   }
 }

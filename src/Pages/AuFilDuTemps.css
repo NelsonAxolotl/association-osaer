@@ -142,6 +142,7 @@
 
 .ephe-texte span {
   color: rgba(19, 213, 213, 0.843);
+  font-size: 1.2rem;
 }
 
 .ephe-duration3 {
@@ -397,7 +398,7 @@
     background-image: repeating-linear-gradient(
       -135deg,
       rgba(255, 255, 255, 0.06) 0px,
-      rgba(255, 255, 255, 0.15) 1px,
+      rgba(19, 213, 213, 0.15) 1px,
       transparent 350px,
       transparent 530px
     );

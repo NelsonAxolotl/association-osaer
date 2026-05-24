@@ -155,7 +155,10 @@ const Bio = forwardRef((props, externalRef) => {
           <div className="bio-content">
             <div
               className="bio-photo"
-              onClick={() => setZoomedImage1("/Pics/steph.webp")}
+              onClick={() => {
+                if (window.innerWidth <= 768) return;
+                setZoomedImage1("/Pics/steph.webp");
+              }}
             >
               <img
                 src="/Pics/steph.webp"
@@ -279,7 +282,10 @@ const Bio = forwardRef((props, externalRef) => {
           <div className="bio-content20">
             <div
               className="bio-photo20"
-              onClick={() => setZoomedImage1("/Pics/Olivia.webp")}
+              onClick={() => {
+                if (window.innerWidth <= 768) return;
+                setZoomedImage1("/Pics/Olivia.webp");
+              }}
             >
               <img
                 src="/Pics/Olivia.webp"
@@ -431,7 +437,7 @@ const Bio = forwardRef((props, externalRef) => {
           </button>
         </div>
       )}
-      <Footer />
+      <Footer className="bio-footer" />
     </>
   );
 });

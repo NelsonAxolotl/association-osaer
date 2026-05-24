@@ -82,7 +82,7 @@ const Contact = forwardRef(function Contact(props, ref) {
             preload="auto"
             loop
             poster="/Pics/poster.webp"
-            fetchpriority="high"
+            fetchPriority="high"
           />
 
           <div className={`contact-info ${contentVisible ? "visible" : ""}`}>

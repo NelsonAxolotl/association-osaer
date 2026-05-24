@@ -611,4 +611,12 @@
   .direction-artistique {
     margin-top: 30px;
   }
+
+  .papier-image,
+  .parole-image,
+  .asso-image-wrapper,
+  .asso-image-wrapper2,
+  .asso-vertical-image {
+    pointer-events: none;
+  }
 }
