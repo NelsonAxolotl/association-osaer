@@ -90,11 +90,12 @@ const Mouv = forwardRef(function Mouv(props, ref) {
                 aria-label="Agrandir l'image Couleur Papier"
               >
                 <img
-                  src="/Pics/papier.webp"
-                  alt="Couleur Papier - création chorégraphique"
-                  width={500}
-                  height={300}
-                  loading="lazy"
+                  src="/Pics/logo2.webp"
+                  width="200"
+                  height="70"
+                  style={{ height: "auto" }}
+                  alt="Logo OSAER"
+                  loading="eager"
                 />
               </button>
             </div>

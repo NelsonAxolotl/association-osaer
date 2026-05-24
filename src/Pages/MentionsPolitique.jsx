@@ -173,11 +173,12 @@ const MentionsPolitique = forwardRef(function MentionsPolitique(props, ref) {
           <a href="/" aria-label="Retour à l'accueil">
             <img
               src="/Pics/logo2.webp"
-              alt="Logo de l'association OSAER"
-              width={200}
-              height={200}
-              fetchPriority="high"
+              width="200"
+              height="70"
+              style={{ height: "auto" }}
+              alt="Logo OSAER"
               loading="eager"
+              fetchPriority="high"
             />
           </a>
         </div>

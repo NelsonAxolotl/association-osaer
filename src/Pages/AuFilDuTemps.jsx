@@ -116,9 +116,10 @@ const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
           <a href="/" aria-label="Retour à l'accueil">
             <img
               src="/Pics/logo2.webp"
-              alt="Logo de l'association OSAER"
-              width={200}
-              height={200}
+              width="200"
+              height="70"
+              style={{ height: "auto" }}
+              alt="Logo OSAER"
               loading="eager"
             />
           </a>
