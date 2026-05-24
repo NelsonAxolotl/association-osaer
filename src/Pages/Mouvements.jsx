@@ -90,12 +90,12 @@ const Mouv = forwardRef(function Mouv(props, ref) {
                 aria-label="Agrandir l'image Couleur Papier"
               >
                 <img
-                  src="/Pics/logo2.webp"
-                  width="200"
-                  height="70"
-                  style={{ height: "auto" }}
-                  alt="Logo OSAER"
+                  src="/Pics/papier.webp"
                   loading="eager"
+                  fetchpriority="high"
+                  width={500}
+                  height={300}
+                  alt="Projet papier"
                 />
               </button>
             </div>
@@ -157,10 +157,11 @@ const Mouv = forwardRef(function Mouv(props, ref) {
               >
                 <img
                   src="/Pics/parole.webp"
-                  alt="Parole Portée - projet chorégraphique"
+                  loading="eager"
+                  fetchpriority="high"
                   width={500}
                   height={300}
-                  loading="lazy"
+                  alt="Parole Portée - projet chorégraphique"
                 />
               </button>
 
@@ -179,9 +180,10 @@ const Mouv = forwardRef(function Mouv(props, ref) {
           <a href="/" aria-label="Retour à l'accueil">
             <img
               src="/Pics/logo2.webp"
-              alt="Logo de l'association OSAER"
-              width={200}
-              height={200}
+              width="200"
+              height="70"
+              style={{ height: "auto" }}
+              alt="Logo OSAER"
               loading="eager"
             />
           </a>
@@ -201,7 +203,12 @@ const Mouv = forwardRef(function Mouv(props, ref) {
           onClick={() => setZoomedImage1(null)}
         >
           <div className="enlarged-media" onClick={(e) => e.stopPropagation()}>
-            <img src={zoomedImage1} alt="Image agrandie OSAER" />
+            <img
+              src={zoomedImage1}
+              alt="Image agrandie OSAER"
+              loading="eager"
+              decoding="async"
+            />
           </div>
 
           <button
