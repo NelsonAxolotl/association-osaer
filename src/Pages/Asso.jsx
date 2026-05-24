@@ -238,6 +238,7 @@ const Asso = forwardRef((props, externalRef) => {
           className="overlay"
           role="dialog"
           aria-modal="true"
+          aria-label="Image agrandie"
           onClick={() => setZoomedImage1(null)}
         >
           <div className="enlarged-media" onClick={(e) => e.stopPropagation()}>
