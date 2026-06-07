@@ -33,8 +33,8 @@ const LINKS = {
   "Nefeli Papadimouli": "https://www.nefelipapadimouli.com/",
   "Julie Plus":
     "https://www.doitinparis.com/fr/interview-julie-plus-wipplay-21593",
-  "Yann Bertrand": null,
-  "Jeff Mills": null,
+  "Yann Bertrand": "https://fr.wikipedia.org/wiki/Yann_Arthus-Bertrand",
+  "Jeff Mills": "https://fr.wikipedia.org/wiki/Jeff_Mills",
   "Patricia kass": "https://fr.wikipedia.org/wiki/Patricia_Kaas",
   "la compagnie Atmen": "https://www.atmen.org/fran%C3%A7oise-tartinville-1",
   "le collectif AR": "https://www.collectifar.com/collectif-ar",
@@ -219,7 +219,7 @@ const Bio = forwardRef((props, externalRef) => {
                 <SmartLink name="Diana Lui" />,{" "}
                 <SmartLink name="Patricia kass" />,{" "}
                 <SmartLink name="Julie Plus" />,{" "}
-                <SmartLink name="Yann bertrand" />,{" "}
+                <SmartLink name="Yann Bertrand" />,{" "}
                 <SmartLink name="Jeff Mills" />,{" "}
                 <SmartLink name="Maria Ponti" />,{" "}
                 <SmartLink name="Chloé Belloc" />,{" "}
@@ -398,8 +398,86 @@ const Bio = forwardRef((props, externalRef) => {
               </p>
             </div>
           </div>
+          <div className="nelson">
+            <h2>
+              {" "}
+              ✨<span className="name">Nelson Paraïso</span>
+              <span className="dash"> – </span>
+              <span className="role">Régisseur Lumière & Développeur</span>
+            </h2>
+          </div>
+          <div className="bio-content-nelson">
+            <div
+              className="bio-photo-nelson"
+              onClick={() => {
+                if (window.innerWidth <= 768) return;
+                setZoomedImage1("/Pics/nelson.webp");
+              }}
+            >
+              <img
+                src="/Pics/nelson.webp"
+                alt="Nelson Paraïso régisseur lumière"
+                width={400}
+                height={400}
+                loading="lazy"
+              />
+            </div>
+            <div className={`bio-text-nelson ${visibleClass}`}>
+              <p>
+                {" "}
+                Musicien de formation, avec des études de musicologie à{" "}
+                <a
+                  href="https://www.gold.ac.uk/"
+                  target="_blank"
+                  className="highlight-link-bio"
+                >
+                  Goldsmiths University{" "}
+                </a>{" "}
+                (Londres), Nelson a d'abord travaillé dans différents projets
+                artistiques. Il a ensuite suivi une formation de technicien
+                lumière à{" "}
+                <a
+                  href="https://formation-tsv.fr/"
+                  target="_blank"
+                  className="highlight-link-bio"
+                >
+                  TSV{" "}
+                </a>{" "}
+                , il est régisseur lumière depuis 15 ans. Plus récemment il a
+                élargi ses compétences avec un bootcamp de développement web
+                front-end chez{" "}
+                <a
+                  href="https://www.lereacteur.io/"
+                  target="_blank"
+                  className="highlight-link-bio"
+                >
+                  {" "}
+                  Le Réacteur{" "}
+                </a>{" "}
+                et propose aujourd'hui ses services sous le nom de{" "}
+                <a
+                  href="https://www.thecoolaxolotl.com/"
+                  target="_blank"
+                  className="highlight-link-bio"
+                >
+                  The Cool Axolotl{" "}
+                </a>{" "}
+                , en choisissant des projest qui l'inspire vraiment. Il a aussi
+                suivi une formation de danse contemporaine au centre
+                chorégraphique{" "}
+                <a
+                  href="https://www.le-cycle.fr/"
+                  target="_blank"
+                  className="highlight-link-bio"
+                >
+                  {" "}
+                  Le Cycle{" "}
+                </a>{" "}
+                à Lyon, et continue à alimenter sa sensibilité artistique.{" "}
+              </p>{" "}
+            </div>
+          </div>
         </div>
-
         <div className={`logobio ${visibleClass}`}>
           <a href="/">
             <img

@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
-const Footer = forwardRef(({ className = "" }, ref) => {
+const Footer = forwardRef(({ className = "", showLegal = true }, ref) => {
   return (
     <footer ref={ref} className={`footer ${className}`}>
       <div className="footer-content">
@@ -18,11 +18,13 @@ const Footer = forwardRef(({ className = "" }, ref) => {
           </a>
         </p>
 
-        <p className="footer-legal">
-          <Link to="/mentions-politique">
-            Mentions légales & Politique de confidentialité
-          </Link>
-        </p>
+        {showLegal && (
+          <p className="footer-legal">
+            <Link to="/mentions-politique">
+              Mentions légales & Politique de confidentialité
+            </Link>
+          </p>
+        )}
       </div>
     </footer>
   );

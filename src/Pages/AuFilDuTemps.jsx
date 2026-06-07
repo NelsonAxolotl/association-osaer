@@ -42,7 +42,7 @@ const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
 
             <video
               ref={videoRef}
-              fetchpriority="high"
+              fetchPriority="high"
               className="creation-video"
               controls
               playsInline

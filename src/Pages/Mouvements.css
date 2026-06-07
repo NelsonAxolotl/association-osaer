@@ -542,16 +542,7 @@
 
 @media (max-width: 500px) {
   .mouv-title {
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    z-index: 9999;
-    transform: translateX(-50%) !important;
-    transition: opacity 0.8s ease;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    will-change: opacity;
-    contain: layout paint;
+    left: 25%;
   }
 
   .mouv::after {

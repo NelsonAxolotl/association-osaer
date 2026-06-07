@@ -473,6 +473,40 @@ h2 {
   z-index: 9999;
 }
 
+.nelson {
+  margin-top: 100px;
+}
+
+.scroll-arrow-down {
+  position: fixed;
+  top: 10%;
+  right: 9%;
+  font-size: 2rem;
+  color: white;
+  z-index: 22000;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.scroll-arrow-down.visible-after-video {
+  opacity: 1;
+  transform: translateY(0);
+  animation: bounceArrow 1.6s infinite ease-in-out 2s;
+  transition:
+    opacity 1.8s ease,
+    transform 1.8s ease;
+}
+
+@keyframes bounceArrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
 /* =========================
    RESPONSIVE
 ========================= */
@@ -536,7 +570,8 @@ h2 {
   .bio-text50,
   .bio-text51,
   .bio-text52,
-  .bio-text53 {
+  .bio-text53,
+  .bio-text-nelson {
     font-size: 1rem;
     line-height: 1.4;
     hyphens: auto;
@@ -554,7 +589,8 @@ h2 {
   .bio-text50 p::first-letter,
   .bio-text51 p::first-letter,
   .bio-text52 p::first-letter,
-  .bio-text53 p::first-letter {
+  .bio-text53 p::first-letter,
+  .bio-text-nelson p::first-letter {
     font-size: 2rem;
     margin-right: 2px;
     margin-top: -10px;
@@ -580,6 +616,10 @@ h2 {
   .role {
     margin-top: -5px;
   }
+
+  .scroll-arrow-down {
+    display: none;
+  }
 }
 
 @media (max-width: 500px) {
@@ -604,7 +644,8 @@ h2 {
   .bio-text50,
   .bio-text51,
   .bio-text52,
-  .bio-text53 {
+  .bio-text53,
+  .bio-text-nelson {
     width: 100%;
     margin: auto 0;
     line-height: 1.4;
@@ -618,7 +659,8 @@ h2 {
   .bio-text50 p::first-letter,
   .bio-text51 p::first-letter,
   .bio-text52 p::first-letter,
-  .bio-text53 p::first-letter {
+  .bio-text53 p::first-letter,
+  .bio-text-nelson p::first-letter {
     margin-right: 2px;
     margin-top: -12px;
   }
@@ -648,5 +690,16 @@ h2 {
     );
     filter: blur(8px);
     opacity: 1;
+  }
+
+  .nelson {
+    margin-top: 50px;
+  }
+
+  .highlight-link-bio:hover {
+    color: var(--bio-gold);
+    transform: none;
+    filter: none;
+    text-shadow: none;
   }
 }

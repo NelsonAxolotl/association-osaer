@@ -1,101 +1,172 @@
-import { useState, useEffect, forwardRef } from "react";
+import { useEffect, useRef, useState, forwardRef } from "react";
 import "./VideoLoop.css";
-import Nav from "../Components/Nav";
+
 import Footer from "../Components/Footer";
 
-const VideoLoop = forwardRef((props, externalRef) => {
-  const [showIntro, setShowIntro] = useState(true);
-  const [contentVisible, setContentVisible] = useState(false);
+const VideoLoop = forwardRef((props, ref) => {
+  const videoRef = useRef(null);
+  const gridRef = useRef(null);
+  const [gridVisible, setGridVisible] = useState(false);
 
   useEffect(() => {
-    const introTimer = setTimeout(() => {
-      setShowIntro(false);
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, []);
 
-      setTimeout(() => {
-        setContentVisible(true);
-      }, 300);
-    }, 5000);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setGridVisible(true);
+        }
+      },
+      { threshold: 0.2 },
+    );
 
-    return () => clearTimeout(introTimer);
+    if (gridRef.current) {
+      observer.observe(gridRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+  useEffect(() => {
+    const cards = document.querySelectorAll(".video-card");
+
+    cards.forEach((card) => {
+      const video = card.querySelector("video");
+
+      const play = () => {
+        video.currentTime = 0;
+        video.play();
+      };
+
+      const pause = () => {
+        video.pause();
+      };
+
+      card.addEventListener("mouseenter", play);
+      card.addEventListener("mouseleave", pause);
+
+      return () => {
+        card.removeEventListener("mouseenter", play);
+        card.removeEventListener("mouseleave", pause);
+      };
+    });
   }, []);
 
   return (
-    <>
-      <div
-        className={`mainvideo videoloop-page ${
-          contentVisible ? "crossfade-visible" : ""
-        }`}
+    <main className="home" ref={ref}>
+      {/* ================= HERO ================= */}
+      <section className="hero">
+        {/* VIDEO BACKGROUND */}
+        <video
+          className="hero-video"
+          src="/Videos/oz.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+
+        {/* GRADIENT OVERLAY */}
+        <div className="hero-overlay" />
+
+        {/* HERO CONTENT */}
+        <div className="hero-content">
+          <h1 className="hero-title">Cie OSAER</h1>
+
+          <p className="hero-text">
+            <span className="hero-line hero-line-1">
+              Compagnie de danse contemporaine
+            </span>
+
+            <span className="hero-line hero-line-2">
+              création · transmission · recherche
+            </span>
+          </p>
+        </div>
+      </section>
+
+      {/* ================= NAV GRID ================= */}
+      <section
+        ref={gridRef}
+        className={`grid ${gridVisible ? "grid-visible" : ""}`}
       >
-        {showIntro && (
-          <div className="intro-video">
-            <video
-              className="intro-video-player"
-              src="/Videos/oz.mp4"
-              autoPlay
-              muted
-              playsInline
-              preload="auto"
-            >
-              Votre navigateur ne supporte pas la vidéo.
-            </video>
+        <a href="/compagnie" className="card orange compagnie-card">
+          <img
+            src="/Pics/asso5.webp"
+            alt="Compagnie OSAER"
+            className="card-media compagnie-media"
+          />
+
+          <div className="card-content">
+            <h2>Compagnie</h2>
+            <p>Identité . direction artistique . recherche</p>
           </div>
-        )}
+        </a>
 
-        {!showIntro && (
-          <main
-            id="page-container"
-            className={`crossfade-container ${
-              contentVisible ? "crossfade-visible" : ""
-            }`}
-            ref={externalRef}
-            role="main"
-          >
-            <Nav className="videoloop-nav" />
+        <a href="/artistes" className="card white artists-card">
+          <div className="artists-media">
+            <div className="img-steph artists-img"></div>
+            <div className="img-olivia artists-img"></div>
+            <div className="img-nelson artists-img"></div>
+            <div className="diagonal-split" />
+          </div>
 
-            <div className="video-bg" aria-hidden="true"></div>
+          <div className="card-content">
+            <h2>Artistes</h2>
+            <p>Interprètes & collaborations</p>
+          </div>
+        </a>
 
-            <h1
-              className={`main-title ${
-                contentVisible ? "visible-after-video" : ""
-              }`}
-            >
-              Cie OSAER
-            </h1>
+        <a href="/creations" className="card blue video-card">
+          <video
+            className="card-video"
+            src="/Videos/ephe.mp4"
+            muted
+            playsInline
+            preload="metadata"
+          />
+          <div className="card-content-video">
+            <h2>Créations</h2>
+            <p>Pièces chorégraphiques · projets</p>
+          </div>
+        </a>
 
-            <div className="video-rectangle"></div>
+        <a href="/rencontres" className="card green video-card">
+          <video
+            className="card-video"
+            src="/Videos/walk3.mp4"
+            muted
+            playsInline
+            preload="metadata"
+          />
 
-            <div
-              className={`logovideo ${
-                contentVisible ? "visible-after-video" : ""
-              }`}
-            >
-              <a href="/">
-                <img
-                  src="/Pics/logo2.webp"
-                  width="200"
-                  height="70"
-                  style={{ height: "auto" }}
-                  alt="Logo OSAER"
-                  loading="eager"
-                  fetchPriority="high"
-                />
-              </a>
-            </div>
+          <div className="card-content">
+            <h2>Rencontres</h2>
+            <p>Médiation · transmission</p>
+          </div>
+        </a>
 
-            <div
-              className={`scroll-arrow-down ${
-                contentVisible ? "visible-after-video" : ""
-              }`}
-              aria-hidden="true"
-            >
-              ↓
-            </div>
-          </main>
-        )}
+        <a href="/contact" className="card yellow ">
+          <div className="card-content">
+            <h2>Contact</h2>
+            <p>Production · diffusion</p>
+          </div>
+        </a>
 
-        {!showIntro && <Footer className="videoloop-footer" />}
-      </div>
-    </>
+        <a href="/mentions-politique" className="card purple">
+          <div className="card-content">
+            <h2>Mentions légales</h2>
+            <p>Politique de confidentialité</p>
+          </div>
+        </a>
+      </section>
+
+      {/* ================= FOOTER ================= */}
+      <Footer showLegal={false} className="videoloop-footer" />
+    </main>
   );
 });
 

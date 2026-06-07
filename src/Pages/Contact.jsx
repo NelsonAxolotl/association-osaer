@@ -1,5 +1,6 @@
 import "./Contact.css";
 import { useState, useEffect, forwardRef, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 
 import Nav from "../Components/Nav";
@@ -7,7 +8,7 @@ import Footer from "../Components/Footer";
 
 const SOCIALS = [
   {
-    href: "https://www.instagram.com/",
+    href: "https://www.instagram.com/cieosaer/",
     icon: FaInstagram,
     label: "Instagram",
   },
@@ -24,6 +25,22 @@ const SOCIALS = [
 ];
 
 const Contact = forwardRef(function Contact(props, ref) {
+  const formRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+    emailjs
+      .sendForm("SERVICE_ID", "TEMPLATE_ID", formRef.current, "PUBLIC_KEY")
+      .then(() => {
+        alert("Message envoyé !");
+      })
+      .catch((err) => {
+        console.error(err);
+        alert("Erreur envoi");
+      });
+  };
+
   const [contentVisible, setContentVisible] = useState(false);
   const videoRef = useRef(null);
 
@@ -72,22 +89,54 @@ const Contact = forwardRef(function Contact(props, ref) {
           className="contact-rectangle"
           aria-labelledby="contact-heading"
         >
-          <video
-            ref={videoRef}
-            className="contact-video-background"
-            src="/Videos/flaw.mp4"
-            autoPlay
-            muted
-            playsInline
-            preload="auto"
-            loop
-            poster="/Pics/poster.webp"
-            fetchPriority="high"
-          />
+          <div className="contact-intro">
+            <h2>Contactez-nous</h2>
 
+            <p>
+              Vous souhaitez obtenir plus d'infos sur la compagnie ou nos
+              projets ?
+            </p>
+
+            <p>
+              Utilisez le formulaire ci-dessous pour nous envoyer votre message.
+            </p>
+          </div>
+          <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
+            <input
+              type="text"
+              name="name"
+              placeholder="Nom / Prénom"
+              required
+            />
+
+            <select name="type" required>
+              <option value="">Vous êtes ?</option>
+              <option value="particulier">Particulier</option>
+              <option value="asso">Association</option>
+              <option value="institution">Institution</option>
+              <option value="programmateur">Programmateur</option>
+            </select>
+
+            <input type="email" name="email" placeholder="Email" required />
+
+            <textarea
+              name="message"
+              placeholder="Votre message"
+              rows="6"
+              required
+            />
+
+            <button type="submit">Envoyer</button>
+          </form>
+          <label className="contact-rgpd">
+            <input type="checkbox" required />
+            <span>
+              En soumettant ce formulaire, vous acceptez que les informations
+              saisies soient utilisées pour vous recontacter dans le cadre d’une
+              demande de devis ou de renseignements.
+            </span>
+          </label>
           <div className={`contact-info ${contentVisible ? "visible" : ""}`}>
-            <h2>CIE OSAER</h2>
-
             <a href="mailto:cie.osaer@yahoo.com" className="contact-mail">
               cie.osaer@yahoo.com
             </a>
@@ -95,9 +144,6 @@ const Contact = forwardRef(function Contact(props, ref) {
             <a href="tel:+33666213417" className="contact-phone">
               06 66 21 34 17
             </a>
-
-            <p>SIRET : 902 789 411 00011</p>
-            <p>Code APE/NAF : 90.01Z</p>
 
             <div className="contact-socials" aria-label="Réseaux sociaux">
               {SOCIALS.map(({ href, icon: Icon, label }) => (
