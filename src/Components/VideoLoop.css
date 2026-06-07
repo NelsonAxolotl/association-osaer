@@ -232,7 +232,7 @@
 .img-steph {
   z-index: 1;
   clip-path: none;
-  background-image: url("Pics/steph.webp");
+  background-image: url("/Pics/steph.webp");
   background-position: 100% 25%; /* gauche + bas */
 }
 
@@ -240,7 +240,7 @@
 .img-olivia {
   z-index: 2;
   clip-path: polygon(48% 0, 82% 0, 62% 100%, 28% 100%);
-  background-image: url("Pics/Olivia.webp");
+  background-image: url("/Pics/Olivia.webp");
   background-position: 30% 35%;
 }
 
@@ -248,7 +248,7 @@
 .img-nelson {
   z-index: 3;
   clip-path: polygon(78% 0, 100% 0, 100% 100%, 58% 100%);
-  background-image: url("Pics/nelson.webp");
+  background-image: url("/Pics/nelson.webp");
   background-position: 0% 52%;
   transform: scale(1.2);
 }
