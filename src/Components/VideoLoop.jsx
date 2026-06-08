@@ -30,11 +30,24 @@ const VideoLoop = forwardRef((props, ref) => {
 
     return () => observer.disconnect();
   }, []);
+
   useEffect(() => {
     const cards = document.querySelectorAll(".video-card");
 
+    if (window.innerWidth <= 768) {
+      cards.forEach((card) => {
+        const video = card.querySelector("video");
+        if (!video) return;
+        video.play().catch(() => {});
+      });
+      return;
+    }
+
+    const handlers = [];
+
     cards.forEach((card) => {
       const video = card.querySelector("video");
+      if (!video) return;
 
       const play = () => {
         video.currentTime = 0;
@@ -48,11 +61,15 @@ const VideoLoop = forwardRef((props, ref) => {
       card.addEventListener("mouseenter", play);
       card.addEventListener("mouseleave", pause);
 
-      return () => {
+      handlers.push({ card, play, pause });
+    });
+
+    return () => {
+      handlers.forEach(({ card, play, pause }) => {
         card.removeEventListener("mouseenter", play);
         card.removeEventListener("mouseleave", pause);
-      };
-    });
+      });
+    };
   }, []);
 
   return (
@@ -149,7 +166,14 @@ const VideoLoop = forwardRef((props, ref) => {
           </div>
         </a>
 
-        <a href="/contact" className="card yellow ">
+        <a href="/contact" className="card yellow video-card">
+          <video
+            className="card-video"
+            src="/Videos/flaw.mp4"
+            muted
+            playsInline
+            preload="metadata"
+          />
           <div className="card-content">
             <h2>Contact</h2>
             <p>Production · diffusion</p>
@@ -157,6 +181,11 @@ const VideoLoop = forwardRef((props, ref) => {
         </a>
 
         <a href="/mentions-politique" className="card purple">
+          <img
+            src="/Pics/tulle.webp"
+            alt="Compagnie OSAER"
+            className="card-media compagnie-media"
+          />
           <div className="card-content">
             <h2>Mentions légales</h2>
             <p>Politique de confidentialité</p>
