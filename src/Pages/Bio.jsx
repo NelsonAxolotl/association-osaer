@@ -434,8 +434,7 @@ const Bio = forwardRef((props, externalRef) => {
                   Goldsmiths University{" "}
                 </a>{" "}
                 (Londres), Nelson a d'abord travaillé dans différents projets
-                artistiques. Il a ensuite suivi une formation de technicien
-                lumière à{" "}
+                artistiques. Il s'est ensuite formé comme technicien lumière à{" "}
                 <a
                   href="https://formation-tsv.fr/"
                   target="_blank"
@@ -443,27 +442,19 @@ const Bio = forwardRef((props, externalRef) => {
                 >
                   TSV{" "}
                 </a>{" "}
-                , il est régisseur lumière depuis 15 ans. Plus récemment il a
-                élargi ses compétences avec un bootcamp de développement web
-                front-end chez{" "}
+                et exerce depuis plus de 16 ans en tant que régisseur lumière.
+                Plus récemment il a élargi ses compétences avec une formation de
+                développement front-end au{" "}
                 <a
                   href="https://www.lereacteur.io/"
                   target="_blank"
                   className="highlight-link-bio"
                 >
                   {" "}
-                  Le Réacteur{" "}
-                </a>{" "}
-                et propose aujourd'hui ses services sous le nom de{" "}
-                <a
-                  href="https://www.thecoolaxolotl.com/"
-                  target="_blank"
-                  className="highlight-link-bio"
-                >
-                  The Cool Axolotl{" "}
-                </a>{" "}
-                , en choisissant des projest qui l'inspire vraiment. Il a aussi
-                suivi une formation de danse contemporaine au centre
+                  Réacteur
+                </a>
+                , en choisissant des projest qui l'inspire vraiment. Il a
+                également suivi une formation de danse contemporaine au centre
                 chorégraphique{" "}
                 <a
                   href="https://www.le-cycle.fr/"
@@ -473,15 +464,25 @@ const Bio = forwardRef((props, externalRef) => {
                   {" "}
                   Le Cycle{" "}
                 </a>{" "}
-                à Lyon, et continue à alimenter sa sensibilité artistique.{" "}
-              </p>{" "}
+                à Lyon, nourrissant une approche transversale de la création. Il
+                a conçu est développé le site internet de la compagnie Osaer
+                sous le nom de{" "}
+                <a
+                  href="https://www.thecoolaxolotl.com/"
+                  target="_blank"
+                  className="highlight-link-bio"
+                >
+                  The Cool Axolotl
+                </a>
+                , en collaboration avec l'équipe artistique.
+              </p>
             </div>
           </div>
         </div>
         <div className={`logobio ${visibleClass}`}>
           <a href="/">
             <img
-              src="/Pics/logo2.webp"
+              src="/Pics/Osaersolo.png"
               width="200"
               height="70"
               style={{ height: "auto" }}

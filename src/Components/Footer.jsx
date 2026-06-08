@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import { Link } from "react-router-dom";
+import { FaInstagram } from "react-icons/fa";
 import "./Footer.css";
 
 const Footer = forwardRef(({ className = "", showLegal = true }, ref) => {
@@ -7,14 +8,15 @@ const Footer = forwardRef(({ className = "", showLegal = true }, ref) => {
     <footer ref={ref} className={`footer ${className}`}>
       <div className="footer-content">
         <p className="footer-copy">
-          &copy; {new Date().getFullYear()} Cie OSAER —{" "}
+          &copy; {new Date().getFullYear()} Cie OSAER |{" "}
           <a
-            href="https://www.thecoolaxolotl.com/"
+            href="https://www.instagram.com/cieosaer/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="The Cool Axolotl - ouvre un nouvel onglet"
+            aria-label="Instagram"
+            className="footer-instagram"
           >
-            The Cool Axolotl
+            <FaInstagram />
           </a>
         </p>
 

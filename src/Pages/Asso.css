@@ -92,8 +92,8 @@
 
 .logoasso {
   position: fixed;
-  top: 14%;
-  right: 21%;
+  top: 11%;
+  right: 22%;
   z-index: -1;
   opacity: 0;
   transition: opacity 2s ease-in-out;
@@ -101,7 +101,7 @@
 
 .logoasso img {
   width: 12vw;
-  width: 200px;
+  width: 120px;
   height: auto;
   transition:
     transform 0.3s ease,

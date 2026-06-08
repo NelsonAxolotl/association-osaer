@@ -117,7 +117,7 @@ const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
         <div className={`logostemps ${visibleClass}`}>
           <a href="/" aria-label="Retour à l'accueil">
             <img
-              src="/Pics/logo2.webp"
+              src="/Pics/Osaersolo.png"
               width="200"
               height="70"
               style={{ height: "auto" }}

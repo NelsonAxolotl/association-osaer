@@ -118,14 +118,14 @@
 
 .logocontact {
   position: fixed;
-  top: 14%;
-  right: 21%;
+  top: 11%;
+  right: 22%;
   z-index: -1;
   opacity: 0;
 }
 
 .logocontact img {
-  width: min(12vw, 200px);
+  width: min(12vw, 120px);
   height: auto;
   transition:
     transform 0.3s ease,
@@ -251,7 +251,7 @@
   text-align: center;
   color: white;
   font-family: system-ui;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .contact-intro h2 {
@@ -311,7 +311,7 @@
 }
 
 .contact-rgpd {
-  max-width: 600px;
+  max-width: 800px;
   display: flex;
   gap: 10px;
   font-size: 0.85rem;

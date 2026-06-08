@@ -215,7 +215,7 @@ const Asso = forwardRef((props, externalRef) => {
         >
           <a href="/">
             <img
-              src="/Pics/logo2.webp"
+              src="/Pics/Osaersolo.png"
               width="200"
               height="70"
               style={{ height: "auto" }}

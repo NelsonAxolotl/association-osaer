@@ -1,67 +1,15 @@
 import "./Contact.css";
-import { useState, useEffect, forwardRef, useRef } from "react";
-import emailjs from "@emailjs/browser";
-import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { useState, useEffect, forwardRef } from "react";
 
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 
-const SOCIALS = [
-  {
-    href: "https://www.instagram.com/cieosaer/",
-    icon: FaInstagram,
-    label: "Instagram",
-  },
-  {
-    href: "https://www.facebook.com/",
-    icon: FaFacebook,
-    label: "Facebook",
-  },
-  {
-    href: "https://www.linkedin.com/",
-    icon: FaLinkedin,
-    label: "LinkedIn",
-  },
-];
-
 const Contact = forwardRef(function Contact(props, ref) {
-  const formRef = useRef();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formRef.current) return;
-    emailjs
-      .sendForm("SERVICE_ID", "TEMPLATE_ID", formRef.current, "PUBLIC_KEY")
-      .then(() => {
-        alert("Message envoyé !");
-      })
-      .catch((err) => {
-        console.error(err);
-        alert("Erreur envoi");
-      });
-  };
-
   const [contentVisible, setContentVisible] = useState(false);
-  const videoRef = useRef(null);
 
   useEffect(() => {
     const t = setTimeout(() => setContentVisible(true), 200);
     return () => clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const onLoaded = () => {
-      video.playbackRate = 0.5;
-    };
-
-    video.addEventListener("loadeddata", onLoaded);
-
-    return () => {
-      video.removeEventListener("loadeddata", onLoaded);
-    };
   }, []);
 
   return (
@@ -101,7 +49,13 @@ const Contact = forwardRef(function Contact(props, ref) {
               Utilisez le formulaire ci-dessous pour nous envoyer votre message.
             </p>
           </div>
-          <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
+
+          {/* FORM FORMSPREE */}
+          <form
+            action="https://formspree.io/f/mzdqejek"
+            method="POST"
+            className="contact-form"
+          >
             <input
               type="text"
               name="name"
@@ -115,6 +69,7 @@ const Contact = forwardRef(function Contact(props, ref) {
               <option value="asso">Association</option>
               <option value="institution">Institution</option>
               <option value="programmateur">Programmateur</option>
+              <option value="autre">Autre</option>
             </select>
 
             <input type="email" name="email" placeholder="Email" required />
@@ -126,16 +81,18 @@ const Contact = forwardRef(function Contact(props, ref) {
               required
             />
 
+            {/* ✅ ICI */}
+
             <button type="submit">Envoyer</button>
+            <label className="contact-rgpd">
+              <input type="checkbox" name="consent" required />
+              <span>
+                J’accepte que mes informations soient utilisées uniquement dans
+                le cadre de ma demande de contact.
+              </span>
+            </label>
           </form>
-          <label className="contact-rgpd">
-            <input type="checkbox" required />
-            <span>
-              En soumettant ce formulaire, vous acceptez que les informations
-              saisies soient utilisées pour vous recontacter dans le cadre d’une
-              demande de devis ou de renseignements.
-            </span>
-          </label>
+
           <div className={`contact-info ${contentVisible ? "visible" : ""}`}>
             <a href="mailto:cie.osaer@yahoo.com" className="contact-mail">
               cie.osaer@yahoo.com
@@ -144,21 +101,6 @@ const Contact = forwardRef(function Contact(props, ref) {
             <a href="tel:+33666213417" className="contact-phone">
               06 66 21 34 17
             </a>
-
-            <div className="contact-socials" aria-label="Réseaux sociaux">
-              {SOCIALS.map(({ href, icon: Icon, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  title={label}
-                >
-                  <Icon />
-                </a>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -169,7 +111,7 @@ const Contact = forwardRef(function Contact(props, ref) {
         >
           <a href="/" aria-label="Retour à l'accueil">
             <img
-              src="/Pics/logo2.webp"
+              src="/Pics/Osaersolo.png"
               width="200"
               height="70"
               style={{ height: "auto" }}

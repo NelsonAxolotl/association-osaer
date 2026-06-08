@@ -118,14 +118,14 @@
 
 .logomouv {
   position: fixed;
-  top: 14%;
-  right: 21%;
+  top: 11%;
+  right: 22%;
   z-index: -1;
   opacity: 0;
 }
 
 .logomouv img {
-  width: min(12vw, 200px);
+  width: min(12vw, 120px);
   height: auto;
   transition:
     transform 0.3s ease,
