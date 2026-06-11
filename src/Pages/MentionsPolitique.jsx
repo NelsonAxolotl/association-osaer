@@ -1,4 +1,5 @@
 import { useEffect, useState, forwardRef } from "react";
+import { Link } from "react-router-dom";
 import "./MentionsPolitique.css";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
@@ -36,18 +37,18 @@ const MentionsPolitique = forwardRef(function MentionsPolitique(props, ref) {
           <div className="ley">
             <section className="mentions-legales">
               <h2>1. Mentions légales</h2>
-
+              <div className="br">
+                <p>
+                  Le présent site est édité par : <br />
+                  <span>
+                    La Compagnie <strong> OSAER</strong>
+                  </span>
+                  , <br /> association loi 1901 dédiée à la création artistique
+                  et au spectacle vivant.
+                </p>
+              </div>
               <p>
-                Le présent site est édité par : <br />
-                <span>
-                  la Compagnie <strong> OSAER</strong>
-                </span>
-                , association loi 1901 dédiée à la création artistique et au
-                spectacle vivant.
-              </p>
-
-              <p>
-                <strong>Dénomination :</strong> Compagnie OSAER
+                <strong>Dénomination :</strong> Cie OSAER
               </p>
 
               <p>
@@ -61,12 +62,13 @@ const MentionsPolitique = forwardRef(function MentionsPolitique(props, ref) {
               </p>
 
               <p>
-                <strong>Code APE / NAF :</strong> 90.01Z – Arts du spectacle
-                vivant
+                <strong>Code APE / NAF :</strong> 90.01Z <br />– Arts du
+                spectacle vivant –
               </p>
 
               <p>
-                <strong>Directeur de la publication :</strong> Stéphanie Pignon
+                <strong>Directeur de la publication :</strong> <br />{" "}
+                <Link to="/artistes#stephanie-pignon">Stéphanie Pignon </Link>
               </p>
 
               <p>
@@ -84,9 +86,8 @@ const MentionsPolitique = forwardRef(function MentionsPolitique(props, ref) {
 
               <p>
                 <strong>Hébergement :</strong>
-                <br />
-                Le site est hébergé par Vercel Inc., 440 N Barranca Ave 4133
-                Covina, CA 91723 États-Unis,{" "}
+                <br /> Le site est hébergé par Vercel Inc., 440 N Barranca Ave
+                4133 Covina, CA 91723 États-Unis,{" "}
                 <a
                   href="https://vercel.com"
                   target="_blank"
@@ -189,7 +190,7 @@ const MentionsPolitique = forwardRef(function MentionsPolitique(props, ref) {
         </div>
       </main>
 
-      <Footer className="legal-footer" />
+      <Footer showLegal={false} className="legal-footer" />
     </>
   );
 });

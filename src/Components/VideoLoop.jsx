@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, forwardRef } from "react";
+import { Link } from "react-router-dom";
 import "./VideoLoop.css";
 
 import Footer from "../Components/Footer";
@@ -38,6 +39,7 @@ const VideoLoop = forwardRef((props, ref) => {
       cards.forEach((card) => {
         const video = card.querySelector("video");
         if (!video) return;
+        video.currentTime = 0;
         video.play().catch(() => {});
       });
       return;
@@ -91,7 +93,7 @@ const VideoLoop = forwardRef((props, ref) => {
 
         {/* HERO CONTENT */}
         <div className="hero-content">
-          <h1 className="hero-title">Cie OSAER</h1>
+          <h1 className="hero-title">OSAER</h1>
 
           <p className="hero-text">
             <span className="hero-line hero-line-1">
@@ -101,6 +103,23 @@ const VideoLoop = forwardRef((props, ref) => {
             <span className="hero-line hero-line-2">
               création · transmission · recherche
             </span>
+          </p>
+        </div>
+      </section>
+      {/* ================= INTRO COMPANY ================= */}
+
+      <section className="intro-osaer">
+        <div className="intro-frame">
+          <p className="intro-osaer-direction">
+            Direction artistique :{" "}
+            <Link to="/artistes#stephanie-pignon" className="bio-link">
+              Stéphanie Pignon
+            </Link>
+            ,
+            <br /> en co-direction avec{" "}
+            <Link to="/artistes#olivia-caillaud" className="bio-link">
+              Olivia Caillaud
+            </Link>
           </p>
         </div>
       </section>
@@ -144,6 +163,7 @@ const VideoLoop = forwardRef((props, ref) => {
             muted
             playsInline
             preload="metadata"
+            loop
           />
           <div className="card-content-video">
             <h2>Créations</h2>
@@ -158,6 +178,7 @@ const VideoLoop = forwardRef((props, ref) => {
             muted
             playsInline
             preload="metadata"
+            loop
           />
 
           <div className="card-content">

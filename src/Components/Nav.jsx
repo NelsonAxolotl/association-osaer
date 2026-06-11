@@ -68,6 +68,7 @@ function Navbar({ className = "" }) {
     pathname === "/contact" ? "contact-active" : "",
     pathname === "/rencontres" ? "mouvements-active" : "",
     pathname === "/creations" ? "creations-active" : "",
+    pathname === "/mentions-politique" ? "legal-active" : "",
   ]
     .filter(Boolean)
     .join(" ");

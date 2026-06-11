@@ -81,8 +81,14 @@ const Contact = forwardRef(function Contact(props, ref) {
               required
             />
 
-            {/* ✅ ICI */}
+            <input
+              type="hidden"
+              name="_subject"
+              value="[OSAER] Nouveau message depuis le site"
+            />
 
+            <input type="hidden" name="_format" value="plain" />
+            <input type="hidden" name="_replyto" value="email" />
             <button type="submit">Envoyer</button>
             <label className="contact-rgpd">
               <input type="checkbox" name="consent" required />

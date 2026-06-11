@@ -4,7 +4,7 @@
   background: rgb(0, 0, 0);
   height: auto;
   overflow: visible;
-  padding: 0rem 0.5rem 16rem;
+  padding: 0rem 0.5rem 18rem;
   height: auto;
   z-index: 0;
 }
@@ -78,7 +78,7 @@
 
 .temps-rectangle {
   position: relative;
-  top: 220px;
+  top: 230px;
   left: 1%;
   width: 78%;
   background: rgb(0, 0, 0);
@@ -292,10 +292,6 @@
   line-height: 1.5;
 }
 
-.ephe-premiere br {
-  display: none;
-}
-
 .ephe-premiere-title {
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -381,6 +377,10 @@
 }
 
 @media (max-width: 500px) {
+  .temps {
+    padding: 0rem 0.5rem 16rem;
+  }
+
   .temps-title {
     left: 25%;
   }
@@ -480,17 +480,5 @@
     padding: 2rem 1rem 2rem;
     line-height: 24px;
     hyphens: auto;
-  }
-
-  .ephe-premiere br {
-    display: block;
-  }
-
-  .ephe-premiere span {
-    display: none;
-  }
-
-  .ephe-premiere strong {
-    display: none;
   }
 }

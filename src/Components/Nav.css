@@ -57,6 +57,16 @@
   );
 }
 
+.navbar.mobile.active.legal-active::after {
+  background-image: repeating-linear-gradient(
+    -135deg,
+    rgba(72, 27, 218, 0.074) 0px,
+    rgba(84, 37, 212, 0.15) 1px,
+    transparent 250px,
+    transparent 460px
+  );
+}
+
 .videoloop-page .navbar::before {
   height: 240%;
   animation: fadeLineVertical 10s ease-in forwards;

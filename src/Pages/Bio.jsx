@@ -41,7 +41,6 @@ const LINKS = {
   "la compagnie Sauf le Dimanche": "https://saufledimanche.com/la-compagnie/",
   "la compagnie Tangible": "https://tangible-et-cie.org/",
   "Didier Théron": "https://www.didiertheron.com/",
-  "la compagnie pilote": null,
   "Etienne Decroux": "https://mimecorporel.com/etienne-decroux/",
 };
 
@@ -389,14 +388,6 @@ const Bio = forwardRef((props, externalRef) => {
                 auprès de différents publics.
               </p>
             </div>
-
-            <div className={`bio-text53 ${visibleClass}`}>
-              <p>
-                En 2021, elle crée <SmartLink name="la compagnie Pilote" /> qui
-                lui permet de libérer des temps dédiés à ses recherches
-                chorégraphiques et d’héberger des projets plus personnels.
-              </p>
-            </div>
           </div>
           <div className="nelson">
             <h2>
@@ -442,7 +433,7 @@ const Bio = forwardRef((props, externalRef) => {
                 >
                   TSV{" "}
                 </a>{" "}
-                et exerce depuis plus de 16 ans en tant que régisseur lumière.
+                et exerce depuis plus de 15 ans en tant que régisseur lumière.
                 Plus récemment il a élargi ses compétences avec une formation de
                 développement front-end au{" "}
                 <a
@@ -465,16 +456,8 @@ const Bio = forwardRef((props, externalRef) => {
                   Le Cycle{" "}
                 </a>{" "}
                 à Lyon, nourrissant une approche transversale de la création. Il
-                a conçu est développé le site internet de la compagnie Osaer
-                sous le nom de{" "}
-                <a
-                  href="https://www.thecoolaxolotl.com/"
-                  target="_blank"
-                  className="highlight-link-bio"
-                >
-                  The Cool Axolotl
-                </a>
-                , en collaboration avec l'équipe artistique.
+                a conçu est développé le site internet de la compagnie Osaer ,
+                en collaboration avec l'équipe artistique.
               </p>
             </div>
           </div>

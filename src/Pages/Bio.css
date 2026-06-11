@@ -552,7 +552,7 @@ h2 {
 
   .bio-rectangle {
     width: calc(100% - 1rem);
-    margin-top: 0;
+    margin-top: -10px;
     padding: 1rem 0.5rem 3.5rem;
     border-radius: 5px;
     z-index: 0;
@@ -620,12 +620,16 @@ h2 {
   .scroll-arrow-down {
     display: none;
   }
+
+  .nelson {
+    margin-top: 80px;
+  }
 }
 
 @media (max-width: 500px) {
   .bio {
     left: 0.7%;
-    padding: 0 0 10rem;
+    padding: 0 0 12rem;
   }
 
   .bio-title {

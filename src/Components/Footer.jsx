@@ -8,7 +8,7 @@ const Footer = forwardRef(({ className = "", showLegal = true }, ref) => {
     <footer ref={ref} className={`footer ${className}`}>
       <div className="footer-content">
         <p className="footer-copy">
-          &copy; {new Date().getFullYear()} Cie OSAER |{" "}
+          &copy; {new Date().getFullYear()} Cie OSAER{" "}
           <a
             href="https://www.instagram.com/cieosaer/"
             target="_blank"

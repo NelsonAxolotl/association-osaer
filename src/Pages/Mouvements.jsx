@@ -1,6 +1,6 @@
 import "./Mouvements.css";
 import { useState, useEffect, forwardRef } from "react";
-
+import { Link } from "react-router-dom";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 
@@ -98,7 +98,7 @@ const Mouv = forwardRef(function Mouv(props, ref) {
                   height="300"
                   alt="Projet papier"
                   loading="eager"
-                  fetchpriority="high"
+                  fetchPriority="high"
                   decoding="async"
                 />
               </button>
@@ -152,7 +152,10 @@ const Mouv = forwardRef(function Mouv(props, ref) {
               <div className="text-parol">
                 <p>Un espace où la parole se cherche et se transforme.</p>
               </div>
-
+              <div className="text-parol">
+                Restitution du projet le 10 avril à 18h auprès de la structure
+                et des partenaires à Rouen.
+              </div>
               <button
                 type="button"
                 className="parole-image pano"
@@ -180,6 +183,68 @@ const Mouv = forwardRef(function Mouv(props, ref) {
               </div>
             </div>
           </div>
+          <div className="extended-divider">───────── ○ ─────────</div>
+          <div className="extended">
+            <h2 className="exented-title">"Extended"</h2>
+            <button
+              type="button"
+              className="papier-image"
+              onClick={() => {
+                if (window.innerWidth <= 768) return;
+                setZoomedImage1("/Pics/phare.webp");
+              }}
+              aria-label="Agrandir l'image plein phare"
+            >
+              <img
+                src="/Pics/phare.webp"
+                loading="lazy"
+                width={500}
+                height={300}
+                alt="Plein phare - projet chorégraphique"
+              />
+            </button>
+            <div className="text-extended">
+              <p>
+                "Extended" est une création chorégraphique inspirée du duo{" "}
+                <Link to="/creations" className="text-link">
+                  <span>« É.phe »</span>
+                </Link>
+                , développée en partenariat avec les options danse du lycée
+                François 1er et le
+                <a
+                  href="https://lephare-ccn.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="highlight"
+                >
+                  {" "}
+                  CCN du Havre Normandie
+                </a>
+                .
+              </p>
+            </div>
+            <div className="text-extended">
+              <p>
+                Cette pièce questionne les multiples formes de la rencontre,
+                dans toute la subjectivité et la singularité qu'implique la
+                relation à l'autre.
+              </p>
+            </div>
+            <div className="text-extended">
+              <p>
+                Sous la direction{" "}
+                <Link to="/artistes#olivia-caillaud" className="bio-link">
+                  Olivia Caillaud
+                </Link>
+                , avec la collaboration de{" "}
+                <Link to="/artistes#stephanie-pignon" className="bio-link">
+                  Stéphanie Pignon{" "}
+                </Link>
+                pour la réflexion artistique.
+              </p>
+            </div>
+          </div>
+          <div className="extended-divider">───────── ○ ─────────</div>
         </div>
 
         <div className={`logomouv ${visibleClass}`}>

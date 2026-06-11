@@ -125,7 +125,7 @@
 
 .legal-rectangle {
   position: relative;
-  top: 210px;
+  top: 215px;
   left: 1%;
   width: 79%;
   overflow: hidden;
@@ -138,13 +138,6 @@
 
 .crossfade-visible .legal-rectangle {
   opacity: 1;
-}
-
-.legal-rectangle::before {
-  background: url("/Pics/tulle.webp") center/cover no-repeat;
-  opacity: 0.15;
-  filter: grayscale(40%) blur(2px);
-  z-index: 0;
 }
 
 /* =========================
@@ -165,7 +158,7 @@
 }
 
 .politique-confidentialite {
-  margin-top: clamp(30px, 5vw, 60px);
+  margin-top: 100px;
 }
 
 /* =========================
@@ -179,7 +172,7 @@
 
 .mentions-legales h2,
 .politique-confidentialite h2 {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-size: 1.8rem;
   font-weight: 600;
   color: #cfcfff;
@@ -220,12 +213,17 @@
   color: var(--legal-primary);
 }
 
+.mentions-legales span {
+  font-size: 1.2rem;
+}
+
 .mentions-legales a:hover,
 .politique-confidentialite a:hover {
   color: var(--legal-primary-light);
 }
 
-.mentions-legales a {
+.mentions-legales a,
+.politique-confidentialite a {
   font-size: 1.2rem;
 }
 
@@ -299,6 +297,14 @@
     right: 0;
     width: 98vw;
   }
+
+  .mentions-legales br {
+    display: block;
+  }
+
+  .br br {
+    display: none;
+  }
 }
 
 @media (max-width: 500px) {
@@ -323,7 +329,7 @@
   }
 
   .politique-confidentialite h2 {
-    margin-top: 10px;
+    margin-top: -50px;
   }
 
   .mentions-legales p {
@@ -334,7 +340,12 @@
     font-size: 1.3rem;
   }
 
-  .mentions-legales br {
+  .br br {
     display: block;
+  }
+
+  .mentions-legales a,
+  .politique-confidentialite a {
+    font-size: 1rem;
   }
 }

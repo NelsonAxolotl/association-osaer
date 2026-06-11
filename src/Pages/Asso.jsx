@@ -28,11 +28,12 @@ const Asso = forwardRef((props, externalRef) => {
         >
           Compagnie
         </h1>
-
         <p className="seo-hidden">
-          OSAER est une compagnie de danse contemporaine développant des projets
-          artistiques collaboratifs mêlant chorégraphie, performance et
-          médiation culturelle.
+          OSAER est une compagnie émergente de danse contemporaine développant
+          des projets à la croisée des disciplines artistiques, mêlant danse,
+          image et son. Elle favorise des processus de création collectifs
+          fondés sur la recherche, l’expérimentation et la collaboration entre
+          artistes.
         </p>
 
         <div className="asso-rectangle">
@@ -72,7 +73,8 @@ const Asso = forwardRef((props, externalRef) => {
                   <p>
                     Elle développe également ses propres créations, portées par
                     une écriture chorégraphique nourrie des corps, des parcours
-                    et des rencontres qui les traversent.
+                    et des rencontres qui les traversent. La danse y entre en
+                    dialogue avec l’image et le son.
                   </p>
                 </div>
 

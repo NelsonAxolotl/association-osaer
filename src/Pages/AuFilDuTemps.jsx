@@ -103,8 +103,6 @@ const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
                 >
                   Festival Les Estivales de Comberge
                 </a>{" "}
-                <span>–</span> <br />
-                Saint-Michel-Chef-Chef
               </p>
 
               <p>Esplanade du Port de Comberge</p>
