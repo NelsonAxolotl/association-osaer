@@ -5,6 +5,19 @@
   overflow-x: hidden;
   position: relative;
   font-family: system-ui, sans-serif;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(20px);
+  transition:
+    opacity 1.4s ease,
+    filter 1.4s ease,
+    transform 1.4s ease;
+}
+
+.home.page-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
 }
 
 /* =========================
@@ -67,6 +80,16 @@
   max-width: 900px;
   text-align: center;
   animation: heroFade 1.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 1.6s ease 0.3s,
+    transform 1.6s ease 0.3s;
+}
+
+.page-visible .hero-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-title {
@@ -93,15 +116,17 @@
   letter-spacing: 0.5px;
 }
 
-/* animation douce */
 @keyframes heroFade {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
+    filter: blur(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
   }
 }
 
@@ -114,6 +139,16 @@
   padding: 0 2rem;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 1.4s ease 0.8s,
+    transform 1.4s ease 0.8s;
+}
+
+.page-visible .intro-osaer {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .intro-frame {
@@ -528,16 +563,22 @@
   .hero {
     height: auto;
     min-height: 60svh; /* ou 60vh si tu veux plus compact */
-    align-items: flex-start;
-    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3.5rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    font-family: "Caveat", cursive;
+    font-weight: 400;
+    letter-spacing: 1px;
   }
 
   .hero-content {
     display: contents;
-  }
-
-  .hero-title {
-    display: none;
   }
 
   .hero-line-2 {

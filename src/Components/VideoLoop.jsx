@@ -8,7 +8,12 @@ const VideoLoop = forwardRef((props, ref) => {
   const videoRef = useRef(null);
   const gridRef = useRef(null);
   const [gridVisible, setGridVisible] = useState(false);
+  const [pageVisible, setPageVisible] = useState(false);
 
+  useEffect(() => {
+    const t = setTimeout(() => setPageVisible(true), 100);
+    return () => clearTimeout(t);
+  }, []);
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.5;
@@ -75,7 +80,7 @@ const VideoLoop = forwardRef((props, ref) => {
   }, []);
 
   return (
-    <main className="home" ref={ref}>
+    <main className={`home ${pageVisible ? "page-visible" : ""}`} ref={ref}>
       {/* ================= HERO ================= */}
       <section className="hero">
         {/* VIDEO BACKGROUND */}
