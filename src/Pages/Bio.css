@@ -107,8 +107,8 @@
 
 .bio-title {
   position: fixed;
-  top: 10%;
-  left: 5%;
+  top: 11%;
+  left: 3%;
   z-index: 3;
   margin: 0;
   font-size: 3.5rem;
@@ -168,7 +168,7 @@
 
 .logobio {
   position: fixed;
-  top: 11%;
+  top: 12%;
   right: 22%;
   z-index: 100;
   opacity: 0;

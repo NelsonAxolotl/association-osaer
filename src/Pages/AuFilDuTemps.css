@@ -51,8 +51,8 @@
 
 .temps-title {
   position: fixed;
-  top: 10%;
-  left: 5%;
+  top: 11%;
+  left: 3%;
   font-size: 3.5rem;
   color: rgba(19, 213, 213, 0.843);
   font-family: "Caveat", cursive;
@@ -266,7 +266,7 @@
 
 .logostemps {
   position: fixed;
-  top: 11%;
+  top: 12%;
   right: 22%;
   z-index: -1;
   opacity: 0;
@@ -290,6 +290,10 @@
   margin-top: 15px;
   text-align: center;
   line-height: 1.5;
+}
+
+.ephe-premiere a:hover {
+  color: rgb(5, 243, 255);
 }
 
 .ephe-premiere-title {
@@ -408,11 +412,15 @@
   }
 
   .temps-rectangle {
-    margin-top: 0;
+    margin-top: -20px;
   }
 
   .texte-centre {
     margin: 2.5rem 1rem 0 1rem;
+  }
+
+  .tr {
+    margin-top: -10px;
   }
 
   .tr::before {

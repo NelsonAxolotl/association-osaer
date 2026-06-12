@@ -74,8 +74,8 @@
 
 .legal-title {
   position: fixed;
-  top: 10%;
-  left: 5%;
+  top: 11%;
+  left: 3%;
   margin: 0;
   z-index: 3;
   font-size: 2.5rem;
@@ -105,7 +105,7 @@
 
 .logolegal {
   position: fixed;
-  top: 11%;
+  top: 12%;
   right: 22%;
   z-index: 100;
   opacity: 0;
@@ -138,6 +138,16 @@
 
 .crossfade-visible .legal-rectangle {
   opacity: 1;
+}
+
+.legal-rectangle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/Pics/tulle.webp") center/cover no-repeat;
+  opacity: 0.1;
+  filter: grayscale(100%);
+  z-index: 0;
 }
 
 /* =========================
@@ -224,7 +234,7 @@
 
 .mentions-legales a,
 .politique-confidentialite a {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 /* =========================
@@ -288,22 +298,20 @@
     font-size: 2.5rem;
   }
 
-  .legal-title br {
-    display: block;
-  }
-
   .mainlegal::after {
     top: 22.5%;
     right: 0;
     width: 98vw;
   }
 
-  .mentions-legales br {
-    display: block;
-  }
-
   .br br {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .legal-title br {
+    display: block;
   }
 }
 
@@ -341,6 +349,10 @@
   }
 
   .br br {
+    display: block;
+  }
+
+  .mentions-legales br {
     display: block;
   }
 

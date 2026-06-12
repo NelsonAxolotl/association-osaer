@@ -67,12 +67,9 @@ const MentionsPolitique = forwardRef(function MentionsPolitique(props, ref) {
               </p>
 
               <p>
-                <strong>Directeur de la publication :</strong> <br />{" "}
+                <strong>Directeur de la publication :</strong>
+                <br />{" "}
                 <Link to="/artistes#stephanie-pignon">Stéphanie Pignon </Link>
-              </p>
-
-              <p>
-                <strong>Contact :</strong>
               </p>
 
               <p>

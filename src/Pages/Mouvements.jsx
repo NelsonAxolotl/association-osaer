@@ -45,9 +45,17 @@ const Mouv = forwardRef(function Mouv(props, ref) {
               <div className="texte gauche">
                 <p>
                   Dans le cadre de l’exposition Couleur Papier,{" "}
-                  <span>OSAER</span> répond à l’invitation de Vanessa Simon en
-                  créant une pièce chorégraphique avec les élèves de l’atelier
-                  danse du Collège Alphonse Allais.
+                  <span>OSAER</span> répond à l’invitation de{" "}
+                  <a
+                    href="https://www.untrainpeutencacherunautre.com/vanessasimon.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="highlight"
+                  >
+                    Vanessa Simon
+                  </a>{" "}
+                  en créant une pièce chorégraphique avec les élèves de
+                  l’atelier danse du Collège Alphonse Allais.
                 </p>
               </div>
 
@@ -206,7 +214,7 @@ const Mouv = forwardRef(function Mouv(props, ref) {
             <div className="text-extended">
               <p>
                 "Extended" est une création chorégraphique inspirée du duo{" "}
-                <Link to="/creations" className="text-link">
+                <Link to="/creations" className="mouv-link">
                   <span>« É.phe »</span>
                 </Link>
                 , développée en partenariat avec les options danse du lycée
@@ -233,11 +241,11 @@ const Mouv = forwardRef(function Mouv(props, ref) {
             <div className="text-extended">
               <p>
                 Sous la direction{" "}
-                <Link to="/artistes#olivia-caillaud" className="bio-link">
+                <Link to="/artistes#olivia-caillaud" className="mouv-link">
                   Olivia Caillaud
                 </Link>
                 , avec la collaboration de{" "}
-                <Link to="/artistes#stephanie-pignon" className="bio-link">
+                <Link to="/artistes#stephanie-pignon" className="mouv-link">
                   Stéphanie Pignon{" "}
                 </Link>
                 pour la réflexion artistique.

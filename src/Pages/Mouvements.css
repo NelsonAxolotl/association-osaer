@@ -91,8 +91,8 @@
 
 .mouv-title {
   position: fixed;
-  top: 10%;
-  left: 5%;
+  top: 11%;
+  left: 3%;
   z-index: 3;
   margin: 0;
   font-size: 3.5rem;
@@ -118,7 +118,7 @@
 
 .logomouv {
   position: fixed;
-  top: 11%;
+  top: 12%;
   right: 22%;
   z-index: -1;
   opacity: 0;
@@ -217,12 +217,14 @@
 }
 
 .text-parol a,
-.texte-centre a {
+.texte-centre a,
+.gauche a {
   color: var(--mouv-primary-light);
 }
 
 .text-parol a:hover,
-.texte-centre a:hover {
+.texte-centre a:hover,
+.gauche a:hover {
   color: var(--mouv-primary-hover);
 }
 
@@ -346,7 +348,6 @@
   font-size: 1.05rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-
   color: var(--mouv-secondary);
 }
 
@@ -448,7 +449,7 @@
   height: auto;
   display: block;
   border-radius: 6px;
-  border: 1px solid var(--mouv-secondary);
+  border: 1px dashed var(--mouv-secondary);
   object-fit: cover;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -463,6 +464,10 @@
   color: var(--mouv-secondary);
   font-weight: 500;
   font-size: 1.2rem;
+}
+
+.text-extended span:hover {
+  color: var(--mouv-primary-hover);
 }
 
 .text-extended a {

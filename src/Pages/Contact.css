@@ -91,8 +91,8 @@
 
 .contact-title {
   position: fixed;
-  top: 10%;
-  left: 5%;
+  top: 11%;
+  left: 3%;
   z-index: 3;
   margin: 0;
   font-size: 3.5rem;
@@ -118,7 +118,7 @@
 
 .logocontact {
   position: fixed;
-  top: 11%;
+  top: 12%;
   right: 22%;
   z-index: -1;
   opacity: 0;
@@ -264,6 +264,7 @@
 .contact-intro p {
   text-align: justify;
   line-height: 1.5em;
+  text-align: center;
 }
 
 /* =========================
@@ -422,21 +423,11 @@
 
   .contact-mail,
   .contact-phone {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .contact-info p {
     font-size: 1.5rem;
-  }
-
-  .contact-socials a {
-    font-size: 2rem;
-  }
-
-  .contact-socials a:hover {
-    color: var(--contact-text);
-    transform: none;
-    filter: none;
   }
 
   .contact-bg::before {
