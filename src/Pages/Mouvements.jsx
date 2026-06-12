@@ -116,53 +116,54 @@ const Mouv = forwardRef(function Mouv(props, ref) {
           <div className="status-diagonal-wrapper">
             <div className="status-diagonal">
               <h2>"Parole Portée"</h2>
+              <div className="text-lay">
+                <div className="text-parol">
+                  <p>
+                    Paroles portées est un projet mené auprès de mineurs non
+                    accompagnés, en partenariat avec{" "}
+                    <a
+                      href="https://www.perinat-normandie.fr/sites/service-adolescence-et-daccueil-familial-dintervention-rouennais-saafir-idefhi-38-route-de-sahurs-canteleu/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="highlight"
+                    >
+                      le Service Adolescence et Accueil Familial d’Intervention
+                      Rouennais
+                    </a>
+                    .
+                  </p>
+                </div>
 
-              <div className="text-parol">
-                <p>
-                  Paroles portées est un projet mené auprès de mineurs non
-                  accompagnés, en partenariat avec{" "}
-                  <a
-                    href="https://www.perinat-normandie.fr/sites/service-adolescence-et-daccueil-familial-dintervention-rouennais-saafir-idefhi-38-route-de-sahurs-canteleu/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="highlight"
-                  >
-                    le Service Adolescence et Accueil Familial d’Intervention
-                    Rouennais
-                  </a>
-                  .
-                </p>
-              </div>
+                <div className="text-parol">
+                  <p>
+                    À la croisée de l’écriture et du corps, le projet s’articule
+                    autour d’un temps d’écriture avec{" "}
+                    <a
+                      href="https://marceline-putnai.fr/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="highlight"
+                    >
+                      Marceline Putnaï
+                    </a>{" "}
+                    et d’un temps d’expression corporelle avec Stéphanie Pignon.
+                  </p>
+                </div>
 
-              <div className="text-parol">
-                <p>
-                  À la croisée de l’écriture et du corps, le projet s’articule
-                  autour d’un temps d’écriture avec{" "}
-                  <a
-                    href="https://marceline-putnai.fr/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="highlight"
-                  >
-                    Marceline Putnaï
-                  </a>{" "}
-                  et d’un temps d’expression corporelle avec Stéphanie Pignon.
-                </p>
-              </div>
+                <div className="text-parol">
+                  <p>
+                    De cette rencontre émergent des fragments de vie, des mots
+                    et des gestes.
+                  </p>
+                </div>
 
-              <div className="text-parol">
-                <p>
-                  De cette rencontre émergent des fragments de vie, des mots et
-                  des gestes.
-                </p>
-              </div>
-
-              <div className="text-parol">
-                <p>Un espace où la parole se cherche et se transforme.</p>
-              </div>
-              <div className="text-parol">
-                Restitution du projet le 10 avril à 18h auprès de la structure
-                et des partenaires à Rouen.
+                <div className="text-parol">
+                  <p>Un espace où la parole se cherche et se transforme.</p>
+                </div>
+                <div className="text-parol">
+                  Restitution du projet le 10 avril à 18h auprès de la structure
+                  et des partenaires à Rouen.
+                </div>
               </div>
               <button
                 type="button"

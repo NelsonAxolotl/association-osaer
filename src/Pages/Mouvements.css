@@ -260,6 +260,10 @@
   padding: 10px;
   text-align: justify;
   text-justify: inter-word;
+  padding: 15px 20px;
+  background-color: var(--bio-panel);
+  border-radius: 12px;
+  box-shadow: var(--bio-shadow-soft);
 }
 
 .gauche,
@@ -268,7 +272,7 @@
 }
 
 .droite {
-  margin-top: -40px;
+  margin-top: -30px;
 }
 
 .texte-centre {
@@ -290,6 +294,13 @@
 .creation-lieu br,
 .direction-artistique br {
   display: none;
+}
+
+.text-lay {
+  padding: 15px 20px;
+  background-color: var(--bio-panel);
+  border-radius: 12px;
+  box-shadow: var(--bio-shadow-soft);
 }
 
 /* =========================
@@ -439,8 +450,12 @@
   line-height: 1.4;
   color: white;
   max-width: 900px;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   text-align: justify;
+  padding: 15px 20px;
+  background-color: var(--bio-panel);
+  border-radius: 12px;
+  box-shadow: var(--bio-shadow-soft);
 }
 
 .extended img {
@@ -682,6 +697,7 @@
 
   .texte {
     width: 100%;
+    padding: 15px 15px;
   }
 
   .ephe-status2 {
@@ -730,10 +746,15 @@
     max-width: 92%;
     margin: 1.2rem auto;
     line-height: 1.65;
+    padding: 15px 10px;
   }
 
   .extended img {
     width: 100%;
     border-radius: 4px;
+  }
+
+  .text-lay {
+    padding: 10px 15px;
   }
 }

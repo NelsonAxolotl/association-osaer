@@ -156,11 +156,15 @@
 .ephe-block p {
   width: 70%;
   max-width: 900px;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   text-align: justify;
   line-height: 1.4;
   font-family: "Quicksand", sans-serif;
   font-size: 1.05rem;
+  padding: 15px 20px;
+  background-color: var(--bio-panel);
+  border-radius: 12px;
+  box-shadow: var(--bio-shadow-soft);
 }
 
 .pastel-text {
