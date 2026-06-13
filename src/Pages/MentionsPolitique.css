@@ -330,6 +330,9 @@
     text-align: center;
     line-height: 38px;
     font-size: 2rem;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
   }
 
   .legal-rectangle {
