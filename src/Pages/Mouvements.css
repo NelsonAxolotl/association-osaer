@@ -692,12 +692,12 @@
   }
 
   .ephe-status-wrapper {
-    width: 90%;
+    width: 100%;
   }
 
   .texte {
     width: 100%;
-    padding: 15px 15px;
+    padding: 15px 10px;
   }
 
   .ephe-status2 {
@@ -705,7 +705,7 @@
   }
 
   .status-diagonal-wrapper {
-    margin: 10rem 0 -2rem;
+    margin: 10rem 0 0rem;
   }
 
   .status-diagonal {
@@ -738,13 +738,13 @@
   .extended-divider {
     font-size: 1rem;
     letter-spacing: 0.15em;
-    margin: 4rem 0;
+    margin: 3rem 0;
   }
 
   .text-extended {
     font-size: 1rem;
-    max-width: 92%;
-    margin: 1.2rem auto;
+    max-width: 100%;
+    margin: 1rem auto;
     line-height: 1.65;
     padding: 15px 10px;
   }
@@ -755,6 +755,10 @@
   }
 
   .text-lay {
-    padding: 10px 15px;
+    padding: 5px 10px;
+  }
+
+  .text-parol {
+    margin-top: 10px;
   }
 }

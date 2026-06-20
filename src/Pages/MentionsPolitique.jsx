@@ -48,7 +48,8 @@ const MentionsPolitique = forwardRef(function MentionsPolitique(props, ref) {
                 </p>
               </div>
               <p>
-                <strong>Dénomination :</strong> Cie OSAER
+                <strong>Dénomination :</strong>
+                <span> Cie OSAER</span>
               </p>
 
               <p>

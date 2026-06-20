@@ -19,8 +19,12 @@ const VideoLoop = forwardRef((props, ref) => {
       videoRef.current.playbackRate = 0.5;
     }
   }, []);
-
   useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setGridVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

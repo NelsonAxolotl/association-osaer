@@ -4,7 +4,7 @@
   background: rgb(0, 0, 0);
   height: auto;
   overflow: visible;
-  padding: 0rem 0.5rem 16rem;
+  padding: 3rem 0.5rem 16rem;
   height: auto;
   z-index: 0;
 }
@@ -547,7 +547,7 @@
 
 @media (max-width: 500px) {
   .asso {
-    padding: 0rem 0.5rem 17rem;
+    padding: 0 0.5rem 17rem;
   }
 
   .asso-title {
@@ -627,6 +627,10 @@
 
   .asso-image-wrapper2 {
     margin-top: -40px;
+  }
+
+  .asso-image-wrapper img {
+    object-position: 30% center;
   }
 
   .asso-block {
