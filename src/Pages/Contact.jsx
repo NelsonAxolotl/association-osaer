@@ -52,7 +52,7 @@ const Contact = forwardRef(function Contact(props, ref) {
 
           {/* FORM FORMSPREE */}
           <form
-            action="https://formspree.io/f/mzdqejek"
+            action="https://formspree.io/f/xaqgpbga"
             method="POST"
             className="contact-form"
           >

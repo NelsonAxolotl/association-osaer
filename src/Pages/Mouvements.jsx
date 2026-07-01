@@ -47,7 +47,7 @@ const Mouv = forwardRef(function Mouv(props, ref) {
                   Dans le cadre de l’exposition Couleur Papier,{" "}
                   <span>OSAER</span> répond à l’invitation de{" "}
                   <a
-                    href="https://www.untrainpeutencacherunautre.com/vanessasimon.html"
+                    href="https://vanessasimoncatelin.wordpress.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="highlight"
@@ -253,7 +253,48 @@ const Mouv = forwardRef(function Mouv(props, ref) {
               </p>
             </div>
           </div>
-          <div className="extended-divider">───────── ○ ─────────</div>
+          <div className="extended-divider2">───────── ○ ─────────</div>
+          <section className="now-section animate-on-scroll">
+            <h2>"NOW – Œuvre éphémère"</h2>
+
+            <p>
+              <strong>NOW</strong> est une œuvre éphémère improvisée, une
+              première rencontre née d’un jeu d’écoute, d’impressions, de
+              propositions sonores et dansées. Chacun, par son médium
+              d’expression, fait de l’espace scénique un lieu de dialogue,
+              d’accords ou de désaccords. <br />
+              Cette rencontre artistique et humaine trouvera-t-elle un écho l’un
+              chez l’autre ?
+            </p>
+
+            <p className="now-quote">
+              <span>
+                <strong>NOW</strong> n’est jamais ce qu’on a décidé.
+              </span>
+              <span>
+                <strong>NOW</strong> est une résistance à la gravité,
+              </span>
+              <span>
+                <strong>NOW</strong> rend visible la musicalité de l’instant.
+              </span>
+            </p>
+
+            <p className="now-credits">
+              Interprète : Olivia Caillaud
+              <br />
+              Guitare à 10 cordes microtonales :{" "}
+              <a
+                href="http://artitoo.free.fr/plarge/html/marzan.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="highlight"
+              >
+                Pascal Marzan
+              </a>
+            </p>
+            <div className="now-circle-bottom-left" />
+            <div className="now-circle-bottom-right" />
+          </section>
         </div>
 
         <div className={`logomouv ${visibleClass}`}>
