@@ -267,30 +267,36 @@ const Mouv = forwardRef(function Mouv(props, ref) {
               chez l’autre ?
             </p>
 
-            <p className="now-quote">
-              <span>
+            <div className="now-quote">
+              <p>
                 <strong>NOW</strong> n’est jamais ce qu’on a décidé.
-              </span>
-              <span>
+              </p>
+              <p>
                 <strong>NOW</strong> est une résistance à la gravité,
-              </span>
-              <span>
+              </p>
+              <p>
                 <strong>NOW</strong> rend visible la musicalité de l’instant.
-              </span>
-            </p>
+              </p>
+            </div>
 
             <p className="now-credits">
-              Interprète : Olivia Caillaud
-              <br />
-              Guitare à 10 cordes microtonales :{" "}
-              <a
-                href="http://artitoo.free.fr/plarge/html/marzan.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="highlight"
-              >
-                Pascal Marzan
-              </a>
+              <span>
+                Interprète :{" "}
+                <a href="/artistes#olivia-caillaud" className="highlight-link">
+                  Olivia Caillaud
+                </a>
+              </span>{" "}
+              <span>
+                Guitare à 10 cordes microtonales :{" "}
+                <a
+                  href="http://artitoo.free.fr/plarge/html/marzan.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="highlight"
+                >
+                  Pascal Marzan
+                </a>
+              </span>
             </p>
             <div className="now-circle-bottom-left" />
             <div className="now-circle-bottom-right" />

@@ -570,23 +570,29 @@
 }
 
 .now-quote {
-  max-width: 520px;
-  margin: 2rem auto;
+  max-width: 380px;
   display: flex;
   flex-direction: column;
+  margin: 2rem auto;
   text-align: justify;
-  gap: 0.3rem;
   font-style: italic;
   line-height: 2;
+  gap: 10px;
 }
 
-.now-quote span {
-  display: block;
+.now-quote p {
+  margin: 0;
 }
 
 .now-credits {
-  margin-top: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.now-credits span {
+  display: block;
 }
 
 .now-credits a {
@@ -747,6 +753,12 @@
     letter-spacing: 0.2em;
   }
 
+  .extended-divider2 {
+    margin: 3rem 0;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+  }
+
   .extended h2 {
     margin: 3rem 0 -1rem;
   }
@@ -763,6 +775,40 @@
     width: 90%;
     max-width: 100%;
     margin-bottom: 30px;
+  }
+
+  .now-section {
+    margin: 5rem auto 10rem;
+    padding: 90px 1.2rem 0;
+  }
+
+  .now-section h2 {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .now-quote {
+    max-width: 350px;
+    gap: 8px;
+  }
+
+  .now-section::before,
+  .now-section::after {
+    width: 110px;
+    height: 110px;
+    margin-top: 30px;
+  }
+
+  .now-section::before {
+    left: 40%;
+  }
+
+  .now-section::after {
+    right: 40%;
+  }
+
+  .now-section p {
+    padding: 12px 16px;
   }
 }
 
@@ -852,12 +898,18 @@
     margin: 3rem 0;
   }
 
+  .extended-divider2 {
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    margin: 3rem 0;
+  }
+
   .text-extended {
     font-size: 1rem;
     max-width: 100%;
     margin: 1rem auto;
     line-height: 1.65;
-    padding: 15px 10px;
+    padding: 15px 20px;
   }
 
   .extended img {
@@ -871,5 +923,59 @@
 
   .text-parol {
     margin-top: 10px;
+  }
+
+  .now-section {
+    margin: 2.5rem auto 10rem;
+    padding: 70px 1rem 0;
+  }
+
+  .now-section h2 {
+    font-size: 1.7rem;
+    margin-bottom: 3rem;
+  }
+
+  .now-quote {
+    max-width: 100%;
+    padding: 0 10px;
+    gap: 6px;
+  }
+
+  .now-quote p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  /* on allège les cercles du haut */
+  .now-section::before,
+  .now-section::after {
+    width: 80px;
+    height: 80px;
+  }
+
+  .now-section::before {
+    left: 32%;
+  }
+
+  .now-section::after {
+    right: 32%;
+  }
+
+  .now-circle-bottom-left {
+    left: 32%;
+  }
+
+  .now-circle-bottom-right {
+    right: 32%;
+  }
+
+  /* optionnel : allège les blocs */
+  .now-section p {
+    padding: 10px 12px;
+  }
+
+  .now-credits span:nth-child(2) a.highlight {
+    display: block;
+    margin-top: 0.4rem;
   }
 }
