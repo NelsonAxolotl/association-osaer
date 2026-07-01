@@ -146,7 +146,11 @@ const Mouv = forwardRef(function Mouv(props, ref) {
                     >
                       Marceline Putnaï
                     </a>{" "}
-                    et d’un temps d’expression corporelle avec Stéphanie Pignon.
+                    et d’un temps d’expression corporelle avec{" "}
+                    <Link to="/artistes#stephanie-pignon" className="mouv-link">
+                      Stéphanie Pignon{" "}
+                    </Link>
+                    .
                   </p>
                 </div>
 
