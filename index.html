@@ -1,33 +1,44 @@
 <!doctype html>
 <html lang="fr">
   <head>
+    <!-- =======================
+         META TECHNIQUES
+    ======================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    <meta
-      name="description"
-      content="Association Osaer – compagnie de danse contemporaine et de chorégraphie. Découvrez nos spectacles, projets artistiques et événements."
-    />
     <meta name="author" content="Compagnie Osaer" />
     <meta name="theme-color" content="#000000" />
+    <meta name="format-detection" content="telephone=no" />
     <meta
       name="google-site-verification"
       content="2pINTbw9nr-6K-L0L_iAXu4RwHO6FAp5U8o7VjQ7Sh8"
     />
-    <title>Association Osaer | Danse contemporaine et chorégraphie</title>
 
-    <!-- Favicon -->
+    <!-- =======================
+         SEO PRINCIPAL
+    ======================== -->
+    <title>
+      Osaer | Compagnie de danse contemporaine – Spectacles et créations
+      chorégraphiques
+    </title>
+
+    <meta
+      name="description"
+      content="Osaer est une compagnie de danse contemporaine basée en France. Découvrez ses créations chorégraphiques, spectacles, projets artistiques et actions de transmission."
+    />
+
+    <link rel="canonical" href="https://www.cieosaer.com/" />
+
+    <!-- =======================
+         FAVICON
+    ======================== -->
     <link rel="icon" type="image/png" href="/Pics/logo2.png" />
     <link rel="apple-touch-icon" href="/Pics/logo2.png" />
 
-    <!-- Préchargement image LCP -->
-    <link
-      rel="preload"
-      as="image"
-      href="/Pics/logo2.webp"
-      fetchpriority="high"
-    />
-
+    <!-- =======================
+         PREFETCH / FONTS
+    ======================== -->
     <link
       rel="preload"
       href="/fonts/Quicksand-Regular.woff2"
@@ -42,37 +53,65 @@
       type="font/woff2"
       crossorigin
     />
-    <!-- Open Graph / Twitter -->
+
+    <!-- =======================
+         OPEN GRAPH (réseaux sociaux)
+    ======================== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Association Osaer" />
+    <meta property="og:locale" content="fr_FR" />
     <meta property="og:title" content="Association Osaer" />
     <meta
       property="og:description"
       content="Danse contemporaine, chorégraphie. Découvrez nos projets et événements."
     />
+    <meta property="og:url" content="https://www.cieosaer.com" />
     <meta
       property="og:image"
       content="https://www.cieosaer.com/Pics/logo2.webp"
     />
-    <meta property="og:url" content="https://www.cieosaer.com" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="og:image:alt"
+      content="Logo de la compagnie de danse contemporaine Osaer"
+    />
 
-    <!-- Content Security Policy -->
+    <!-- =======================
+         JSON-LD (SEO avancé)
+    ======================== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "PerformingGroup",
+        "name": "Association Osaer",
+        "url": "https://www.cieosaer.com",
+        "description": "Compagnie de danse contemporaine et de créations chorégraphiques.",
+        "logo": "https://www.cieosaer.com/Pics/logo2.webp",
+        "image": "https://www.cieosaer.com/Pics/logo2.webp",
+        "sameAs": ["https://www.instagram.com/cieosaer/"]
+      }
+    </script>
+
+    <!-- =======================
+         CONTENT SECURITY POLICY
+    ======================== -->
     <meta
       http-equiv="Content-Security-Policy"
       content="
-    default-src 'self';
-    script-src 'self' 'unsafe-inline' https://kit.fontawesome.com https://unpkg.com https://vercel.live;
-    style-src 'self' 'unsafe-inline' https://ka-f.fontawesome.com;
-    img-src 'self' data: https://cieosaer.com https://www.cieosaer.com https://unpkg.com;
-    font-src 'self';
-    connect-src 'self' https://ka-f.fontawesome.com https://api.emailjs.com;
-  "
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://kit.fontawesome.com https://unpkg.com https://vercel.live;
+        style-src 'self' 'unsafe-inline' https://ka-f.fontawesome.com;
+        img-src 'self' data: blob: https://cieosaer.com https://www.cieosaer.com https://unpkg.com;
+        font-src 'self';
+        connect-src 'self' https://ka-f.fontawesome.com https://api.emailjs.com;
+      "
     />
   </head>
+
   <body>
-    <!-- Racine React -->
+    <!-- React root -->
     <div id="root"></div>
 
-    <!-- Script principal React -->
-    <script type="module" src="/src/main.jsx" defer></script>
+    <!-- App -->
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
