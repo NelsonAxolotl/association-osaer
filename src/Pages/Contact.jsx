@@ -90,25 +90,32 @@ const Contact = forwardRef(function Contact(props, ref) {
               type="text"
               name="name"
               placeholder="Nom / Prénom"
+              autoComplete="name"
               required
             />
 
-            <select name="type" required>
+            <select name="type" required autoComplete="organization">
               <option value="">Vous êtes ?</option>
               <option value="particulier">Particulier</option>
-              <option value="association">Association</option>
+              <option value="asso">Association</option>
               <option value="institution">Institution</option>
               <option value="programmateur">Programmateur</option>
               <option value="autre">Autre</option>
             </select>
 
-            <input type="email" name="email" placeholder="Email" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              autoComplete="email"
+              required
+            />
 
             <textarea
               name="message"
               placeholder="Votre message"
               rows="6"
-              required
+              autoComplete="off"
             />
 
             <input
