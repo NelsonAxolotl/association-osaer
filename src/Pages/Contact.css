@@ -329,25 +329,27 @@
 }
 
 .success-message {
-  width: 100%;
-  max-width: 800px;
-  padding: 12px 14px;
-  margin-top: 10px;
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid var(--contact-gold);
-  color: var(--contact-gold);
-  font-size: 1rem;
-  font-family: system-ui;
+  margin-top: 20px;
+  padding: 12px 20px;
   text-align: center;
-  border-radius: 2px;
-  animation: successFade 0.4s ease-in-out;
+  color: #8df08d;
+  background: rgba(141, 240, 141, 0.15);
+  border: 1px solid rgba(141, 240, 141, 0.35);
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease;
 }
 
-@keyframes successFade {
+.contact-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

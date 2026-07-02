@@ -6,11 +6,45 @@ import Footer from "../Components/Footer";
 
 const Contact = forwardRef(function Contact(props, ref) {
   const [contentVisible, setContentVisible] = useState(false);
+  const [messageSent, setMessageSent] = useState(false);
+  const [sending, setSending] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setContentVisible(true), 200);
     return () => clearTimeout(t);
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setSending(true);
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xaqgpbga", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setMessageSent(true);
+        form.reset();
+
+        setTimeout(() => {
+          setMessageSent(false);
+        }, 5000);
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'envoi :", error);
+    }
+
+    setSending(false);
+  };
 
   return (
     <>
@@ -41,7 +75,7 @@ const Contact = forwardRef(function Contact(props, ref) {
             <h2>Contactez-nous</h2>
 
             <p>
-              Vous souhaitez obtenir plus d'infos sur la compagnie ou nos
+              Vous souhaitez obtenir plus d'informations sur la compagnie ou nos
               projets ?
             </p>
 
@@ -50,12 +84,8 @@ const Contact = forwardRef(function Contact(props, ref) {
             </p>
           </div>
 
-          {/* FORM FORMSPREE */}
-          <form
-            action="https://formspree.io/f/xaqgpbga"
-            method="POST"
-            className="contact-form"
-          >
+          {/* FORMULAIRE */}
+          <form onSubmit={handleSubmit} className="contact-form">
             <input
               type="text"
               name="name"
@@ -66,7 +96,7 @@ const Contact = forwardRef(function Contact(props, ref) {
             <select name="type" required>
               <option value="">Vous êtes ?</option>
               <option value="particulier">Particulier</option>
-              <option value="asso">Association</option>
+              <option value="association">Association</option>
               <option value="institution">Institution</option>
               <option value="programmateur">Programmateur</option>
               <option value="autre">Autre</option>
@@ -87,9 +117,6 @@ const Contact = forwardRef(function Contact(props, ref) {
               value="[OSAER] Nouveau message depuis le site"
             />
 
-            <input type="hidden" name="_format" value="plain" />
-            <input type="hidden" name="_replyto" value="email" />
-            <button type="submit">Envoyer</button>
             <label className="contact-rgpd">
               <input type="checkbox" name="consent" required />
               <span>
@@ -97,6 +124,16 @@ const Contact = forwardRef(function Contact(props, ref) {
                 le cadre de ma demande de contact.
               </span>
             </label>
+
+            <button type="submit" disabled={sending}>
+              {sending ? "Envoi..." : "Envoyer"}
+            </button>
+
+            {messageSent && (
+              <p className="success-message">
+                ✓ Votre message a bien été envoyé.
+              </p>
+            )}
           </form>
 
           <div className={`contact-info ${contentVisible ? "visible" : ""}`}>
