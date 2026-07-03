@@ -273,13 +273,13 @@ const Mouv = forwardRef(function Mouv(props, ref) {
 
             <div className="now-quote">
               <p>
-                <strong>NOW</strong> n’est jamais ce qu’on a décidé.
+                <strong>NOW</strong> n’est jamais ce qu’on a décidé
               </p>
               <p>
-                <strong>NOW</strong> est une résistance à la gravité,
+                <strong>NOW</strong> est une résistance à la gravité
               </p>
               <p>
-                <strong>NOW</strong> rend visible la musicalité de l’instant.
+                <strong>NOW</strong> rend visible la musicalité de l’instant
               </p>
             </div>
 
