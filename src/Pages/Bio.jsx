@@ -251,7 +251,16 @@ const Bio = forwardRef((props, externalRef) => {
                 >
                   "2001 - The Midnight Zone"
                 </a>{" "}
-                2015, "Une relation affine" 2019, "Sails" 2025).
+                2015, "Une relation affine" 2019,{" "}
+                <a
+                  href="https://www.facebook.com/watch/?v=1943601183059526"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="highlight-link-bio"
+                >
+                  "Sails"
+                </a>{" "}
+                2025 ).
               </p>
             </div>
 
