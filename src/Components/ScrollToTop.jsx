@@ -9,7 +9,7 @@ export default function ScrollToTop() {
       window.history.scrollRestoration = "manual";
     }
 
-    const scroll = () => {
+    const timeout = setTimeout(() => {
       if (!hash) {
         window.scrollTo({
           top: 0,
@@ -17,16 +17,9 @@ export default function ScrollToTop() {
           behavior: "auto",
         });
       }
-    };
+    }, 0);
 
-    const id1 = requestAnimationFrame(() => {
-      const id2 = requestAnimationFrame(scroll);
-
-      // cleanup correct
-      return () => cancelAnimationFrame(id2);
-    });
-
-    return () => cancelAnimationFrame(id1);
+    return () => clearTimeout(timeout);
   }, [pathname, hash]);
 
   return null;

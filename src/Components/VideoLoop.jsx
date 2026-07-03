@@ -11,10 +11,6 @@ const VideoLoop = forwardRef((props, ref) => {
   const [pageVisible, setPageVisible] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
     const t = setTimeout(() => setPageVisible(true), 100);
     return () => clearTimeout(t);
   }, []);
@@ -143,7 +139,7 @@ const VideoLoop = forwardRef((props, ref) => {
         ref={gridRef}
         className={`grid ${gridVisible ? "grid-visible" : ""}`}
       >
-        <a href="/compagnie" className="card orange compagnie-card">
+        <Link to="/compagnie" className="card orange compagnie-card">
           <img
             src="/Pics/asso5.webp"
             alt="Compagnie OSAER"
@@ -154,9 +150,8 @@ const VideoLoop = forwardRef((props, ref) => {
             <h2>Compagnie</h2>
             <p>Identité . direction artistique . recherche</p>
           </div>
-        </a>
-
-        <a href="/artistes" className="card white artists-card">
+        </Link>
+        <Link to="/artistes" className="card white artists-card">
           <div className="artists-media">
             <div className="img-steph artists-img"></div>
             <div className="img-olivia artists-img"></div>
@@ -168,9 +163,9 @@ const VideoLoop = forwardRef((props, ref) => {
             <h2>Artistes</h2>
             <p>Interprètes & collaborations</p>
           </div>
-        </a>
+        </Link>
 
-        <a href="/creations" className="card blue video-card">
+        <Link to="/creations" className="card blue video-card">
           <video
             className="card-video"
             src="/Videos/ephe.mp4"
@@ -183,9 +178,9 @@ const VideoLoop = forwardRef((props, ref) => {
             <h2>Créations</h2>
             <p>Pièces chorégraphiques · projets</p>
           </div>
-        </a>
+        </Link>
 
-        <a href="/rencontres" className="card green video-card">
+        <Link to="/rencontres" className="card green video-card">
           <video
             className="card-video"
             src="/Videos/walk3.mp4"
@@ -199,9 +194,9 @@ const VideoLoop = forwardRef((props, ref) => {
             <h2>Rencontres</h2>
             <p>Médiation · transmission</p>
           </div>
-        </a>
+        </Link>
 
-        <a href="/contact" className="card yellow video-card">
+        <Link to="/contact" className="card yellow video-card">
           <video
             className="card-video"
             src="/Videos/flaw.mp4"
@@ -213,9 +208,9 @@ const VideoLoop = forwardRef((props, ref) => {
             <h2>Contact</h2>
             <p>Production · diffusion</p>
           </div>
-        </a>
+        </Link>
 
-        <a href="/mentions-politique" className="card purple">
+        <Link to="/mentions-politique" className="card purple">
           <img
             src="/Pics/tulle.webp"
             alt="Compagnie OSAER"
@@ -225,7 +220,7 @@ const VideoLoop = forwardRef((props, ref) => {
             <h2>Mentions légales</h2>
             <p>Politique de confidentialité</p>
           </div>
-        </a>
+        </Link>
       </section>
 
       {/* ================= FOOTER ================= */}
