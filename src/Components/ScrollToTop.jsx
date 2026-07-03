@@ -1,21 +1,33 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const ScrollToTop = () => {
+export default function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    // 🔥 désactive la restauration automatique du navigateur
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
 
-    if (!hash) {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    }
+    const scroll = () => {
+      if (!hash) {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "auto",
+        });
+      }
+    };
+
+    const id1 = requestAnimationFrame(() => {
+      const id2 = requestAnimationFrame(scroll);
+
+      // cleanup correct
+      return () => cancelAnimationFrame(id2);
+    });
+
+    return () => cancelAnimationFrame(id1);
   }, [pathname, hash]);
 
   return null;
-};
-
-export default ScrollToTop;
+}

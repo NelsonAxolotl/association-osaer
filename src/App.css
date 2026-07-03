@@ -15,7 +15,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   height: auto;
-  scroll-behavior: smooth;
+  scroll-behavior: auto !important;
   background-color: #000;
 }
 

@@ -11,9 +11,14 @@ const VideoLoop = forwardRef((props, ref) => {
   const [pageVisible, setPageVisible] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const t = setTimeout(() => setPageVisible(true), 100);
     return () => clearTimeout(t);
   }, []);
+
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.5;
