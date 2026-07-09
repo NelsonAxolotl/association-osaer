@@ -875,6 +875,10 @@
     line-height: 1.6;
   }
 
+  .creation-lieu {
+    margin-top: -15px;
+  }
+
   .creation-lieu a {
     display: inline-block;
     margin-top: 6px;

@@ -82,12 +82,14 @@ const Mouv = forwardRef(function Mouv(props, ref) {
                 >
                   musée Eugène Boudin
                 </a>
-                .
               </p>
 
               <p className="direction-artistique">
                 Direction artistique : <br />
-                Stéphanie Pignon <br />
+                <Link to="/artistes#stephanie-pignon" className="mouv-link">
+                  Stéphanie Pignon{" "}
+                </Link>
+                <br />
                 en collaboration avec Karine Dury.
               </p>
 

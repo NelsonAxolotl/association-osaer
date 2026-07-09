@@ -127,8 +127,8 @@ const Contact = forwardRef(function Contact(props, ref) {
             <label className="contact-rgpd">
               <input type="checkbox" name="consent" required />
               <span>
-                J’accepte que mes informations soient utilisées uniquement dans
-                le cadre de ma demande de contact.
+                J’accepte que mes informations soient utilisées dans le cadre de
+                ma demande de contact.
               </span>
             </label>
 
