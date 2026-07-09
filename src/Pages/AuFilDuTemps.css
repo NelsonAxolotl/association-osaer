@@ -386,7 +386,7 @@
 
 @media (max-width: 500px) {
   .temps {
-    padding: 0rem 0.5rem 16rem;
+    padding: 1rem 0.5rem 16rem;
   }
 
   .temps-title {

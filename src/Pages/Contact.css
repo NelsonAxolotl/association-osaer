@@ -440,6 +440,10 @@
 }
 
 @media (max-width: 500px) {
+  .maincontact {
+    padding: 2rem 0 16rem;
+  }
+
   .maincontact::after {
     display: none;
   }

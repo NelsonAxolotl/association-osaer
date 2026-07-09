@@ -629,7 +629,7 @@ h2 {
 @media (max-width: 500px) {
   .bio {
     left: 0.7%;
-    padding: 1rem 0 12rem;
+    padding: 1.5rem 0 12rem;
   }
 
   .bio-title {
