@@ -49,7 +49,7 @@ const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
               muted
               autoPlay
               preload="auto"
-              poster="/Pics/poster.webp"
+              poster="/Pics/assowall.webp"
               controlsList="nodownload"
             >
               <source src="/Videos/ephe2.mp4" type="video/mp4" />

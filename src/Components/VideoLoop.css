@@ -275,6 +275,7 @@
     transform 0.4s ease,
     border-color 0.4s ease;
   z-index: 1;
+  border-radius: 3px;
 }
 
 .card h2 {
@@ -301,7 +302,6 @@
 .artists-card {
   position: relative;
   overflow: hidden;
-  border-radius: 2px;
 }
 
 .artists-card:hover .artists-img {
@@ -386,7 +386,6 @@
   transition:
     transform 0.6s ease,
     opacity 0.4s ease;
-  border-radius: 2px;
 }
 
 .compagnie-card:hover .compagnie-media {

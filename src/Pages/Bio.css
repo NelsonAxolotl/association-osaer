@@ -629,7 +629,7 @@ h2 {
 @media (max-width: 500px) {
   .bio {
     left: 0.7%;
-    padding: 0 0 12rem;
+    padding: 1rem 0 12rem;
   }
 
   .bio-title {
@@ -676,10 +676,6 @@ h2 {
 
   .olivia {
     margin-top: 50px;
-  }
-
-  .bio-rectangle {
-    margin-top: -20px;
   }
 
   .bio-bg::before {
