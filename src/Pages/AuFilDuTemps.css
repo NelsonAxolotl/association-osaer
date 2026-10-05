@@ -291,7 +291,7 @@
 }
 
 .ephe-premiere {
-  margin-top: 15px;
+  margin-top: 45px;
   text-align: center;
   line-height: 1.5;
 }
@@ -316,6 +316,244 @@
 .ephe-festival {
   color: rgba(19, 213, 213, 0.843); /* ton bleu */
   font-weight: 500;
+}
+
+/* =========================================================
+   GALERIE PHOTOGRAPHIQUE
+   ========================================================= */
+
+.creations-gallery {
+  position: relative;
+  width: 78%;
+  margin: 60px auto 20px;
+  padding: 10px 0 20px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MOSAÏQUE
+   ========================================================= */
+
+.gallery-grid {
+  width: 100%;
+  column-count: 3;
+  column-gap: 24px;
+}
+
+/* =========================================================
+   PHOTOS
+   ========================================================= */
+
+.gallery-item {
+  width: 100%;
+  margin: 0 0 22px;
+  display: inline-block;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  cursor: zoom-in;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* =========================================================
+   PETITES VARIATIONS
+   ========================================================= */
+
+.gallery-item:nth-child(3n + 1) {
+  margin-bottom: 28px;
+}
+
+.gallery-item:nth-child(3n + 2) {
+  margin-bottom: 22px;
+}
+
+.gallery-item:nth-child(3n) {
+  margin-bottom: 30px;
+}
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.gallery-item:hover {
+  z-index: 5;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.025);
+  filter: brightness(1.06);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.6),
+    0 0 14px rgba(19, 213, 213, 0.12);
+}
+
+/* =========================================================
+   CRÉDIT
+   ========================================================= */
+
+.gallery-credit {
+  margin: 35px 0 0;
+  text-align: center;
+  color: rgba(19, 213, 213, 0.75);
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gallery-credit a {
+  color: rgb(238, 235, 232);
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.gallery-credit a:hover {
+  color: rgba(19, 213, 213, 0.95);
+  text-shadow: 0 0 8px rgba(19, 213, 213, 0.35);
+}
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.94);
+  cursor: pointer;
+  animation: lightboxFade 0.25s ease;
+}
+
+.gallery-lightbox img {
+  display: block;
+  max-width: 92vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
+  cursor: default;
+}
+
+@keyframes lightboxFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   FERMETURE
+   ========================================================= */
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  font-size: 3rem;
+  font-weight: 200;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.75;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.gallery-lightbox-close:hover {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .creations-gallery {
+    width: 78%;
+    margin-top: 70px;
+  }
+
+  .gallery-grid {
+    column-count: 2;
+    column-gap: 20px;
+  }
+
+  .gallery-item {
+    margin-bottom: 20px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .creations-gallery {
+    width: 78%;
+    margin-top: 55px;
+  }
+
+  .gallery-grid {
+    column-count: 2;
+    column-gap: 12px;
+  }
+
+  .gallery-item {
+    margin-bottom: 12px;
+    cursor: default;
+  }
+
+  .gallery-lightbox {
+    padding: 20px;
+  }
+
+  .gallery-lightbox img {
+    pointer-events: none;
+    max-width: 94vw;
+    max-height: 85vh;
+  }
+
+  .gallery-lightbox-close {
+    top: 8px;
+    right: 12px;
+    font-size: 2.5rem;
+  }
+
+  .gallery-credit {
+    margin-top: 25px;
+    font-size: 0.65rem;
+  }
 }
 
 @media (max-width: 1450px) {

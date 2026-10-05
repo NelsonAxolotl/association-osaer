@@ -5,6 +5,7 @@ import Footer from "../Components/Footer";
 
 const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
   const [contentVisible, setContentVisible] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -13,7 +14,9 @@ const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
   }, []);
 
   const visibleClass = contentVisible ? "visible-after-video" : "";
-
+  const galleryPhotos = [
+    1, 5, 10, 12, 15, 18, 19, 9, 2, 6, 8, 17, 14, 20, 3, 7, 4, 13, 11, 16, 21,
+  ];
   return (
     <>
       <main
@@ -84,10 +87,10 @@ const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
                 rencontre se vit plus qu’elle ne se raconte.
               </p>
             </div>
-
+            {/* 
             <div className="ephe-status-wrapper">
               <p className="ephe-status">En cours de création</p>
-            </div>
+            </div> */}
 
             <div className="ephe-premiere">
               <p className="ephe-premiere-title">Première</p>
@@ -109,6 +112,68 @@ const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
               <p>Boulevard de l’Océan</p>
               <p>44730 Saint-Michel-Chef-Chef</p>
             </div>
+            {/* =========================================================
+    GALERIE PHOTOGRAPHIQUE
+    ========================================================= */}
+
+            <div className="creations-gallery">
+              <div className="gallery-grid">
+                {galleryPhotos.map((number) => (
+                  <figure
+                    key={number}
+                    className={`gallery-item gallery-item-${number}`}
+                    onClick={() => setSelectedPhoto(number)}
+                  >
+                    <img
+                      src={`/Pics/os${number}.webp`}
+                      alt={`É.phe — photographie ${number}`}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                ))}
+              </div>
+
+              <p className="gallery-credit">
+                Photographies :{" "}
+                <a
+                  href="https://www.linkedin.com/in/martine-jamin-91138117b/?isSelfProfile=false"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Martine Jamin
+                </a>
+              </p>
+            </div>
+
+            {/* =========================================================
+    LIGHTBOX
+    ========================================================= */}
+
+            {selectedPhoto && (
+              <div
+                className="gallery-lightbox"
+                onClick={() => setSelectedPhoto(null)}
+                role="dialog"
+                aria-modal="true"
+                aria-label="Photographie en plein écran"
+              >
+                <button
+                  type="button"
+                  className="gallery-lightbox-close"
+                  onClick={() => setSelectedPhoto(null)}
+                  aria-label="Fermer la photo"
+                >
+                  ×
+                </button>
+
+                <img
+                  src={`/Pics/os${selectedPhoto}.webp`}
+                  alt={`É.phe — photographie ${selectedPhoto}`}
+                  onClick={(event) => event.stopPropagation()}
+                />
+              </div>
+            )}
           </article>
         </section>
 
