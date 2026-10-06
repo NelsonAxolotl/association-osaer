@@ -144,6 +144,14 @@ const AuFilDuTemps = forwardRef(function AuFilDuTemps(props, ref) {
                   Martine Jamin
                 </a>
               </p>
+              <div className="creation-poster">
+                <img
+                  src="/Pics/creaposter.webp"
+                  alt="Poster des créations — novembre 2026"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
 
             {/* =========================================================

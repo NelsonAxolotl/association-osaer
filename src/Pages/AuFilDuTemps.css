@@ -425,6 +425,40 @@
   text-shadow: 0 0 8px rgba(19, 213, 213, 0.35);
 }
 
+.creation-poster {
+  position: relative;
+  width: 70%;
+  margin: 85px auto 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.creation-poster::before,
+.creation-poster::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(19, 213, 213, 0.843);
+}
+
+.creation-poster::before {
+  left: -10%;
+}
+
+.creation-poster::after {
+  right: -10%;
+}
+
+.creation-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 700px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
 /* =========================================================
    LIGHTBOX
    ========================================================= */
@@ -730,5 +764,13 @@
     padding: 2rem 1rem 2rem;
     line-height: 24px;
     hyphens: auto;
+  }
+
+  .creation-poster {
+    position: relative;
+    width: 90%;
+    margin: 85px auto 20px;
+    display: flex;
+    justify-content: center;
   }
 }
